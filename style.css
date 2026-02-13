@@ -254,7 +254,8 @@ span a {
   text-decoration: none;
 }
 /* fix shrinking video issue */
-@media only screen and (max-width: 420px) {
+/* po ustawieniu max-with 910px o dziwo się naprawia :O */
+@media only screen and (max-width: 910px) {
   .video-container {
     width: 100%;
     z-index: -10;
