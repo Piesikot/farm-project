@@ -7,14 +7,14 @@ html {
   /* background: #
   000; */
   z-index: -10;
-  max-width: 100%;
+  /* max-width: 100%; */
   height: 100%;
 }
 
 /* ⓘ Ustawienie media query z top:0 jest sposobem na problem zmniejszającego się video */
 .video-container {
   position: absolute;
-  /* top: 0; */
+  top: 0;
   /* bottom: 0; */
   width: 100%;
   height: 100%;
@@ -26,8 +26,12 @@ html {
 }
 
 /* 🐛 od width 342 video się zmniejsza */
+
 /* 🐛 od width ok. 330 napisy przestają się mieścić*/
 .video-container video {
+    /* border: dotted 5px blue; */
+    /* box-sizing: border-box; */
+
   /* width: 100%; */
   /* height: 100%; */
   /* z-index: -3; */
@@ -52,23 +56,40 @@ html {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     */
-    
-    border: dotted 5px blue;
-    box-sizing: border-box;
 }
 
+  /* Jaakoś tam dzaiła na małych ekranach */
+  /* @media only screen and (max-width: 342px) {
+  .video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+} */
+
 .logo {
-  /* filter: brightness(0) invert(1); */
+  filter: brightness(0) invert(1);
   width: clamp(25px, 6vw, 300px);
   padding: 2vw;
 }
 .logo-container-media {
   display: none;
 }
+/* ⚠ 🐛 Wielkość .top ma ogromny wpływa zachowanie video!  */
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* background-color: whitesmoke; */
+  /* opacity: 0.7; */
+  /* border-radius: 10px; */
+  /* height: 5vh; */
+  /* position: sticky; */
+  /* top: 0; */
 }
 .bottom {
   display: none;
@@ -76,7 +97,7 @@ html {
 .menu {
   display: flex;
   justify-content: flex-end;
-  padding: 0vw 3vw 0 3vw;
+  /* padding: 0vw 3vw 0 3vw; */
   list-style: none;
   gap: 6vw;
   font-size: clamp(11px, 2vw, 20px); /* pozostawione */
@@ -274,6 +295,12 @@ span a {
   text-decoration: none;
 }
 
+/* Refaktoryzacja */
+.top a, .menu, header{
+  /* color: #000000; */
+  color: whitesmoke;
+}
+
 /* fix shrinking video issue */
 /* po ustawieniu max-with 910px o dziwo się naprawia :O */
 /* ale musi być też ustawiony top 75px i od max-with 438 znowu nie działa */
@@ -335,8 +362,19 @@ span a {
 }  */
 
 
-
-
+/* Refaktoryzuję */
+/* 
+ @media only screen and (max-width: 342px) { */
+  .video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+/* } */
 
 
 
