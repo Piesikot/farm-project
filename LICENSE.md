@@ -12,4 +12,4 @@ All Rights Reserved © Emil Piesik, Piesik od Pokoleń, e-Pies, Piesikot, Piesik
 Any use is strictly prohibited without the author’s written consent.
 
 The source code and materials in this repository are subject to a proprietary license.  
-Copying, modifying, and distributing are permitted only for purposes aligned with the project mission, as described at: https://piesikodpokolen.pl/mission.html
+Copying, modifying, and distributing are permitted only for purposes aligned with the project mission, as described at: https://piesikodpokolen.pl/misja.html
