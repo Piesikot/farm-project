@@ -1,7 +1,6 @@
 /* ⚠ Ważne, żeby komentarze pisać nad kodem, bo CSS nie obsługuje zagnieżdżania komentarzy i potem  trudo zakomentować*/
 
-/* 🛠 ↓ Refaktoryzuję fonty, rozmiary i menu ↓ 🛠 */
-/* - Zrobić czarne menu i czarne tło pod video */
+/* 🛠 Czyszczę kod przed migracją klas do metodologii BEM  */
 
  * { box-sizing: border-box; } 
 
@@ -19,18 +18,15 @@ html {
 /* 🔧 ↓ WŁĄCZNIK video:↓ 🔧 */
 /* video {display: none;} */
 
-/* ↓  ✓ Video po refaktoryzacji ↓ ✓ */
+/* ↓  ✓ Video po pierwszej refaktoryzacji ↓ ✓ */
 .video-container {
   position: fixed;
   inset: 0;
   z-index: -3;
   overflow: hidden;
-  /* background: #000; */
-  /* background: red; */
-  /* background: #000 url('path/to/image.jpg') center/cover; */
-
-  /* tutaj sprawdzić czy przy paskach przy za bardzo zeskalowanym video też jest białe tło, i wtedy zrobię białe menu - tak robi się białe, czyli nie jestem skazany na czarne menu i czarne tło w polish-quality!*/
   background: white;
+    /* background: #white url('path/to/image.jpg') center/cover; */
+/* ↑ Do zrobienia zapasowego tła, na wypadek gdyby video się nie załadowało. ↑ */
 }
  @media only screen and (max-width: 768px) {
    .video-container video {
@@ -44,68 +40,48 @@ html {
   transform: translate(-50%,-50%) scale(0.5);
  }
 } 
-/* ↑ ✓ Video po refaktoryzacji ✓ ↑ */
+/* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
 
-
-/* 🛠 ↓ Refaktoryzuję top menu ↓ 🛠 */
 .logo {
-  filter: brightness(0) invert(1);
-  width: clamp(50px, 10vw, 300px);
-  padding: 2vw;
-}
-.logo-container-media {
-  display: none;
+  /* filter: brightness(0) invert(1); */
+  width: clamp(50px,6vw + 5px, 300px);
+  padding: 0.5em;
 }
 
-/* ⚠ 🐛 Wielkość .top ma ogromny wpływa zachowanie video!  */
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: black; */
-  /* opacity: 0.7; */
-  /* border-radius: 10px; */
-  /* height: 5vh; */
+  /* ^ Działa do width poniżej 378 (kiedy nasza misja się zwija) */
+
+  /* ↑ Nietransparentne tło z jakiegoś powodu nie przesuwa video, ale czarny topbar (przynajmniej obecnie) wygląda dobrze. Z tym, że przypuszczalnie będzie potem problem z dostosowaniem kolorów do loga.↑  */
+
   /* position: sticky; */
   /* top: 0; */
+  /* ↑ Działa tylko do końca video ↑ */
+
+  background: white;
+  opacity: 0.6;
+  height: 4em;
+  min-width: 4em;;
 }
 
 .bottom {
   display: none;
 }
-.wrapper {
-  /* background-color: red; */
-  /* background-color: #ffffff; */
-  /* z-index: -4 !important; */
-  /* why not working? */
-  /* opacity: 0.5; */
-}
-.wrapper h1, h2{
-  /* color: #000000; */
-  /* opacity: 1; */
-}
 .menu {
   display: flex;
-  justify-content: flex-end;
   padding: 2vw 3vw 2vw 3vw;
   list-style: none;
   gap: 6vw;
-  font-size: clamp(11px, 2vw, 20px); /* pozostawione */
-  /* margin-bottom: auto; */
-  /* background-color: black; */
-  /* opacity: 1; */
-
-  color: white;
+  font-size: clamp(11px, 2vw, 20px); 
 }
 .menu a {
   color: black;
   text-decoration: none;
   opacity: 1;
   z-index: 10;
-
-  color: white;
 }
-
 .menu .menu__products-list {
   padding: 0;
   cursor: grab;
@@ -122,39 +98,33 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color:black;
+  padding: 2.5em;
+  background: white;
+  opacity: 0.6;
+
+  /* width: fit-content; */
+  /* ↑ z tym withem przestaje centrować */
 }
-h1 {
+/*  ↑ Do doszliwoania w przyszłości ↑ */
+
+header h1 {
   text-align: center;
-  font-size: clamp(22px, 4vw, 148px); /* unchanged */
-  margin: 0;color:
-  
-  white;
+  font-size: clamp(22px, 4vw, 148px); 
+  margin: 0;
 }
-h2 {
-  font-size: clamp(
-    14px,
-    2.2vw,
-    28px
-  );
-  color: white;
-}
-h3 {
-  font-size: clamp(16px, 2.6vw, 30px); /* mniejszy skok na desktopie */
-}
-h4 {
-  font-size: clamp(12px, 1.8vw, 20px);
-}
-h5 {
-  font-size: clamp(10px, 1.4vw, 16px);
-}
-h6 {
-  font-size: clamp(9px, 1vw, 14px);
+header h2 {
+  font-size: clamp( 14px, 2.2vw, 28px);
 }
 .adventages-container {
   display: flex;
   font-size: clamp(10px, 1.2vw, 18px); /* zmniejszone max */
   color: #ffffff;
   justify-content: center;
+
+  border: 3px dashed red;
+  flex-wrap: wrap;
+
 }
 .pro-container {
   display: flex;
@@ -162,6 +132,12 @@ h6 {
   padding: 5vw;
   align-items: center;
   text-align: center;
+
+  /* background: white; */
+  /* opacity: 0.6; */
+  /* z-index: -5; */
+
+  border: 3px dashed blue;
 }
 .pro-img {
   border-radius: 50%;
@@ -174,16 +150,15 @@ h6 {
   align-items: center;
 }
 .pro-img img {
-  width: 6vw;
+  width: 63%; 
 }
 .pro-title {
   text-transform: uppercase;
   font-weight: 800;
 }
-.pro-title h3 {
-  font-size: clamp(14px, 2.4vw, 22px); /* mniejsze na desktopie */
+.adventages-container h3 {
+  font-size: clamp(14px, 2.4vw, 22px); 
 }
-
   /* !zrobić czarne tło pod video wtedy da się ukryć bug, chociaż tymczasowo */
 .farm {
   color: #000;
