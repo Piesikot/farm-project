@@ -11,7 +11,7 @@ html {
 
 .container {
   z-index: -10;
-  max-width: 100%;
+  max-width: 100%; 
   height: 100%; 
 }
 
@@ -28,17 +28,29 @@ html {
     /* background: #white url('path/to/image.jpg') center/cover; */
 /* ↑ Do zrobienia zapasowego tła, na wypadek gdyby video się nie załadowało. ↑ */
 }
- @media only screen and (max-width: 768px) {
+ @media only screen and (max-width: 1050px) {
    .video-container video {
   min-width: 100%; 
   min-height: 100%; 
   width: auto;
   height: auto;
   position: absolute;
-  top: 25%;
+  /* top: 25%; */
   left: 50%;
-  transform: translate(-50%,-50%) scale(0.5);
- }
+
+  /* transform: translate(-50%,-50%) scale(0.7); */
+  /* 0.6 lepiej, ale jest biały pask u góry na Samsungu */
+/* 0.7 na firefoxie działa dobrze nawet na width 260, na Samsungu Galaxy A41 robią się paski, które teoretycznie chyba dałbym radę ogarnąć dodając białe menu, i jakiś margin/clamp na topie. ale czy warto ryzykować? Zwłaszcza, że ikonka wolnego wybiegu też jednak nie może wychodzić poza, bo z duża jasnością ekrenu ją widać!*/
+/* Bez sensu z tym kombinować, bez  */
+
+    /* object-fit: fill; */
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* bez skalowania działa - obiekt ma ten sam rozmiar, co kontener */
+    /* w Firefoxie działa na 320x256 oprócz 🐛 menu  */
+    /* w Chromie 320x256 się wykrzacza  */
+    /* na Samsungu Galaxy A41 działa*/ 
+  }
 } 
 /* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
 
@@ -123,21 +135,48 @@ header h2 {
   justify-content: center;
 
   border: 3px dashed red;
-  flex-wrap: wrap;
+  /* color: red; */
+  /* flex-wrap: wrap; */
+/* nawet bez flex-wrap napisy czasem wystają, więc muszą pozostać białe, ale wtedy zrobić, kiedy chcę też białe tło?*/
 
+/* Od ok. 1050 video zaczyna się kurczyć, więc zrobię tu zrobię breakpoint, a następnie zrewiduję poprzedni */
+
+/* height: 100vh; */
+
+/* Problem  jest kwestią zmniejszającego się filmu, trzeba ustawić video fill na małych ekranach */
 }
+ @media only screen and (max-width: 1050px) {
+  .adventages-container {
+  flex-direction: column;
+
+  gap: 15em;
+  /* odstęp pomiędzy elementami */
+  padding: 15em 0;
+  /* odstęp od krawiędzi */
+ }
+}
+ /* hmm, teraz działa  */
 .pro-container {
   display: flex;
   flex-direction: column;
-  padding: 5vw;
+  /* padding: 10em; */
+  /* wtf em działa lepiej niż 5 */;
+  /* pionowy pading mogę robić ile chcę i nie zaburza to wyświetlania video */
+  /* ⚠ 🐛 padding left i right daje horizontal scroll!!! */
+  padding: 4em 0;
+  /* ⓘ 10em/vh po prostu było za duże */
+  /* 5em to minimum na którm działa dobrze na moich sprzętach, więc daję 4 na wszelki */
   align-items: center;
   text-align: center;
 
   /* background: white; */
   /* opacity: 0.6; */
   /* z-index: -5; */
-
   border: 3px dashed blue;
+
+
+  /* ⓘ najlepsze efekty wizualne dałoby menu czarne i byłoby też najbardziej funkcjonalne */
+  /* działa, jedynie nie zdaje testu SC - chyba to kwestia menu*/
 }
 .pro-img {
   border-radius: 50%;
@@ -159,6 +198,7 @@ header h2 {
 .adventages-container h3 {
   font-size: clamp(14px, 2.4vw, 22px); 
 }
+
   /* !zrobić czarne tło pod video wtedy da się ukryć bug, chociaż tymczasowo */
 .farm {
   color: #000;
