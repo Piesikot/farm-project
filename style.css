@@ -163,9 +163,10 @@ header h2 {
   /* wtf em działa lepiej niż 5 */;
   /* pionowy pading mogę robić ile chcę i nie zaburza to wyświetlania video */
   /* ⚠ 🐛 padding left i right daje horizontal scroll!!! */
-  padding: 4em 0;
+  padding: 4em 4em;
   /* ⓘ 10em/vh po prostu było za duże */
   /* 5em to minimum na którm działa dobrze na moich sprzętach, więc daję 4 na wszelki */
+  /* ale padding left i right daje odstęp pomiędzy elementami, więc też jest potrzebny */
   align-items: center;
   text-align: center;
 
