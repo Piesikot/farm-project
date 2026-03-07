@@ -1,18 +1,48 @@
-/* ⚠ Ważne, żeby komentarze pisać nad kodem, bo CSS nie obsługuje zagnieżdżania komentarzy i potem  trudo zakomentować*/
 
-/* 🛠 Czyszczę kod przed migracją klas do metodologii BEM  */
+
+/* 🛠 Czyszczę kod przed migracją klas do metodologii BEM oraz refaktyryzuję menu, advantages i oferty */
 
  * { box-sizing: border-box; } 
+ /* [ℹ] sprawia, że całkowite wymiary elementu są uwzględniane łącznie, to ustawienie ma naukowo udowodniony wpływ na zmniejszenie myśli samobójczych u programistów [ℹ] */
+ /* [ℹ] sets how the total width and height of an element is calculated, this setting has a scientifically proven effect on reducing suicidal thoughts among programmers. [ℹ] */
+
+
+ /* 🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠ */
 
 body,
 html {
   margin: 0;
+/* [ℹ] usuwa defaultowe ustawienia przeglądarki - przestrzenie wokół strony i sprawia, że strona w całości wyświetla się na cały viewport, bez tego filmik wychodzi poza krawędzie [ℹ] */
+/* [ℹ] removes the browser’s default spacing around the page content, giving you a “full-bleed” layout starting from the very edge of the viewport, without this video is visible beyond the edges [ℹ] */
+
+
+  overflow-x: hidden;
+  /* ^ ⚠ Tymczasowe rozwiązanie 🐛 z horizontal scrollem  */
+
+
+  /* następnie w dev tools trzeba poszukać co powoduje: 
+  
+  document.querySelectorAll('*').forEach(e=>{if(e.scrollWidth>document.documentElement.clientWidth) console.log(e, e.scrollWidth)}) 
+  
+  */
 }
 
+/* 🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠ */
+
 .container {
-  z-index: -10;
+  /* z-index: -10; */
+  /* ⓘ "bez position to nic nie robi i robi bałagan (negatywne z-indexy bywają źródłem niespodzianek)." ⓘ*/
   max-width: 100%; 
   height: 100%; 
+
+  /* z-index: -1; */
+  /* dalej header zakrywa logo */
+  /* a do tego elementy poniżej advantages stają się zasłonięte przez 
+  video */
+  /* ale to kwestia z-indexu, a nie position */
+
+  /* position: relative; */
+  /* ^ po wyłączeniu działa, hmm */
 }
 
 /* 🔧 ↓ WŁĄCZNIK video:↓ 🔧 */
@@ -22,7 +52,8 @@ html {
 .video-container {
   position: fixed;
   inset: 0;
-  z-index: -3;
+  /* ^ bez tego totalnie się rozjeżdża ^ */
+  z-index: -20;
   overflow: hidden;
   background: white;
     /* background: #white url('path/to/image.jpg') center/cover; */
@@ -63,8 +94,16 @@ html {
   /* width: 80%; */
   /* height: auto; */
   /* padding: 1em; */
-  /* z-index: 5; */
+
+  /* z-index: 10; */
+  /* position: static; */
+
+  position: relative; z-index: 30;
 }
+.logo img {
+  z-index: 90;
+  position: static;
+  }
  @media only screen and (max-width: 1050px) {
   .logo {
      width: clamp(50px, 30% + 5px, 3200px);
@@ -89,10 +128,15 @@ html {
   /* ↑ Działa tylko do końca video ↑ */
 
   background: white;
-  opacity: 0.6;
+  /* opacity: 0.6; */
+
+  background: rgba(255,255,255,0.6); 
+/* ^ zapobiega tworzeniu dodatkowych stacking contextów i ułatwia kontrolę porządku warstw, które mają miejsce w przypadku używania opacity */
 
   height: 4em;
-  min-width: 4em;;
+  min-width: 4em;
+
+  position: relative; z-index: 20; 
 }
 .menu {
   display: flex;
@@ -102,6 +146,8 @@ html {
   font-size: clamp(11px, 2vw, 20px); 
 
   align-items: center;
+
+  /* z-index: 40; */
 }
 .menu a {
   color: black;
@@ -128,14 +174,15 @@ header {
   color:black;
   padding: 2.5em;
   background: white;
-  opacity: 0.6;
 
   /* width: fit-content; */
   /* ↑ z tym withem przestaje centrować */
 
-  /* z-index: -100;
-  overflow:hidden; */
-  
+  position: relative; z-index: -10;
+  opacity: 0.6;
+  /* to nie header sprawiał, że menu zakywało logo, a menu! */
+  /* ⓘ opacity  tworzy własny stacking context — elementy wewnątrz tego kontekstu nie będą układane względem rodzeństwa z zewnątrz ⓘ */
+  /* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
 }
 /*  ↑ Do doszliwoania w przyszłości ↑ */
 
