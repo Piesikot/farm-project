@@ -57,10 +57,25 @@ html {
 
 .logo {
   /* filter: brightness(0) invert(1); */
-  width: clamp(50px,6vw + 5px, 300px);
-  padding: 0.5em;
+  width: clamp(100px, 60% + 20px, 500px);
+  padding-top: 8em;
+  padding-left: 1.5em;
+  /* width: 80%; */
+  /* height: auto; */
+  /* padding: 1em; */
+  /* z-index: 5; */
 }
-
+ @media only screen and (max-width: 1050px) {
+  .logo {
+     width: clamp(50px, 30% + 5px, 3200px);
+    padding: 1em 0 0 0.5em;
+    /* padding-left: 0.5em; */
+    /* padding-left: 0.5em; */
+    /* width: 80%; */
+    /* height: auto; */
+    /* padding: 1em; */
+  }
+ }
 .top {
   display: flex;
   justify-content: space-between;
@@ -75,12 +90,9 @@ html {
 
   background: white;
   opacity: 0.6;
+
   height: 4em;
   min-width: 4em;;
-}
-
-.bottom {
-  display: none;
 }
 .menu {
   display: flex;
@@ -88,6 +100,8 @@ html {
   list-style: none;
   gap: 6vw;
   font-size: clamp(11px, 2vw, 20px); 
+
+  align-items: center;
 }
 .menu a {
   color: black;
@@ -118,6 +132,10 @@ header {
 
   /* width: fit-content; */
   /* ↑ z tym withem przestaje centrować */
+
+  /* z-index: -100;
+  overflow:hidden; */
+  
 }
 /*  ↑ Do doszliwoania w przyszłości ↑ */
 
