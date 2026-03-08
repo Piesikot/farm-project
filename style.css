@@ -1,13 +1,8 @@
-
-
 /* 🛠 Czyszczę kod przed migracją klas do metodologii BEM oraz refaktyryzuję menu, advantages i oferty */
 
  * { box-sizing: border-box; } 
  /* [ℹ] sprawia, że całkowite wymiary elementu są uwzględniane łącznie, to ustawienie ma naukowo udowodniony wpływ na zmniejszenie myśli samobójczych u programistów [ℹ] */
  /* [ℹ] sets how the total width and height of an element is calculated, this setting has a scientifically proven effect on reducing suicidal thoughts among programmers. [ℹ] */
-
-
- /* 🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠ */
 
 body,
 html {
@@ -15,19 +10,28 @@ html {
 /* [ℹ] usuwa defaultowe ustawienia przeglądarki - przestrzenie wokół strony i sprawia, że strona w całości wyświetla się na cały viewport, bez tego filmik wychodzi poza krawędzie [ℹ] */
 /* [ℹ] removes the browser’s default spacing around the page content, giving you a “full-bleed” layout starting from the very edge of the viewport, without this video is visible beyond the edges [ℹ] */
 
+/*  ⚠ TYMCZASOWE ROZWIĄZANIE 🐛 Z HORIZONTAL SCROLLEM  */
 
-  overflow-x: hidden;
-  /* ^ ⚠ Tymczasowe rozwiązanie 🐛 z horizontal scrollem  */
+/*  ↓ 🔧 ↓ */
+/*  overflow-x: hidden; */
 
 
   /* następnie w dev tools trzeba poszukać co powoduje: 
   
   document.querySelectorAll('*').forEach(e=>{if(e.scrollWidth>document.documentElement.clientWidth) console.log(e, e.scrollWidth)}) 
-  
-  */
-}
 
-/* 🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠🐛⚠ */
+  /* 
+*{
+    width: 0;
+}
+ */
+
+  /* WIDTH POWODUJE BUGA Z HORIZONTAL SCROOL PRZY SC */
+
+  /* ⚠ POLISH QUALITY IMG WIDTH POWODOWAŁ BUGA Z HORIZONTAL SCROLLEM PRZY SC - a konkretnie, to comment out dany na width:100% */
+
+  /* tutaj chyba najlepszą praktyką jest dawać max-width? */
+
 
 .container {
   /* z-index: -10; */
@@ -319,7 +323,7 @@ header h2 {
 
 .polish-quality-container{  
   /* background: linear-gradient(to bottom, black, white); */
-    /* background: linear-gradient(to bottom, red, white); */
+  /* background: linear-gradient(to bottom, red, white); */
   width: 100%;
   /* width: 100vw; */
   display: flex;
@@ -331,6 +335,12 @@ header h2 {
   width: clamp(400px, 50vw, 600px);
   padding: 5em;
   /* width: 100%; */
+  /* ⚠ ↑ wykomentowane powodowało buga w postaci horizonatl scroll przy SC bo width:100% był wyłączony, mimo, że cały czas tu był, hmm...⚠ */
+  /* 🟡 ⚠ zastanawiam się, czy to jest dobra praktyka ustawiać tak width:100% - choć widzę, że warto na wszelki wypadek, ale czy to nie powinno być tak, że i bez tego elementy nie powiększają się przesadnie? Wszystkie rozmiary i tak są do refaktoryzacji ⚠ 🟡*/
+
+  max-width: 100%;
+/* w takich przypadkach chyba najlepszą praktyką jest dawać max-width */
+
 }
 
 
