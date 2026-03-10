@@ -303,24 +303,6 @@ header h2 {
    
 }
 
-.farm {
-  color: #000;
-
- /* ⚠ ⓘ  🔧↓   JAK WYŁĄCZĘ TEN KOLOR TO CAŁA STRONA SIĘ PRZEWIJA NA TLE FILMIKU :O  tylko polish-quality i stopka zakrywają↓  */
-  background: white;
-/* ↑ 🔧 */
-/* aha bo to jest klamra do klasy farm */
-/* ale farm się zaczyna dopiero  prosach, hmm dlaczego tło blokuje rozpływanie się filmu? I dlaczego potem stopka już tego rozpływanie nie blokuje (choć zakrywa)? */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: clamp(10px, 1.2vw, 18px); /* zmniejszone max */
-  padding: 40px;
-}
-
-
 .polish-quality-container{  
   /* background: linear-gradient(to bottom, black, white); */
   /* background: linear-gradient(to bottom, red, white); */
@@ -344,11 +326,73 @@ header h2 {
 }
 
 
-/* WTF!? */
+
+.farm {
+  color: #000;
+
+  /* ⚠ ⓘ  🔧↓   ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
+  background: white;
+        /* ↑ 🔧 */
+
+/*  */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+  /* font-size: clamp(10px, 1.2vw, 18px); zmniejszone max */
+  /* padding: 40px; */
+  /* ↑  raczej całe do wykasowania */
+
+  border: dashed 5px red;
+
+  /* flex-wrap: wrap; */
+
+  /* 🔴 ⚠ Tu jest coś pomieszane bardzo.  ⚠ */
+/* worldwide offer nie ma wrappera */
+/* jednak ma, ale coś jest nie tak, jak powinno */
+
+}
+
+.farm__products-header-container__wrap{
+  border: dashed 5px blue;  
+  /* !? co to za wrap w ogóle? !? */
+   
+}
+
+.farm__products-header-container__products-header-img {
+/* display: none; */
+/* width: 25%; */
+
+/* width: 100px; */
+/* padding: 10px; */
+
+display: flex;
+justify-content: center;
+}
+
+.farm__products-header-container__products-header-img img{
+  /* width: 35%; */
+  width: 55%;
+}
+
+.farm__products-header-container{
+border: dashed 5px gold;
+
+display: flex;
+justify-content: center;
+ align-items: center;
+
+ /* flex-wrap: wrap; */
+}
+
+
+
+
+/* 🔴 WYŁĄCZAM TEN BAŁĄGAN  🔴*/
 .farm__products-header-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   /* padding: 30px; */
   /* gap: 40px; */
 }
@@ -359,16 +403,22 @@ header h2 {
 .farm__products-container__products-header-footer {
   font-size: clamp(10px, 1.1vw, 16px); 
 }
+
+/* 🔴⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠🔴 */
+/* ALE TU JEST BAŁAGAN, NIE PO KOLEI */
+/* WYŁĄCZAM DO TESTU */
 .farm__products-header-container__products-header-img {
-  width: 18em;
-  padding: 3em;
+  /* width: 18em; */
+  /* padding: 3em; */
 }
 .farm__products-header-container__wrap {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   /* color: aqua; */
   /* padding: 80px 0px 80px 0px; */
 }
+
+
 .farm__products-main-container__products-main {
   display: flex;
   justify-content: center;
