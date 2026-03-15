@@ -1,67 +1,40 @@
 /* 🛠 Czyszczę kod przed migracją klas do metodologii BEM oraz refaktyryzuję menu, advantages i oferty */
 
- * { box-sizing: border-box; } 
- /* [ℹ] sprawia, że całkowite wymiary elementu są uwzględniane łącznie, to ustawienie ma naukowo udowodniony wpływ na zmniejszenie myśli samobójczych u programistów [ℹ] */
- /* [ℹ] sets how the total width and height of an element is calculated, this setting has a scientifically proven effect on reducing suicidal thoughts among programmers. [ℹ] */
+
+/* 🔧 ↓ WŁĄCZNIK video:↓ 🔧 */
+    /* video {display: none;} */
+/* 🔧 ↑ WŁĄCZNIK video ↑ 🔧 */
+
+ * { box-sizing: border-box; 
+}     /* ↑ [ℹ] sprawia, że całkowite wymiary elementu są uwzględniane łącznie, to ustawienie ma naukowo udowodniony wpływ na zmniejszenie myśli samobójczych u programistów [ℹ] */
+      /* ↑ [ℹ] sets how the total width and height of an element is calculated, this setting has a scientifically proven effect on reducing suicidal thoughts among programmers. [ℹ] */
 
 body,
 html {
   margin: 0;
-/* [ℹ] usuwa defaultowe ustawienia przeglądarki - przestrzenie wokół strony i sprawia, że strona w całości wyświetla się na cały viewport, bez tego filmik wychodzi poza krawędzie [ℹ] */
-/* [ℹ] removes the browser’s default spacing around the page content, giving you a “full-bleed” layout starting from the very edge of the viewport, without this video is visible beyond the edges [ℹ] */
-
-/*  ⚠ TYMCZASOWE ROZWIĄZANIE 🐛 Z HORIZONTAL SCROLLEM  */
-
-/*  ↓ 🔧 ↓ */
-/*  overflow-x: hidden; */
-
-
-  /* następnie w dev tools trzeba poszukać co powoduje: 
-  
-  document.querySelectorAll('*').forEach(e=>{if(e.scrollWidth>document.documentElement.clientWidth) console.log(e, e.scrollWidth)}) 
-
-  /* 
-*{
-    width: 0;
-}
- */
-
-  /* WIDTH POWODUJE BUGA Z HORIZONTAL SCROOL PRZY SC */
-
-  /* ⚠ POLISH QUALITY IMG WIDTH POWODOWAŁ BUGA Z HORIZONTAL SCROLLEM PRZY SC - a konkretnie, to comment out dany na width:100% */
-
-  /* tutaj chyba najlepszą praktyką jest dawać max-width? */
-
+} /* [ℹ] ↑ usuwa defaultowe ustawienia przeglądarki - przestrzenie wokół strony i sprawia, że strona w całości wyświetla się na cały viewport, bez tego filmik wychodzi poza krawędzie [ℹ] */
+ /* [ℹ] ↑ removes the browser’s default spacing around the page content, giving you a “full-bleed” layout starting from the very edge of the viewport, without this video is visible beyond the edges [ℹ] */
 
 .container {
   /* z-index: -10; */
-  /* ⓘ "bez position to nic nie robi i robi bałagan (negatywne z-indexy bywają źródłem niespodzianek)." ⓘ*/
+  /* ⓘ ↑ bez position to nic nie robi i robi bałagan ("negatywne z-indexy bywają źródłem niespodzianek") ⓘ */
   max-width: 100%; 
   height: 100%; 
-
-  /* z-index: -1; */
-  /* dalej header zakrywa logo */
-  /* a do tego elementy poniżej advantages stają się zasłonięte przez 
-  video */
-  /* ale to kwestia z-indexu, a nie position */
-
-  /* position: relative; */
-  /* ^ po wyłączeniu działa, hmm */
 }
-
-/* 🔧 ↓ WŁĄCZNIK video:↓ 🔧 */
-/* video {display: none;} */
 
 /* ↓  ✓ Video po pierwszej refaktoryzacji ↓ ✓ */
 .video-container {
   position: fixed;
   inset: 0;
-  /* ^ bez tego totalnie się rozjeżdża ^ */
+  /* ⓘ ↑ bez tego totalnie się rozjeżdża ⓘ */
   z-index: -20;
   overflow: hidden;
   background: white;
-    /* background: #white url('path/to/image.jpg') center/cover; */
-/* ↑ Do zrobienia zapasowego tła, na wypadek gdyby video się nie załadowało. ↑ */
+
+  /* [ℹ] zdjęcie na wypadek, gdyby video się nie załadowało */
+  /* [ℹ] picture in case video fails to load */
+    background: url('src/TastyDog-Background.png') center/cover;
+    /* ↑ Do zrobienia jeszcze inne warianty */
 }
  @media only screen and (max-width: 1050px) {
    .video-container video {
@@ -75,8 +48,8 @@ html {
 
   /* transform: translate(-50%,-50%) scale(0.7); */
   /* 0.6 lepiej, ale jest biały pask u góry na Samsungu */
-/* 0.7 na firefoxie działa dobrze nawet na width 260, na Samsungu Galaxy A41 robią się paski, które teoretycznie chyba dałbym radę ogarnąć dodając białe menu, i jakiś margin/clamp na topie. ale czy warto ryzykować? Zwłaszcza, że ikonka wolnego wybiegu też jednak nie może wychodzić poza, bo z duża jasnością ekrenu ją widać!*/
-/* Bez sensu z tym kombinować, bez  */
+  /* 0.7 na firefoxie działa dobrze nawet na width 260, na Samsungu Galaxy A41 robią się paski, które teoretycznie chyba dałbym radę ogarnąć dodając białe menu, i jakiś margin/clamp na topie. ale czy warto ryzykować? Zwłaszcza, że ikonka wolnego wybiegu też jednak nie może wychodzić poza, bo z duża jasnością ekrenu ją widać!*/
+  /* Bez sensu z tym kombinować raczej, ale się zobaczy po refaktoryzacji menu  */
 
    /* object-fit: fill; */
    top: 50%;
@@ -86,6 +59,7 @@ html {
     /* w Chromie 320x256 się wykrzacza  */
     /* na Samsungu Galaxy A41 działa*/
 
+    /* jakoś tam działą, ale do film do dostosowania, i zobaczy się, co trzeba będzie zastosować po refaktoryzacji menu */
   }
 } 
 /* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
@@ -95,48 +69,35 @@ html {
   width: clamp(100px, 60% + 20px, 500px);
   padding-top: 8em;
   padding-left: 1.5em;
-  /* width: 80%; */
-  /* height: auto; */
-  /* padding: 1em; */
-
-  /* z-index: 10; */
-  /* position: static; */
-
   position: relative; z-index: 30;
 }
 .logo img {
   z-index: 90;
   position: static;
   }
+
+  /* [ℹ] jeden breakpoint jest konieczny dla dobrego UX - interaktywnego efektu parallax nożem po gardle przy scrollowaniu */
+  /* [ℹ] one breakpoint is necessary for good UX - interactive parallax effect of a knife across the throat while scrolling */
  @media only screen and (max-width: 1050px) {
   .logo {
-     width: clamp(50px, 30% + 5px, 3200px);
+    width: clamp(50px, 30% + 5px, 3200px);
     padding: 1em 0 0 0.5em;
-    /* padding-left: 0.5em; */
-    /* padding-left: 0.5em; */
-    /* width: 80%; */
-    /* height: auto; */
-    /* padding: 1em; */
   }
  }
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* ^ Działa do width poniżej 378 (kiedy nasza misja się zwija) */
-
-  /* ↑ Nietransparentne tło z jakiegoś powodu nie przesuwa video, ale czarny topbar (przynajmniej obecnie) wygląda dobrze. Z tym, że przypuszczalnie będzie potem problem z dostosowaniem kolorów do loga.↑  */
-
-  /* position: sticky; */
-  /* top: 0; */
-  /* ↑ Działa tylko do końca video ↑ */
-
   background: white;
+
+  /* ⓘ🔧 ↓ tworzy własny stacking context — elementy wewnątrz tego 
+  kontekstu nie będą układane względem rodzeństwa z zewnątrz ↓ 🔧 ⓘ */
   /* opacity: 0.6; */
+  /* ⓘ 🔧 ↑ 🔧 ⓘ */
 
   background: rgba(255,255,255,0.6); 
-/* ^ zapobiega tworzeniu dodatkowych stacking contextów i ułatwia kontrolę porządku warstw, które mają miejsce w przypadku używania opacity */
-
+/* ⓘ 🔧 ↑ zapobiega tworzeniu dodatkowych stacking contextów i ułatwia kontrolę porządku warstw, które mają miejsce w przypadku używania opacity 🔧 ⓘ */
+  /* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
   height: 4em;
   min-width: 4em;
 
@@ -150,8 +111,6 @@ html {
   font-size: clamp(11px, 2vw, 20px); 
 
   align-items: center;
-
-  /* z-index: 40; */
 }
 .menu a {
   color: black;
@@ -184,7 +143,7 @@ header {
 
   position: relative; z-index: -10;
   opacity: 0.6;
-  /* to nie header sprawiał, że menu zakywało logo, a menu! */
+  /* to nie header sprawiał, że menu zakrywało logo, a menu! */
   /* ⓘ opacity  tworzy własny stacking context — elementy wewnątrz tego kontekstu nie będą układane względem rodzeństwa z zewnątrz ⓘ */
   /* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
 }
@@ -198,24 +157,14 @@ header h1 {
 header h2 {
   font-size: clamp( 14px, 2.2vw, 28px);
 }
+
 .adventages-container {
   display: flex;
-  font-size: clamp(10px, 1.2vw, 18px); /* zmniejszone max */
+  font-size: clamp(10px, 1.2vw, 18px); 
   color: #ffffff;
   justify-content: center;
-
-  /* border: 3px dashed red; */
-  /* color: red; */
-
-  /* flex-wrap: wrap; */
-/* nawet bez flex-wrap napisy czasem wystają, więc muszą pozostać białe, ale wtedy zrobić, kiedy chcę też białe tło?*/
-
-/* Od ok. 1050 video zaczyna się kurczyć, więc zrobię tu zrobię breakpoint, a następnie zrewiduję poprzedni */
-
-/* height: 100vh; */
-
-/* Problem  jest kwestią zmniejszającego się filmu, trzeba ustawić video fill na małych ekranach */
 }
+
  @media only screen and (max-width: 1050px) {
   .adventages-container {
   flex-direction: column;
@@ -226,29 +175,20 @@ header h2 {
   /* odstęp od krawiędzi */
  }
 }
- /* hmm, teraz działa  */
+
 .pro-container {
   display: flex;
   flex-direction: column;
-  /* padding: 10em; */
-  /* wtf em działa lepiej niż 5 */;
-  /* pionowy pading mogę robić ile chcę i nie zaburza to wyświetlania video */
-  /* ⚠ 🐛 padding left i right daje horizontal scroll!!! */
+
   padding: 4em;
   /* ⓘ 10em/vh po prostu było za duże */
   /* 5em to minimum na którm działa dobrze na moich sprzętach, więc daję 4 na wszelki */
   /* ale padding left i right daje odstęp pomiędzy elementami, więc też jest potrzebny */
     /* po zmianie padiingów w pro zczęło się ucinać, więc muszę dać jeszcze mniejszy padding tutaj: 3 wyadję się być ok, ale daję 2 na wszelki  */
     /* ten padding przydaje się tylko na większych ekranach */
+
   align-items: center;
   text-align: center;
-
-  /* background: white; */
-  /* opacity: 0.6; */
-  /* z-index: -5; */
-
-  /* border: 3px dashed blue; */
-  /* ↑ 🔧 duże ekrany */
 
   /* ⓘ najlepsze efekty wizualne dałoby menu czarne i byłoby też najbardziej funkcjonalne */
   /* działa, jedynie nie zdaje testu SC - chyba to kwestia menu*/
@@ -258,10 +198,7 @@ header h2 {
     padding: 0;
     /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
 
-    /* border: 5px dashed purple; */
-    /* ↑ 🔧 małe ekrany */
-
-/* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
+    /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
  }
 }
 .pro-img {
@@ -273,41 +210,30 @@ header h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-
   /* background: white; */
+
+  /* ⚠ 🔧🟡 opacity 🟡 🔧 ⚠ */
   opacity: 0.6;
+  /* ⚠ 🔧🟡 opacity 🟡 🔧 ⚠ */
 }
 .pro-img img {
   width: 63%;
-  /* opacity: 1; */
-
-  /* DLACZEGO TO JEST SZARE!? */
-
-
 }
 .pro-title {
   text-transform: uppercase;
   font-weight: 800;
-
   color: black;
-  /* opacity: 1; */
 }
 .adventages-container h3, .pro-description{
   font-size: clamp(14px, 2.4vw, 22px);
-
   background: white;
   opacity: 0.5;
   color: black;
   padding: 0.5em;
   border-radius: 0.5em;
-   
 }
-
 .polish-quality-container{  
-  /* background: linear-gradient(to bottom, black, white); */
-  /* background: linear-gradient(to bottom, red, white); */
   width: 100%;
-  /* width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,158 +243,126 @@ header h2 {
   width: clamp(400px, 50vw, 600px);
   padding: 5em;
   /* width: 100%; */
-  /* ⚠ ↑ wykomentowane powodowało buga w postaci horizonatl scroll przy SC bo width:100% był wyłączony, mimo, że cały czas tu był, hmm...⚠ */
-  /* 🟡 ⚠ zastanawiam się, czy to jest dobra praktyka ustawiać tak width:100% - choć widzę, że warto na wszelki wypadek, ale czy to nie powinno być tak, że i bez tego elementy nie powiększają się przesadnie? Wszystkie rozmiary i tak są do refaktoryzacji ⚠ 🟡*/
+  /* ⚠ ↑ 🟡 wykomentowane powodowało buga w postaci horizonatl scroll przy SC bo width:100% był wyłączony, mimo, że cały czas tu był...⚠ 🟡 */
+
+  /* 🟡 Ustawiać na wszelki wypade width:100%? max-width:100%? Wszystkie rozmiary i tak są zaaplanowane do refaktoryzacji ⚠ 🟡*/
 
   max-width: 100%;
-/* w takich przypadkach chyba najlepszą praktyką jest dawać max-width */
-
 }
 
-
-
+/* .offer-content */
 .farm {
   color: #000;
 
-  /* ⚠ ⓘ  🔧↓   ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
+  /* ⚠ ⓘ  🔧 ↓   ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
   background: white;
-        /* ↑ 🔧 */
+        /* ↑ 🔧 ↑ */
 
-/*  */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
-  /* font-size: clamp(10px, 1.2vw, 18px); zmniejszone max */
-  /* padding: 40px; */
-  /* ↑  raczej całe do wykasowania */
-
-  border: dashed 5px red;
-
-  /* flex-wrap: wrap; */
-
-  /* 🔴 ⚠ Tu jest coś pomieszane bardzo.  ⚠ */
-/* worldwide offer nie ma wrappera */
-/* jednak ma, ale coś jest nie tak, jak powinno */
-
+padding: 1em;
 }
-
+/* ⓘ ten wrap  jednak okazał się potrzebny, żeby ułożyć globus w odpowiednim miejscu ⓘ */
 .farm__products-header-container__wrap{
-  border: dashed 5px blue;  
-  /* !? co to za wrap w ogóle? !? */
-   
+  display: flex;
+/* border: 3px dashed purple; */
+  padding: 1em;
+  align-items: center;
+  /* 🟡 koniecznie trzeba dostosować jeszcze, żeby linki były bardziej klikalne 🟡*/
 }
-
 .farm__products-header-container__products-header-img {
-/* display: none; */
-/* width: 25%; */
-
-/* width: 100px; */
-/* padding: 10px; */
-
 display: flex;
 justify-content: center;
+align-items: center;
 }
-
 .farm__products-header-container__products-header-img img{
-  /* width: 35%; */
-  width: 55%;
+  width: 6em;
+  height: 6em;
+  /* width:35%; */
+  /* height: 35%; */
+  /* ⚠ z procentami się totalnie spłaszcza, że jest ledwo widoczne, hmmm.. ⚠  */
+  /* 🟡 dlatego wracam tymczasowo do em 🟡*/
 }
 
+
+/* 🛠 ↓ offer-content po pierwszedj refaktoryzacji ↓ 🛠 ✓ */
 .farm__products-header-container{
-border: dashed 5px gold;
+  display: flex;
+ flex-direction: column;
+ /* border: dashed 5px blue;   */
+}
 
-display: flex;
-justify-content: center;
- align-items: center;
+ @media only screen and (max-width: 1050px) {
+  .farm__products-header-container__products-header-img img{
+  width: 4em;
+  height:4em;
+}
 
- /* flex-wrap: wrap; */
+.farm__products-main-container__products-main {
+  flex-direction: column;
+  }
+ }
+
+.farm__products-container__products-header-title h2{
+  text-align: center;
+}
+
+.farm__products-container__products-header-description {
+  /* border: dashed 3px violet; */
+  padding-left: 1em ;
 }
 
 
-
-
-/* 🔴 WYŁĄCZAM TEN BAŁĄGAN  🔴*/
-.farm__products-header-container {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* padding: 30px; */
-  /* gap: 40px; */
-}
-.farm__products-container__products-header-description h2 {
-  font-size: clamp(12px, 1.4vw, 22px); 
-  color: black;
-}
 .farm__products-container__products-header-footer {
-  font-size: clamp(10px, 1.1vw, 16px); 
-}
+/* color: brown; */
+width: fit-content;
+text-align: center;
 
-/* 🔴⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠🔴 */
-/* ALE TU JEST BAŁAGAN, NIE PO KOLEI */
-/* WYŁĄCZAM DO TESTU */
-.farm__products-header-container__products-header-img {
-  /* width: 18em; */
-  /* padding: 3em; */
 }
-.farm__products-header-container__wrap {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* color: aqua; */
-  /* padding: 80px 0px 80px 0px; */
-}
-
 
 .farm__products-main-container__products-main {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 30px;
-  /* flex-direction: column; */
-  gap: 30px;
+  /* border: forestgreen dashed 5px; */
+  padding: 1em;
 }
+
+.farm__products-header-container{
+padding: 1em;
+}
+
 .farm__products-main-container__products-main__products-main-title h3 {
-  padding: 20px;
+  /* color: greenyellow; */
 }
 .farm__products-main-container__products-main__products-main-description {
-  font-size: clamp(12px, 1.2vw, 18px); /* zmniejszone max */
+  /* font-size: clamp(12px, 1.2vw, 18px); zmniejszone max */
+  /* color: cadetblue; */
+  padding-left: 1em;
 }
 
-
-/* ↓ ✓ footer po refaktoryzacji ✓ ↓ */
+/* ↓ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↓ */
 footer {
   background: #000;
   color: #ffffff;
-  /* text-align: center; */
-  /* padding: 10px 0; */
-   
-  /* display: flex; */
-  /* justify-content: center; */
-  /* justify-content: space-between; */
-  /* align-items: space-between; */
 
-  /* margin-top: 30px; */
-    /* justify-content: center; */
 }
-/* ⓘten wrapper jednak okazał się zbędny */
+/* ⓘ ten wrapper jednak okazał się zbędny ⓘ  */
 .footer-wrapper {
   /* display: flex; */
   /* flex-direction: column; */
   /* gap: 5px; */
-    /* gap: 10rem;  */
-    /* padding: 15rem;   odstęp OD KRAWĘDZI kontenera */
+  /* gap: 10rem;  */
+  /* padding: 15rem;   odstęp OD KRAWĘDZI kontenera */
   /* align-items: space-between; */
-    /* justify-content: center; */
+  /* justify-content: center; */
 }
 .footer-menu {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: space-evenly; */
+
     gap: 1.5em;
     /*ⓘ ↑odstęp↑ MIĘDZY elementami PIONOWY */
     padding: 1.5em;
     /*ⓘ ↑odstęp↑ OD KRAWĘDZI kontenera  */
+
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -487,44 +381,8 @@ footer {
 .footer-menu__copyright {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-basis: 100%;
   text-align: center;
 }
-/* ↑ ✓ footer po refaktoryzacji ✓ ↑ */
-
-
-
-
-/* ↓ WYŁĄCZAM WSZYSKTKIE BRAKPOINTY ↓ */
-
-/* Mobile-S resolution */
-/* @media only screen and (max-width: 320px) {
-  .logo-container {
-    display: none;
-  }
-  .logo-container-media {
-    display: block;
-    position: absolute;
-    margin-top: -5px;
-  }
-  h1 {
-    margin-top: 10px;
-  }
-  .logo-container-media {
-    margin-top: 2.5px;
-  }
-  .video-container {
-    top: 100px;
-  }
-} */
-
-/* Mobile < S resolution */
-/* @media only screen and (min-width: 320px) {
-  h2 {
-    padding: 15px 0px;
-  }
-}  */
-
-
+/* ↑ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↑ */
 

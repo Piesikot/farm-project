@@ -56,7 +56,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
  }
  .alert button{
     position: fixed;
@@ -65,21 +64,6 @@
     bottom: 40%;
     z-index: 1;
  }
-
-/* 🔧 TESTY W SZUKANIU 🐛 */
-@media only screen and (max-width: 1050px) {
-    video{
-        /* display: none; */
-    }
-
-    .video-container{
-        /* display: none; */
-    }
-
-    .top{
-        /* display: none; */
-    }
-}
 
 </style>
 
@@ -102,21 +86,22 @@
                         <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
                     </ul>
             </div>
+
+            <div class="video-container">
+            <video width="100%" preload="auto" loop autoplay muted>
+                <source src='src/video/SweetyTastyDoggiesBackground.mp4' type='video/mp4' />
+                <!-- some videos downloaded from https://www.vecteezy.com/ -->
+                <!-- some videos downloaded from https://www.elwooddogmeat.com/ -->
+            </video>       
+        </div>
+
             <header>
                 <h1>Piesik od Pokoleń S.A.</h1>
                 <h2>Psie mięso to przyszłość!</h2>
             </header>      
             
-        <div class="video-container">
-            <video width="100%" preload="auto" loop autoplay muted>
-                <source src='src/video/SweetyTastyDoggiesBackground.mp4' type='video/mp4' />
-                <!-- some videos downloaded from https://www.vecteezy.com/ -->
-                <!-- some videos downloaded from https://www.elwooddogmeat.com/ -->
-                <source src='src/video/explore.mp4' type='video/mp4' />
-                <source src='src/video/explore.webm' type='video/webm' />
-            </video>       
-        </div>
-
+             <main> 
+        
             <div class="adventages-container">
                 <div class="pro-container">
                     <div class="pro-img">
@@ -153,8 +138,7 @@
                         Nasze psy mają możliwość przebywania na świeżym powietrzu.
                     </span>
                 </div>
-                
-                <!-- videp-container wcześniej był tutaj -->
+
 
             </div>
         </div>
@@ -169,20 +153,26 @@
                 <img class="polish-quality-container-img" src="src/Copilot_20260225_083128.png" alt="Certyfikat Ministerstwa Rolnictwa i Rozwoju Wsi - Produkt Polski">
             </div>
 
-
+            <!-- .offer-content -->
             <div class="farm">
-
-                <!-- ! KASUJĘ DZIWNEGO WRAPA DLA TESTU -->
-                    <!-- <div class="farm__products-header-container__wrap"> -->
+                    
+                <!-- offer-content__worldwide-offer -->
+                <div class="farm__products-header-container">
                 
-                    <div class="farm__products-header-container">
+                <!-- offer-content__worldwide-offer__header -->
+                    <div class="farm__products-container__products-header-title">
+                        <h2>Czy wiesz, że nasze produkty są dostępne w wielu krajach na całym świecie?</h2>
+                    </div>
+                
+                    <div class="farm__products-header-container__wrap">
 
-                        <div class="farm__products-header-container__products-header-img"><img class="" src="src/international_2206535.png" alt="Globus">
+                        <div class="farm__products-header-container__products-header-img">
+                            <img class="" src="src/international_2206535.png" alt="Globus">
                         </div>
-                
-                        <div class="farm__products-container__products-header-description">
-                                <h2>Czy wiesz, że nasze produkty są dostępne w wielu krajach na całym świecie?
-                                    <p>Jesteśmy dostępni w
+                    
+                    
+                        <div class="farm__products-container__products-header-description">    
+                                <p>Jesteśmy dostępni w
                                         <a href="https://www.elwooddogmeat.com/" target="_blank" rel="noopener">Stanach Zjednoczonych</a>,
                                         <a href="https://sites.google.com/view/ranchodoslatidos/" target="_blank" rel="noopener">Brazylii</a>,
                                         <a href="https://www.facebook.com/Rodopskaovcharka" target="_blank" rel="noopener">Bułgarii</a>,
@@ -195,28 +185,27 @@
                                         <a href="https://belmontecarnedeperro.com/" target="_blank" rel="noopener">Hiszpanii</a>,
                                         <a href="https://www.gotlandshundfarm.se/" target="_blank" rel="noopener">Szwecji</a>,
                                     a także już niedługo w Niemczech i Afryce Południowej!
-                                    </p>
-                                </h2>
-                            
-
-                                <div class="farm__products-container__products-header-footer">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.
-                                </div>
-
-                            </div>
+                                </p>
+                        </div>
 
                     </div>
 
-                <!-- </div> -->
+                        <div class="farm__products-container__products-header-footer">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.
+                        </div>    
+                </div>
 
-                <main>
-                    <div class="farm__products-main-container"></div>
-                        <!-- https://sokolow.pl/produkty -->
+<!-- https://sokolow.pl/produkty -->
+
+                <!-- .offer-content__local-offer-content -->
+                <div class="farm__products-main-container">
+
+                        <!-- .offer-content__local-offer-content -->
                         <div class="farm__products-main-container__products-main">
                             <span class="farm__products-main-container__products-main__products-main-title"><h3>MIĘSO</h3></span>
                             <span class="farm__products-main-container__products-main__products-main-description">Hodowla zwierząt i produkcja mięsa jest naszą pasją! Z zaangażowaniem dostarczamy psie, kocie, i królicze mięso naszym klientom, głęboko wierząc, że najwyższą jakość osiągamy dzięki połączeniu nowoczesnych rozwiązań, ciężkiej pracy, miłości do zwierząt i współpracy z polskimi, a także zagranicznymi rolnikami. Kontrolujemy każdy etap produkcji, by tworzyć mięso, które jest owocem naszej pasji i doświadczenia, by mogło trafić na Twój stół!</span>
                         </div>
                         <div class="farm__products-main-container__products-main">
-                            <span class="products-main-container__products-main__products-main-title"><h3>WĘDLINY</h3></span>
+                            <span class="farm__products-main-container__products-main__products-main-title"><h3>WĘDLINY</h3></span>
                             <span class="farm__products-main-container__products-main__products-main-description">Każdego dnia wytwarzamy około 1200 ton najwyższej jakości wyrobów mięsnych, z pasją tworząc smaki, które podbijają podniebienia. Nieustannie rozwijamy naszą ofertę, wprowadzając nowe kulinarne rozwiązania. Dbałość o wyjątkowy smak idzie u nas w parze z najwyższą jakością składników, z których powstają nasze produkty.</span>
                         </div>
                         <div class="farm__products-main-container__products-main">
@@ -233,7 +222,8 @@
                             <span class="farm__products-main-container__products-main__products-main-description">Tak, nasze produkty są także idealne dla ludzi na diecie wegetariańskiej! Ze względu na to, że uważnie śledzimy trendy żywieniowe i staramy się jak najlepiej odpowiadać na potrzeby naszych klientów, stworzyliśmy specjalną linię produktów wegetariańskich, dedykowaną osobom, które kochają zwierzęta i z tego powodu nie jedzą mięsa. Każdy, kto spróbował naszych produktów żałuje, że zrobił to tak późno. Jeśli jesteś, tak jak niegdyś nasi nowi klienci, osobą znudzoną ciągłym piciem krowiego, owczego, czy koziego mleka, gorąco zachęcamy do zapoznania się z naszą ofertą psiego i kociego mleka. Gwarantujemy wspaniały smak, nie wspominając nawet o walorach zdrowotnych! 
                             </span>
                         </div>
-                </main>
+                </div>   
+
             </div>
     </div> 
 </div> 
@@ -250,6 +240,7 @@
                 <!-- a href zobacz więcej https://sokolowsa.pl/firma/razem-w-przyszlosc -->
                 <!-- Pertycja o zakaz roślinnego jedzenia -->
         </div>
+    </main>
     <footer>
             <div class="footer-menu">
                 <span class="footer-menu__dobrostan"><a href="dobrostan.html" class="footer-button" >DOBROSTAN</a></span>
@@ -260,13 +251,11 @@
             </div>
     </footer>
 
-
 <!-- 🔧 Wyłączanie alertu 🔧-->
-<!-- <div class="alert">
+<div class="alert">
     <span>Uwaga! Strona w trakcie budowy. Niektóre rzeczy mogą nie działać poprawnie.</span>
     <button id="alert-button">OK</button>
-</div> -->
-
+</div>
 
 <script>
     let alert_window = document.querySelector('.alert');
