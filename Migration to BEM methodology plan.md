@@ -3,13 +3,14 @@
 ---
 
 **General guidelines**
-- Leave all existing comments in HTML/CSS untouched; add your own in English so it is clear which comments are AI-added.
+- Leave all existing comments in HTML/CSS untouched; in case you generate your own code, do it in English language and mark it using Copilot symbol "🤖" so it is clear which comments are AI-added.
 - In comments, state what you changed and why, to keep intent transparent.
 - Comment out previous styles instead of deleting, to preserve original intent and allow easy rollback if needed.
 
 **Key decisions**
 - Separate class names for index.html vs produkty.html (no shared product block names across pages).
 - Move all inline CSS into style.css; only alert in index.html must remain in this file.
+- For this migration stage, use mapped class names as the source of truth, including existing multi-element naming already present in the project.
 
 ---
 
@@ -19,7 +20,6 @@
 - `.top` → `.topbar`
 - `.logo-container` → `.topbar__logo-container`
 - `.logo` → `.topbar__logo`
-- `.logo-container-media` → `.topbar__logo--mobile`
 - `.menu` → `.topbar__menu`
 - `.menu__farm`, `.menu__news`, `.menu__contact`, `.menu__mission` → `.topbar__menu__item`
 - `.menu a` → `.topbar__menu__button`
@@ -28,7 +28,7 @@
 
 **Layout**
 - `.container` → `.page`
-- `.wrapper` → removed
+- `.wrapper` → keep (do not rename/remove in this migration stage)
 - `.adventages-container` → `.advantages`
 
 **Footer**
@@ -102,6 +102,7 @@
 - `.program-container__program-main` → `.program__content`
 - `.program-container__program-main__program-main-description` → `.program__description`
 - `.program-container__program-main__program-main-category` → `.program__category`
+- `.program-container__program-main__category` → `.program__category`
 
 **Kariera (kariera.html)**
 - `.kariera-container` → `.career`
@@ -124,34 +125,35 @@
 
 ## Execution Order (now scoped to mapping + migration only)
 1) Map old → new BEM names (reference above).
-2) Migrate to BEM in all HTML + style.css (find & replace, no structural changes).
+2) Migrate to BEM in all HTML + style.css (find & replace step by step; allow required menu markup normalization to pass HTML validation).
 
 ---
 
 ### Step 1: BEM mapping (reference)
 - Use the map above as the authoritative old → new list.
-- Optional: generate `BEM-MAPPING.md` for quick diffing.
+- Generate `BEM-MAPPING.md` for quick diffing.
 
 ---
 
 ### Step 2: Full BEM migration (HTML + CSS)
 - Order: follow html files and style.css top-to-bottom while replacing selectors.
-- Replace all class names in all 9 HTML files per the map.
+- Replace all class names in all 10 HTML files per the map.
 - Replace all selectors in style.css per the map.
 - Verify no legacy classes remain (grep for `.farm`, `.pro-`, `.menu__`, etc.).
 
-Files: style.css + all 9 HTML files
+Files: style.css + all 10 HTML files (`index.html`, `produkty.html`, `aktualnosci.html`, `kontakt.html`, `misja.html`, `dobrostan.html`, `program.html`, `kariera.html`, `partnerzy.html`, `przyszlosc.html`)
 
 ---
 
 ### Verification
-- After each step: run HTML validation (W3C), visual check on all 9 pages, responsive check (Chrome DevTools), optional CSS validation.- For class residue 
+- After each step: run HTML validation (W3C), visual check on all 10 pages, responsive check (Chrome DevTools), optional CSS validation.
+- Verify class residue with grep for legacy patterns.
 
 ### Final checklist
 - [ ] 0 inline `<style>` blocks in HTML (except optional alert in index.html)
 - [ ] 0 HTML validation errors (especially menu ul>li>a)
-- [ ] All class names follow BEM (max 2 nesting levels)
-- [ ] Topbar (`.topbar`, `.topbar__nav`, `.topbar__menu__*`) applied on all 9 pages
+- [ ] All class names follow the migration BEM map consistently (including existing multi-element patterns used in the map)
+- [ ] Topbar (`.topbar`, `.topbar__menu__*`) applied on all 10 pages
 - [ ] `.offer-content` with `.offer-content__worldwide-offer` and `.offer-content__local-offer-content` in index.html
 - [ ] `.offer-content__category` items (MIĘSO, WĘDLINY, DANIA GOTOWE, KONSERWY, OFERTA DLA WEGETARIAN)
 - [ ] `.products-section` present in produkty.html
