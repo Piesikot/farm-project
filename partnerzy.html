@@ -35,10 +35,6 @@ h2,h4{
 ul h3{
     font-weight: normal;
 }
-/* wtf z tym kursorem? */
-ul:hover{
-    cursor: default
-}
 </style>
 <body>
     <div class="container">
@@ -55,10 +51,6 @@ ul:hover{
                     <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
                 </ul>
                 </div>
-            <div class="logo-container-media">
-                <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
-            </div>
-
             <header> 
                 <h1> Partnerzy </h1>
             </header>
@@ -104,48 +96,8 @@ ul:hover{
             </div>
     </footer>
 
-<!-- Google Analytics i cookie-consent zostały usunięte -->
 
 <script>
-    // Globalne zmienne:
-    // WAŻNE: Kolejność indeksów w 'counts' i 'rate' musi odpowiadać kolejności w HTML!
-    // count0: króliki
-    // count1: psy
-    // count2: koty
-    var counts = [ 0, 0, 0 ];
-    var rate = [ 0, 0, 0 ];
-
-    function StartKillCounter() {
-        var millions = [ 857, 16, 4 ];
-        var perSecond = 8;
-        for (var i = 0; i < counts.length; ++i)
-            rate[i] = millions[i] * 1000000 / 365 / 24 / 60 / 60 / perSecond;
-        setInterval(NewCounts, 1000 / perSecond);
-    }
-
-    function NewCounts() {
-        var num, thous, str;
-        for (var i = 0; i < counts.length; ++i) {
-            counts[i] += rate[i];
-            num = Math.round(counts[i]);
-            str = "";
-            while (num > 1000) {
-                thous = num % 1000;
-                if (thous < 10)
-                    thous = "00" + thous;
-                else if (thous < 100)
-                    thous = "0" + thous;
-                str = "," + thous + str;
-                num = Math.floor(num / 1000);
-            }
-            str = num + str;
-            var el = document.getElementById("count" + i);
-            if (el) el.innerHTML = str;
-        }
-    }
-
-    // Uruchom licznik po załadowaniu skryptu
-    StartKillCounter();
 </script>
 </body>
 </html>
