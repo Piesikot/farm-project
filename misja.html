@@ -21,16 +21,16 @@
         font-size: clamp(14px, 2.3vw, 20px);
         padding: 0 100px;
     }
-    .future{
+        .mission-intro{
         padding: 20vh 0 0 0;
     }
-      .facts h3 {
+            .facts__heading {
     padding-bottom: 0;
   }
-  .counter-header {
+    .kill-counter__header {
     font-size: clamp(14px, 2.3vw, 20px);
   }
-  .facts li{
+    .facts__item{
     list-style-type: none;
      padding: 25px;
      margin: 10vh 0;
@@ -53,7 +53,7 @@
         padding-top: 60vh 0;
         font-weight: 100;
     }
-    .counter-container{
+    .kill-counter{
         padding: 20vh 0;
     }
     h6{
@@ -63,22 +63,21 @@
 
 </style>
 <body>
-    <div class="container">
-        <div class="top">
-                <div class="logo-container">
-                    <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
+    <div class="page">
+        <div class="topbar">
+                <div class="topbar__logo-container">
+                    <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
                 </div>
-                <ul class="menu">
-                    <li class="menu__farm"><a href="index.html">Farma</a></li>
-                    <li class="menu__news"><a href="aktualnosci.html">Aktualności</a></li>
-                    <ul class="menu__products-list"><a href="produkty.html">Produkty</a></li>
-                </ul>
-                    <li class="menu__contact"><a href="kontakt.html">Kontakt</a></li>
-                    <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
+                <ul class="topbar__menu">
+                    <li class="topbar__menu__item"><a class="topbar__menu__button" href="index.html">Farma</a></li>
+                    <li class="topbar__menu__item"><a class="topbar__menu__button" href="aktualnosci.html">Aktualności</a></li>
+                    <li class="menu__products-list"><a class="topbar__menu__button" href="produkty.html">Produkty</a></li>
+                    <li class="topbar__menu__item"><a class="topbar__menu__button" href="kontakt.html">Kontakt</a></li>
+                    <li class="topbar__menu__item topbar__menu__item--active"><a class="topbar__menu__button" href="misja.html">Nasza Misja</a></li>
                 </ul>
                 </div>
             <header>
-                <span class="future">
+                <span class="mission-intro">
                     <!-- Zrobić animowane tło -->
                      <!-- https://www.vecteezy.com/video/50144448-a-fresh-uncooked-red-pork-belly-slices-are-flying-through-the-air -->
                     <!-- https://www.vecteezy.com/video/36623687-chopped-red-meat-display-at-local-store -->
@@ -91,7 +90,7 @@
                 <h4>Naszą misją jest rozpowszechnienie hodowli psów i kotów na cały świat. Razem z innymi rolnikami na całym świecie dbamy o to, aby  mięso i nabiał trafiały na Twój stół!</h4>
                 <div class="kill-counter-farm">
                     <!-- Potem zrobić, żeby liczyło od czasu wejścia na stronę, a nie w odnośnik misji. -->
-                    <span class="counter-header">Od czasu zapoznawania się z naszą misją zostało zabitych na świecie dla Ciebie:
+                    <span class="kill-counter__header">Od czasu zapoznawania się z naszą misją zostało zabitych na świecie dla Ciebie:
                     </span>
                     <p>  
                         <span id="count1" class="counter">0</span>&nbsp;psów<br />
@@ -101,33 +100,33 @@
             
             <ul class="facts">
 
-            <h3>Kilka faktów o hodowli psów i kotów:</h3>
+            <h3 class="facts__heading">Kilka faktów o hodowli psów i kotów:</h3>
 
-                <li>👉Hodowla psów i kotów zapewnia pracę milionom ludzi na całym świecie.</li>
+                <li class="facts__item">👉Hodowla psów i kotów zapewnia pracę milionom ludzi na całym świecie.</li>
 
-                <li>👉W wielu krajach psina oraz kocina są uważane za delikates, a ich spożywanie jest tradycją.</li>
+                <li class="facts__item">👉W wielu krajach psina oraz kocina są uważane za delikates, a ich spożywanie jest tradycją.</li>
 
-                <li>👉Nasze rasy psów hodowlanych są hodowane specjalnie na mięso i nie przetrwałyby bez opieki człowieka.</li>
+                <li class="facts__item">👉Nasze rasy psów hodowlanych są hodowane specjalnie na mięso i nie przetrwałyby bez opieki człowieka.</li>
                 
-                <li>👉Mięso psów i kotów zawiera żelazo hemowe, które jest łatwiej przyswajalne niż to z innych zwierząt.</li>
+                <li class="facts__item">👉Mięso psów i kotów zawiera żelazo hemowe, które jest łatwiej przyswajalne niż to z innych zwierząt.</li>
 
-                <li>👉Kocie i psie mięso jest lepszym źródłem białka, niż mięso innych zwierząt.</li>
+                <li class="facts__item">👉Kocie i psie mięso jest lepszym źródłem białka, niż mięso innych zwierząt.</li>
 
-                <li>👉Ludzie jedli psy i koty od zarania dziejów.</li>
+                <li class="facts__item">👉Ludzie jedli psy i koty od zarania dziejów.</li>
 
-                <li>👉Niektóre rasy psów hodowlanych zostały udomowione właśnie po to, by służyć ludziom jako pożywienie.</li>
+                <li class="facts__item">👉Niektóre rasy psów hodowlanych zostały udomowione właśnie po to, by służyć ludziom jako pożywienie.</li>
 
-                <li>👉Wiele kultur ma rytuały religijne i święta związane z jedzeniem psiny i kociny, np. Yulin w Chinach.</li>
+                <li class="facts__item">👉Wiele kultur ma rytuały religijne i święta związane z jedzeniem psiny i kociny, np. Yulin w Chinach.</li>
 
-                <li>👉Ludzie są biologicznie przystosowani do trawienia psiego i kociego mięsa.</li>
+                <li class="facts__item">👉Ludzie są biologicznie przystosowani do trawienia psiego i kociego mięsa.</li>
 
-                <li>👉Ograniczenie spożycia psiego i kociego mięsa może prowadzić do niedoborów niektórych składników odżywczych.</li>
+                <li class="facts__item">👉Ograniczenie spożycia psiego i kociego mięsa może prowadzić do niedoborów niektórych składników odżywczych.</li>
 
-                <li>👉Jedzenie mięsa z psów i kotów jest osobistym wyborem.</li>
+                <li class="facts__item">👉Jedzenie mięsa z psów i kotów jest osobistym wyborem.</li>
 
-                <li>👉Gdybyśmy nie jedli psów i kotów, to byłoby ich tak dużo, że zawładnęłyby światem.</li>
+                <li class="facts__item">👉Gdybyśmy nie jedli psów i kotów, to byłoby ich tak dużo, że zawładnęłyby światem.</li>
 
-                <li>👉Czy psy i koty są ważniejsze od ludzi?</li>
+                <li class="facts__item">👉Czy psy i koty są ważniejsze od ludzi?</li>
 
             </ul>
 
@@ -135,8 +134,8 @@
 
             <h4>Jeśli się nie zgadzasz, i chcesz bronić zwierząt...</h4>
 
-            <div class="counter-container">
-                <h5 class="counter-header">
+            <div class="kill-counter">
+                <h5 class="kill-counter__header">
                     Wiedz, że w tej chwili na świecie zabijanych jest również:
                 </h5>
                     <div class="kill-counter-livestock">
@@ -159,7 +158,7 @@
                         <span id="count18" class="counter">0</span>&nbsp;wielbłądów i innych wielbłądowatych<br />
                         </p>
                     </div>
-                    <span class="counter-header">
+                    <span class="kill-counter__header">
                     Każde z nich jest odrębną istotą, która — tak jak pies, kot czy człowiek — posiada uczucia, pragnienia i chce żyć w radości, bez strachu, bólu i cierpienia.
                     </span>  
                 </div>
@@ -180,11 +179,11 @@
                 </main>
     <footer>
             <div class="footer-menu">
-                <span class="footer-menu__dobrostan"><a href="dobrostan.html" class="footer-button">DOBROSTAN</a></span>
-                <span class="footer-menu__program"><a href="program.html" class="footer-button">PROGRAM</a></span>
-                <span class="footer-menu__kariera"><a href="kariera.html" class="footer-button">KARIERA</a></span>
-                <span class="footer-menu__partnerzy"><a href="partnerzy.html" class="footer-button">PARTNERZY</a></span>
-                <span class="footer-menu__copyright"><a class="footer-button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
+                <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
+                <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
+                <span class="footer-menu__item"><a href="kariera.html" class="footer-menu__button">KARIERA</a></span>
+                <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
+                <span class="footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
     </footer>
 

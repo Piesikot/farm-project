@@ -10,24 +10,23 @@
 
 </style>
 <body>
-    <div class="container">
+    <div class="page">
         <div class="wrapper">
 
-                <div class="top">
-                    <div class="logo-container">
-                        <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
+                <div class="topbar">
+                    <div class="topbar__logo-container">
+                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
                     </div>
-                    <ul class="menu">
-                        <li class="menu__farm"><a href="index.html">Farma</a></li>
-                        <li class="menu__news"><a href="aktualnosci.html">Aktualności</a></li>
-                        <ul class="menu__products-list"><a href="produkty.html">Produkty</a></li>
+                    <ul class="topbar__menu">
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="index.html">Farma</a></li>
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="aktualnosci.html">Aktualności</a></li>
+                        <li class="menu__products-list topbar__menu__item--active"><a class="topbar__menu__button" href="produkty.html">Produkty</a></li>
                                 <!-- <li>Psina</li>
                                 <li>Nabiał</li>
                                 <li>Szczenięcina</li>
                                 <li>Kocina</li> -->
-                            </ul>    
-                            <li class="menu__contact"><a href="kontakt.html">Kontakt</a></li>
-                            <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="kontakt.html">Kontakt</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
                 
@@ -54,15 +53,15 @@
                         
                         <!-- <div class="products-main-container"></div> -->
                             <!-- https://sokolow.pl/produkty -->
-                            <div class="products-main-container__products-main">
-                                <span class="products-main-container__products-main__products-main-title"><h3>PSINA</h3></span>
-                                <span class="products-main-container__products-main__products-main-description">Psina jest szlachetnym gatunkiem mięsa, a ponadto jest to wartościowy składnik diety, dostarczający pełnowartościowego białka, niezbędnych aminokwasów oraz witamin, takich jak kwas foliowy i inne witaminy z grupy B, a także minerałów w tym fosforu, sodu i potasu. Dzięki wysokiej zawartości tłuszczu charakteryzuje się dużą wartością energetyczną. To kluczowy element tradycyjnych potraw, doskonały do gotowania, smażenia, duszenia czy pieczenia. Przy wyborze psiny warto postawić na mięso wysokiej jakości, najlepiej pochodzące z młodych sztuk, które jest delikatne i niezbyt tłuste.</span>
+                            <div class="products-section">
+                                <span class="products-section__title"><h3>PSINA</h3></span>
+                                <span class="products-section__description">Psina jest szlachetnym gatunkiem mięsa, a ponadto jest to wartościowy składnik diety, dostarczający pełnowartościowego białka, niezbędnych aminokwasów oraz witamin, takich jak kwas foliowy i inne witaminy z grupy B, a także minerałów w tym fosforu, sodu i potasu. Dzięki wysokiej zawartości tłuszczu charakteryzuje się dużą wartością energetyczną. To kluczowy element tradycyjnych potraw, doskonały do gotowania, smażenia, duszenia czy pieczenia. Przy wyborze psiny warto postawić na mięso wysokiej jakości, najlepiej pochodzące z młodych sztuk, które jest delikatne i niezbyt tłuste.</span>
                             </div>
                             
 
-                            <div class="products-main-container__products-main">
-                                <span class="products-main-container__products-main__products-main-title"><h3>KOCINA</h3></span>
-                                <span class="products-main-container__products-main__products-main-description">Kocina to mięso o wyjątkowych właściwościach, wyróżniające się delikatną strukturą, jasnoróżową barwą i niską zawartością tłuszczu. Jest doskonałym źródłem białka, cynku, potasu, żelaza oraz witamin z grupy B. Dzięki wysokiej wartości odżywczej szczególnie polecana jest dzieciom, seniorom i osobom dbającym o szczupłą sylwetkę. Ze względu na niską zawartość tłuszczu jest również odpowiednia dla osób z podwyższonym ryzykiem miażdżycy, chorób serca oraz diabetyków.</span>
+                            <div class="products-section">
+                                <span class="products-section__title"><h3>KOCINA</h3></span>
+                                <span class="products-section__description">Kocina to mięso o wyjątkowych właściwościach, wyróżniające się delikatną strukturą, jasnoróżową barwą i niską zawartością tłuszczu. Jest doskonałym źródłem białka, cynku, potasu, żelaza oraz witamin z grupy B. Dzięki wysokiej wartości odżywczej szczególnie polecana jest dzieciom, seniorom i osobom dbającym o szczupłą sylwetkę. Ze względu na niską zawartość tłuszczu jest również odpowiednia dla osób z podwyższonym ryzykiem miażdżycy, chorób serca oraz diabetyków.</span>
                             </div>
 
 
@@ -73,11 +72,11 @@
 
     <footer>
             <div class="footer-menu">
-                <span class="footer-menu__dobrostan"><a href="dobrostan.html" class="footer-button">DOBROSTAN</a></span>
-                <span class="footer-menu__program"><a href="program.html" class="footer-button">PROGRAM</a></span>
-                <span class="footer-menu__kariera"><a href="kariera.html" class="footer-button">KARIERA</a></span>
-                <span class="footer-menu__partnerzy"><a href="partnerzy.html" class="footer-button">PARTNERZY</a></span>
-                <span class="footer-menu__copyright"><a class="footer-button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
+                <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
+                <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
+                <span class="footer-menu__item"><a href="kariera.html" class="footer-menu__button">KARIERA</a></span>
+                <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
+                <span class="footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
     </footer>
 </body>

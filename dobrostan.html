@@ -12,7 +12,7 @@
 
 </head>
 <style>
- .dobrostan-container {
+ .welfare-policy {
     margin: 20px;
     padding: 20px;
     border: 2px solid #000000;
@@ -20,35 +20,34 @@
     background-color: #f9f9f9;
 }
 
-.signature-container {
+.welfare-policy__signature {
     margin-top: 40px;
     text-align: right;
 } 
 </style>
 <body>
-    <div class="container">
+    <div class="page">
         <!-- <div class="wrapper"> -->
-                <div class="top">
-                    <div class="logo-container">
-                        <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
+                <div class="topbar">
+                    <div class="topbar__logo-container">
+                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
                     </div>
-                    <ul class="menu">
-                        <li class="menu__farm"><a href="index.html">Farma</a></li>
-                        <li class="menu__news"><a href="aktualnosci.html">Aktualności</a></li>
-                        <ul class="menu__products-list"><a href="produkty.html">Produkty</a></li>
+                    <ul class="topbar__menu">
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="index.html">Farma</a></li>
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="aktualnosci.html">Aktualności</a></li>
+                        <li class="menu__products-list"><a class="topbar__menu__button" href="produkty.html">Produkty</a></li>
                                 <!-- <li>Psina</li>
                                 <li>Nabiał</li>
                                 <li>Szczenięcina</li>
                                 <li>Kocina</li> -->
-                            </ul>    
-                            <li class="menu__contact"><a href="kontakt.html">Kontakt</a></li>
-                            <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="kontakt.html">Kontakt</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
 
         <!-- Treść strony jest satyryczną parafrazą polityki firmy Sokołów S.A. -->
         <!-- https://sokolowsa.pl/sites/default/files/files/Polityka%20Dobrostanu%20Zwierz%C4%85t%20w%20SOKO%C5%81%C3%93W%20S.A.pdf -->
-            <div class="dobrostan-container">
+            <div class="welfare-policy">
                 
                 <header>
                     <h2>Polityka Dobrostanu Zwierząt w „Piesik od Pokoleń" S.A.</h2>
@@ -105,7 +104,7 @@
                        </h4>
                          </ul>
 
-                        <div class="signature-container">
+                        <div class="welfare-policy__signature">
                             <h4><b>Podpisano: </b></h4>
                             <h5>Prezes Zarządu „Piesik od Pokoleń" S.A.</h5>  <span>02.11.2025 <i>Emil Piesik</i> </span>
                          </div>
@@ -171,11 +170,11 @@
 
     <footer>
             <div class="footer-menu">
-                <span class="footer-menu__dobrostan"><a href="dobrostan.html" class="footer-button">DOBROSTAN</a></span>
-                <span class="footer-menu__program"><a href="program.html" class="footer-button">PROGRAM</a></span>
-                <span class="footer-menu__kariera"><a href="kariera.html" class="footer-button">KARIERA</a></span>
-                <span class="footer-menu__partnerzy"><a href="partnerzy.html" class="footer-button">PARTNERZY</a></span>
-                <span class="footer-menu__copyright"><a class="footer-button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
+                <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
+                <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
+                <span class="footer-menu__item"><a href="kariera.html" class="footer-menu__button">KARIERA</a></span>
+                <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
+                <span class="footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
     </footer>
 

@@ -17,7 +17,7 @@
         font-size: clamp(14px, 2.3vw, 20px);
         padding: 0 100px;
     }
-      .future, h2, h3, h4, h5 { 
+            .vegan-future, h2, h3, h4, h5 { 
         padding: 20vh 0;
         font-weight: 100;
     }
@@ -25,7 +25,8 @@
         padding: 20px;;
         /* color: red; */
     }
-    .org-list ul li {
+    .vegan-future__org-list ul li,
+    .vegan-future__org-item {
         padding: 10px;
         list-style-type: none;
     }
@@ -38,23 +39,22 @@
     } 
 </style>
 <body>
-    <div class="container">
+    <div class="page">
         <!-- <div class="wrapper"> -->
-                <div class="top">
-                    <div class="logo-container">
-                        <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
+                <div class="topbar">
+                    <div class="topbar__logo-container">
+                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
                     </div>
-                    <ul class="menu">
-                        <li class="menu__farm"><a href="index.html">Farma</a></li>
-                        <li class="menu__news"><a href="aktualnosci.html">Aktualności</a></li>
-                        <ul class="menu__products-list"><a href="produkty.html">Produkty</a></li>
+                    <ul class="topbar__menu">
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="index.html">Farma</a></li>
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="aktualnosci.html">Aktualności</a></li>
+                        <li class="menu__products-list"><a class="topbar__menu__button" href="produkty.html">Produkty</a></li>
                                 <!-- <li>Psina</li>
                                 <li>Nabiał</li>
                                 <li>Szczenięcina</li>
                                 <li>Kocina</li> -->
-                            </ul>    
-                            <li class="menu__contact"><a href="kontakt.html">Kontakt</a></li>
-                            <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="kontakt.html">Kontakt</a></li>
+                            <li class="topbar__menu__item topbar__menu__item--active"><a class="topbar__menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
 
@@ -62,7 +62,7 @@
         
                     
                 <header>
-                    <span class="future">
+                    <span class="vegan-future">
                         <h1>Wegański świat to przyszłość!</h1>
                     </span>
                 </header>
@@ -75,18 +75,18 @@
                 
                 <h4>Aktywizm - kolejnym krokiem,który można podjąć jest działalność społeczna mająca na celu zwiększenie świadomości społecznego problemu wykorzystywania zwierząt. Zwierzęta nas potrzebują! </h4>
                 
-                <div class="org-list">
+                <div class="vegan-future__org-list">
                     <ul><h4 class="org-list-title">Oto kilka przykładów organizacji, które zajmują się aktywizmem na rzecz zwierząt:</h4>
-                        <li> 
+                        <li class="vegan-future__org-item"> 
                             <a href="https://www.messenger.com/t/477358212314248/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0"><b><span class="underline">Piesik od Pokoleń</span></b> - Wolontariat w mediach społecznościowych naszej farmy! Poza aktywizmem internetowym, w przyszłści będzie także organizawać różne wydarzenia uliczne. </a> 
                             </li>
-                        <li>
+                        <li class="vegan-future__org-item">
                             <a href=https://www.anonymousforthevoiceless.org/join><b><span class="underline">Anonymous for the Voiceless</b></span> - organizacja, która zajmuje się aktywizmem ulicznym w postaci happeningów, zwanych Sześcianami Prawdy. Mają one na celu wzbudzenie w ludziach poczucia odpowiedzialności za los zwierząt, i zwiększenie świadomości na temat okrucieństwa, jakie jest im wyrządzane przez nieświadomych niewegan. Organizacja ta działa na całym świecie.</a>
                         </li>
-                        <li>
+                        <li class="vegan-future__org-item">
                             <a href=https://viva.org.pl/wolontariat/><b><span class="underline">Fundacja Viva!</span></b> - zajmująca się zarówno aktywizmem ulicznym, jak i kampaniami społecznymi, edukacją, pomocą zwierzętom i innymi formami działalności na rzecz zwierząt. Działają głównie w Polsce, ale mają również oddziały w innych krajach.</a>
                         </li>
-                        <li>
+                        <li class="vegan-future__org-item">
                             <a href="https://getinvolved.activism.wtf/"><b><span class="underline">Activism.wtf</span></b> - zajmuje się aktywizmem w formie kampanii internetowych edukacyjnych, i ulicznych. Działają na całym świecie.</a>
                         </li>
                     </ul>
@@ -98,11 +98,11 @@
 
     <footer>
             <div class="footer-menu">
-                <span class="footer-menu__dobrostan"><a href="dobrostan.html" class="footer-button">DOBROSTAN</a></span>
-                <span class="footer-menu__program"><a href="program.html" class="footer-button">PROGRAM</a></span>
-                <span class="footer-menu__kariera"><a href="kariera.html" class="footer-button">KARIERA</a></span>
-                <span class="footer-menu__partnerzy"><a href="partnerzy.html" class="footer-button">PARTNERZY</a></span>
-                <span class="footer-menu__copyright"><a class="footer-button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
+                <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
+                <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
+                <span class="footer-menu__item"><a href="kariera.html" class="footer-menu__button">KARIERA</a></span>
+                <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
+                <span class="footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
     </footer>
 

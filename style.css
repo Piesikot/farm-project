@@ -403,7 +403,8 @@ footer {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.footer-button{
+.footer-button,
+.footer-menu__button {
   color: red;
   color: #ffffff;
   text-decoration: none;
@@ -415,7 +416,8 @@ footer {
   /* padding: 44px; */
   /* margin: 4rem; */
 }
-.footer-menu__copyright {
+.footer-menu__copyright,
+.footer-menu__item--centered {
   display: flex;
   justify-content: center;
   flex-basis: 100%;

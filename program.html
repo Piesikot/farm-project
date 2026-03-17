@@ -12,40 +12,39 @@
 
 </head>
 <style>
- .program-container {
+ .program {
     margin: 20px;
     padding: 20px;
 }
-.program-container__program-main__program-main-description{
+.program__description{
     padding-bottom: 40px;
 }
 </style>
 <body>
-    <div class="container">
+    <div class="page">
         <!-- <div class="wrapper"> -->
-                <div class="top">
-                    <div class="logo-container">
-                        <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
+                <div class="topbar">
+                    <div class="topbar__logo-container">
+                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
                     </div>
-                    <ul class="menu">
-                        <li class="menu__farm"><a href="index.html">Farma</a></li>
-                        <li class="menu__news"><a href="aktualnosci.html">Aktualności</a></li>
-                        <ul class="menu__products-list"><a href="produkty.html">Produkty</a></li>
+                    <ul class="topbar__menu">
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="index.html">Farma</a></li>
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="aktualnosci.html">Aktualności</a></li>
+                        <li class="menu__products-list"><a class="topbar__menu__button" href="produkty.html">Produkty</a></li>
                                 <!-- <li>Psina</li>
                                 <li>Nabiał</li>
                                 <li>Szczenięcina</li>
                                 <li>Kocina</li> -->
-                            </ul>    
-                            <li class="menu__contact"><a href="kontakt.html">Kontakt</a></li>
-                            <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="kontakt.html">Kontakt</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
 
         <!-- Treść strony jest satyryczną parafrazą polityki firmy Sokołów S.A. -->
         <!-- https://sokolowsa.pl/firma/razem-w-przyszlosc -->
-            <div class="program-container">
+            <div class="program">
                 <header>
-                    <div class="program-container__program-header" >
+                    <div class="program__header" >
                         <h4>W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z polskimi rolnikami i możliwości kontroli na każdym etapie produkcji możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.  
                         </h4>
                     <!-- <img src="src/FutureDogs.png" alt="biegnące psy"> -->
@@ -54,15 +53,15 @@
                 </header>    
 
                 <main>
-                    <div class="program-container__program-main">
-                        <div class="program-container__program-main__program-main-description">
+                    <div class="program__content">
+                        <div class="program__description">
                             <span> 
                                 Idea działania firmy Piesik od Pokoleń S.A. opiera się na założeniu, że doskonałość w przemyśle mięsnym można osiągnąć jedynie poprzez harmonijne połączenie innowacyjnych technologii z najwyższymi standardami bezpieczeństwa, gwarantowanymi przez zespół wysoko kompetentnych ekspertów.
                                 W ramach inicjatywy „Psie mięso to przyszłość" spółka Piesik od Pokoleń kształtuje wizję zdrowej żywności przyszłości. Dzięki ścisłej kooperacji z zagranicznymi producentami rolnymi oraz możliwości nadzoru nad całym procesem wytwórczym, firma ma gwarancję wytwarzania produktów mięsnych i wyrobów wędliniarskich najwyższej próby.
                                 Piesik od Pokoleń S.A. jest prekursorem w polskim sektorze przetwórstwa mięsa psiego i kociego, wprowadził model bezpośredniej partnerstwa z gospodarstwami rolnymi. Nowatorski system hodowli psów funkcjonuje nieprzerwanie od roku 2020, natomiast program tuczu psowatych rozpoczął działalność w marcu 2017 roku. Obecnie Piesik od Pokoleń S.A. współpracuje z prawie 200 hodowcami zwierząt z całego świata.
                             </span>
                         </div>
-                        <div class="program-container__program-main__program-main-category" >
+                        <div class="program__category" >
                             <h5>PROGRAM OPASU PSOWATYCH</h5>
                             <span>W celu poprawy jakości żywca psowatego oraz rozwoju bezpośredniej współpracy z producentami Piesik od Pokoleń S.A. realizuje program opasu psów przeznaczonych na rzeź.
 
@@ -75,7 +74,7 @@
                             </ul>
                             </span>    
                         </div>
-                        <div class="program-container__program-main__category" >
+                        <div class="program__category" >
                             <h5> PROGRAM OPASU KOTOWATYCH  </h5>
                             <span>Najważnejszym celem programu jest tworzenie najkorzystniejszych warunków hodowli i produkcji kociny w kociej masarni:
                             <ul>
@@ -99,11 +98,11 @@
 
     <footer>
             <div class="footer-menu">
-                <span class="footer-menu__dobrostan"><a href="dobrostan.html" class="footer-button">DOBROSTAN</a></span>
-                <span class="footer-menu__program"><a href="program.html" class="footer-button">PROGRAM</a></span>
-                <span class="footer-menu__kariera"><a href="kariera.html" class="footer-button">KARIERA</a></span>
-                <span class="footer-menu__partnerzy"><a href="partnerzy.html" class="footer-button">PARTNERZY</a></span>
-                <span class="footer-menu__copyright"><a class="footer-button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
+                <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
+                <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
+                <span class="footer-menu__item"><a href="kariera.html" class="footer-menu__button">KARIERA</a></span>
+                <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
+                <span class="footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
     </footer>
 

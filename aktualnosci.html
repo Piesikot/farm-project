@@ -10,23 +10,22 @@
 
 </style>
 <body>
-    <div class="container">
+    <div class="page">
         <div class="wrapper">
-                <div class="top">
-                    <div class="logo-container">
-                        <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
+                <div class="topbar">
+                    <div class="topbar__logo-container">
+                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
                     </div>
-                    <ul class="menu">
-                        <li class="menu__farm"><a href="index.html">Farma</a></li>
-                        <li class="menu__news"><a href="aktualnosci.html">Aktualności</a></li>
-                        <ul class="menu__products-list"><a href="produkty.html">Produkty</a></li>
+                    <ul class="topbar__menu">
+                        <li class="topbar__menu__item"><a class="topbar__menu__button" href="index.html">Farma</a></li>
+                        <li class="topbar__menu__item topbar__menu__item--active"><a class="topbar__menu__button" href="aktualnosci.html">Aktualności</a></li>
+                        <li class="menu__products-list"><a class="topbar__menu__button" href="produkty.html">Produkty</a></li>
                                 <!-- <li>Psina</li>
                                 <li>Nabiał</li>
                                 <li>Szczenięcina</li>
                                 <li>Kocina</li> -->
-                            </ul>    
-                            <li class="menu__contact"><a href="kontakt.html">Kontakt</a></li>
-                            <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="kontakt.html">Kontakt</a></li>
+                            <li class="topbar__menu__item"><a class="topbar__menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
                 <header><h1>AKTUALNOŚCI Z FARMY</h1></header>
@@ -34,17 +33,17 @@
                         <!-- https://sokolowsa.pl/aktualne-wydarzenia -->
                         <article>
                             <article>
-                                <div class="news">
+                                <div class="news-section">
     
-                                    <div class="news-wrapper">
+                                    <div class="news-section__wrapper">
                                         
-                                        <!-- <img src="src/parowcie.jpg" class="news__news-img" alt=""> -->
+                                        <!-- <img src="src/parowcie.jpg" class="news-section__img" alt=""> -->
                                          
-                                        <span class="news-date">22.06.2025</span>
-                                        <h2 class="news-title"> 
+                                        <span class="news-section__date">22.06.2025</span>
+                                        <h2 class="news-section__title"> 
                                             Ze względu na ostatnie wysokie zainteresowanie korzyściami ze spożywania naszych produktów dla najmłodszych, stworzyliśmy specjalną linię produktów dla dzieci!
                                             </h2>
-                                        <span class="news-description">
+                                        <span class="news-section__description">
                                             Małe Piesiki to smakowite kiełbaski o wyjątkowym smaku. Stanowią doskonałe źródło wysokiej jakości białka, a jednocześnie charakteryzują się zmniejszonym poziomem tłuszczu. W ich składzie znajdziemy aż 95% mięsa! Zostały subtelnie doprawione i wyprodukowane z najwyższej jakości mięsa psiego wzbogaconego szczenięciną. Dzięki braku naturalnych osłonek są niezwykle praktyczne w przygotowaniu - można je spożywać zarówno po podgrzaniu na gorąco, jak i jako chłodną przekąskę. Małe Piesiki to doskonały wybór nie tylko dla dzieci, ale także dla wszystkich prowadzących aktywny tryb życia i dbających o zbilansowane odżywianie. To homogenizowany, wędzony i parzony wyrób z dodatkiem szczenięciny.
                                         </span>
                                     </div>
@@ -52,13 +51,13 @@
                             </article>
 
 
-                            <div class="news">
-                                <div class="news-wrapper">
-                                    <img src="src/Pomagamy.png" class="news__news-img" alt="">
-                                    <span class="news-date">25.09.2024</span>
-                                    <h2 class="news-title"> 
+                            <div class="news-section">
+                                <div class="news-section__wrapper">
+                                    <img src="src/Pomagamy.png" class="news-section__img" alt="">
+                                    <span class="news-section__date">25.09.2024</span>
+                                    <h2 class="news-section__title"> 
                                         W odpowiedzi na ogromne potrzeby pomocy po powodzi na południowo-zachodnich terenach Polski, firma Piesik S.A. wznowiła akcję „Piesik Pomaga od Pokoleń”. Przekazano ponad tonę konserw psiego mięsa dla poszkodowanych, współpracując z Polskim Czerwonym Krzyżem i Caritasem.</h2>
-                                    <span class="news-description">
+                                    <span class="news-section__description">
                                         Powódź na południowo-zachodnich terenach Polski stworzyła ogromne wyzwanie w organizacji skutecznej pomocy dla tysięcy poszkodowanych. Firma Piesik od Pokoleń, znana z odpowiedzialności społecznej, aktywnie wspiera ogólnopolską akcję pomocową.
 
                                         Piesik od Pokoleń przekazała około 35 000 konserw mięsnych – trwałych, łatwych w transporcie i o długim terminie przydatności. Aby skutecznie odpowiedzieć na potrzeby powodzian, firma współpracuje z organizacjami pozarządowymi działającymi na zalanych obszarach. Przekazane produkty, dzięki Caritasowi i Polskiemu Czerwonemu Krzyżowi, trafią tam, gdzie są najbardziej potrzebne.
@@ -68,13 +67,13 @@
                         </article>
 
                         <article>
-                            <div class="news">
-                                <div class="news-wrapper">
-                                    <img src="src/export.png" class="news__news-img" alt="mapa exportu">
-                                    <span class="news-date">27.05.2024</span>
-                                    <h2 class="news-title"> 
+                            <div class="news-section">
+                                <div class="news-section__wrapper">
+                                    <img src="src/export.png" class="news-section__img" alt="mapa exportu">
+                                    <span class="news-section__date">27.05.2024</span>
+                                    <h2 class="news-section__title"> 
                                         Piesik od Pokoleń S.A. jako pierwsza firma w Polsce ze zgodą na export psiny do Chin!</h2>
-                                    <span class="news-description">
+                                    <span class="news-section__description">
                                         Piesik od Pokoleń S.A. jako pierwszy polski producent otrzymał zgodę na eksport psiny do Chin, dzięki pomyślnemu zakończeniu pełnej procedury rejestracyjnej. Uprawnienia uzyskał Oddział Piesik od Pokoleń S.A. w Koronowie, spełniający najwyższe standardy jakości i eksportu.
 
                                         Procedura uzyskania zgody obejmowała dwa etapy: zebranie i weryfikację dokumentacji przez GACC (General Administration of Customs China) oraz audyt online przeprowadzony przez chińskie służby. Oddział w Koronowie był w pełni dostosowany do wymaganych norm. Dzięki zaangażowaniu pracowników firmy oraz współpracy z Ministerstwem Rolnictwa i Rozwoju Wsi i radcą rolnym w Pekinie, proces zakończył się sukcesem.
@@ -90,11 +89,11 @@
     </div>   
     <footer>
             <div class="footer-menu">
-                <span class="footer-menu__dobrostan"><a href="dobrostan.html" class="footer-button">DOBROSTAN</a></span>
-                <span class="footer-menu__program"><a href="program.html" class="footer-button">PROGRAM</a></span>
-                <span class="footer-menu__kariera"><a href="kariera.html" class="footer-button">KARIERA</a></span>
-                <span class="footer-menu__partnerzy"><a href="partnerzy.html" class="footer-button">PARTNERZY</a></span>
-                <span class="footer-menu__copyright"><a class="footer-button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
+                <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
+                <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
+                <span class="footer-menu__item"><a href="kariera.html" class="footer-menu__button">KARIERA</a></span>
+                <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
+                <span class="footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
     </footer>
 </body>
