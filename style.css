@@ -15,7 +15,6 @@ html {
 } /* [ℹ] ↑ usuwa defaultowe ustawienia przeglądarki - przestrzenie wokół strony i sprawia, że strona w całości wyświetla się na cały viewport, bez tego filmik wychodzi poza krawędzie [ℹ] */
  /* [ℹ] ↑ removes the browser’s default spacing around the page content, giving you a “full-bleed” layout starting from the very edge of the viewport, without this video is visible beyond the edges [ℹ] */
 
-.container,
 .page {
   /* z-index: -10; */
   /* ⓘ ↑ bez position to nic nie robi i robi bałagan ("negatywne z-indexy bywają źródłem niespodzianek") ⓘ */
@@ -65,7 +64,6 @@ html {
 } 
 /* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
 
-.logo,
 .topbar__logo {
   /* filter: brightness(0) invert(1); */
   width: clamp(100px, 60% + 20px, 500px);
@@ -73,7 +71,6 @@ html {
   padding-left: 1.5em;
   position: relative; z-index: 30;
 }
-.logo img,
 .topbar__logo img {
   z-index: 90;
   position: static;
@@ -82,13 +79,11 @@ html {
   /* [ℹ] jeden breakpoint jest konieczny dla dobrego UX - interaktywnego efektu parallax nożem po gardle przy scrollowaniu */
   /* [ℹ] one breakpoint is necessary for good UX - interactive parallax effect of a knife across the throat while scrolling */
  @media only screen and (max-width: 1050px) {
-  .logo,
   .topbar__logo {
     width: clamp(50px, 30% + 5px, 3200px);
     padding: 1em 0 0 0.5em;
   }
  }
-.top,
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -108,7 +103,6 @@ html {
 
   position: relative; z-index: 20; 
 }
-.menu,
 .topbar__menu {
   display: flex;
   padding: 2vw 3vw 2vw 3vw;
@@ -118,7 +112,6 @@ html {
 
   align-items: center;
 }
-.menu a,
 .topbar__menu__button {
   color: black;
   text-decoration: none;
@@ -128,7 +121,6 @@ html {
 .topbar__menu__item--active .topbar__menu__button {
   text-decoration: underline;
 }
-.menu .menu__products-list,
 .topbar__menu .menu__products-list {
   padding: 0;
   cursor: grab;
@@ -169,7 +161,6 @@ header h2 {
   font-size: clamp( 14px, 2.2vw, 28px);
 }
 
-.adventages-container,
 .advantages {
   display: flex;
   font-size: clamp(10px, 1.2vw, 18px); 
@@ -178,7 +169,6 @@ header h2 {
 }
 
  @media only screen and (max-width: 1050px) {
-  .adventages-container,
   .advantages {
   flex-direction: column;
 
@@ -189,7 +179,6 @@ header h2 {
  }
 }
 
-.pro-container,
 .advantages__card {
   display: flex;
   flex-direction: column;
@@ -208,7 +197,6 @@ header h2 {
   /* działa, jedynie nie zdaje testu SC - chyba to kwestia menu*/
 }
  @media only screen and (max-width: 1050px) {
- .pro-container,
  .advantages__card {
     padding: 0;
     /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
@@ -216,7 +204,6 @@ header h2 {
     /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
  }
 }
-.pro-img,
 .advantages__img {
   border-radius: 50%;
   /* color: black; */
@@ -232,19 +219,15 @@ header h2 {
   opacity: 0.6;
   /* ⚠ 🔧🟡 opacity 🟡 🔧 ⚠ */
 }
-.pro-img img,
 .advantages__img img {
   width: 63%;
 }
-.pro-title,
 .advantages__title {
   text-transform: uppercase;
   font-weight: 800;
   color: black;
 }
-.adventages-container h3,
 .advantages h3,
-.pro-description,
 .advantages__description {
   font-size: clamp(14px, 2.4vw, 22px);
   background: white;
@@ -253,7 +236,6 @@ header h2 {
   padding: 0.5em;
   border-radius: 0.5em;
 }
-.polish-quality-container,
 .polish-quality {  
   width: 100%;
   display: flex;
@@ -261,7 +243,6 @@ header h2 {
   align-items: center;
   background: white;
 }
-.polish-quality-container-img,
 .polish-quality__seal {
   width: clamp(400px, 50vw, 600px);
   padding: 5em;
@@ -274,7 +255,6 @@ header h2 {
 }
 
 /* .offer-content */
-.farm,
 .offer-content {
   color: #000;
 
@@ -285,7 +265,6 @@ header h2 {
 padding: 1em;
 }
 /* ⓘ ten wrap  jednak okazał się potrzebny, żeby ułożyć globus w odpowiednim miejscu ⓘ */
-.farm__products-header-container__wrap,
 .offer-content__worldwide-offer__content {
   display: flex;
 /* border: 3px dashed purple; */
@@ -293,13 +272,11 @@ padding: 1em;
   align-items: center;
   /* 🟡 koniecznie trzeba dostosować jeszcze, żeby linki były bardziej klikalne 🟡*/
 }
-.farm__products-header-container__products-header-img,
 .offer-content__worldwide-offer__img {
 display: flex;
 justify-content: center;
 align-items: center;
 }
-.farm__products-header-container__products-header-img img,
 .offer-content__worldwide-offer__img img {
   width: 6em;
   height: 6em;
@@ -311,7 +288,6 @@ align-items: center;
 
 
 /* 🛠 ↓ offer-content po pierwszedj refaktoryzacji ↓ 🛠 ✓ */
-.farm__products-header-container,
 .offer-content__worldwide-offer {
   display: flex;
  flex-direction: column;
@@ -319,31 +295,26 @@ align-items: center;
 }
 
  @media only screen and (max-width: 1050px) {
-  .farm__products-header-container__products-header-img img,
   .offer-content__worldwide-offer__img img {
   width: 4em;
   height:4em;
 }
 
-.farm__products-main-container__products-main,
 .offer-content__category {
   flex-direction: column;
   }
  }
 
-.farm__products-container__products-header-title h2,
 .offer-content__worldwide-offer__header h2 {
   text-align: center;
 }
 
-.farm__products-container__products-header-description,
 .offer-content__worldwide-offer__description {
   /* border: dashed 3px violet; */
   padding-left: 1em ;
 }
 
 
-.farm__products-container__products-header-footer,
 .offer-content__worldwide-offer__footer {
 /* color: brown; */
 width: fit-content;
@@ -351,7 +322,6 @@ text-align: center;
 
 }
 
-.farm__products-main-container__products-main,
 .offer-content__category {
   display: flex;
   justify-content: center;
@@ -360,16 +330,13 @@ text-align: center;
   padding: 1em;
 }
 
-.farm__products-header-container,
 .offer-content__worldwide-offer {
 padding: 1em;
 }
 
-.farm__products-main-container__products-main__products-main-title h3,
 .offer-content__category__title h3 {
   /* color: greenyellow; */
 }
-.farm__products-main-container__products-main__products-main-description,
 .offer-content__category__description {
   /* font-size: clamp(12px, 1.2vw, 18px); zmniejszone max */
   /* color: cadetblue; */
@@ -403,7 +370,6 @@ footer {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.footer-button,
 .footer-menu__button {
   color: red;
   color: #ffffff;
@@ -416,7 +382,6 @@ footer {
   /* padding: 44px; */
   /* margin: 4rem; */
 }
-.footer-menu__copyright,
 .footer-menu__item--centered {
   display: flex;
   justify-content: center;
