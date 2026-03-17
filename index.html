@@ -21,7 +21,7 @@
 </head>
 
 <style>
-.menu__farm{
+.topbar__menu__item--active{
     text-decoration: underline;
  }
 
@@ -68,23 +68,22 @@
 </style>
 
 <body>
-    <div class="container">
-            <div class="top">
-                <div class="logo-container">
-                    <img class="logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
+    <div class="page">
+            <div class="topbar">
+                <div class="topbar__logo-container">
+                    <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
                 </div>
-                <ul class="menu">
-                    <li class="menu__farm"><a href="index.html">Farma</a></li>
-                    <li class="menu__news"><a href="aktualnosci.html">Aktualności</a></li>
-                    <ul class="menu__products-list"><a href="produkty.html">Produkty</a></li>
+                <ul class="topbar__menu">
+                    <li class="topbar__menu__item topbar__menu__item--active"><a class="topbar__menu__button" href="index.html">Farma</a></li>
+                    <li class="topbar__menu__item"><a class="topbar__menu__button" href="aktualnosci.html">Aktualności</a></li>
+                    <li class="menu__products-list"><a class="topbar__menu__button" href="produkty.html">Produkty</a></li>
                         <!-- <li>Psina</li>
                         <li>Nabiał</li>
                         <li>Szczenięcina</li>
                         <li>Kocina</li> -->
-                    </ul>    
-                        <li class="menu__contact"><a href="kontakt.html">Kontakt</a></li>
-                        <li class="menu__mission"><a href="misja.html">Nasza Misja</a></li>
-                    </ul>
+                    <li class="topbar__menu__item"><a class="topbar__menu__button" href="kontakt.html">Kontakt</a></li>
+                    <li class="topbar__menu__item"><a class="topbar__menu__button" href="misja.html">Nasza Misja</a></li>
+                </ul>
             </div>
 
             <div class="video-container">
@@ -102,39 +101,39 @@
             
              <main> 
         
-            <div class="adventages-container">
-                <div class="pro-container">
-                    <div class="pro-img">
+            <div class="advantages">
+                <div class="advantages__card">
+                    <div class="advantages__img">
                             <img src="src/farm_land.png" alt="Ikona farmy">
                     </div>
-                    <span class="pro-title">
+                    <span class="advantages__title">
                         <h3>Wiejskie Mięso</h3>
                         </span>
-                        <span class="pro-description">
+                        <span class="advantages__description">
                         Produkty z lokalnego gospodarstwa, a nie hodowli przemysłowych.
                     </span>
                 </div>
 
-                <div class="pro-container">
-                    <div class="pro-img">
+                <div class="advantages__card">
+                    <div class="advantages__img">
                         <img src="src/hand_with_knife.png" alt="Nóż do uboju">
                     </div>
-                    <span class="pro-title">
+                    <span class="advantages__title">
                         <h3>Humanitarny Ubój</h3>
                     </span>
-                    <span class="pro-description">
+                    <span class="advantages__description">
                         Dbamy, aby nasze psy były zawsze ogłuszone przed zabiciem.
                     </span>
                 </div>
 
-                <div class="pro-container">
-                    <div class="pro-img">
+                <div class="advantages__card">
+                    <div class="advantages__img">
                         <img src="src/open_cage.png" alt="Wolny wybieg">
                     </div>
-                    <span class="pro-title">
+                    <span class="advantages__title">
                     <h3>Wolny Wybieg</h3>
                     </span>
-                    <span class="pro-description">
+                    <span class="advantages__description">
                         Nasze psy mają możliwość przebywania na świeżym powietrzu.
                     </span>
                 </div>
@@ -149,29 +148,29 @@
             
             <!-- <img class="chart" src="src/butcher_chart.png" alt=""> -->
 
-            <div class="polish-quality-container">
-                <img class="polish-quality-container-img" src="src/Copilot_20260225_083128.png" alt="Certyfikat Ministerstwa Rolnictwa i Rozwoju Wsi - Produkt Polski">
+            <div class="polish-quality">
+                <img class="polish-quality__seal" src="src/Copilot_20260225_083128.png" alt="Certyfikat Ministerstwa Rolnictwa i Rozwoju Wsi - Produkt Polski">
             </div>
 
             <!-- .offer-content -->
-            <div class="farm">
+            <div class="offer-content">
                     
                 <!-- offer-content__worldwide-offer -->
-                <div class="farm__products-header-container">
+                <div class="offer-content__worldwide-offer">
                 
                 <!-- offer-content__worldwide-offer__header -->
-                    <div class="farm__products-container__products-header-title">
+                    <div class="offer-content__worldwide-offer__header">
                         <h2>Czy wiesz, że nasze produkty są dostępne w wielu krajach na całym świecie?</h2>
                     </div>
                 
-                    <div class="farm__products-header-container__wrap">
+                    <div class="offer-content__worldwide-offer__content">
 
-                        <div class="farm__products-header-container__products-header-img">
+                        <div class="offer-content__worldwide-offer__img">
                             <img class="" src="src/international_2206535.png" alt="Globus">
                         </div>
                     
                     
-                        <div class="farm__products-container__products-header-description">    
+                        <div class="offer-content__worldwide-offer__description">    
                                 <p>Jesteśmy dostępni w
                                         <a href="https://www.elwooddogmeat.com/" target="_blank" rel="noopener">Stanach Zjednoczonych</a>,
                                         <a href="https://sites.google.com/view/ranchodoslatidos/" target="_blank" rel="noopener">Brazylii</a>,
@@ -190,36 +189,36 @@
 
                     </div>
 
-                        <div class="farm__products-container__products-header-footer">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.
+                        <div class="offer-content__worldwide-offer__footer">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.
                         </div>    
                 </div>
 
 <!-- https://sokolow.pl/produkty -->
 
                 <!-- .offer-content__local-offer-content -->
-                <div class="farm__products-main-container">
+                <div class="offer-content__local-offer-content">
 
                         <!-- .offer-content__local-offer-content -->
-                        <div class="farm__products-main-container__products-main">
-                            <span class="farm__products-main-container__products-main__products-main-title"><h3>MIĘSO</h3></span>
-                            <span class="farm__products-main-container__products-main__products-main-description">Hodowla zwierząt i produkcja mięsa jest naszą pasją! Z zaangażowaniem dostarczamy psie, kocie, i królicze mięso naszym klientom, głęboko wierząc, że najwyższą jakość osiągamy dzięki połączeniu nowoczesnych rozwiązań, ciężkiej pracy, miłości do zwierząt i współpracy z polskimi, a także zagranicznymi rolnikami. Kontrolujemy każdy etap produkcji, by tworzyć mięso, które jest owocem naszej pasji i doświadczenia, by mogło trafić na Twój stół!</span>
+                        <div class="offer-content__category">
+                            <span class="offer-content__category__title"><h3>MIĘSO</h3></span>
+                            <span class="offer-content__category__description">Hodowla zwierząt i produkcja mięsa jest naszą pasją! Z zaangażowaniem dostarczamy psie, kocie, i królicze mięso naszym klientom, głęboko wierząc, że najwyższą jakość osiągamy dzięki połączeniu nowoczesnych rozwiązań, ciężkiej pracy, miłości do zwierząt i współpracy z polskimi, a także zagranicznymi rolnikami. Kontrolujemy każdy etap produkcji, by tworzyć mięso, które jest owocem naszej pasji i doświadczenia, by mogło trafić na Twój stół!</span>
                         </div>
-                        <div class="farm__products-main-container__products-main">
-                            <span class="farm__products-main-container__products-main__products-main-title"><h3>WĘDLINY</h3></span>
-                            <span class="farm__products-main-container__products-main__products-main-description">Każdego dnia wytwarzamy około 1200 ton najwyższej jakości wyrobów mięsnych, z pasją tworząc smaki, które podbijają podniebienia. Nieustannie rozwijamy naszą ofertę, wprowadzając nowe kulinarne rozwiązania. Dbałość o wyjątkowy smak idzie u nas w parze z najwyższą jakością składników, z których powstają nasze produkty.</span>
+                        <div class="offer-content__category">
+                            <span class="offer-content__category__title"><h3>WĘDLINY</h3></span>
+                            <span class="offer-content__category__description">Każdego dnia wytwarzamy około 1200 ton najwyższej jakości wyrobów mięsnych, z pasją tworząc smaki, które podbijają podniebienia. Nieustannie rozwijamy naszą ofertę, wprowadzając nowe kulinarne rozwiązania. Dbałość o wyjątkowy smak idzie u nas w parze z najwyższą jakością składników, z których powstają nasze produkty.</span>
                         </div>
-                        <div class="farm__products-main-container__products-main">
-                            <span class="farm__products-main-container__products-main__products-main-title"><h3>DANIA GOTOWE</h3></span>
-                            <span class="farm__products-main-container__products-main__products-main-description">Wiemy, jak cenny jest Twój czas, dlatego oferujemy najwyższej jakości dania gotowe, które ułatwiają codzienne gotowanie. Tworzenie nowych produktów to nasza pasja! Przywracamy smaki uwielbiane przez naszych klientów od lat i odkrywamy nietypowe połączenia dla miłośników kulinarnych eksperymentów. Łączymy aktualne potrzeby konsumentów z naszymi inspiracjami, by dostarczać produkty o wyjątkowych walorach smakowych.</span>
+                        <div class="offer-content__category">
+                            <span class="offer-content__category__title"><h3>DANIA GOTOWE</h3></span>
+                            <span class="offer-content__category__description">Wiemy, jak cenny jest Twój czas, dlatego oferujemy najwyższej jakości dania gotowe, które ułatwiają codzienne gotowanie. Tworzenie nowych produktów to nasza pasja! Przywracamy smaki uwielbiane przez naszych klientów od lat i odkrywamy nietypowe połączenia dla miłośników kulinarnych eksperymentów. Łączymy aktualne potrzeby konsumentów z naszymi inspiracjami, by dostarczać produkty o wyjątkowych walorach smakowych.</span>
                         </div>
-                        <div class="farm__products-main-container__products-main">
-                            <span class="farm__products-main-container__products-main__products-main-title"><h3>KONSERWY</h3></span>
-                            <span class="farm__products-main-container__products-main__products-main-description">Czy dobre jedzenie i smaki z dzieciństwa są dla Ciebie ważne? Na farmie Piesik od Pokoleń wierzymy, że tak! Dlatego tworzymy nasze konserwy z myślą o chwilach pełnych kulinarnych przyjemności. Łączymy tradycyjne smaki z wygodą szybkiego przygotowania, by cieszyć się pysznymi wspomnieniami każdego dnia.
+                        <div class="offer-content__category">
+                            <span class="offer-content__category__title"><h3>KONSERWY</h3></span>
+                            <span class="offer-content__category__description">Czy dobre jedzenie i smaki z dzieciństwa są dla Ciebie ważne? Na farmie Piesik od Pokoleń wierzymy, że tak! Dlatego tworzymy nasze konserwy z myślą o chwilach pełnych kulinarnych przyjemności. Łączymy tradycyjne smaki z wygodą szybkiego przygotowania, by cieszyć się pysznymi wspomnieniami każdego dnia.
                             </span>
                         </div>
-                        <div class="farm__products-main-container__products-main">
-                            <span class="farm__products-main-container__products-main__products-main-title"><h3>OFERTA DLA WEGETARIAN</h3></span>
-                            <span class="farm__products-main-container__products-main__products-main-description">Tak, nasze produkty są także idealne dla ludzi na diecie wegetariańskiej! Ze względu na to, że uważnie śledzimy trendy żywieniowe i staramy się jak najlepiej odpowiadać na potrzeby naszych klientów, stworzyliśmy specjalną linię produktów wegetariańskich, dedykowaną osobom, które kochają zwierzęta i z tego powodu nie jedzą mięsa. Każdy, kto spróbował naszych produktów żałuje, że zrobił to tak późno. Jeśli jesteś, tak jak niegdyś nasi nowi klienci, osobą znudzoną ciągłym piciem krowiego, owczego, czy koziego mleka, gorąco zachęcamy do zapoznania się z naszą ofertą psiego i kociego mleka. Gwarantujemy wspaniały smak, nie wspominając nawet o walorach zdrowotnych! 
+                        <div class="offer-content__category">
+                            <span class="offer-content__category__title"><h3>OFERTA DLA WEGETARIAN</h3></span>
+                            <span class="offer-content__category__description">Tak, nasze produkty są także idealne dla ludzi na diecie wegetariańskiej! Ze względu na to, że uważnie śledzimy trendy żywieniowe i staramy się jak najlepiej odpowiadać na potrzeby naszych klientów, stworzyliśmy specjalną linię produktów wegetariańskich, dedykowaną osobom, które kochają zwierzęta i z tego powodu nie jedzą mięsa. Każdy, kto spróbował naszych produktów żałuje, że zrobił to tak późno. Jeśli jesteś, tak jak niegdyś nasi nowi klienci, osobą znudzoną ciągłym piciem krowiego, owczego, czy koziego mleka, gorąco zachęcamy do zapoznania się z naszą ofertą psiego i kociego mleka. Gwarantujemy wspaniały smak, nie wspominając nawet o walorach zdrowotnych! 
                             </span>
                         </div>
                 </div>   
