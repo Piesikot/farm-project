@@ -1,3 +1,5 @@
+🔴⚠ DALEJ JEST TU NIEPOPRAWNE NAZEWNICTWO!!! ⚠ 🔴
+
 ***Migration to BEM methodology***
 
 ---
