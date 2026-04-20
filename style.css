@@ -103,7 +103,9 @@ html {
 
   position: relative; z-index: 20; 
 }
-.topbar__menu {
+/* 🤖 LEGACY-STAGE1: replaced `.topbar__menu` with `.menu` for getbem consistency. */
+/* .topbar__menu { */
+.menu {
   display: flex;
   padding: 2vw 3vw 2vw 3vw;
   list-style: none;
@@ -112,24 +114,38 @@ html {
 
   align-items: center;
 }
-.topbar__menu__button {
+/* 🤖 LEGACY-STAGE1: replaced `.topbar__menu__button` with `.menu__button` for getbem consistency. */
+/* .topbar__menu__button { */
+.menu__button {
   color: black;
   text-decoration: none;
   opacity: 1;
   z-index: 10;
 }
-.topbar__menu__item--active .topbar__menu__button {
+/* 🤖 LEGACY-STAGE1: replaced `.topbar__menu__item--active .topbar__menu__button` with `.menu__item--active .menu__button`. */
+/* .topbar__menu__item--active .topbar__menu__button { */
+.menu__item--active .menu__button {
   text-decoration: underline;
 }
-.topbar__menu .menu__products-list {
+/* 🤖 LEGACY-STAGE1: top-level products item is now `.menu__products`; old `.menu__products-list` is reserved for future dropdown and stays inactive in MVP. */
+.menu .menu__products {
   padding: 0;
   cursor: grab;
 }
-.products-list {
+/* .menu .menu__products-list {
   padding: 0;
   cursor: grab;
-}
-ul li {
+} */
+/* 🤖 LEGACY-STAGE1: old alias kept inactive for rollback readability. */
+/* .products-list {
+  padding: 0;
+  cursor: grab;
+} */
+/* 🤖 LEGACY-STAGE1: replaced broad `ul li` selector with `.menu__item` to avoid side effects outside menu block. */
+/* ul li {
+  cursor: grab;
+} */
+.menu__item {
   cursor: grab;
 }
 header {
@@ -265,19 +281,29 @@ header h2 {
 padding: 1em;
 }
 /* ⓘ ten wrap  jednak okazał się potrzebny, żeby ułożyć globus w odpowiednim miejscu ⓘ */
-.offer-content__worldwide-offer__content {
+/* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer__content` with `.worldwide-offer__content` (Batch B). */
+/* .offer-content__worldwide-offer__content { */
+.worldwide-offer__content {
   display: flex;
 /* border: 3px dashed purple; */
   padding: 1em;
   align-items: center;
   /* 🟡 koniecznie trzeba dostosować jeszcze, żeby linki były bardziej klikalne 🟡*/
 }
-.offer-content__worldwide-offer__img {
+/* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer__img` with `.worldwide-offer__img` (Batch B). */
+/* .offer-content__worldwide-offer__img { */
+/* 🤖 LEGACY-STAGE1B: renamed `.worldwide-offer__img` to `.worldwide-offer__icon-container` for clearer semantics of the wrapper element. */
+/* .worldwide-offer__img { */
+.worldwide-offer__icon-container {
 display: flex;
 justify-content: center;
 align-items: center;
 }
-.offer-content__worldwide-offer__img img {
+/* 🤖 LEGACY-STAGE1: replaced tag-coupled `.offer-content__worldwide-offer__img img` with class-first `.worldwide-offer__icon` (Batch D). */
+/* .offer-content__worldwide-offer__img img { */
+
+
+.worldwide-offer__icon {
   width: 6em;
   height: 6em;
   /* width:35%; */
@@ -288,41 +314,43 @@ align-items: center;
 
 
 /* 🛠 ↓ offer-content po pierwszedj refaktoryzacji ↓ 🛠 ✓ */
-.offer-content__worldwide-offer {
+/* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer` with `.worldwide-offer` (Batch B). */
+/* .offer-content__worldwide-offer { */
+.worldwide-offer {
   display: flex;
  flex-direction: column;
  /* border: dashed 5px blue;   */
 }
 
  @media only screen and (max-width: 1050px) {
-  .offer-content__worldwide-offer__img img {
+  .worldwide-offer__icon {
   width: 4em;
   height:4em;
 }
 
-.offer-content__category {
+.local-offer__category {
   flex-direction: column;
   }
  }
 
-.offer-content__worldwide-offer__header h2 {
+.worldwide-offer__title {
   text-align: center;
 }
 
-.offer-content__worldwide-offer__description {
+.worldwide-offer__description {
   /* border: dashed 3px violet; */
   padding-left: 1em ;
 }
 
 
-.offer-content__worldwide-offer__footer {
+.worldwide-offer__footer {
 /* color: brown; */
 width: fit-content;
 text-align: center;
 
 }
 
-.offer-content__category {
+.local-offer__category {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -330,14 +358,12 @@ text-align: center;
   padding: 1em;
 }
 
-.offer-content__worldwide-offer {
+.worldwide-offer {
 padding: 1em;
 }
 
-.offer-content__category__title h3 {
-  /* color: greenyellow; */
-}
-.offer-content__category__description {
+/* 🤖 LEGACY-STAGE1: old `.offer-content__category__title h3` replaced by `.local-offer__category-heading` class in HTML; no dedicated style required now. */
+.local-offer__category-description {
   /* font-size: clamp(12px, 1.2vw, 18px); zmniejszone max */
   /* color: cadetblue; */
   padding-left: 1em;
@@ -350,15 +376,7 @@ footer {
 
 }
 /* ⓘ ten wrapper jednak okazał się zbędny ⓘ  */
-.footer-wrapper {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* gap: 5px; */
-  /* gap: 10rem;  */
-  /* padding: 15rem;   odstęp OD KRAWĘDZI kontenera */
-  /* align-items: space-between; */
-  /* justify-content: center; */
-}
+/* 🤖 LEGACY-STAGE1: `.footer-wrapper` is intentionally inactive (unused). */
 .footer-menu {
   display: flex;
 
@@ -381,6 +399,10 @@ footer {
   /* min-height: 44px; */
   /* padding: 44px; */
   /* margin: 4rem; */
+}
+.footer-menu__item--active .footer-menu__button {
+  text-decoration: underline;
+  font-weight: 700;
 }
 .footer-menu__item--centered {
   display: flex;
