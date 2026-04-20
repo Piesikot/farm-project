@@ -82,13 +82,17 @@ Products item policy:
 Rule:
 
 - Every active menu item must contain both classes: `menu__item` and `menu__item--active`.
+- Every footer modifier must contain the base class `footer-menu__item`
+   (`footer-menu__item footer-menu__item--centered`,
+   `footer-menu__item footer-menu__item--active`).
 
 ### Offer section (`index.html` + `style.css`)
 
 - `offer-content__worldwide-offer` -> `worldwide-offer`
 - `offer-content__worldwide-offer__header` -> `worldwide-offer__header`
 - `offer-content__worldwide-offer__content` -> `worldwide-offer__content`
-- `offer-content__worldwide-offer__img` -> `worldwide-offer__img`
+- `offer-content__worldwide-offer__img` -> `worldwide-offer__icon-container`
+- `offer-content__worldwide-offer__img img` -> `worldwide-offer__icon`
 - `offer-content__worldwide-offer__description` -> `worldwide-offer__description`
 - `offer-content__worldwide-offer__footer` -> `worldwide-offer__footer`
 - `offer-content__local-offer-content` -> `local-offer`
@@ -182,6 +186,8 @@ Acceptance:
    - `menu__products-list` is only commented/inactive in MVP.
 4. Modifier base check:
    - every `menu__item--active` also contains `menu__item`.
+   - every `footer-menu__item--centered` also contains `footer-menu__item`.
+   - every `footer-menu__item--active` also contains `footer-menu__item`.
 5. CSS/HTML sync check:
    - renamed classes exist in both HTML and CSS where expected.
 6. Manual smoke test:
