@@ -229,7 +229,7 @@ header h2,
     /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
  }
 }
-.advantages__img {
+.advantages__icon-container {
   border-radius: 50%;
   /* color: black; */
   width: 10em;
@@ -244,7 +244,7 @@ header h2,
   opacity: 0.6;
   /* ⚠ 🔧🟡 opacity 🟡 🔧 ⚠ */
 }
-.advantages__img img {
+.advantages__icon {
   width: 63%;
 }
 .advantages__title {
