@@ -199,12 +199,14 @@ header h2 {
   display: flex;
   flex-direction: column;
 
-  padding: 4em;
+  padding: 1em;
   /* ⓘ 10em/vh po prostu było za duże */
   /* 5em to minimum na którm działa dobrze na moich sprzętach, więc daję 4 na wszelki */
   /* ale padding left i right daje odstęp pomiędzy elementami, więc też jest potrzebny */
     /* po zmianie padiingów w pro zczęło się ucinać, więc muszę dać jeszcze mniejszy padding tutaj: 3 wyadję się być ok, ale daję 2 na wszelki  */
     /* ten padding przydaje się tylko na większych ekranach */
+
+    /* przy 4em są paski, zmienam na 1em */
 
   align-items: center;
   text-align: center;
