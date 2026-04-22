@@ -21,6 +21,7 @@
 </head>
 
 <style>
+/* 🟡 */
 .menu__item--active{
     text-decoration: underline;
  }
@@ -87,7 +88,7 @@
             </div>
 
             <div class="video-container">
-            <video width="100%" preload="auto" loop autoplay muted>
+            <video class="video-container__video" width="100%" preload="auto" loop autoplay muted>
                 <source src='src/video/SweetyTastyDoggiesBackground.mp4' type='video/mp4' />
                 <!-- some videos downloaded from https://www.vecteezy.com/ -->
                 <!-- some videos downloaded from https://www.elwooddogmeat.com/ -->
@@ -95,13 +96,13 @@
         </div>
 
             <header>
+                <!-- 🔴dodać diva i klasy header, header__title, header__description -->
                 <h1>Piesik od Pokoleń S.A.</h1>
                 <h2>Psie mięso to przyszłość!</h2>
             </header>      
             
              <main> 
-        
-            <div class="advantages">
+                <div class="advantages">
                 <div class="advantages__card">
                     <div class="advantages__img">
                             <img src="src/farm_land.png" alt="ikona przedstawiająca farmę na wiosce">
@@ -169,22 +170,23 @@
                             <img class="worldwide-offer__icon" src="src/international_2206535.png" alt="Globus">
                         </div>
                     
-                    
-                        <div class="worldwide-offer__description">    
-                                <p>Jesteśmy dostępni w
-                                        <a href="https://www.elwooddogmeat.com/" target="_blank" rel="noopener">Stanach Zjednoczonych</a>,
-                                        <a href="https://sites.google.com/view/ranchodoslatidos/" target="_blank" rel="noopener">Brazylii</a>,
-                                        <a href="https://www.facebook.com/Rodopskaovcharka" target="_blank" rel="noopener">Bułgarii</a>,
-                                        <a href="https://www.ellashunde.dk/" target="_blank" rel="noopener">Danii</a>,
-                                        <a href="https://koiranliha.com/" target="_blank" rel="noopener">Finlandii</a>,
-                                        <a href="https://www.ferme-bernier.fr/" target="_blank" rel="noopener">Francji</a>,
-                                        <a href="https://www.facebook.com/p/Cat-Gourmet-Butcher-100087208381072/" target="_blank" rel="noopener">Malcie</a>,
-                                        <a href="https://www.koninkhondenvlees.nl/" target="_blank" rel="noopener">Holandii</a>,
-                                        <a href="https://www.hundekjott.no/" target="_blank" rel="noopener">Norwegii</a>,
-                                        <a href="https://belmontecarnedeperro.com/" target="_blank" rel="noopener">Hiszpanii</a>,
-                                        <a href="https://www.gotlandshundfarm.se/" target="_blank" rel="noopener">Szwecji</a>,
-                                    a także już niedługo w Niemczech i Afryce Południowej!
-                                </p>
+                        <div class="worldwide-offer__description">  
+                                <div class="worldwide-offer__countries-container">
+                                    <p class="worldwide-offer__countries">Jesteśmy dostępni w
+                                        <a class="worldwide-offer__country" href="https://www.elwooddogmeat.com/" target="_blank" rel="noopener">Stanach Zjednoczonych</a>,
+                                        <a class="worldwide-offer__country" href="https://sites.google.com/view/ranchodoslatidos/" target="_blank" rel="noopener">Brazylii</a>,
+                                        <a class="worldwide-offer__country" href="https://www.facebook.com/Rodopskaovcharka" target="_blank" rel="noopener">Bułgarii</a>,
+                                        <a class="worldwide-offer__country" href="https://www.ellashunde.dk/" target="_blank" rel="noopener">Danii</a>,
+                                        <a class="worldwide-offer__country" href="https://koiranliha.com/" target="_blank" rel="noopener">Finlandii</a>,
+                                        <a class="worldwide-offer__country" href="https://www.ferme-bernier.fr/" target="_blank" rel="noopener">Francji</a>,
+                                        <a class="worldwide-offer__country" href="https://www.facebook.com/p/Cat-Gourmet-Butcher-100087208381072/" target="_blank" rel="noopener">Malcie</a>,
+                                        <a class="worldwide-offer__country" href="https://www.koninkhondenvlees.nl/" target="_blank" rel="noopener">Holandii</a>,
+                                        <a class="worldwide-offer__country" href="https://www.hundekjott.no/" target="_blank" rel="noopener">Norwegii</a>,
+                                        <a class="worldwide-offer__country" href="https://belmontecarnedeperro.com/" target="_blank" rel="noopener">Hiszpanii</a>,
+                                        <a class="worldwide-offer__country" href="https://www.gotlandshundfarm.se/" target="_blank" rel="noopener">Szwecji</a>,
+                                        a także już niedługo w Niemczech i Afryce Południowej!
+                                    </p>
+                                </div>
                         </div>
 
                     </div>
@@ -196,9 +198,10 @@
 <!-- https://sokolow.pl/produkty -->
 
                 <!-- .local-offer -->
-                <div class="local-offer">
+            <div class="local-offer">
 
-                        <!-- .local-offer -->
+                    <!-- .local-offer categories -->
+                    <div class="local-offer__category-container">
                         <div class="local-offer__category">
                             <span class="local-offer__category-title"><h3 class="local-offer__category-heading">MIĘSO</h3></span>
                             <span class="local-offer__category-description">Hodowla zwierząt i produkcja mięsa jest naszą pasją! Z zaangażowaniem dostarczamy psie, kocie, i królicze mięso naszym klientom, głęboko wierząc, że najwyższą jakość osiągamy dzięki połączeniu nowoczesnych rozwiązań, ciężkiej pracy, miłości do zwierząt i współpracy z polskimi, a także zagranicznymi rolnikami. Kontrolujemy każdy etap produkcji, by tworzyć mięso, które jest owocem naszej pasji i doświadczenia, by mogło trafić na Twój stół!</span>
@@ -221,6 +224,7 @@
                             <span class="local-offer__category-description">Tak, nasze produkty są także idealne dla ludzi na diecie wegetariańskiej! Ze względu na to, że uważnie śledzimy trendy żywieniowe i staramy się jak najlepiej odpowiadać na potrzeby naszych klientów, stworzyliśmy specjalną linię produktów wegetariańskich, dedykowaną osobom, które kochają zwierzęta i z tego powodu nie jedzą mięsa. Każdy, kto spróbował naszych produktów żałuje, że zrobił to tak późno. Jeśli jesteś, tak jak niegdyś nasi nowi klienci, osobą znudzoną ciągłym piciem krowiego, owczego, czy koziego mleka, gorąco zachęcamy do zapoznania się z naszą ofertą psiego i kociego mleka. Gwarantujemy wspaniały smak, nie wspominając nawet o walorach zdrowotnych! 
                             </span>
                         </div>
+                    </div>
                 </div>   
 
             </div>
@@ -237,7 +241,6 @@
                 <span class="pro-description">
                 W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z polskimi rolnikami i możliwości kontroli na każdym etapie produkcji możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.            </span>-->
                 <!-- a href zobacz więcej https://sokolowsa.pl/firma/razem-w-przyszlosc -->
-                <!-- Pertycja o zakaz roślinnego jedzenia -->
         </div>
     </main>
     <footer>
