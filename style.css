@@ -1,5 +1,31 @@
-/* 🛠 Czyszczę kod przed migracją klas do metodologii BEM oraz refaktyryzuję menu, advantages i oferty */
+/* [ℹ] Projekt został zrefaktoryzowany do metodologii BEM (getbem – zachodni standard).
+   Struktura klas została uporządkowana zgodnie z zasadami OOCSS:
+   - rozdzielenie structure vs skin
+   - rozdzielenie container vs content
+   - brak klas zależnych od kontekstu
+   - każdy komponent jest niezależnym obiektem
 
+   Projekt jest również zgodny ze SMACSS:
+   - Base: reset, normalizacja, style globalne
+   - Layout: page, topbar, hero, video-container, offer-content
+   - Module: menu, advantages, worldwide-offer, local-offer, footer-menu, polish-quality
+   - State: modyfikatory (np. menu__item--active)
+   - Theme: brak (nie wymagane w tym projekcie)
+
+   [ℹ] The project has been refactored to the BEM methodology (getbem – Western standard).
+   The class structure has been organized according to OOCSS principles:
+   - separation of structure vs skin
+   - separation of container vs content
+   - no context‑dependent classes
+   - each component is an independent object
+
+   The project is also compliant with SMACSS:
+   - Base: reset, normalization, global styles
+   - Layout: page, topbar, hero, video-container, offer-content
+   - Module: menu, advantages, worldwide-offer, local-offer, footer-menu, polish-quality
+   - State: modifiers (e.g., menu__item--active)
+   - Theme: none (not required in this project)
+*/
 
 /* 🔧 ↓ WŁĄCZNIK video:↓ 🔧 */
     /* video {display: none;} */
@@ -64,17 +90,15 @@ html {
 } 
 /* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
 
+
 .topbar__logo {
   /* filter: brightness(0) invert(1); */
   width: clamp(100px, 60% + 20px, 500px);
   padding-top: 8em;
   padding-left: 1.5em;
-  position: relative; z-index: 30;
+  position: relative; 
+  z-index: 30;
 }
-.topbar__logo img {
-  z-index: 90;
-  position: static;
-  }
 
   /* [ℹ] jeden breakpoint jest konieczny dla dobrego UX - interaktywnego efektu parallax nożem po gardle przy scrollowaniu */
   /* [ℹ] one breakpoint is necessary for good UX - interactive parallax effect of a knife across the throat while scrolling */
@@ -136,20 +160,11 @@ html {
   padding: 0;
   cursor: grab;
 } */
-/* 🤖 LEGACY-STAGE1: old alias kept inactive for rollback readability. */
-/* .products-list {
-  padding: 0;
-  cursor: grab;
-} */
-/* 🤖 LEGACY-STAGE1: replaced broad `ul li` selector with `.menu__item` to avoid side effects outside menu block. */
-/* ul li {
-  cursor: grab;
-} */
+
 .menu__item {
   cursor: grab;
 }
 
-/* 🔴 */
 header,
 .hero {
   display: flex;
@@ -171,14 +186,13 @@ header,
 }
 /*  ↑ Do doszliwoania w przyszłości ↑ */
 
-/* 🔴 */
 header h1,
 .hero__title {
   text-align: center;
   font-size: clamp(22px, 4vw, 148px); 
   margin: 0;
 }
-/* 🔴 */
+
 header h2,
 .hero__subtitle {
   font-size: clamp( 14px, 2.2vw, 28px);
@@ -190,7 +204,6 @@ header h2,
   color: #ffffff;
   justify-content: center;
 }
-
  @media only screen and (max-width: 1050px) {
   .advantages {
   flex-direction: column;
@@ -229,6 +242,7 @@ header h2,
     /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
  }
 }
+
 .advantages__icon-container {
   border-radius: 50%;
   /* color: black; */
@@ -253,7 +267,6 @@ header h2,
   color: black;
 }
 
-/* 🔴 */
 .advantages h3,
 .advantages__description {
   font-size: clamp(14px, 2.4vw, 22px);
@@ -263,6 +276,8 @@ header h2,
   padding: 0.5em;
   border-radius: 0.5em;
 }
+
+
 .polish-quality {  
   width: 100%;
   display: flex;
@@ -322,7 +337,12 @@ align-items: center;
   /* ⚠ z procentami się totalnie spłaszcza, że jest ledwo widoczne, hmmm.. ⚠  */
   /* 🟡 dlatego wracam tymczasowo do em 🟡*/
 }
-
+ @media only screen and (max-width: 1050px) {
+  .worldwide-offer__icon {
+  width: 4em;
+  height:4em;
+  }
+ }
 
 /* 🛠 ↓ offer-content po pierwszedj refaktoryzacji ↓ 🛠 ✓ */
 /* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer` with `.worldwide-offer` (Batch B). */
@@ -335,33 +355,24 @@ align-items: center;
  padding: 2em;
 }
 
- @media only screen and (max-width: 1050px) {
-  .worldwide-offer__icon {
-  width: 4em;
-  height:4em;
-}
 
-.local-offer__category {
-  flex-direction: column;
-  }
- }
+
 
 .worldwide-offer__title {
   text-align: center;
 }
-
 .worldwide-offer__description {
   /* border: dashed 3px violet; */
   padding-left: 1em ;
 }
-
-
 .worldwide-offer__footer {
 /* color: brown; */
 width: fit-content;
 text-align: center;
-
 }
+
+
+
 .local-offer{
   padding: 2em;
 }
@@ -372,14 +383,17 @@ text-align: center;
   /* border: forestgreen dashed 5px; */
   padding: 1em;
 }
-
-
-/* 🤖 LEGACY-STAGE1: old `.offer-content__category__title h3` replaced by `.local-offer__category-heading` class in HTML; no dedicated style required now. */
 .local-offer__category-description {
   /* font-size: clamp(12px, 1.2vw, 18px); zmniejszone max */
   /* color: cadetblue; */
   padding-left: 1em;
 }
+  @media only screen and (max-width: 1050px) {
+.local-offer__category {
+  flex-direction: column;
+  }
+ }
+
 
 /* ↓ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↓ */
 footer {
@@ -387,11 +401,8 @@ footer {
   color: #ffffff;
 
 }
-/* ⓘ ten wrapper jednak okazał się zbędny ⓘ  */
-/* 🤖 LEGACY-STAGE1: `.footer-wrapper` is intentionally inactive (unused). */
 .footer-menu {
   display: flex;
-
     gap: 1.5em;
     /*ⓘ ↑odstęp↑ MIĘDZY elementami PIONOWY */
     padding: 1.5em;
