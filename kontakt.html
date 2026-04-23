@@ -7,11 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
+/* [ℹ]  Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/
+/* [ℹ]  Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/
+
 
  .menu__item--active .menu__button{
     text-decoration: underline;
     cursor: not-allowed;
 }
+
+.header__title {
+  padding-top: 2em;
+}
+
 .contact__icon{
     width: 50px;
 }
@@ -31,7 +47,6 @@
 </style>
 <body>
     <div class="page">
-        <div class="wrapper">
 
                 <div class="topbar">
                     <div class="topbar__logo-container">
@@ -49,24 +64,21 @@
                             <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
-                
-                <h1>KONTAKT:</h1>
-    
-                <main>
-                <div class="contact">
-                    <a href="https://www.facebook.com/p/Piesik-Psy-od-Pokole%C5%84-100067847195424/"><div class="contact__item contact__item--facebook"><img class="contact__icon" src="src/facebook_5968764.png" alt=""><span>Facebook</span></div></a>
+
+            <header class="header">
+                <h1 class="header__title">KONTAKT:</h1>
+            </header>
+
+            <main class="contact">
+                    <a href="https://www.facebook.com/p/Piesik-Psy-od-Pokole%C5%84-100067847195424/" class="contact__item contact__item--facebook"><img class="contact__icon" src="src/facebook_5968764.png" alt=""><span>Facebook</span></a>
+
                     <a href="https://www.messenger.com/t/477358212314248/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0
-                    "><div class="contact__item contact__item--messenger"><img class="contact__icon" src="src/messenger_5968771.png" alt=""><span>Messenger</span></div></a>
+                    " class="contact__item contact__item--messenger"><img class="contact__icon" src="src/messenger_5968771.png" alt=""><span>Messenger</span></a>
 
-                    <a href="https://www.instagram.com/piesikodpokolen"><div class="contact__item contact__item--instagram"><img class="contact__icon" src="src/instagram_5968776.png" alt=""><span>Instagram</span></div></a>
-                </div>
-                </main>
-
-                </div>
-        </div> 
-    </div> 
-
-    <footer>
+                    <a href="https://www.instagram.com/piesikodpokolen" class="contact__item contact__item--instagram"><img class="contact__icon" src="src/instagram_5968776.png" alt=""><span>Instagram</span></a>
+            </main>
+x
+        <footer>
             <div class="footer-menu">
                 <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
                 <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
@@ -74,6 +86,7 @@
                 <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
                 <span class="footer-menu__item footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
