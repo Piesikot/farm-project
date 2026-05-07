@@ -16,38 +16,96 @@
 
 </head>
 <style> 
-.header{
-/* 🟡 do ustawienia z indexem potem */
-    z-index: 1;
-    opacity: 1;
-}
+/* [ℹ]  Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/
+/* [ℹ]  Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/
+    .partners {
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        line-height: 1.6;
+    }
 
-header,main{
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    font-weight: normal
-}
+    .header{
+    /* 🟡 do ustawienia z indexem potem */
+        z-index: 1;
+        opacity: 1;
+    }
 
-.header{
-/* 🟡 do ustawienia z indexem potem */
-    z-index: 1;
-    opacity: 1;
-}
+    .partners__list {
+        margin: 0;
+        padding: 30px;
+        list-style: none;
 
-main ul li{
-    list-style-type: none;
-    margin: 40px;
-}
-li a{
-    color: black;
-}
-h2, h4{
-    font-weight: normal;
-}
-ul h3{
-    font-weight: normal;
-}
+        /* display: grid; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .partners__link {
+        color: black;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background: rgba(255,255,255,0.35);
+        border-radius: inherit;
+        padding: 0.25rem;
+        box-sizing: border-box;
+        white-space: normal;
+        font-size: 1.4rem;
+    }
+
+    .partners__list-item {
+        /* padding: 1em 0; */
+        border: 1px solid black;
+        width: 220px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 16px;
+    }
+
+    .partners__list-item::before {
+        content: '';
+        position:  absolute;
+        top: 10px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 220px;
+    }
+
+    /* .partners__list-item--us::before { content: '🇺🇸'; } */
+    /* .partners__list-item--br::before { content: '🇧🇷'; } */
+    /* .partners__list-item--bg::before { content: '🇧🇬'; } */
+    /* .partners__list-item--dk::before { content: '🇩🇰'; } */
+    /* .partners__list-item--fi::before { content: '🇫🇮'; } */
+    /* .partners__list-item--fr::before { content: '🇫🇷'; } */
+    /* .partners__list-item--mt::before { content: '🇲🇹'; } */
+    /* .partners__list-item--nl::before { content: '🇳🇱'; } */
+    /* .partners__list-item--no::before { content: '🇳🇴'; } */
+    /* .partners__list-item--es::before { content: '🇪🇸'; } */
+    /* .partners__list-item--se::before { content: '🇸🇪'; } */
+    /* .partners__list-item--de::before { content: '🇩🇪'; } */
+    /* .partners__list-item--za::before { content: '🇿🇦'; } */
 </style>
 <body>
     <div class="page">
@@ -63,39 +121,35 @@ ul h3{
                     <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                 </ul>
                 </div>
-            <header> 
-                <h1> Partnerzy </h1>
-            </header>
+            <div class="partners">
+                <header class="header">
+                    <h1 class="header__title">PARTNERZY</h1>
+                </header>
 
                 <main>
+                    <p class="partners__paragraph">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.</p>
+                    <p class="partners__paragraph">W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z rolnikami z całego świata możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.</p>
 
-                    <h2>
-                    <span>Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.</span>
-                    
-
-                    <span>W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z rolnikami z całego świata możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.</span>
-                </h2>
-                
-                    
-                        <ul><h3>Kaje z którymi współpracujemy:</h3>
-                            <h4>
-                                <li><a href="https://www.elwooddogmeat.com/">Stany Zjednoczone</a> </li>
-                                <li><a href="https://sites.google.com/view/ranchodoslatidos/">Brazylia</a> </li>
-                                <li><a href="https://www.facebook.com/Rodopskaovcharka">Bułgaria</a> </li>
-                                <li><a href="https://www.ellashunde.dk/">Dania</a> </li>
-                                <li><a href="https://koiranliha.com/">Finlandia</a> </li>
-                                <li><a href="https://www.ferme-bernier.fr/">Francja</a> </li>
-                                <li><a href="https://www.facebook.com/p/Cat-Gourmet-Butcher-100087208381072/">Malta</a> </li>
-                                <li><a href="https://www.koninkhondenvlees.nl/">Holandia</a> </li>
-                                <li><a href="https://www.hundekjott.no/">Norwegia</a> </li>
-                                <li><a href="https://belmontecarnedeperro.com/">Hiszpania</a> </li>
-                                <li><a href="https://www.gotlandshundfarm.se/">Szwecja</a> </li>
-                                <li>Niemcy - Już niedługo!</li>
-                                <li>Afryka Południowa - Już niedługo!</li>
-                            </h4>
+                    <section class="partners__section">
+                        <h2 class="partners__section-title">Kraje z którymi współpracujemy:</h2>
+                        <ul class="partners__list">
+                            <li class="partners__list-item partners__list-item--us"><a class="partners__link" href="https://www.elwooddogmeat.com/">Stany Zjednoczone</a></li>
+                            <li class="partners__list-item partners__list-item--br"><a class="partners__link" href="https://sites.google.com/view/ranchodoslatidos/">Brazylia</a></li>
+                            <li class="partners__list-item partners__list-item--bg"><a class="partners__link" href="https://www.facebook.com/Rodopskaovcharka">Bułgaria</a></li>
+                            <li class="partners__list-item partners__list-item--dk"><a class="partners__link" href="https://www.ellashunde.dk/">Dania</a></li>
+                            <li class="partners__list-item partners__list-item--fi"><a class="partners__link" href="https://koiranliha.com/">Finlandia</a></li>
+                            <li class="partners__list-item partners__list-item--fr"><a class="partners__link" href="https://www.ferme-bernier.fr/">Francja</a></li>
+                            <li class="partners__list-item partners__list-item--mt"><a class="partners__link" href="https://www.facebook.com/p/Cat-Gourmet-Butcher-100087208381072/">Malta</a></li>
+                            <li class="partners__list-item partners__list-item--nl"><a class="partners__link" href="https://www.koninkhondenvlees.nl/">Holandia</a></li>
+                            <li class="partners__list-item partners__list-item--no"><a class="partners__link" href="https://www.hundekjott.no/">Norwegia</a></li>
+                            <li class="partners__list-item partners__list-item--es"><a class="partners__link" href="https://belmontecarnedeperro.com/">Hiszpania</a></li>
+                            <li class="partners__list-item partners__list-item--se"><a class="partners__link" href="https://www.gotlandshundfarm.se/">Szwecja</a></li>
+                            <li class="partners__list-item partners__list-item--de">Niemcy - Już niedługo!</li>
+                            <li class="partners__list-item partners__list-item--za">Afryka Południowa - Już niedługo!</li>
                         </ul>
-                    
+                    </section>
                 </main>
+            </div>
 
     <footer>
             <div class="footer-menu">
