@@ -12,15 +12,62 @@
 
 </head>
 <style>
+.topbar__logo {
+        width: clamp(50px, 30% + 5px, 3200px);
+        padding-top: 1em;
+    }
  .program {
     margin: 20px;
     padding: 20px;
+    line-height: 1.6;
 }
-.program__description{
-    padding-bottom: 40px;
+
+.header{
+    /* do ustawienia z indexem potem */
+    opacity: 1;
+}
+
+/* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
+.header__subtitle {
+    margin: 0;
+}
+
+.program__description {
+    margin: 0 0 2rem 0;
+}
+
+.program__section {
+    margin: 0 0 2rem 0;
+}
+
+.program__section-title {
+    margin: 0 0 0.75rem 0;
+}
+
+.program__section-lead {
+    margin: 0 0 1rem 0;
+}
+
+.program__list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.program__list-item {
+    margin-bottom: 0.5rem;
 }
 </style>
 <body>
+        <!-- /* Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/ -->
+    <!-- /* Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/ -->
     <div class="page">
         <!-- <div class="wrapper"> -->
                 <div class="topbar">
@@ -43,49 +90,39 @@
         <!-- Treść strony jest satyryczną parafrazą polityki firmy Sokołów S.A. -->
         <!-- https://sokolowsa.pl/firma/razem-w-przyszlosc -->
             <div class="program">
-                <header>
-                    <div class="program__header" >
-                        <h4>W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z polskimi rolnikami i możliwości kontroli na każdym etapie produkcji możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.  
-                        </h4>
+                <header class="header">
+                    <h1 class="header__title">PROGRAM</h1>
+                    <p class="header__subtitle">W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z polskimi rolnikami i możliwości kontroli na każdym etapie produkcji możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.</p>
                     <!-- <img src="src/FutureDogs.png" alt="biegnące psy"> -->
-
-                    </div>
-                </header>    
+                </header>
 
                 <main>
                     <div class="program__content">
-                        <div class="program__description">
-                            <span> 
-                                Idea działania firmy Piesik od Pokoleń S.A. opiera się na założeniu, że doskonałość w przemyśle mięsnym można osiągnąć jedynie poprzez harmonijne połączenie innowacyjnych technologii z najwyższymi standardami bezpieczeństwa, gwarantowanymi przez zespół wysoko kompetentnych ekspertów.
-                                W ramach inicjatywy „Psie mięso to przyszłość" spółka Piesik od Pokoleń kształtuje wizję zdrowej żywności przyszłości. Dzięki ścisłej kooperacji z zagranicznymi producentami rolnymi oraz możliwości nadzoru nad całym procesem wytwórczym, firma ma gwarancję wytwarzania produktów mięsnych i wyrobów wędliniarskich najwyższej próby.
-                                Piesik od Pokoleń S.A. jest prekursorem w polskim sektorze przetwórstwa mięsa psiego i kociego, wprowadził model bezpośredniej partnerstwa z gospodarstwami rolnymi. Nowatorski system hodowli psów funkcjonuje nieprzerwanie od roku 2020, natomiast program tuczu psowatych rozpoczął działalność w marcu 2017 roku. Obecnie Piesik od Pokoleń S.A. współpracuje z prawie 200 hodowcami zwierząt z całego świata.
-                            </span>
-                        </div>
-                        <div class="program__category" >
-                            <h5>PROGRAM OPASU PSOWATYCH</h5>
-                            <span>W celu poprawy jakości żywca psowatego oraz rozwoju bezpośredniej współpracy z producentami Piesik od Pokoleń S.A. realizuje program opasu psów przeznaczonych na rzeź.
+                        <p class="program__description">Idea działania firmy Piesik od Pokoleń S.A. opiera się na założeniu, że doskonałość w przemyśle mięsnym można osiągnąć jedynie poprzez harmonijne połączenie innowacyjnych technologii z najwyższymi standardami bezpieczeństwa, gwarantowanymi przez zespół wysoko kompetentnych ekspertów. W ramach inicjatywy „Psie mięso to przyszłość" spółka Piesik od Pokoleń kształtuje wizję zdrowej żywności przyszłości. Dzięki ścisłej kooperacji z zagranicznymi producentami rolnymi oraz możliwości nadzoru nad całym procesem wytwórczym, firma ma gwarancję wytwarzania produktów mięsnych i wyrobów wędliniarskich najwyższej próby. Piesik od Pokoleń S.A. jest prekursorem w polskim sektorze przetwórstwa mięsa psiego i kociego, wprowadził model bezpośredniej partnerstwa z gospodarstwami rolnymi. Nowatorski system hodowli psów funkcjonuje nieprzerwanie od roku 2020, natomiast program tuczu psowatych rozpoczął działalność w marcu 2017 roku. Obecnie Piesik od Pokoleń S.A. współpracuje z prawie 200 hodowcami zwierząt z całego świata.</p>
 
-                            Program adresowany jest do:
-                            <ul>
-                                <li>gospodarzy dysponujących odpowiednimi możliwościami do tuczu psów</li>
-                                <li>producentów rolnych, którzy zakończyli działalność mleczarską</li>
-                                <li>hodowców mleka zainteresowanych jednoczesnym prowadzeniem chowu  zwierząt przeznaczonych na rzeź</li>
-                                <li>Firma Piesik od Pokoleń S.A. oferuje członkom programu korzystne możliwości finansowania nabycia młodych psów, a także fachowe doradztwo oraz wsparcie w pozyskaniu szczeniąt przeznaczonych do tuczu</li>        
+                        <section class="program__section">
+                            <h2 class="program__section-title">Program opasu psowatych</h2>
+                            <p class="program__section-lead">W celu poprawy jakości żywca psowatego oraz rozwoju bezpośredniej współpracy z producentami Piesik od Pokoleń S.A. realizuje program opasu psów przeznaczonych na rzeź.</p>
+                            <p class="program__section-lead">Program adresowany jest do:</p>
+                            <ul class="program__list">
+                                <li class="program__list-item">gospodarzy dysponujących odpowiednimi możliwościami do tuczu psów</li>
+                                <li class="program__list-item">producentów rolnych, którzy zakończyli działalność mleczarską</li>
+                                <li class="program__list-item">hodowców mleka zainteresowanych jednoczesnym prowadzeniem chowu zwierząt przeznaczonych na rzeź</li>
+                                <li class="program__list-item">Firma Piesik od Pokoleń S.A. oferuje członkom programu korzystne możliwości finansowania nabycia młodych psów, a także fachowe doradztwo oraz wsparcie w pozyskaniu szczeniąt przeznaczonych do tuczu</li>
                             </ul>
-                            </span>    
-                        </div>
-                        <div class="program__category" >
-                            <h5> PROGRAM OPASU KOTOWATYCH  </h5>
-                            <span>Najważnejszym celem programu jest tworzenie najkorzystniejszych warunków hodowli i produkcji kociny w kociej masarni:
-                            <ul>
-                                <li>gwarancja najwyższej klasy młodych kotek i kocurów reprodukcyjnych</li>
-                                <li>wszechstronne wsparcie doradcze w dziedzinie karmienia oraz możliwości udoskonalenia warunków bytowych zwierząt</li>
-                                <li>perspektywa unowocześnienia i wyposażenia farm w nowoczesne technologie produkcyjne</li>
-                                <li>dostęp do preferencyjnych produktów kredytowych na zakup materiału hodowlanego, młodych kotów oraz pasz</li>
-                                <li>fachowe konsultacje i transfer wiedzy specjalistycznej od ekspertów</li>
-                            </ul>        
-                            </span>
-                        </div>
+                        </section>
+
+                        <section class="program__section">
+                            <h2 class="program__section-title">Program opasu kotowatych</h2>
+                            <p class="program__section-lead">Najważnejszym celem programu jest tworzenie najkorzystniejszych warunków hodowli i produkcji kociny w kociej masarni:</p>
+                            <ul class="program__list">
+                                <li class="program__list-item">gwarancja najwyższej klasy młodych kotek i kocurów reprodukcyjnych</li>
+                                <li class="program__list-item">wszechstronne wsparcie doradcze w dziedzinie karmienia oraz możliwości udoskonalenia warunków bytowych zwierząt</li>
+                                <li class="program__list-item">perspektywa unowocześnienia i wyposażenia farm w nowoczesne technologie produkcyjne</li>
+                                <li class="program__list-item">dostęp do preferencyjnych produktów kredytowych na zakup materiału hodowlanego, młodych kotów oraz pasz</li>
+                                <li class="program__list-item">fachowe konsultacje i transfer wiedzy specjalistycznej od ekspertów</li>
+                            </ul>
+                        </section>
                     </div>
                 </main>
                         
