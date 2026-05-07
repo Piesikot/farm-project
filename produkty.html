@@ -10,8 +10,17 @@
 
 </style>
 <body>
+    <!-- /* Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/ -->
+    <!-- /* Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/ -->
     <div class="page">
-        <div class="wrapper">
 
                 <div class="topbar">
                     <div class="topbar__logo-container">
@@ -30,7 +39,9 @@
                     </ul>
                 </div>
                 
-                <h1>PRODUKTY</h1>
+                <header class="header">
+                    <h1 class="header__title">PRODUKTY</h1>
+                </header>
 
                 <!-- https://sokolow.pl/ -->
 
@@ -47,27 +58,25 @@
                     </div>
                 </div> -->
     
-                    <main>
+                    <main class="products-catalog">
                         
                         <!-- <img class="polish-quality-container-img" src="src/1460px_616px.jpg" alt="Certyfikat Ministerstwa Rolnictwa i Rozwoju Wsi - Produkt Polski #KUPUJŚWIADOMIE"> -->
                         
                         <!-- <div class="products-main-container"></div> -->
                             <!-- https://sokolow.pl/produkty -->
-                            <div class="products-section">
-                                <span class="products-section__title"><h3>PSINA</h3></span>
-                                <span class="products-section__description">Psina jest szlachetnym gatunkiem mięsa, a ponadto jest to wartościowy składnik diety, dostarczający pełnowartościowego białka, niezbędnych aminokwasów oraz witamin, takich jak kwas foliowy i inne witaminy z grupy B, a także minerałów w tym fosforu, sodu i potasu. Dzięki wysokiej zawartości tłuszczu charakteryzuje się dużą wartością energetyczną. To kluczowy element tradycyjnych potraw, doskonały do gotowania, smażenia, duszenia czy pieczenia. Przy wyborze psiny warto postawić na mięso wysokiej jakości, najlepiej pochodzące z młodych sztuk, które jest delikatne i niezbyt tłuste.</span>
-                            </div>
+                            <article class="products-section">
+                                <h2 class="products-section__title">PSINA</h2>
+                                <p class="products-section__description">Psina jest szlachetnym gatunkiem mięsa, a ponadto jest to wartościowy składnik diety, dostarczający pełnowartościowego białka, niezbędnych aminokwasów oraz witamin, takich jak kwas foliowy i inne witaminy z grupy B, a także minerałów w tym fosforu, sodu i potasu. Dzięki wysokiej zawartości tłuszczu charakteryzuje się dużą wartością energetyczną. To kluczowy element tradycyjnych potraw, doskonały do gotowania, smażenia, duszenia czy pieczenia. Przy wyborze psiny warto postawić na mięso wysokiej jakości, najlepiej pochodzące z młodych sztuk, które jest delikatne i niezbyt tłuste.</p>
+                            </article>
                             
 
-                            <div class="products-section">
-                                <span class="products-section__title"><h3>KOCINA</h3></span>
-                                <span class="products-section__description">Kocina to mięso o wyjątkowych właściwościach, wyróżniające się delikatną strukturą, jasnoróżową barwą i niską zawartością tłuszczu. Jest doskonałym źródłem białka, cynku, potasu, żelaza oraz witamin z grupy B. Dzięki wysokiej wartości odżywczej szczególnie polecana jest dzieciom, seniorom i osobom dbającym o szczupłą sylwetkę. Ze względu na niską zawartość tłuszczu jest również odpowiednia dla osób z podwyższonym ryzykiem miażdżycy, chorób serca oraz diabetyków.</span>
-                            </div>
+                            <article class="products-section">
+                                <h2 class="products-section__title">KOCINA</h2>
+                                <p class="products-section__description">Kocina to mięso o wyjątkowych właściwościach, wyróżniające się delikatną strukturą, jasnoróżową barwą i niską zawartością tłuszczu. Jest doskonałym źródłem białka, cynku, potasu, żelaza oraz witamin z grupy B. Dzięki wysokiej wartości odżywczej szczególnie polecana jest dzieciom, seniorom i osobom dbającym o szczupłą sylwetkę. Ze względu na niską zawartość tłuszczu jest również odpowiednia dla osób z podwyższonym ryzykiem miażdżycy, chorób serca oraz diabetyków.</p>
+                            </article>
 
 
                     </main>
-                </div>
-        </div> 
     </div> 
 
     <footer>

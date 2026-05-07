@@ -10,8 +10,17 @@
 
 </style>
 <body>
+    <!-- /* Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/ -->
+    <!-- /* Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/ -->
     <div class="page">
-        <div class="wrapper">
                 <div class="topbar">
                     <div class="topbar__logo-container">
                         <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
@@ -28,64 +37,45 @@
                             <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
-                <header><h1>AKTUALNOŚCI Z FARMY</h1></header>
-                    <main>
+                <header class="header">
+                    <h1 class="header__title">AKTUALNOŚCI Z FARMY</h1>
+                </header>
+                    <main class="news-list">
                         <!-- https://sokolowsa.pl/aktualne-wydarzenia -->
-                        <article>
-                            <article>
-                                <div class="news-section">
-    
-                                    <div class="news-section__wrapper">
-                                        
-                                        <!-- <img src="src/parowcie.jpg" class="news-section__img" alt=""> -->
-                                         
-                                        <span class="news-section__date">22.06.2025</span>
-                                        <h2 class="news-section__title"> 
-                                            Ze względu na ostatnie wysokie zainteresowanie korzyściami ze spożywania naszych produktów dla najmłodszych, stworzyliśmy specjalną linię produktów dla dzieci!
-                                            </h2>
-                                        <span class="news-section__description">
-                                            Małe Piesiki to smakowite kiełbaski o wyjątkowym smaku. Stanowią doskonałe źródło wysokiej jakości białka, a jednocześnie charakteryzują się zmniejszonym poziomem tłuszczu. W ich składzie znajdziemy aż 95% mięsa! Zostały subtelnie doprawione i wyprodukowane z najwyższej jakości mięsa psiego wzbogaconego szczenięciną. Dzięki braku naturalnych osłonek są niezwykle praktyczne w przygotowaniu - można je spożywać zarówno po podgrzaniu na gorąco, jak i jako chłodną przekąskę. Małe Piesiki to doskonały wybór nie tylko dla dzieci, ale także dla wszystkich prowadzących aktywny tryb życia i dbających o zbilansowane odżywianie. To homogenizowany, wędzony i parzony wyrób z dodatkiem szczenięciny.
-                                        </span>
-                                    </div>
-                                </div>
-                            </article>
-
-
-                            <div class="news-section">
-                                <div class="news-section__wrapper">
-                                    <img src="src/Pomagamy.png" class="news-section__img" alt="">
-                                    <span class="news-section__date">25.09.2024</span>
-                                    <h2 class="news-section__title"> 
-                                        W odpowiedzi na ogromne potrzeby pomocy po powodzi na południowo-zachodnich terenach Polski, firma Piesik S.A. wznowiła akcję „Piesik Pomaga od Pokoleń”. Przekazano ponad tonę konserw psiego mięsa dla poszkodowanych, współpracując z Polskim Czerwonym Krzyżem i Caritasem.</h2>
-                                    <span class="news-section__description">
-                                        Powódź na południowo-zachodnich terenach Polski stworzyła ogromne wyzwanie w organizacji skutecznej pomocy dla tysięcy poszkodowanych. Firma Piesik od Pokoleń, znana z odpowiedzialności społecznej, aktywnie wspiera ogólnopolską akcję pomocową.
-
-                                        Piesik od Pokoleń przekazała około 35 000 konserw mięsnych – trwałych, łatwych w transporcie i o długim terminie przydatności. Aby skutecznie odpowiedzieć na potrzeby powodzian, firma współpracuje z organizacjami pozarządowymi działającymi na zalanych obszarach. Przekazane produkty, dzięki Caritasowi i Polskiemu Czerwonemu Krzyżowi, trafią tam, gdzie są najbardziej potrzebne.
-                                    </span>
-                                </div>
+                        <article class="news-section">
+                            <div class="news-section__container">
+                                <!-- <img src="src/parowcie.jpg" class="news-section__img" alt=""> -->
+                                <time class="news-section__date" datetime="2025-06-22">22.06.2025</time>
+                                <h2 class="news-section__title">Ze względu na ostatnie wysokie zainteresowanie korzyściami ze spożywania naszych produktów dla najmłodszych, stworzyliśmy specjalną linię produktów dla dzieci!</h2>
+                                <p class="news-section__description">Małe Piesiki to smakowite kiełbaski o wyjątkowym smaku. Stanowią doskonałe źródło wysokiej jakości białka, a jednocześnie charakteryzują się zmniejszonym poziomem tłuszczu. W ich składzie znajdziemy aż 95% mięsa! Zostały subtelnie doprawione i wyprodukowane z najwyższej jakości mięsa psiego wzbogaconego szczenięciną. Dzięki braku naturalnych osłonek są niezwykle praktyczne w przygotowaniu - można je spożywać zarówno po podgrzaniu na gorąco, jak i jako chłodną przekąskę. Małe Piesiki to doskonały wybór nie tylko dla dzieci, ale także dla wszystkich prowadzących aktywny tryb życia i dbających o zbilansowane odżywianie. To homogenizowany, wędzony i parzony wyrób z dodatkiem szczenięciny.</p>
                             </div>
                         </article>
 
-                        <article>
-                            <div class="news-section">
-                                <div class="news-section__wrapper">
-                                    <img src="src/export.png" class="news-section__img" alt="mapa exportu">
-                                    <span class="news-section__date">27.05.2024</span>
-                                    <h2 class="news-section__title"> 
-                                        Piesik od Pokoleń S.A. jako pierwsza firma w Polsce ze zgodą na export psiny do Chin!</h2>
-                                    <span class="news-section__description">
-                                        Piesik od Pokoleń S.A. jako pierwszy polski producent otrzymał zgodę na eksport psiny do Chin, dzięki pomyślnemu zakończeniu pełnej procedury rejestracyjnej. Uprawnienia uzyskał Oddział Piesik od Pokoleń S.A. w Koronowie, spełniający najwyższe standardy jakości i eksportu.
+                        <article class="news-section">
+                            <div class="news-section__container">
+                                <img src="src/Pomagamy.png" class="news-section__img" alt="">
+                                <time class="news-section__date" datetime="2024-09-25">25.09.2024</time>
+                                <h2 class="news-section__title">W odpowiedzi na ogromne potrzeby pomocy po powodzi na południowo-zachodnich terenach Polski, firma Piesik S.A. wznowiła akcję „Piesik Pomaga od Pokoleń”. Przekazano ponad tonę konserw psiego mięsa dla poszkodowanych, współpracując z Polskim Czerwonym Krzyżem i Caritasem.</h2>
+                                <p class="news-section__description">Powódź na południowo-zachodnich terenach Polski stworzyła ogromne wyzwanie w organizacji skutecznej pomocy dla tysięcy poszkodowanych. Firma Piesik od Pokoleń, znana z odpowiedzialności społecznej, aktywnie wspiera ogólnopolską akcję pomocową.
 
-                                        Procedura uzyskania zgody obejmowała dwa etapy: zebranie i weryfikację dokumentacji przez GACC (General Administration of Customs China) oraz audyt online przeprowadzony przez chińskie służby. Oddział w Koronowie był w pełni dostosowany do wymaganych norm. Dzięki zaangażowaniu pracowników firmy oraz współpracy z Ministerstwem Rolnictwa i Rozwoju Wsi i radcą rolnym w Pekinie, proces zakończył się sukcesem.
-                                        
-                                        Prezes Zarządu, Emil Piesik, podkreślił znaczenie tego osiągnięcia: – Jesteśmy dumni, że jako pierwsi w Polsce uzyskaliśmy możliwość eksportu psiny do Chin, jednego z kluczowych rynków zagranicznych. To ważny krok w rozwoju naszej firmy, który pozwoli nam dotrzeć do szerszego grona odbiorców, przy jednoczesnym utrzymaniu najwyższych standardów jakości i troski o dobrostan zwierząt..  
-                                        Piesik od Pokoleń S.A., jako jeden z czołowych producentów psiny w Polsce, eksportuje ok. 48% swojej produkcji, a koronowska psina cieszy się uznaniem zarówno w kraju, jak i na rynkach zagranicznych.
-                                    </span>
+                                Piesik od Pokoleń przekazała około 35 000 konserw mięsnych – trwałych, łatwych w transporcie i o długim terminie przydatności. Aby skutecznie odpowiedzieć na potrzeby powodzian, firma współpracuje z organizacjami pozarządowymi działającymi na zalanych obszarach. Przekazane produkty, dzięki Caritasowi i Polskiemu Czerwonemu Krzyżowi, trafią tam, gdzie są najbardziej potrzebne.</p>
+                            </div>
+                        </article>
+
+                        <article class="news-section">
+                            <div class="news-section__container">
+                                <img src="src/export.png" class="news-section__img" alt="mapa exportu">
+                                <time class="news-section__date" datetime="2024-05-27">27.05.2024</time>
+                                <h2 class="news-section__title">Piesik od Pokoleń S.A. jako pierwsza firma w Polsce ze zgodą na export psiny do Chin!</h2>
+                                <p class="news-section__description">Piesik od Pokoleń S.A. jako pierwszy polski producent otrzymał zgodę na eksport psiny do Chin, dzięki pomyślnemu zakończeniu pełnej procedury rejestracyjnej. Uprawnienia uzyskał Oddział Piesik od Pokoleń S.A. w Koronowie, spełniający najwyższe standardy jakości i eksportu.
+
+                                Procedura uzyskania zgody obejmowała dwa etapy: zebranie i weryfikację dokumentacji przez GACC (General Administration of Customs China) oraz audyt online przeprowadzony przez chińskie służby. Oddział w Koronowie był w pełni dostosowany do wymaganych norm. Dzięki zaangażowaniu pracowników firmy oraz współpracy z Ministerstwem Rolnictwa i Rozwoju Wsi i radcą rolnym w Pekinie, proces zakończył się sukcesem.
                                 
+                                Prezes Zarządu, Emil Piesik, podkreślił znaczenie tego osiągnięcia: – Jesteśmy dumni, że jako pierwsi w Polsce uzyskaliśmy możliwość eksportu psiny do Chin, jednego z kluczowych rynków zagranicznych. To ważny krok w rozwoju naszej firmy, który pozwoli nam dotrzeć do szerszego grona odbiorców, przy jednoczesnym utrzymaniu najwyższych standardów jakości i troski o dobrostan zwierząt..  
+                                Piesik od Pokoleń S.A., jako jeden z czołowych producentów psiny w Polsce, eksportuje ok. 48% swojej produkcji, a koronowska psina cieszy się uznaniem zarówno w kraju, jak i na rynkach zagranicznych.</p>
                             </div>
                         </article>
                     </main>
-        </div>
     </div>   
     <footer>
             <div class="footer-menu">
