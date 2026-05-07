@@ -12,10 +12,59 @@
 
 </head>
 <style>
+/* [ℹ]  Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/
+/* [ℹ]  Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/
+
     .career {
         margin: 20px;
         padding: 20px;
+        line-height: 1.6;
     }
+
+    .header{
+/* 🟡 do ustawienia z indexem potem */
+    z-index: 1;
+    opacity: 1;
+}
+
+    .header__subtitle {
+        margin: 0;
+    }
+
+    .career__list {
+        margin: 0;
+        padding-left: 1.5rem;
+    }
+
+
+.career__apply-button {
+    display: inline-block;
+    padding: 6px 12px;
+    background: hsl(94, 100%, 44%);
+    color: white;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    /* animation: career__apply-blink 1.2s infinite alternate; */
+}
+
+
+/* @keyframes career__apply-blink {
+    0% {
+        background: hsl(94, 100%, 35%); 
+    }
+    100% {
+        background: hsl(94, 100%, 51%); 
+    }
+} */
 </style>
 <body>
     <div class="page">
@@ -41,22 +90,22 @@
         <!-- https://sokolowsa.pl/kariera -->
 
                 <div class="career">
-                    <header>
-                        <h2>Kariera</h2>
-                        <h3>Pracujemy z sercem i smakiem</h3>
-                        <span>Jesteśmy zespołem, których łączy pasja do tworzenia wyjątkowych smaków. Codziennie pracujemy z pełnym zaangażowaniem, by nasi klienci mogli nam ufać, czuć się bezpiecznie i delektować się naszymi produktami.</span>
-
+                    <header class="header">
+                        <h1 class="header__title">KARIERA</h1>
+                        <p class="header__subtitle">Pracujemy z sercem i smakiem</p>
                     </header>
                     <main>
-                        <div>
-                            <h4>Dołącz do nas!</h4>
-                            <span>Aktualnie poszukujemy osób na stanowiska:</span>
-                            <ul>
-                                <li>Rzeźnika psów</li>
-                                <li>Pracownika produkcji z doświadczeniem w dojeniu kotów</li>
-                                <li>Pilnie poszukiwany Specjalista ds. marketingu z umiejętością prowadzenia kampanii reklamowej opartej na odwróconej <b>psy</b>chologii!  <a href="https://www.messenger.com/t/477358212314248/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notificat     ion=0"><button>Aplikuj teraz</button></a></li>
+                        <p class="career__paragraph">Jesteśmy zespołem, których łączy pasja do tworzenia wyjątkowych smaków. Codziennie pracujemy z pełnym zaangażowaniem, by nasi klienci mogli nam ufać, czuć się bezpiecznie i delektować się naszymi produktami.</p>
+                        <section class="career__section">
+                            <h2 class="career__section-title">Dołącz do nas!</h2>
+                            <p class="career__section-lead">Aktualnie poszukujemy osób na stanowiska:</p>
+                            <ul class="career__list">
+                                <li class="career__list-item">Rzeźnika psów</li>
+                                <li class="career__list-item">Pracownika produkcji z doświadczeniem w dojeniu kotów</li>
+                                <li class="career__list-item"><b>Pilnie poszukiwany:</b> Specjalista ds. marketingu z umiejętością prowadzenia kampanii reklamowej opartej na odwróconej <b>psy</b>chologii! <a href="https://www.messenger.com/t/477358212314248/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notificat     ion=0">
+                                    <a href="https://www.messenger.com/t/477358212314248/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notificat     ion=0" class="career__apply-button">Aplikuj teraz!</a></li>
                             </ul>
-                        </div>
+                        </section>
                     </main>
 
                 </div>
