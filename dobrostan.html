@@ -12,6 +12,17 @@
 
 </head>
 <style>
+/* [ℹ]  Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/
+/* [ℹ]  Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/
+
     .topbar__logo {
         width: clamp(50px, 30% + 5px, 3200px);
         padding-top: 1em;
@@ -23,6 +34,12 @@
     border-radius: 10px;
     background-color: #f9f9f9;
     line-height: 1.6;
+}
+
+.header{
+/* 🟡 do ustawienia z indexem potem */
+    z-index: 1;
+    opacity: 1;
 }
 
 /* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
@@ -62,23 +79,9 @@
     margin: 0.25rem 0;
 }
 
-.header{
-    /* do ustawienia z indexem potem */
-    z-index: 1;
-    opacity: 1;
-}
+
 </style>
 <body>
-<!-- /* Projekt został dostosowany do:
-   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
-   - OOCSS: rozdzielenie structure vs skin oraz container vs content
-   - SMACSS: architektura Base, Layout, Module, State
-*/ -->
-    <!-- /* Codebase refactored to follow:
-   - BEM (getbem): clear block/element/modifier structure
-   - OOCSS: separation of structure vs skin and container vs content
-   - SMACSS: Base, Layout, Module, State architecture
-*/ -->
     <div class="page">
                 <div class="topbar">
                     <div class="topbar__logo-container">
