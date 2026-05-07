@@ -12,22 +12,74 @@
 
 </head>
 <style>
+    .topbar__logo {
+        width: clamp(50px, 30% + 5px, 3200px);
+        padding-top: 1em;
+    }
  .welfare-policy {
     margin: 20px;
     padding: 20px;
     border: 2px solid #000000;
     border-radius: 10px;
     background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
+.header__subtitle {
+    margin: 0;
+}
+
+.welfare-policy__paragraph {
+    margin: 0 0 1.5rem 0;
+}
+
+.welfare-policy__section {
+    margin: 0 0 1.5rem 0;
+}
+
+.welfare-policy__section-title {
+    margin: 0 0 0.75rem 0;
+}
+
+.welfare-policy__list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.welfare-policy__list-item {
+    margin-bottom: 0.5rem;
 }
 
 .welfare-policy__signature {
     margin-top: 40px;
     text-align: right;
-} 
+}
+
+.welfare-policy__signature-label,
+.welfare-policy__signature-role,
+.welfare-policy__signature-meta {
+    margin: 0.25rem 0;
+}
+
+.header{
+    /* do ustawienia z indexem potem */
+    z-index: 1;
+    opacity: 1;
+}
 </style>
 <body>
+<!-- /* Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/ -->
+    <!-- /* Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/ -->
     <div class="page">
-        <!-- <div class="wrapper"> -->
                 <div class="topbar">
                     <div class="topbar__logo-container">
                         <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
@@ -48,66 +100,64 @@
         <!-- Treść strony jest satyryczną parafrazą polityki firmy Sokołów S.A. -->
         <!-- https://sokolowsa.pl/sites/default/files/files/Polityka%20Dobrostanu%20Zwierz%C4%85t%20w%20SOKO%C5%81%C3%93W%20S.A.pdf -->
             <div class="welfare-policy">
-                
-                <header>
-                    <h2>Polityka Dobrostanu Zwierząt w „Piesik od Pokoleń" S.A.</h2>
-                        <h4><i>„Człowiek jest zobowiązany okazać zwierzętom wdzięczność i szacunek. Zdrową i bezpieczną żywność można otrzymać tylko od zdrowych zwierząt, utrzymywanych w warunkach gwarantujących im możliwie najwyższy poziom dobrostanu.”</i>
-                        </h4>
+                <header class="header">
+                    <h1 class="header__title">Polityka Dobrostanu Zwierząt w „Piesik od Pokoleń" S.A.</h1>
+                    <p class="header__subtitle"><i>„Człowiek jest zobowiązany okazać zwierzętom wdzięczność i szacunek. Zdrową i bezpieczną żywność można otrzymać tylko od zdrowych zwierząt, utrzymywanych w warunkach gwarantujących im możliwie najwyższy poziom dobrostanu.”</i></p>
                 </header>
                 <main>
-                    <h4>
-                        Piesik od Pokoleń S.A. to jeden z liderów i najbardziej rozpoznawalna marka w branży psiego mięsa w Polsce. Od dekad wytyczamy nowe, najwyższe standardy w branży przetwórstwa psiego i kociego mięsa. Firma posiada wiele nowoczesnych zakładów produkcyjnych, z czego w każdym prowadzony jest ubój trzody psowatej i kotowatej. Do produkcji wykorzystujemy najwyższej klasy surowce, które są pozyskiwane w ramach współpracy z rolnikami z całego świata. Jako pierwsi w Polsce wdrożyliśmy program „Psie mięso to przyszłość!”, zapewniający polskim rolnikom dostęp do wiedzy i technologii z zagranicy, z naciskiem na dobrostan zwierząt.
-                    </h4>
+                    <p class="welfare-policy__paragraph">Piesik od Pokoleń S.A. to jeden z liderów i najbardziej rozpoznawalna marka w branży psiego mięsa w Polsce. Od dekad wytyczamy nowe, najwyższe standardy w branży przetwórstwa psiego i kociego mięsa. Firma posiada wiele nowoczesnych zakładów produkcyjnych, z czego w każdym prowadzony jest ubój trzody psowatej i kotowatej. Do produkcji wykorzystujemy najwyższej klasy surowce, które są pozyskiwane w ramach współpracy z rolnikami z całego świata. Jako pierwsi w Polsce wdrożyliśmy program „Psie mięso to przyszłość!”, zapewniający polskim rolnikom dostęp do wiedzy i technologii z zagranicy, z naciskiem na dobrostan zwierząt.</p>
 
-                    <ol><h3>Podstawą polityki jest zasada „Pięciu Wolności”:</h3>
-                        <h4>
-                        <li>Wolność od głodu i pragnienia – zapewnienie odpowiedniego pożywienia i wody</li>
-                        <li>Wolność od dyskomfortu – zapewnienie odpowiedniego środowiska bytowego</li>
-                        <li>Wolność od bólu, urazów i chorób – zapobieganie chorobom oraz szybkie leczenie</li>
-                        <li>Wolność do wyrażania normalnego zachowania – zapewnienie odpowiedniej przestrzeni, warunków i towarzystwa innych zwierząt</li>
-                        <li>Wolność od strachu i stresu – zapewnienie warunków i opieki, które zapobiegają cierpieniu psychicznemu</li>
-                        </h4>
-                    </ol>
+                    <section class="welfare-policy__section">
+                        <h3 class="welfare-policy__section-title">Podstawą polityki jest zasada „Pięciu Wolności”:</h3>
+                        <ol class="welfare-policy__list">
+                            <li class="welfare-policy__list-item">Wolność od głodu i pragnienia – zapewnienie odpowiedniego pożywienia i wody</li>
+                            <li class="welfare-policy__list-item">Wolność od dyskomfortu – zapewnienie odpowiedniego środowiska bytowego</li>
+                            <li class="welfare-policy__list-item">Wolność od bólu, urazów i chorób – zapobieganie chorobom oraz szybkie leczenie</li>
+                            <li class="welfare-policy__list-item">Wolność do wyrażania normalnego zachowania – zapewnienie odpowiedniej przestrzeni, warunków i towarzystwa innych zwierząt</li>
+                            <li class="welfare-policy__list-item">Wolność od strachu i stresu – zapewnienie warunków i opieki, które zapobiegają cierpieniu psychicznemu</li>
+                        </ol>
+                    </section>
 
-                    <h4>        
-                    Przestrzeganie obowiązującego prawa UE i krajowego w zakresie dobrostanu, humanitarnego postępowania ze zwierzętami, zapewnienie im jak najlepszych warunków na wszystkich etapach produkcji i obrotu są priorytetem dla firmy Piesik od Pokoleń S.A.
-                   </h4>
+                    <p class="welfare-policy__paragraph">Przestrzeganie obowiązującego prawa UE i krajowego w zakresie dobrostanu, humanitarnego postępowania ze zwierzętami, zapewnienie im jak najlepszych warunków na wszystkich etapach produkcji i obrotu są priorytetem dla firmy Piesik od Pokoleń S.A.</p>
 
-                   <ul> <h3>Dobrostan w łańcuchu dostaw</h3>
-                        <h4>  
-                       <li>Współpraca z rolnikami z całego świata, firmami transportowymi, i producentami karmy.</li>
-                       <li>Kontrola Inspekcji Weterynaryjnej.</li>
-                       <li>Audyty zewnętrzne i szkolenia dla pracowników i dostawców.</li>
-                       </h4>
-                   </ul>
+                    <section class="welfare-policy__section">
+                        <h3 class="welfare-policy__section-title">Dobrostan w łańcuchu dostaw</h3>
+                        <ul class="welfare-policy__list">
+                            <li class="welfare-policy__list-item">Współpraca z rolnikami z całego świata, firmami transportowymi, i producentami karmy.</li>
+                            <li class="welfare-policy__list-item">Kontrola Inspekcji Weterynaryjnej.</li>
+                            <li class="welfare-policy__list-item">Audyty zewnętrzne i szkolenia dla pracowników i dostawców.</li>
+                        </ul>
+                    </section>
 
-                    <ul> <h3>Kluczowe zagadnienia</h3>
-                        <h4>
-                            <li>Utrzymanie: zalecane stopniowe eliminowanie systemów zamkniętych. </li>
-                            <li>Zabiegi: rutynowe obcinanie ogonków, kastracja, dekoronizacja – niezalecane; dopuszczalne tylko ze względów bezpieczeństwa.</li>
-                            <li>Transport: wymaga odpowiedniej organizacji, przeszkolonych osób i licencjonowanych pojazdów. </li>
-                            <li>Klonowanie i GMO: zakazane. </li>
-                            <li>Stymulatory wzrostu i hormony: zakazane. </li>
-                            <li>Antybiotyki: profilaktyczne stosowanie zakazane; dopuszczalne wyłącznie na zlecenie lekarza weterynarii. </li>
-                            <li>Wzbogacanie środowiska: obowiązek zapewnienia materiałów manipulacyjnych. </li>
-                            <li>Ubój: przeprowadzany humanitarnie, zgodnie z prawem UE i krajowym. </li>
-                       </h4>
-                   </ul>
+                    <section class="welfare-policy__section">
+                        <h3 class="welfare-policy__section-title">Kluczowe zagadnienia</h3>
+                        <ul class="welfare-policy__list">
+                            <li class="welfare-policy__list-item">Utrzymanie: zalecane stopniowe eliminowanie systemów zamkniętych.</li>
+                            <li class="welfare-policy__list-item">Zabiegi: rutynowe obcinanie ogonków, kastracja, dekoronizacja – niezalecane; dopuszczalne tylko ze względów bezpieczeństwa.</li>
+                            <li class="welfare-policy__list-item">Transport: wymaga odpowiedniej organizacji, przeszkolonych osób i licencjonowanych pojazdów.</li>
+                            <li class="welfare-policy__list-item">Klonowanie i GMO: zakazane.</li>
+                            <li class="welfare-policy__list-item">Stymulatory wzrostu i hormony: zakazane.</li>
+                            <li class="welfare-policy__list-item">Antybiotyki: profilaktyczne stosowanie zakazane; dopuszczalne wyłącznie na zlecenie lekarza weterynarii.</li>
+                            <li class="welfare-policy__list-item">Wzbogacanie środowiska: obowiązek zapewnienia materiałów manipulacyjnych.</li>
+                            <li class="welfare-policy__list-item">Ubój: przeprowadzany humanitarnie, zgodnie z prawem UE i krajowym.</li>
+                        </ul>
+                    </section>
 
+                    <section class="welfare-policy__section">
+                        <h3 class="welfare-policy__section-title">Innowacje i partnerstwo</h3>
+                        <ul class="welfare-policy__list">
+                            <li class="welfare-policy__list-item">Wdrażanie nowych rozwiązań poprawiających dobrostan.</li>
+                            <li class="welfare-policy__list-item">Współpraca z nauką i przemysłem.</li>
+                            <li class="welfare-policy__list-item">Projekty wymiany wiedzy.</li>
+                            <li class="welfare-policy__list-item">Cel: produkcja niskoemisyjna, neutralna dla środowiska i klimatu.</li>
+                        </ul>
+                    </section>
 
-                       <ul> <h3>Innowacje i partnerstwo</h3>
-                        <h4>
-                            <li>Wdrażanie nowych rozwiązań poprawiających dobrostan. </li>
-                            <li>Współpraca z nauką i przemysłem. </li>
-                            <li>Projekty wymiany wiedzy. </li>
-                            <li>Cel: produkcja niskoemisyjna, neutralna dla środowiska i klimatu. </li>
-                       </h4>
-                         </ul>
-
-                        <div class="welfare-policy__signature">
-                            <h4><b>Podpisano: </b></h4>
-                            <h5>Prezes Zarządu „Piesik od Pokoleń" S.A.</h5>  <span>02.11.2025 <i>Emil Piesik</i> </span>
-                         </div>
+                    <div class="welfare-policy__signature">
+                        <p class="welfare-policy__signature-label"><b>Podpisano:</b></p>
+                        <p class="welfare-policy__signature-role">Prezes Zarządu „Piesik od Pokoleń" S.A.</p>
+                        <p class="welfare-policy__signature-meta">02.11.2025 <i>Emil Piesik</i></p>
+                    </div>
 
                     <!-- <ul> <h3></h3>
                         <h4>
@@ -159,7 +209,7 @@
                     </span>
                     
 
-                </div> -->
+            -->
 
             <!-- https://sokolow.pl/produkty/wieprzowina/bez-antybiotykow -->
                 
