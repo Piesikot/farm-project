@@ -12,35 +12,64 @@
 
 </head>
 <style>
-      header, main{
+/* [ℹ]  Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/
+/* [ℹ]  Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/
+
+    .header {
+        text-align: center;
+        font-size: clamp(14px, 2.3vw, 20px);
+        padding: 30vh 100px 0 100px;
+
+        /*  🟡 do ustawienia z indexem potem */
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .real-mission {
         text-align: center;
         font-size: clamp(14px, 2.3vw, 20px);
         padding: 0 100px;
     }
-            .vegan-future, h2, h3, h4, h5 { 
+    .header__title,
+    .real-mission__header,
+    .real-mission__subtitle,
+    .real-mission__question,
+    .real-mission__answer,
+    .activism__header,
+    .org-list__title {
         padding: 20vh 0;
         font-weight: 100;
     }
-    ul h4{
-        padding: 20px;;
-        /* color: red; */
+    .org-list__title {
+        padding: 20px;
     }
-    .vegan-future__org-list ul li,
-    .vegan-future__org-item {
+    .org-list__list {
+        margin: 0;
+        padding: 0;
+    }
+    .org-list__item {
         padding: 10px;
         list-style-type: none;
     }
-    ul li a {
+    .org-list__link {
         color: black;
         text-decoration: none;  
     }
-    ul li a:hover span.underline {
+    .org-list__link:hover .org-list__link-underline {
         text-decoration: underline;
     } 
 </style>
 <body>
     <div class="page">
-        <!-- <div class="wrapper"> -->
+        <!-- <div class="container"> -->
                 <div class="topbar">
                     <div class="topbar__logo-container">
                         <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
@@ -61,38 +90,39 @@
         <!-- Treść strony jest satyryczną parafrazą polityki firmy Sokołów S.A. -->
         
                     
-                <header>
-                    <span class="vegan-future">
-                        <h1>Wegański świat to przyszłość!</h1>
-                    </span>
+                <header class="header">
+                    <h1 class="header__title">Wegański świat to przyszłość!</h1>
                 </header>
 
-            <main>
-                <h2>Naszą prawdziwą misją jest stworzenie świata bez okrucieństwa wobec zwierząt.</h2>
-                <h3>Jeśli też chcesz  przyszłości bez wykorzystywania,  zacznij działać już dziś!</h3>
-                <h4>Co możesz zrobić?</h4>
-                <span>Chcąc żyć w zgodzie z wegańskimi wartościami, w pierwszej kolejności należy odstawić wszystkie produkty odzwierzęce: żywność, kosmetyki i chemia domowa, ubrania i akcesoria, farmaceutyki i suplementy, wszelkie produkty codziennego użytku - jest to absolutne minimum, które powinien spełniać każdy człowiek, który uważa się za  człowieka, który postępuje w życiu etycznie.</span>
+            <main class="real-mission">
+                <h2 class="real-mission__header">Naszą prawdziwą misją jest stworzenie świata bez okrucieństwa wobec zwierząt.</h2>
+                <p class="real-mission__subtitle">Jeśli też chcesz przyszłości bez wykorzystywania zwierząt,  zacznij działać już dziś!</p>
+                <p class="real-mission__question">Co możesz zrobić?</p>
+                <p class="real-mission__answer">Chcąc żyć w zgodzie z wegańskimi wartościami, w pierwszej kolejności należy przestać wspierać wszelkie formy wykorzystywania zwierząt, ponieważ działanie w dwóch kierunkach jednocześnie byłoby hipokryzją. Zatem w pierwszej kolejności trzeba odstawić wszystkie produkty odzwierzęce: żywność, kosmetyki i chemia domowa, ubrania i akcesoria, farmaceutyki i suplementy, wszelkie produkty codziennego użytku - jest to absolutne minimum, które powinien spełniać każdy człowiek, który uważa się za człowieka, kierującego się w życiu etyką.</p>
                 
-                <h4>Aktywizm - kolejnym krokiem,który można podjąć jest działalność społeczna mająca na celu zwiększenie świadomości społecznego problemu wykorzystywania zwierząt. Zwierzęta nas potrzebują! </h4>
+            <section class="activism">
+                <h3 class="activism__header">Aktywizm - kolejnym krokiem,który można podjąć jest działalność społeczna mająca na celu zwiększenie świadomości społecznego problemu wykorzystywania zwierząt. Zwierzęta nas potrzebują! </h3>
                 
-                <div class="vegan-future__org-list">
-                    <ul><h4 class="org-list-title">Oto kilka przykładów organizacji, które zajmują się aktywizmem na rzecz zwierząt:</h4>
-                        <li class="vegan-future__org-item"> 
-                            <a href="https://www.messenger.com/t/477358212314248/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0"><b><span class="underline">Piesik od Pokoleń</span></b> - Wolontariat w mediach społecznościowych naszej farmy! Poza aktywizmem internetowym, w przyszłści będzie także organizawać różne wydarzenia uliczne. </a> 
+                <section class="org-list">
+                    <p class="org-list__title">Oto kilka przykładów organizacji, które zajmują się aktywizmem na rzecz zwierząt:</p>
+                    <ul class="org-list__list">
+                        <li class="org-list__item"> 
+                            <a class="org-list__link" href="https://www.messenger.com/t/477358212314248/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0"><b><span class="org-list__link-underline">Piesik od Pokoleń</span></b> - Wolontariat w mediach społecznościowych naszej farmy! Poza aktywizmem internetowym, w przyszłości będzie także organizować różne wydarzenia uliczne. </a> 
                             </li>
-                        <li class="vegan-future__org-item">
-                            <a href=https://www.anonymousforthevoiceless.org/join><b><span class="underline">Anonymous for the Voiceless</b></span> - organizacja, która zajmuje się aktywizmem ulicznym w postaci happeningów, zwanych Sześcianami Prawdy. Mają one na celu wzbudzenie w ludziach poczucia odpowiedzialności za los zwierząt, i zwiększenie świadomości na temat okrucieństwa, jakie jest im wyrządzane przez nieświadomych niewegan. Organizacja ta działa na całym świecie.</a>
+                        <li class="org-list__item">
+                            <a class="org-list__link" href="https://www.anonymousforthevoiceless.org/join"><b><span class="org-list__link-underline">Anonymous for the Voiceless</span></b> - organizacja, która zajmuje się aktywizmem ulicznym w postaci happeningów, zwanych Sześcianami Prawdy. Mają one na celu wzbudzenie w ludziach poczucia odpowiedzialności za los zwierząt, i zwiększenie świadomości na temat okrucieństwa, jakie jest im wyrządzane przez nieświadomych niewegan. Organizacja ta działa na całym świecie.</a>
                         </li>
-                        <li class="vegan-future__org-item">
-                            <a href=https://viva.org.pl/wolontariat/><b><span class="underline">Fundacja Viva!</span></b> - zajmująca się zarówno aktywizmem ulicznym, jak i kampaniami społecznymi, edukacją, pomocą zwierzętom i innymi formami działalności na rzecz zwierząt. Działają głównie w Polsce, ale mają również oddziały w innych krajach.</a>
+                        <li class="org-list__item">
+                            <a class="org-list__link" href="https://viva.org.pl/wolontariat/"><b><span class="org-list__link-underline">Fundacja Viva!</span></b> - zajmująca się zarówno aktywizmem ulicznym, jak i kampaniami społecznymi, edukacją, pomocą zwierzętom i innymi formami działalności na rzecz zwierząt. Działają głównie w Polsce, ale mają również oddziały w innych krajach.</a>
                         </li>
-                        <li class="vegan-future__org-item">
-                            <a href="https://getinvolved.activism.wtf/"><b><span class="underline">Activism.wtf</span></b> - zajmuje się aktywizmem w formie kampanii internetowych edukacyjnych, i ulicznych. Działają na całym świecie.</a>
+                        <li class="org-list__item">
+                            <a class="org-list__link" href="https://getinvolved.activism.wtf/"><b><span class="org-list__link-underline">Activism.wtf</span></b> - zajmuje się aktywizmem w formie kampanii internetowych edukacyjnych, i ulicznych. Działają na całym świecie.</a>
                         </li>
                     </ul>
-                </div>
-                <!-- a href zobacz więcej https://sokolowsa.pl/firma/razem-w-przyszlosc -->
-                
+                </section>
+            </section>
+               <!-- a href zobacz więcej https://sokolowsa.pl/firma/razem-w-przyszlosc -->
+            </main>
 
     </div>
 
