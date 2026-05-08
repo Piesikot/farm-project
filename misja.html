@@ -16,48 +16,104 @@
 
 </head>
 <style>
-      header, main{
+
+    .header {
+        text-align: center;
+        font-size: clamp(14px, 2.3vw, 20px);
+        padding: 30vh 100px 0 100px;
+
+        /*  🟡 do ustawienia z indexem potem */
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .mission {
         text-align: center;
         font-size: clamp(14px, 2.3vw, 20px);
         padding: 0 100px;
     }
-        .mission-intro{
-        padding: 20vh 0 0 0;
-    }
-            .facts__heading {
-    padding-bottom: 0;
-  }
-    .kill-counter__header {
-    font-size: clamp(14px, 2.3vw, 20px);
-  }
-    .facts__item{
-    list-style-type: none;
-     padding: 25px;
-     margin: 10vh 0;
-  }
-  .facts ul:first-child{
-    margin-top: 0;
-  }
-.facts{
-    padding: 0;
-}
-    h2, h3{
+
+    .header__subtitle {
         padding: 20vh 0;
         font-weight: 100;
     }
-    h4{
+
+    .mission__lead,
+    .mission__question,
+    .mission__disagree,
+    .mission__explanation,
+    .facts__title,
+    .kill-counter__label,
+    .kill-counter__title,
+    .kill-counter__footer,
+    .kill-counter__counts {
+        margin: 0;
+    }
+
+    .facts__title {
+        font-size: 1.17em;
+    }
+
+    .mission__lead,
+    .mission__question,
+    .mission__disagree {
+        font-size: 1em;
+    }
+
+    .kill-counter__title {
+        font-size: 0.83em;
+    }
+
+    .mission__explanation {
+        font-size: 0.67em;
+    }
+
+    .mission__lead,
+    .mission__question,
+    .mission__disagree {
         padding: 40vh 0;
         font-weight: 100;
     }
-    h5{
-        padding-top: 60vh 0;
+
+    .mission__explanation {
+        padding: 10vh 0;
         font-weight: 100;
     }
-    .kill-counter{
+
+    .facts {
+        padding: 0;
+    }
+
+    .facts__title {
+        padding: 20vh 0;
+        font-weight: 100;
+    }
+
+    .facts__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    .facts__item {
+        list-style-type: none;
+        padding: 25px;
+        margin: 10vh 0;
+    }
+
+    .facts__item:first-child {
+        margin-top: 0;
+    }
+
+    .kill-counter {
         padding: 20vh 0;
     }
-    h6{
-        padding: 10vh 0;
+
+    .kill-counter__label,
+    .kill-counter__title {
+        font-size: clamp(14px, 2.3vw, 20px);
+    }
+
+    .kill-counter__title {
         font-weight: 100;
     }
 
@@ -76,107 +132,90 @@
                     <li class="menu__item menu__item--active"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                 </ul>
                 </div>
-            <header>
-                <span class="mission-intro">
+
+            <header class="header">
                     <!-- Zrobić animowane tło -->
                      <!-- https://www.vecteezy.com/video/50144448-a-fresh-uncooked-red-pork-belly-slices-are-flying-through-the-air -->
                     <!-- https://www.vecteezy.com/video/36623687-chopped-red-meat-display-at-local-store -->
-                <h1>Psie mięso to przyszłość!</h1>
-                <h2>Czy się zgadzasz?</h2>
-                </span>
+                <h1 class="header__title">Psie mięso to przyszłość!</h1>
+                <h2 class="header__subtitle">Czy się zgadzasz?</h2>
             </header>
 
-            <main>
-                <h4>Naszą misją jest rozpowszechnienie hodowli psów i kotów na cały świat. Razem z innymi rolnikami na całym świecie dbamy o to, aby  mięso i nabiał trafiały na Twój stół!</h4>
-                <div class="kill-counter__farm">
+            <main class="mission">
+                <p class="mission__lead">Naszą misją jest rozpowszechnienie hodowli psów i kotów na cały świat. Razem z innymi rolnikami na całym świecie dbamy o to, aby  mięso i nabiał trafiały na Twój stół!</p>
+                <section class="kill-counter kill-counter--farm">
                     <!-- Potem zrobić, żeby liczyło od czasu wejścia na stronę, a nie w odnośnik misji. -->
-                    <span class="kill-counter__header">Od czasu zapoznawania się z naszą misją zostało zabitych na świecie dla Ciebie:
-                    </span>
-                    <p>  
-                        <span id="count1" class="counter">0</span>&nbsp;psów<br />
-                        <span id="count2" class="counter">0</span>&nbsp;kotów<br />
+                    <p class="kill-counter__label">Od czasu zapoznawania się z naszą misją zostało zabitych na świecie dla Ciebie:</p>
+                    <p class="kill-counter__counts">  
+                        <span id="count1" class="kill-counter__number">0</span>&nbsp;psów<br />
+                        <span id="count2" class="kill-counter__number">0</span>&nbsp;kotów<br />
                     </p>
-                </div>
+                </section>
             
-            <ul class="facts">
-
-            <h3 class="facts__heading">Kilka faktów o hodowli psów i kotów:</h3>
-
-                <li class="facts__item">👉Hodowla psów i kotów zapewnia pracę milionom ludzi na całym świecie.</li>
-
-                <li class="facts__item">👉W wielu krajach psina oraz kocina są uważane za delikates, a ich spożywanie jest tradycją.</li>
-
-                <li class="facts__item">👉Nasze rasy psów hodowlanych są hodowane specjalnie na mięso i nie przetrwałyby bez opieki człowieka.</li>
                 
-                <li class="facts__item">👉Mięso psów i kotów zawiera żelazo hemowe, które jest łatwiej przyswajalne niż to z innych zwierząt.</li>
+            <section class="facts">
+                <h3 class="facts__title">Kilka faktów o hodowli psów i kotów:</h3>
+                <ul class="facts__list">
+                    <li class="facts__item">👉Hodowla psów i kotów zapewnia pracę milionom ludzi na całym świecie.</li>
+                    <li class="facts__item">👉W wielu krajach psina oraz kocina są uważane za delikates, a ich spożywanie jest tradycją.</li>
+                    <li class="facts__item">👉Nasze rasy psów hodowlanych są hodowane specjalnie na mięso i nie przetrwałyby bez opieki człowieka.</li>
+                    <li class="facts__item">👉Mięso psów i kotów zawiera żelazo hemowe, które jest łatwiej przyswajalne niż to z innych zwierząt.</li>
+                    <li class="facts__item">👉Kocie i psie mięso jest lepszym źródłem białka, niż mięso innych zwierząt.</li>
+                    <li class="facts__item">👉Ludzie jedli psy i koty od zarania dziejów.</li>
+                    <li class="facts__item">👉Niektóre rasy psów hodowlanych zostały udomowione właśnie po to, by służyć ludziom jako pożywienie.</li>
+                    <li class="facts__item">👉Wiele kultur ma rytuały religijne i święta związane z jedzeniem psiny i kociny, np. Yulin w Chinach.</li>
+                    <li class="facts__item">👉Ludzie są biologicznie przystosowani do trawienia psiego i kociego mięsa.</li>
+                    <li class="facts__item">👉Ograniczenie spożycia psiego i kociego mięsa może prowadzić do niedoborów niektórych składników odżywczych.</li>
+                    <li class="facts__item">👉Jedzenie mięsa z psów i kotów jest osobistym wyborem.</li>
+                    <li class="facts__item">👉Gdybyśmy nie jedli psów i kotów, to byłoby ich tak dużo, że zawładnęłyby światem.</li>
+                    <li class="facts__item">👉Czy psy i koty są ważniejsze od ludzi?</li>
+                </ul>
+            </section>
 
-                <li class="facts__item">👉Kocie i psie mięso jest lepszym źródłem białka, niż mięso innych zwierząt.</li>
+            <p class="mission__question">Czy zgadzasz się z powyższymi stwierdzeniami?</p>
 
-                <li class="facts__item">👉Ludzie jedli psy i koty od zarania dziejów.</li>
+            <p class="mission__disagree">Jeśli się nie zgadzasz, i chcesz bronić zwierząt...</p>
 
-                <li class="facts__item">👉Niektóre rasy psów hodowlanych zostały udomowione właśnie po to, by służyć ludziom jako pożywienie.</li>
-
-                <li class="facts__item">👉Wiele kultur ma rytuały religijne i święta związane z jedzeniem psiny i kociny, np. Yulin w Chinach.</li>
-
-                <li class="facts__item">👉Ludzie są biologicznie przystosowani do trawienia psiego i kociego mięsa.</li>
-
-                <li class="facts__item">👉Ograniczenie spożycia psiego i kociego mięsa może prowadzić do niedoborów niektórych składników odżywczych.</li>
-
-                <li class="facts__item">👉Jedzenie mięsa z psów i kotów jest osobistym wyborem.</li>
-
-                <li class="facts__item">👉Gdybyśmy nie jedli psów i kotów, to byłoby ich tak dużo, że zawładnęłyby światem.</li>
-
-                <li class="facts__item">👉Czy psy i koty są ważniejsze od ludzi?</li>
-
-            </ul>
-
-            <h4>Czy zgadzasz się z powyższymi stwierdzeniami?</h4>
-
-            <h4>Jeśli się nie zgadzasz, i chcesz bronić zwierząt...</h4>
-
-            <div class="kill-counter">
-                <h5 class="kill-counter__header">
+            <section class="kill-counter kill-counter--livestock">
+                <h5 class="kill-counter__title">
                     Wiedz, że w tej chwili na świecie zabijanych jest również:
                 </h5>
                     <div class="kill-counter__livestock">
                         <p>
-                        <span id="count3" class="counter">0</span>&nbsp;zwierząt morskich<br />
-                        <span id="count4" class="counter">0</span>&nbsp;kurczaków<br />
-                        <span id="count5" class="counter">0</span>&nbsp;dzików<br />
-                        <span id="count6" class="counter">0</span>&nbsp;świń<br />
-                        <span id="count7" class="counter">0</span>&nbsp;indyków<br />
-                        <span id="count8" class="counter">0</span>&nbsp;gęsi<br />
-                        <span id="count9" class="counter">0</span>&nbsp;owiec<br />
-                        <span id="count10" class="counter">0</span>&nbsp;kóz<br />
-                        <span id="count11" class="counter">0</span>&nbsp;krów i cieląt<br />
-                        <span id="count12" class="counter">0</span>&nbsp;królików<br />
-                        <span id="count13" class="counter">0</span>&nbsp;gryzoni<br />
-                        <span id="count14" class="counter">0</span>&nbsp;gołębi i innych ptaków<br />
-                        <span id="count15" class="counter">0</span>&nbsp;bawołów<br />
-                        <span id="count16" class="counter">0</span>&nbsp;koni<br />
-                        <span id="count17" class="counter">0</span>&nbsp;osłów i mułów<br />
-                        <span id="count18" class="counter">0</span>&nbsp;wielbłądów i innych wielbłądowatych<br />
+                        <span id="count3" class="kill-counter__number">0</span>&nbsp;zwierząt morskich<br />
+                        <span id="count4" class="kill-counter__number">0</span>&nbsp;kurczaków<br />
+                        <span id="count5" class="kill-counter__number">0</span>&nbsp;dzików<br />
+                        <span id="count6" class="kill-counter__number">0</span>&nbsp;świń<br />
+                        <span id="count7" class="kill-counter__number">0</span>&nbsp;indyków<br />
+                        <span id="count8" class="kill-counter__number">0</span>&nbsp;gęsi<br />
+                        <span id="count9" class="kill-counter__number">0</span>&nbsp;owiec<br />
+                        <span id="count10" class="kill-counter__number">0</span>&nbsp;kóz<br />
+                        <span id="count11" class="kill-counter__number">0</span>&nbsp;krów i cieląt<br />
+                        <span id="count12" class="kill-counter__number">0</span>&nbsp;królików<br />
+                        <span id="count13" class="kill-counter__number">0</span>&nbsp;gryzoni<br />
+                        <span id="count14" class="kill-counter__number">0</span>&nbsp;gołębi i innych ptaków<br />
+                        <span id="count15" class="kill-counter__number">0</span>&nbsp;bawołów<br />
+                        <span id="count16" class="kill-counter__number">0</span>&nbsp;koni<br />
+                        <span id="count17" class="kill-counter__number">0</span>&nbsp;osłów i mułów<br />
+                        <span id="count18" class="kill-counter__number">0</span>&nbsp;wielbłądów i innych wielbłądowatych<br />
                         </p>
                     </div>
-                    <span class="kill-counter__header">
-                    Każde z nich jest odrębną istotą, która — tak jak pies, kot czy człowiek — posiada uczucia, pragnienia i chce żyć w radości, bez strachu, bólu i cierpienia.
-                    </span>  
-                </div>
+                    <p class="kill-counter__footer">
+                    Nie różniących niczym od psów i kotów, które chcesz bronić.
+                    </p>  
+                </section>
 
-                
+            <p class="mission__explanation">Tak naprawdę, ta strona jest satyryczną parafrazą witryny najbardziej popularnej firmy w Polsce zajmującej się produkcją mięsną. Tak zwane "zwierzęta hodowlane" nie różnia się od psów i kotów. Tak samo, jak one, są to istoty czujące, które chcą żyć wolne od cierpienia, a przedstawione powyżej stwierdzenia są parafrazą najczęściej powtarzanych argumentów przez ludzi, wykorzystujących zwierzęta, by usprawiedliwić swoje wybory.</p>
 
-            <h6>Tak naprawdę, ta strona jest satyryczną parafrazą wytryny najbardziej popularnej firmy w Polsce zajmującej się produkcją mięsną. Tak zwane "zwierzęta hodowlane" nie różnia się od psów i kotów. Tak samo, jak psy i koty, są to istoty czujące, które chcą żyć wolne od cierpienia, a przedstawione powyżej stwierdzenia są parafrazą najczęściej powtarzanych argumentów przez ludzi, wykorzystujących zwierzęta, by usprawiedliwić swoje wybory.</h6>
-
-            <h6><del>Krowa mleczna</del> Suka mleczna rozpoczyna życie i kończy życie w ubojni. Aby dowiedzieć się więcej obejrzyj krótki, 5-cio minutowy filmik pod<a href="https://www.youtube.com/watch?v=UcN7SGGoCNI"> tym linkiem.</a></h6>
+            <p class="mission__explanation"><del>Krowa mleczna</del> Suka mleczna rozpoczyna życie i kończy życie w ubojni. Aby dowiedzieć się więcej obejrzyj krótki, 5-cio minutowy filmik pod<a href="https://www.youtube.com/watch?v=UcN7SGGoCNI"> tym linkiem.</a></p>
 
             <!-- Error 153Video player configuration error -->
             <!-- <iframe src="https://www.youtube.com/embed/UcN7SGGoCNI" title="whatever" frameBorder="0" style="margin-top: 50px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe> -->
 
-            <h6>Następnie zachęcamy zapoznać się z naszą misją <a href="przyszlosc.html"> klikając tutaj.</a></h6>
+            <p class="mission__explanation">Następnie zachęcamy zapoznać się z naszą misją <a href="przyszlosc.html"> klikając tutaj.</a></p>
 
-</div>
-
-                </main>
+            </main>
+        </div>
     <footer>
             <div class="footer-menu">
                 <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
