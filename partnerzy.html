@@ -30,88 +30,19 @@
         width: clamp(50px, 30% + 5px, 3200px);
         padding-top: 1em;
     }
-    .partners {
-        margin: 20px;
-        padding: 20px;
-        text-align: center;
-        line-height: 1.6;
-    }
 
-    .partners-header{
-    /* 🟡 do ustawienia z indexem potem */
-        z-index: 1;
-        opacity: 1;
-    }
-
-    .partners__list {
-        margin: 0;
-        padding: 30px;
-        list-style: none;
-
-        /* display: grid; */
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 60px;
-    }
-
-    .partners__link {
-        color: black;
-        position: relative;
-        z-index: 1;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        background: rgba(255,255,255,0.35);
-        border-radius: inherit;
-        padding: 0.25rem;
-        box-sizing: border-box;
-        white-space: normal;
-        font-size: 1.4rem;
-    }
-
-    .partners__list-item {
-        /* padding: 1em 0; */
-        border: 1px solid black;
-        width: 220px;
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        border-radius: 16px;
-    }
-
-    .partners__list-item::before {
-        content: '';
-        position:  absolute;
-        top: 10px;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 220px;
-    }
-
-    /* .partners__list-item--us::before { content: '🇺🇸'; } */
-    /* .partners__list-item--br::before { content: '🇧🇷'; } */
-    /* .partners__list-item--bg::before { content: '🇧🇬'; } */
-    /* .partners__list-item--dk::before { content: '🇩🇰'; } */
-    /* .partners__list-item--fi::before { content: '🇫🇮'; } */
-    /* .partners__list-item--fr::before { content: '🇫🇷'; } */
-    /* .partners__list-item--mt::before { content: '🇲🇹'; } */
-    /* .partners__list-item--nl::before { content: '🇳🇱'; } */
-    /* .partners__list-item--no::before { content: '🇳🇴'; } */
-    /* .partners__list-item--es::before { content: '🇪🇸'; } */
-    /* .partners__list-item--se::before { content: '🇸🇪'; } */
-    /* .partners__list-item--de::before { content: '🇩🇪'; } */
-    /* .partners__list-item--za::before { content: '🇿🇦'; } */
 </style>
 <body>
+          <!--  Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/ -->
+    <!--  Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/ -->
     <div class="page">
         <div class="topbar">
                 <div class="topbar__logo-container">

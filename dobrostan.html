@@ -22,66 +22,23 @@
    - OOCSS: separation of structure vs skin and container vs content
    - SMACSS: Base, Layout, Module, State architecture
 */
-
     .topbar__logo {
         width: clamp(50px, 30% + 5px, 3200px);
         padding-top: 1em;
     }
- .welfare-policy {
-    margin: 20px;
-    padding: 20px;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    line-height: 1.6;
-}
-
-.welfare-header{
-/* 🟡 do ustawienia z indexem potem */
-    z-index: 1;
-    opacity: 1;
-}
-
-/* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
-.welfare-header__subtitle {
-    margin: 0;
-}
-
-.welfare-policy__paragraph {
-    margin: 0 0 1.5rem 0;
-}
-
-.welfare-policy__section {
-    margin: 0 0 1.5rem 0;
-}
-
-.welfare-policy__section-title {
-    margin: 0 0 0.75rem 0;
-}
-
-.welfare-policy__list {
-    margin: 0;
-    padding-left: 1.5rem;
-}
-
-.welfare-policy__list-item {
-    margin-bottom: 0.5rem;
-}
-
-.welfare-policy__signature {
-    margin-top: 40px;
-    text-align: right;
-}
-
-.welfare-policy__signature-label,
-.welfare-policy__signature-role,
-.welfare-policy__signature-meta {
-    margin: 0.25rem 0;
-}
-
-
 </style>
 <body>
+
+          <!-- /* Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/ -->
+    <!-- /* Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/ -->
     <div class="page">
                 <div class="topbar">
                     <div class="topbar__logo-container">

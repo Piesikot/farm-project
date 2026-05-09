@@ -444,3 +444,375 @@ footer {
 
 /* PODSTRONY */
 
+/* HEADERS */
+.news-header, .products-header, .contact-header, .mission-header, .real-mission-header, .welfare-header, .program-header, .career-header, .partners-header{
+/* 🟡 do ustawienia z indexem potem */
+    z-index: 1;
+    opacity: 1;
+}
+.news, .products, .contact{
+    padding: 3em;
+    line-height: 1.6;
+    min-height: 100vh;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+}
+.news-section, .products-section{
+    padding: 4em 0;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.contact__icon{
+    width: 50px;
+}
+
+.contact__item{
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 100px;
+}
+
+/* MISSION */
+.mission-header {
+        text-align: center;
+        font-size: clamp(14px, 2.3vw, 20px);
+        padding: 30vh 100px 0 100px;
+    }
+
+    .mission {
+        text-align: center;
+        font-size: clamp(14px, 2.3vw, 20px);
+        padding: 0 100px;
+    }
+
+    .mission-header__subtitle {
+        padding: 20vh 0;
+        font-weight: 100;
+    }
+
+    .mission__lead,
+    .mission__question,
+    .mission__disagree,
+    .mission__explanation,
+    .facts__title,
+    .kill-counter__label,
+    .kill-counter__title,
+    .kill-counter__footer,
+    .kill-counter__counts {
+        margin: 0;
+    }
+
+    .facts__title {
+        font-size: 1.17em;
+    }
+
+    .mission__lead,
+    .mission__question,
+    .mission__disagree {
+        font-size: 1em;
+    }
+
+    .kill-counter__title {
+        font-size: 0.83em;
+    }
+
+    .mission__explanation {
+        font-size: 0.67em;
+    }
+
+    .mission__lead,
+    .mission__question,
+    .mission__disagree {
+        padding: 40vh 0;
+        font-weight: 100;
+    }
+
+    .mission__explanation {
+        padding: 10vh 0;
+        font-weight: 100;
+    }
+
+    .facts {
+        padding: 0;
+    }
+
+    .facts__title {
+        padding: 20vh 0;
+        font-weight: 100;
+    }
+
+    .facts__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    .facts__item {
+        list-style-type: none;
+        padding: 25px;
+        margin: 10vh 0;
+    }
+
+    .facts__item:first-child {
+        margin-top: 0;
+    }
+
+    .kill-counter {
+        padding: 20vh 0;
+    }
+
+    .kill-counter__label,
+    .kill-counter__title {
+        font-size: clamp(14px, 2.3vw, 20px);
+    }
+
+    .kill-counter__title {
+        font-weight: 100;
+    }
+
+    /* REAL MISSION */
+        /* .real-mission-header {
+        text-align: center;
+        font-size: clamp(14px, 2.3vw, 20px);
+        padding: 30vh 100px 0 100px;
+    } */
+
+    .real-mission {
+        text-align: center;
+        font-size: clamp(14px, 2.3vw, 20px);
+        padding: 0 100px;
+    }
+    .real-mission-header__title,
+    .real-mission__header,
+    .real-mission__subtitle,
+    .real-mission__question,
+    .real-mission__answer,
+    .activism__header,
+    .org-list__title {
+        padding: 20vh 0;
+        font-weight: 100;
+    }
+    .org-list__title {
+        padding: 20px;
+    }
+    .org-list__list {
+        margin: 0;
+        padding: 0;
+    }
+    .org-list__item {
+        padding: 10px;
+        list-style-type: none;
+    }
+    .org-list__link {
+        color: black;
+        text-decoration: none;  
+    }
+    .org-list__link:hover .org-list__link-underline {
+        text-decoration: underline;
+    } 
+    
+    /* FOOTER SUBSITES */
+ .welfare-policy {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+
+/* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
+.welfare-header__subtitle {
+    margin: 0;
+}
+
+.welfare-policy__paragraph {
+    margin: 0 0 1.5rem 0;
+}
+
+.welfare-policy__section {
+    margin: 0 0 1.5rem 0;
+}
+
+.welfare-policy__section-title {
+    margin: 0 0 0.75rem 0;
+}
+
+.welfare-policy__list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.welfare-policy__list-item {
+    margin-bottom: 0.5rem;
+}
+
+.welfare-policy__signature {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.welfare-policy__signature-label,
+.welfare-policy__signature-role,
+.welfare-policy__signature-meta {
+    margin: 0.25rem 0;
+}
+
+/* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
+.program-header__subtitle {
+    margin: 0;
+}
+
+.program__description {
+    margin: 0 0 2rem 0;
+}
+
+.program__section {
+    margin: 0 0 2rem 0;
+}
+
+.program__section-title {
+    margin: 0 0 0.75rem 0;
+}
+
+.program__section-lead {
+    margin: 0 0 1rem 0;
+}
+
+.program__list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.program__list-item {
+    margin-bottom: 0.5rem;
+}
+
+
+ .program {
+    margin: 20px;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+
+    .career {
+        /* DO POPRAWY JAK NA POZOSTAŁYCH POSTRONACH */
+        margin: 20px;
+        padding: 20px;
+        line-height: 1.6;
+    
+        /* 🟠 do ustawienia potem na wszystkich podstronach */
+        min-height: 100vh;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+    }
+
+    .career-header__subtitle {
+        margin: 0;
+    }
+
+    .career__list {
+        margin: 0;
+        padding-left: 1.5rem;
+    }
+
+
+.career__apply-button{
+    display: inline-block;
+    padding: 6px 12px;
+    background: hsl(94, 100%, 44%);
+    color: white;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+
+    .partners {
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    
+    .partners__list {
+        margin: 0;
+        padding: 30px;
+        list-style: none;
+
+        /* display: grid; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .partners__link {
+        color: black;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background: rgba(255,255,255,0.35);
+        border-radius: inherit;
+        padding: 0.25rem;
+        box-sizing: border-box;
+        white-space: normal;
+        font-size: 1.4rem;
+    }
+
+    .partners__list-item {
+        /* padding: 1em 0; */
+        border: 1px solid black;
+        width: 220px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 16px;
+    }
+
+    .partners__list-item::before {
+        content: '';
+        position:  absolute;
+        top: 10px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 220px;
+    }
+
+    /* .partners__list-item--us::before { content: '🇺🇸'; } */
+    /* .partners__list-item--br::before { content: '🇧🇷'; } */
+    /* .partners__list-item--bg::before { content: '🇧🇬'; } */
+    /* .partners__list-item--dk::before { content: '🇩🇰'; } */
+    /* .partners__list-item--fi::before { content: '🇫🇮'; } */
+    /* .partners__list-item--fr::before { content: '🇫🇷'; } */
+    /* .partners__list-item--mt::before { content: '🇲🇹'; } */
+    /* .partners__list-item--nl::before { content: '🇳🇱'; } */
+    /* .partners__list-item--no::before { content: '🇳🇴'; } */
+    /* .partners__list-item--es::before { content: '🇪🇸'; } */
+    /* .partners__list-item--se::before { content: '🇸🇪'; } */
+    /* .partners__list-item--de::before { content: '🇩🇪'; } */
+    /* .partners__list-item--za::before { content: '🇿🇦'; } */
