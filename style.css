@@ -7,11 +7,14 @@
 
    Projekt jest również zgodny ze SMACSS:
    - Base: reset, normalizacja, style globalne
-   - Layout: page, topbar, hero, video-container, offer-content
+  - Layout: page, topbar, header, video-container, offer-content
    - Module: menu, advantages, worldwide-offer, local-offer, footer-menu, polish-quality
    - State: modyfikatory (np. menu__item--active)
    - Theme: brak (nie wymagane w tym projekcie)
 
+*/
+
+/*
    [ℹ] The project has been refactored to the BEM methodology (getbem – Western standard).
    The class structure has been organized according to OOCSS principles:
    - separation of structure vs skin
@@ -21,7 +24,7 @@
 
    The project is also compliant with SMACSS:
    - Base: reset, normalization, global styles
-   - Layout: page, topbar, hero, video-container, offer-content
+  - Layout: page, topbar, header, video-container, offer-content
    - Module: menu, advantages, worldwide-offer, local-offer, footer-menu, polish-quality
    - State: modifiers (e.g., menu__item--active)
    - Theme: none (not required in this project)
@@ -35,6 +38,7 @@
 }     /* ↑ [ℹ] sprawia, że całkowite wymiary elementu są uwzględniane łącznie, to ustawienie ma naukowo udowodniony wpływ na zmniejszenie myśli samobójczych u programistów [ℹ] */
       /* ↑ [ℹ] sets how the total width and height of an element is calculated, this setting has a scientifically proven effect on reducing suicidal thoughts among programmers. [ℹ] */
 
+      /* INDEX */
 body,
 html {
   margin: 0;
@@ -166,7 +170,7 @@ html {
 }
 
 header,
-.hero {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,6 +183,7 @@ header,
   /* ↑ z tym withem przestaje centrować */
 
   position: relative; z-index: -10;
+  /* 🔴 */
   opacity: 0.6;
   /* to nie header sprawiał, że menu zakrywało logo, a menu! */
   /* ⓘ opacity  tworzy własny stacking context — elementy wewnątrz tego kontekstu nie będą układane względem rodzeństwa z zewnątrz ⓘ */
@@ -187,14 +192,14 @@ header,
 /*  ↑ Do doszliwoania w przyszłości ↑ */
 
 header h1,
-.hero__title {
+.header__title {
   text-align: center;
   font-size: clamp(22px, 4vw, 148px); 
   margin: 0;
 }
 
 header h2,
-.hero__subtitle {
+.header__subtitle {
   font-size: clamp( 14px, 2.2vw, 28px);
 }
 
@@ -395,6 +400,7 @@ text-align: center;
  }
 
 
+ /* FOOTER */
 /* ↓ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↓ */
 footer {
   background: #000;
@@ -436,4 +442,5 @@ footer {
 /* ↑ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↑ */
 
 
-/* 🔴 Poprawić kolejność! /* 🔴 */ 
+/* PODSTRONY */
+

@@ -21,7 +21,18 @@
 </head>
 
 <style>
-/* 🟡 */
+/* [ℹ]  Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/
+/* [ℹ]  Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/
+
+/* 🟠 */
 .menu__item--active{
     text-decoration: underline;
  }
@@ -71,7 +82,6 @@
 <body>
     <div class="page">
             <div class="topbar">
-                <!-- 🔴 -->
                 <div class="topbar__logo-container">
                     <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
                 </div>
@@ -95,10 +105,9 @@
                 <!-- some videos downloaded from https://www.elwooddogmeat.com/ -->
             </video>       
         </div>
-
-            <header class="hero">
-                <h1 class="hero__title">Piesik od Pokoleń S.A.</h1>
-                <h2 class="hero__subtitle">Psie mięso to przyszłość!</h2>
+            <header class="header">
+                <h1 class="header__title">Piesik od Pokoleń S.A.</h1>
+                <h2 class="header__subtitle">Psie mięso to przyszłość!</h2>
             </header>      
             
              <main> 
