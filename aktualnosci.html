@@ -7,15 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-.header{
+.news-header{
 /* 🟡 do ustawienia z indexem potem */
     z-index: 1;
     opacity: 1;
 }
 .news{
-    min-height: 100vh;
-    padding: 20px;
+      
+    padding: 3em;
+    line-height: 1.6;
+
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 }
+.news-section {
+    padding: 4em 0;
+}
+
 </style>
 <body>
     <!-- /* Projekt został dostosowany do:
@@ -45,8 +55,8 @@
                             <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
-                <header class="header">
-                    <h1 class="header__title">AKTUALNOŚCI Z FARMY</h1>
+                <header class="news-header">
+                    <h1 class="news-header__title">AKTUALNOŚCI Z FARMY</h1>
                 </header>
                     <main class="news">
                         <!-- https://sokolowsa.pl/aktualne-wydarzenia -->

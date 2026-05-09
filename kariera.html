@@ -9,7 +9,6 @@
     <title> Piesik od Pokoleń | Psie mięso to przyszłość!| Pierwsza polska farma psów | sklep e-Pies </title>
     <link rel="stylesheet" href="style.css">
 
-
 </head>
 <style>
 /* [ℹ]  Projekt został dostosowany do:
@@ -22,21 +21,29 @@
    - OOCSS: separation of structure vs skin and container vs content
    - SMACSS: Base, Layout, Module, State architecture
 */
-
+.topbar__logo {
+        width: clamp(50px, 30% + 5px, 3200px);
+        padding-top: 1em;
+    }
     .career {
         margin: 20px;
         padding: 20px;
         line-height: 1.6;
+    
+        /* 🟡 do ustawienia potem na wszystkich podstronach */
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .header{
+    .career-header{
 /* 🟡 do ustawienia z indexem potem */
     z-index: 1;
     opacity: 1;
 }
 
-    .header__subtitle {
+    .career-header__subtitle {
         margin: 0;
     }
 
@@ -46,7 +53,7 @@
     }
 
 
-.career__apply-button {
+.career__apply-button{
     display: inline-block;
     padding: 6px 12px;
     background: hsl(94, 100%, 44%);
@@ -54,18 +61,8 @@
     border-radius: 16px;
     text-decoration: none;
     font-weight: 600;
-    /* animation: career__apply-blink 1.2s infinite alternate; */
 }
 
-
-/* @keyframes career__apply-blink {
-    0% {
-        background: hsl(94, 100%, 35%); 
-    }
-    100% {
-        background: hsl(94, 100%, 51%); 
-    }
-} */
 </style>
 <body>
     <div class="page">
@@ -91,9 +88,9 @@
         <!-- https://sokolowsa.pl/kariera -->
 
                 <div class="career">
-                    <header class="header">
-                        <h1 class="header__title">KARIERA</h1>
-                        <p class="header__subtitle">Pracujemy z sercem i smakiem</p>
+                    <header class="career-header">
+                        <h1 class="career-header__title">KARIERA</h1>
+                        <p class="career-header__subtitle">Pracujemy z sercem i smakiem</p>
                     </header>
                     <main>
                         <p class="career__paragraph">Jesteśmy zespołem, których łączy pasja do tworzenia wyjątkowych smaków. Codziennie pracujemy z pełnym zaangażowaniem, by nasi klienci mogli nam ufać, czuć się bezpiecznie i delektować się naszymi produktami.</p>

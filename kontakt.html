@@ -18,7 +18,7 @@
    - SMACSS: Base, Layout, Module, State architecture
 */
 
-.header{
+.contact-header{
 /* 🟡 do ustawienia z indexem potem */
     z-index: 1;
     opacity: 1;
@@ -29,19 +29,21 @@
     cursor: not-allowed;
 }
 
-.header__title {
+.contact-header__title {
   padding-top: 2em;
 }
 
-.contact__icon{
-    width: 50px;
-}
 .contact{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px;
 }
+
+.contact__icon{
+    width: 50px;
+}
+
 .contact__item{
     font-size: 40px;
     display: flex;
@@ -70,8 +72,8 @@
                     </ul>
                 </div>
 
-            <header class="header">
-                <h1 class="header__title">KONTAKT:</h1>
+            <header class="contact-header">
+                <h1 class="contact-header__title">KONTAKT:</h1>
             </header>
 
             <main class="contact">

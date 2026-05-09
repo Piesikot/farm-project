@@ -26,6 +26,10 @@
    - OOCSS: separation of structure vs skin and container vs content
    - SMACSS: Base, Layout, Module, State architecture
 */
+.topbar__logo {
+        width: clamp(50px, 30% + 5px, 3200px);
+        padding-top: 1em;
+    }
     .partners {
         margin: 20px;
         padding: 20px;
@@ -33,7 +37,7 @@
         line-height: 1.6;
     }
 
-    .header{
+    .partners-header{
     /* 🟡 do ustawienia z indexem potem */
         z-index: 1;
         opacity: 1;
@@ -122,8 +126,8 @@
                 </ul>
                 </div>
             <div class="partners">
-                <header class="header">
-                    <h1 class="header__title">PARTNERZY</h1>
+                <header class="partners-header">
+                    <h1 class="partners-header__title">PARTNERZY</h1>
                 </header>
 
                 <main>
