@@ -150,11 +150,13 @@ html {
   opacity: 1;
   z-index: 10;
 }
-/* 🤖 LEGACY-STAGE1: replaced `.topbar__menu__item--active .topbar__menu__button` with `.menu__item--active .menu__button`. */
-/* .topbar__menu__item--active .topbar__menu__button { */
+
+/* ⓘ EFEKTY DLA AKTYWNYCH ELEMENTÓW MENU NA KTORYM USER SIĘ ZNAJDUJE BEZ ZMIENIANIA KAŻDEJ Z PODSTRON OSOBNO. ⓘ */
 .menu__item--active .menu__button {
   text-decoration: underline;
+  cursor: not-allowed;
 }
+
 /* 🤖 LEGACY-STAGE1: top-level products item is now `.menu__products`; old `.menu__products-list` is reserved for future dropdown and stays inactive in MVP. */
 .menu .menu__products {
   padding: 0;
