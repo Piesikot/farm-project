@@ -7,25 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-.news-header{
-/* 🟡 do ustawienia z indexem potem */
-    z-index: 1;
-    opacity: 1;
-}
-.news{
-      
+.news {
     padding: 3em;
     line-height: 1.6;
 
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .news-section {
     padding: 4em 0;
 }
-
 </style>
 <body>
     <!-- /* Projekt został dostosowany do:
@@ -55,17 +49,18 @@
                             <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
-                <header class="news-header">
-                    <h1 class="news-header__title">AKTUALNOŚCI Z FARMY</h1>
-                </header>
-                    <main class="news">
+                <div class="news">
+                    <header class="news-header">
+                        <h1 class="news-header__title">AKTUALNOŚCI Z FARMY</h1>
+                    </header>
+                    <main class="news-main">
                         <!-- https://sokolowsa.pl/aktualne-wydarzenia -->
                         <article class="news-section">
                             <div class="news-section__container">
                                 <!-- <img src="src/parowcie.jpg" class="news-section__img" alt=""> -->
                                 <time class="news-section__date" datetime="2025-06-22">22.06.2025</time>
                                 <h2 class="news-section__title">Ze względu na ostatnie wysokie zainteresowanie korzyściami ze spożywania naszych produktów dla najmłodszych, stworzyliśmy specjalną linię produktów dla dzieci!</h2>
-                                <p class="news-section__description">Małe Piesiki to smakowite kiełbaski o wyjątkowym smaku. Stanowią doskonałe źródło wysokiej jakości białka, a jednocześnie charakteryzują się zmniejszonym poziomem tłuszczu. W ich składzie znajdziemy aż 95% mięsa! Zostały subtelnie doprawione i wyprodukowane z najwyższej jakości mięsa psiego wzbogaconego szczenięciną. Dzięki braku naturalnych osłonek są niezwykle praktyczne w przygotowaniu - można je spożywać zarówno po podgrzaniu na gorąco, jak i jako chłodną przekąskę. Małe Piesiki to doskonały wybór nie tylko dla dzieci, ale także dla wszystkich prowadzących aktywny tryb życia i dbających o zbilansowane odżywianie. To homogenizowany, wędzony i parzony wyrób z dodatkiem szczenięciny.</p>
+                                <p class="news-section__description">Małe Piesiki to smakowite kiełbaski o wyjątkowym smaku. Stanowią doskonałe źródło wysokiej jakości białka, a jednocześnie charakteryzują się zmniejszonym poziomem tłuszczu. W ich składzie znajdziemy aż 95% mięsa! Zostały subtelnie doprawione i wyprodukowane z najwyższej jakości mięsa psiego wzbogaconego kociną. Dzięki braku naturalnych osłonek są niezwykle praktyczne w przygotowaniu - można je spożywać zarówno po podgrzaniu na gorąco, jak i jako chłodną przekąskę. Małe Piesiki to doskonały wybór nie tylko dla dzieci, ale także dla wszystkich prowadzących aktywny tryb życia i dbających o zbilansowane odżywianie. To homogenizowany, wędzony i parzony wyrób z psiego mięsa z dodatkiem kociny.</p>
                             </div>
                         </article>
 
@@ -94,6 +89,7 @@
                             </div>
                         </article>
                     </main>
+                </div>
     </div>   
     <footer>
             <div class="footer-menu">
