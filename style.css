@@ -506,7 +506,7 @@ footer {
     .mission__question,
     .mission__disagree,
     .mission__explanation,
-    .facts__title,
+    .arguments__title,
     .kill-counter__label,
     .kill-counter__title,
     .kill-counter__footer,
@@ -514,8 +514,8 @@ footer {
         margin: 0;
     }
 
-    .facts__title {
-        font-size: 1.17em;
+    .arguments__title {
+      font-size: 1.17em;
     }
 
     .mission__lead,
@@ -544,28 +544,28 @@ footer {
         font-weight: 100;
     }
 
-    .facts {
-        padding: 0;
+    .arguments {
+      padding: 0;
     }
 
-    .facts__title {
-        padding: 20vh 0;
-        font-weight: 100;
+    .arguments__title {
+      padding: 20vh 0;
+      font-weight: 100;
     }
 
-    .facts__list {
-        margin: 0;
-        padding: 0;
+    .arguments__list {
+      margin: 0;
+      padding: 0;
     }
 
-    .facts__item {
-        list-style-type: none;
-        padding: 25px;
-        margin: 10vh 0;
+    .arguments__item {
+      list-style-type: none;
+      padding: 25px;
+      margin: 10vh 0;
     }
 
-    .facts__item:first-child {
-        margin-top: 0;
+    .arguments__item:first-child {
+      margin-top: 0;
     }
 
     .kill-counter {
