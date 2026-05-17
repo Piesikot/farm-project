@@ -125,7 +125,7 @@ html {
 
   background: rgba(255,255,255,0.6); 
 /* ⓘ 🔧 ↑ zapobiega tworzeniu dodatkowych stacking contextów i ułatwia kontrolę porządku warstw, które mają miejsce w przypadku używania opacity 🔧 ⓘ */
-  /* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
+/* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
   height: 4em;
   min-width: 4em;
 
@@ -716,10 +716,69 @@ footer {
     
         /* 🟠 do ustawienia potem na wszystkich podstronach */
         min-height: 100vh;
+    }
+
+/*[ℹ] ⓘ  Ukrywa element wizualnie, ale pozostawia go dostępnym dla a11y i SEO */
+/*[ℹ] ⓘ Visually hides the element while keeping it available for a11y and SEO */
+  .visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+
+/* Partners grid (logo banners) */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0 2rem 0;
+  align-items: center;
+}
+.partners-grid__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.partners-grid__card:focus,
+.partners-grid__card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.partners-grid__logo {
+  max-width: 100%;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+.partners-grid__name {
+  font-size: 0.85rem;
+  text-align: center;
+  color: #333;
+}
+@media (min-width: 1200px) {
+  .partners-grid__logo { height: 80px; }
+}
         /* display: flex;
         flex-direction: column;
         justify-content: center; */
-    }
+    
 
     .career-header__subtitle {
         margin: 0;

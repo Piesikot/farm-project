@@ -45,46 +45,88 @@
 */ -->
     <div class="page">
         <div class="topbar">
-                <div class="topbar__logo-container">
-                    <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
-                </div>
-                <ul class="menu">
-                    <li class="menu__item"><a class="menu__button" href="index.html">Farma</a></li>
-                    <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
-                    <li class="menu__item menu__products"><a class="menu__button" href="produkty.html">Produkty</a></li>
-                    <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
-                    <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
-                </ul>
-                </div>
-            <div class="partners">
-                <header class="partners-header">
-                    <h1 class="partners-header__title">PARTNERZY</h1>
-                </header>
-
-                <main class="partners-main">
-                    <p class="partners__paragraph">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.</p>
-                    <p class="partners__paragraph">W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z rolnikami z całego świata możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.</p>
-
-                    <section class="partners__section">
-                        <h2 class="partners__section-title">Kraje z którymi współpracujemy:</h2>
-                        <ul class="partners__list">
-                            <li class="partners__list-item partners__list-item--us"><a class="partners__link" href="https://www.elwooddogmeat.com/">Stany Zjednoczone</a></li>
-                            <li class="partners__list-item partners__list-item--br"><a class="partners__link" href="https://sites.google.com/view/ranchodoslatidos/">Brazylia</a></li>
-                            <li class="partners__list-item partners__list-item--bg"><a class="partners__link" href="https://www.facebook.com/Rodopskaovcharka">Bułgaria</a></li>
-                            <li class="partners__list-item partners__list-item--dk"><a class="partners__link" href="https://www.ellashunde.dk/">Dania</a></li>
-                            <li class="partners__list-item partners__list-item--fi"><a class="partners__link" href="https://koiranliha.com/">Finlandia</a></li>
-                            <li class="partners__list-item partners__list-item--fr"><a class="partners__link" href="https://www.ferme-bernier.fr/">Francja</a></li>
-                            <li class="partners__list-item partners__list-item--mt"><a class="partners__link" href="https://www.facebook.com/p/Cat-Gourmet-Butcher-100087208381072/">Malta</a></li>
-                            <li class="partners__list-item partners__list-item--nl"><a class="partners__link" href="https://www.koninkhondenvlees.nl/">Holandia</a></li>
-                            <li class="partners__list-item partners__list-item--no"><a class="partners__link" href="https://www.hundekjott.no/">Norwegia</a></li>
-                            <li class="partners__list-item partners__list-item--es"><a class="partners__link" href="https://belmontecarnedeperro.com/">Hiszpania</a></li>
-                            <li class="partners__list-item partners__list-item--se"><a class="partners__link" href="https://www.gotlandshundfarm.se/">Szwecja</a></li>
-                            <li class="partners__list-item partners__list-item--de">Niemcy - Już niedługo!</li>
-                            <li class="partners__list-item partners__list-item--za">Afryka Południowa - Już niedługo!</li>
-                        </ul>
-                    </section>
-                </main>
+            <div class="topbar__logo-container">
+                <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
             </div>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__button" href="index.html">Farma</a></li>
+                <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
+                <li class="menu__item menu__products"><a class="menu__button" href="produkty.html">Produkty</a></li>
+                <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
+                <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
+            </ul>
+        </div>
+
+        <div class="partners">
+            <header class="partners-header">
+                <h1 class="partners-header__title visually-hidden">PARTNERZY</h1>
+
+                <h2 class="partners-header__subtitle">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.</h2>
+
+            </header>
+
+            <main class="partners-main">
+                
+
+                <!-- <section class="partners__section">
+                    <h2 class="partners__section-title">Kraje z którymi współpracujemy:</h2> -->
+
+                    <div class="partners-grid">
+                        <a class="partners-grid__card" href="https://www.elwooddogmeat.com/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/ELWOODS-ORGANIC-DOG-MEAT.png" alt="ELWOOD'S ORGANIC DOG MEAT - USA">
+                            <span class="partners-grid__name">ELWOOD'S ORGANIC DOG MEAT<br><small>USA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://sites.google.com/view/ranchodoslatidos/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/RANCHO-DOS-LADITOS.png" alt="RANCHO DOS LADITOS - BRAZYLIA">
+                            <span class="partners-grid__name">RANCHO DOS LADITOS<br><small>BRAZYLIA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://www.facebook.com/Rodopskaovcharka" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/Родопска-овчарка.png" alt="Родопска овчарка - BUŁGARIA">
+                            <span class="partners-grid__name">Родопска овчарка<br><small>BUŁGARIA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://www.ellashunde.dk/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/ELLAS-HUNDEKØD.png" alt="ELLAS HUNDEKØD - DANIA">
+                            <span class="partners-grid__name">ELLAS HUNDEKØD<br><small>DANIA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://koiranliha.com/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/Järvenpään-Luomukoiratila.png" alt="Järvenpään Luomukoiratila - FINLANDIA">
+                            <span class="partners-grid__name">Järvenpään Luomukoiratila<br><small>FINLANDIA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://www.ferme-bernier.fr/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/La-Ferme-Bernier.png" alt="La Ferme Bernier - FRANCJA">
+                            <span class="partners-grid__name">La Ferme Bernier<br><small>FRANCJA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://www.facebook.com/p/Cat-Gourmet-Butcher-100087208381072/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/Cat-Gourmet-Butcher.png" alt="Cat Gourmet Butcher - MALTA">
+                            <span class="partners-grid__name">Cat Gourmet Butcher<br><small>MALTA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://www.koninkhondenvlees.nl/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/Konink-Hondenvlees.png" alt="Konink Hondenvlees - HOLANDIA">
+                            <span class="partners-grid__name">Konink Hondenvlees<br><small>HOLANDIA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://belmontecarnedeperro.com/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/Conócenos-Granja-Belmonte.png" alt="Granja Belmonte - HISZPANIA">
+                            <span class="partners-grid__name">Granja Belmonte<br><small>HISZPANIA</small></span>
+                        </a>
+
+                        <a class="partners-grid__card" href="https://www.gotlandshundfarm.se/" target="_blank" rel="noopener noreferrer">
+                            <img class="partners-grid__logo" src="src/partners/Hem-Gotlands-hundfarm.png" alt="Hem - Gotlands hundfarm - SZWECJA">
+                            <span class="partners-grid__name">Hem - Gotlands hundfarm<br><small>SZWECJA</small></span>
+                        </a>
+                    </div>
+                <!-- </section> -->
+            </main>
+            
+        </div>
+    </div>
 
     <footer>
             <div class="footer-menu">
