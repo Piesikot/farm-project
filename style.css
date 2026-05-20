@@ -362,9 +362,6 @@ align-items: center;
  padding: 2em;
 }
 
-
-
-
 .worldwide-offer__title {
   text-align: center;
 }
@@ -446,23 +443,39 @@ footer {
 
 /* PODSTRONY */
 
+/* układ strony */
+    .career,
+    .contact,
+    .mission,
+    .news,
+    .partners,
+    .products,
+    .program,
+    .real-mission,
+    .welfare {
+        margin: 20px;
+        padding: 20px;
+        line-height: 1.6;
+        min-height: 100vh;
+
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+.news-section, .products-section{
+    padding: 4em 0;
+}
+
 /* HEADERS */
 .news-header, .products-header, .contact-header, .mission-header, .real-mission-header, .welfare-header, .program-header, .career-header, .partners-header{
 /* 🟡 do ustawienia z indexem potem */
     z-index: 1;
     opacity: 1;
 }
-.news, .products, .contact{
-    padding: 3em;
-    line-height: 1.6;
-    min-height: 100vh;
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center; */
-}
-.news-section, .products-section{
-    padding: 4em 0;
-}
+
+
+
 
 .news-section__date{
     font-size: clamp(12px, 1.5vw, 18px);
@@ -730,15 +743,7 @@ footer {
 }
 
 
-    .career {
-        /* DO POPRAWY JAK NA POZOSTAŁYCH POSTRONACH */
-        margin: 20px;
-        padding: 20px;
-        line-height: 1.6;
-    
-        /* 🟠 do ustawienia potem na wszystkich podstronach */
-        min-height: 100vh;
-    }
+
 
 /*[ℹ] ⓘ  Ukrywa element wizualnie, ale pozostawia go dostępnym dla a11y i SEO */
 /*[ℹ] ⓘ Visually hides the element while keeping it available for a11y and SEO */
