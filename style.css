@@ -499,6 +499,29 @@ footer {
     /* padding: 2em; */
 }
 
+.news-section__date{
+    font-size: clamp(12px, 1.5vw, 18px);
+    font-weight: 700;
+}
+
+.news-section__title-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    width: 80%;
+    padding-top: 1em;
+}
+.news-section__title{
+  align-self: center;
+}
+
+.news-section__img {
+    width: 8em;
+    /* max-width: 600px; */
+    height: auto;
+    /* padding: 2em; */
+}
+
 .contact{
     display: flex;
     flex-direction: column;
