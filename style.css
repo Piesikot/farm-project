@@ -1,3 +1,7 @@
+/* 🔧 ↓ WŁĄCZNIK video:↓ 🔧 */
+    /* video {display: none;} */
+/* 🔧 ↑ WŁĄCZNIK video ↑ 🔧 */
+
 /* [ℹ] Projekt został zrefaktoryzowany do metodologii BEM (getbem – zachodni standard).
    Struktura klas została uporządkowana zgodnie z zasadami OOCSS:
    - rozdzielenie structure vs skin
@@ -13,6 +17,7 @@
    - Theme: brak (nie wymagane w tym projekcie)
 
 */
+
 
 /*
    [ℹ] The project has been refactored to the BEM methodology (getbem – Western standard).
@@ -30,9 +35,58 @@
    - Theme: none (not required in this project)
 */
 
-/* 🔧 ↓ WŁĄCZNIK video:↓ 🔧 */
-    /* video {display: none;} */
-/* 🔧 ↑ WŁĄCZNIK video ↑ 🔧 */
+
+
+
+/* 🤖 Stage2: add global tokens for typography, spacing, colors, and shared sizes to enable 1:1 rem/em migration. */
+:root {
+  --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Fraunces', var(--font-fallback);
+  --font-body: 'Inter', var(--font-fallback);
+
+  --text-xs: clamp(0.625rem, 1.2vw, 1.125rem);
+  --text-sm: clamp(0.6875rem, 2vw, 1.25rem);
+  --text-base: clamp(0.75rem, 1.5vw, 1.125rem);
+  --text-md: clamp(0.875rem, 2.2vw, 1.75rem);
+  --text-lg: clamp(0.875rem, 2.3vw, 1.25rem);
+  --text-xl: clamp(0.875rem, 2.4vw, 1.375rem);
+  --text-2xl: clamp(1.375rem, 4vw, 9.25rem);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 2.5rem;
+
+  --color-text: #000;
+  --color-bg: #fff;
+  --color-text-inverse: #fff;
+  --color-bg-inverse: #000;
+  --color-muted: #333;
+  --color-surface: #f9f9f9;
+  --color-surface-soft: rgba(255, 255, 255, 0.35);
+  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-topbar-bg: rgba(255, 255, 255, 0.6);
+  --color-border: #000;
+  --color-border-soft: rgba(0, 0, 0, 0.06);
+  --color-shadow-soft: rgba(0, 0, 0, 0.08);
+  --color-shadow-strong: rgba(0, 0, 0, 0.12);
+  --color-accent: hsl(94, 100%, 44%);
+
+  --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);
+  --size-logo-compact: clamp(3.125rem, 30% + 0.3125rem, 200rem);
+  --size-seal: clamp(18.75rem, 30vw, 37.5rem);
+  --size-advantage-icon: 10rem;
+  --size-advantage-icon-border: 0.17rem;
+  --size-worldwide-icon: 6rem;
+  --size-worldwide-icon-compact: 4rem;
+  --size-news-image: 8rem;
+  --size-contact-icon: 3.125rem;
+  --size-partner-logo: 4rem;
+  --size-partner-logo-lg: 5rem;
+  --size-topbar-height: 4rem;
+}
+
 
  * { box-sizing: border-box; 
 }     /* ↑ [ℹ] sprawia, że całkowite wymiary elementu są uwzględniane łącznie, to ustawienie ma naukowo udowodniony wpływ na zmniejszenie myśli samobójczych u programistów [ℹ] */
@@ -44,6 +98,23 @@ html {
   margin: 0;
 } /* [ℹ] ↑ usuwa defaultowe ustawienia przeglądarki - przestrzenie wokół strony i sprawia, że strona w całości wyświetla się na cały viewport, bez tego filmik wychodzi poza krawędzie [ℹ] */
  /* [ℹ] ↑ removes the browser’s default spacing around the page content, giving you a “full-bleed” layout starting from the very edge of the viewport, without this video is visible beyond the edges [ℹ] */
+
+body {
+  /* 🤖 Stage2: apply global body typeface and default colors via tokens. */
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* 🤖 Stage2: set display font for headings to keep typographic hierarchy consistent. */
+  font-family: var(--font-display);
+}
 
 .page {
   /* z-index: -10; */
@@ -59,7 +130,9 @@ html {
   /* ⓘ ↑ bez tego totalnie się rozjeżdża ⓘ */
   z-index: -20;
   overflow: hidden;
-  background: white;
+  /* background: white; */
+  /* 🤖 Stage2: tokenized background color for consistent theming. */
+  background: var(--color-bg);
 
   /* [ℹ] zdjęcie na wypadek, gdyby video się nie załadowało */
   /* [ℹ] picture in case video fails to load */
@@ -97,37 +170,61 @@ html {
 
 .topbar__logo {
   /* filter: brightness(0) invert(1); */
-  width: clamp(100px, 60% + 20px, 500px);
-  padding-top: 8em;
-  padding-left: 1.5em;
+  /* width: clamp(100px, 60% + 20px, 500px); */
+  /* 🤖 Stage2: tokenized shared logo size for 1:1 rem migration. */
+  width: var(--size-logo);
+  /* padding-top: 8em; */
+  /* 🤖 Stage2: use rem-based spacing token while preserving original scale. */
+  padding-top: calc(var(--space-lg) * 4);
+  /* padding-left: 1.5em; */
+  /* 🤖 Stage2: align padding with spacing tokens. */
+  padding-left: var(--space-md);
   position: relative; 
   z-index: 30;
+}
+
+/* 🤖 Stage2: subpage logo sizing moved from inline styles into CSS. */
+.page--subsite .topbar__logo {
+  width: var(--size-logo-compact);
+  padding-top: var(--space-sm);
 }
 
   /* [ℹ] jeden breakpoint jest konieczny dla dobrego UX - interaktywnego efektu parallax nożem po gardle przy scrollowaniu */
   /* [ℹ] one breakpoint is necessary for good UX - interactive parallax effect of a knife across the throat while scrolling */
  @media only screen and (max-width: 1050px) {
   .topbar__logo {
-    width: clamp(50px, 30% + 5px, 3200px);
-    padding: 1em 0 0 0.5em;
+    /* width: clamp(50px, 30% + 5px, 3200px); */
+    /* 🤖 Stage2: tokenized compact logo size for small screens. */
+    width: var(--size-logo-compact);
+    /* padding: 1em 0 0 0.5em; */
+    /* 🤖 Stage2: rem-based padding for the mobile logo placement. */
+    padding: var(--space-sm) 0 0 var(--space-xs);
   }
  }
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  /* background: white; */
+  /* 🤖 Stage2: tokenized background color for topbar. */
+  background: var(--color-bg);
 
   /* ⓘ🔧 ↓ tworzy własny stacking context — elementy wewnątrz tego 
   kontekstu nie będą układane względem rodzeństwa z zewnątrz ↓ 🔧 ⓘ */
   /* opacity: 0.6; */
   /* ⓘ 🔧 ↑ 🔧 ⓘ */
 
-  background: rgba(255,255,255,0.6); 
+  /* background: rgba(255,255,255,0.6); */
+  /* 🤖 Stage2: tokenized translucent topbar background. */
+  background: var(--color-topbar-bg); 
 /* ⓘ 🔧 ↑ zapobiega tworzeniu dodatkowych stacking contextów i ułatwia kontrolę porządku warstw, które mają miejsce w przypadku używania opacity 🔧 ⓘ */
 /* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
-  height: 4em;
-  min-width: 4em;
+  /* height: 4em; */
+  /* 🤖 Stage2: tokenized topbar height in rem. */
+  height: var(--size-topbar-height);
+  /* min-width: 4em; */
+  /* 🤖 Stage2: keep minimum width aligned with topbar height token. */
+  min-width: var(--size-topbar-height);
 
   position: relative; z-index: 20; 
 }
@@ -138,14 +235,18 @@ html {
   padding: 2vw 3vw 2vw 3vw;
   list-style: none;
   gap: 6vw;
-  font-size: clamp(11px, 2vw, 20px); 
+  /* font-size: clamp(11px, 2vw, 20px); */
+  /* 🤖 Stage2: tokenized menu type size. */
+  font-size: var(--text-sm); 
 
   align-items: center;
 }
 /* 🤖 LEGACY-STAGE1: replaced `.topbar__menu__button` with `.menu__button` for getbem consistency. */
 /* .topbar__menu__button { */
 .menu__button {
-  color: black;
+  /* color: black; */
+  /* 🤖 Stage2: tokenized text color for menu links. */
+  color: var(--color-text);
   text-decoration: none;
   opacity: 1;
   z-index: 10;
@@ -177,9 +278,15 @@ header,
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color:black;
-  padding: 2.5em;
-  background: white;
+  /* color: black; */
+  /* 🤖 Stage2: tokenized header text color. */
+  color: var(--color-text);
+  /* padding: 2.5em; */
+  /* 🤖 Stage2: tokenized header padding. */
+  padding: var(--space-xl);
+  /* background: white; */
+  /* 🤖 Stage2: tokenized header background. */
+  background: var(--color-bg);
 
   /* width: fit-content; */
   /* ↑ z tym withem przestaje centrować */
@@ -196,19 +303,27 @@ header,
 header h1,
 .header__title {
   text-align: center;
-  font-size: clamp(22px, 4vw, 148px); 
+  /* font-size: clamp(22px, 4vw, 148px); */
+  /* 🤖 Stage2: tokenized hero title size. */
+  font-size: var(--text-2xl); 
   margin: 0;
 }
 
 header h2,
 .header__subtitle {
-  font-size: clamp( 14px, 2.2vw, 28px);
+  /* font-size: clamp(14px, 2.2vw, 28px); */
+  /* 🤖 Stage2: tokenized subtitle size. */
+  font-size: var(--text-md);
 }
 
 .advantages {
   display: flex;
-  font-size: clamp(10px, 1.2vw, 18px); 
-  color: #ffffff;
+  /* font-size: clamp(10px, 1.2vw, 18px); */
+  /* 🤖 Stage2: tokenized advantages type size. */
+  font-size: var(--text-xs); 
+  /* color: #ffffff; */
+  /* 🤖 Stage2: tokenized inverse text color. */
+  color: var(--color-text-inverse);
   justify-content: center;
 }
  @media only screen and (max-width: 1050px) {
@@ -253,9 +368,15 @@ header h2,
 .advantages__icon-container {
   border-radius: 50%;
   /* color: black; */
-  width: 10em;
-  height: 10em;
-  border: 0.17em solid black;
+  /* width: 10em; */
+  /* 🤖 Stage2: tokenized icon size. */
+  width: var(--size-advantage-icon);
+  /* height: 10em; */
+  /* 🤖 Stage2: tokenized icon size. */
+  height: var(--size-advantage-icon);
+  /* border: 0.17em solid black; */
+  /* 🤖 Stage2: tokenized icon border. */
+  border: var(--size-advantage-icon-border) solid var(--color-border);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -271,17 +392,29 @@ header h2,
 .advantages__title {
   text-transform: uppercase;
   font-weight: 800;
-  color: black;
+  /* color: black; */
+  /* 🤖 Stage2: tokenized title color. */
+  color: var(--color-text);
 }
 
 .advantages h3,
 .advantages__description {
-  font-size: clamp(14px, 2.4vw, 22px);
-  background: white;
+  /* font-size: clamp(14px, 2.4vw, 22px); */
+  /* 🤖 Stage2: tokenized advantage description size. */
+  font-size: var(--text-xl);
+  /* background: white; */
+  /* 🤖 Stage2: tokenized background color. */
+  background: var(--color-bg);
   opacity: 0.5;
-  color: black;
-  padding: 0.5em;
-  border-radius: 0.5em;
+  /* color: black; */
+  /* 🤖 Stage2: tokenized text color. */
+  color: var(--color-text);
+  /* padding: 0.5em; */
+  /* 🤖 Stage2: tokenized padding. */
+  padding: var(--space-xs);
+  /* border-radius: 0.5em; */
+  /* 🤖 Stage2: tokenized radius. */
+  border-radius: var(--space-xs);
 }
 
 
@@ -290,11 +423,17 @@ header h2,
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
+  /* background: white; */
+  /* 🤖 Stage2: tokenized background color. */
+  background: var(--color-bg);
 }
 .polish-quality__seal {
-  width: clamp(300px, 30vw, 600px);
-  padding: 2em;
+  /* width: clamp(300px, 30vw, 600px); */
+  /* 🤖 Stage2: tokenized seal size. */
+  width: var(--size-seal);
+  /* padding: 2em; */
+  /* 🤖 Stage2: tokenized seal padding. */
+  padding: var(--space-lg);
   /* width: 100%; */
   /* ⚠ ↑ 🟡 wykomentowane powodowało buga w postaci horizonatl scroll przy SC bo width:100% był wyłączony, mimo, że cały czas tu był...⚠ 🟡 */
 
@@ -305,10 +444,14 @@ header h2,
 
 /* .offer-content */
 .offer-content {
-  color: #000;
+  /* color: #000; */
+  /* 🤖 Stage2: tokenized offer text color. */
+  color: var(--color-text);
 
   /* ⚠ ⓘ  🔧 ↓   ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
-  background: white;
+  /* background: white; */
+  /* 🤖 Stage2: tokenized offer background. */
+  background: var(--color-bg);
         /* ↑ 🔧 ↑ */
 
 /* padding: 1em; */
@@ -337,8 +480,12 @@ align-items: center;
 
 
 .worldwide-offer__icon {
-  width: 6em;
-  height: 6em;
+  /* width: 6em; */
+  /* 🤖 Stage2: tokenized worldwide icon size. */
+  width: var(--size-worldwide-icon);
+  /* height: 6em; */
+  /* 🤖 Stage2: tokenized worldwide icon size. */
+  height: var(--size-worldwide-icon);
   /* width:35%; */
   /* height: 35%; */
   /* ⚠ z procentami się totalnie spłaszcza, że jest ledwo widoczne, hmmm.. ⚠  */
@@ -346,8 +493,12 @@ align-items: center;
 }
  @media only screen and (max-width: 1050px) {
   .worldwide-offer__icon {
-  width: 4em;
-  height:4em;
+  /* width: 4em; */
+  /* 🤖 Stage2: tokenized compact worldwide icon size. */
+  width: var(--size-worldwide-icon-compact);
+  /* height: 4em; */
+  /* 🤖 Stage2: tokenized compact worldwide icon size. */
+  height: var(--size-worldwide-icon-compact);
   }
  }
 
@@ -402,15 +553,23 @@ text-align: center;
  /* FOOTER */
 /* ↓ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↓ */
 footer {
-  background: #000;
-  color: #ffffff;
+  /* background: #000; */
+  /* 🤖 Stage2: tokenized footer background. */
+  background: var(--color-bg-inverse);
+  /* color: #ffffff; */
+  /* 🤖 Stage2: tokenized footer text color. */
+  color: var(--color-text-inverse);
 
 }
 .footer-menu {
   display: flex;
-    gap: 1.5em;
+    /* gap: 1.5em; */
+    /* 🤖 Stage2: tokenized footer gap. */
+    gap: var(--space-md);
     /*ⓘ ↑odstęp↑ MIĘDZY elementami PIONOWY */
-    padding: 1.5em;
+    /* padding: 1.5em; */
+    /* 🤖 Stage2: tokenized footer padding. */
+    padding: var(--space-md);
     /*ⓘ ↑odstęp↑ OD KRAWĘDZI kontenera  */
 
   flex-wrap: wrap;
@@ -418,9 +577,13 @@ footer {
 }
 .footer-menu__button {
   color: red;
-  color: #ffffff;
+  /* color: #ffffff; */
+  /* 🤖 Stage2: tokenized footer link color. */
+  color: var(--color-text-inverse);
   text-decoration: none;
-  font-size: 16px;
+  /* font-size: 16px; */
+  /* 🤖 Stage2: rem-based font size for footer links. */
+  font-size: 1rem;
   line-height: 1.2;
 /* daje ~40–44px wysokości */
   /* padding: 16px;  */
@@ -453,8 +616,12 @@ footer {
     .program,
     .real-mission,
     .welfare {
-        margin: 20px;
-        padding: 20px;
+      /* margin: 20px; */
+      /* 🤖 Stage2: rem-based section margin. */
+      margin: 1.25rem;
+      /* padding: 20px; */
+      /* 🤖 Stage2: rem-based section padding. */
+      padding: 1.25rem;
         line-height: 1.6;
         min-height: 100vh;
 
@@ -478,46 +645,31 @@ footer {
 
 
 .news-section__date{
-    font-size: clamp(12px, 1.5vw, 18px);
+  /* font-size: clamp(12px, 1.5vw, 18px); */
+  /* 🤖 Stage2: tokenized news date size. */
+  font-size: var(--text-base);
     font-weight: 700;
 }
 
 .news-section__title-container {
     display: flex;
     align-items: flex-start;
-    gap: 2em;
+  /* gap: 2em; */
+  /* 🤖 Stage2: tokenized gap. */
+  gap: var(--space-lg);
     width: 80%;
-    padding-top: 1em;
+  /* padding-top: 1em; */
+  /* 🤖 Stage2: tokenized padding. */
+  padding-top: var(--space-sm);
 }
 .news-section__title{
   align-self: center;
 }
 
 .news-section__img {
-    width: 8em;
-    height: auto;
-    /* padding: 2em; */
-}
-
-.news-section__date{
-    font-size: clamp(12px, 1.5vw, 18px);
-    font-weight: 700;
-}
-
-.news-section__title-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 2em;
-    width: 80%;
-    padding-top: 1em;
-}
-.news-section__title{
-  align-self: center;
-}
-
-.news-section__img {
-    width: 8em;
-    /* max-width: 600px; */
+  /* width: 8em; */
+  /* 🤖 Stage2: tokenized news image size. */
+  width: var(--size-news-image);
     height: auto;
     /* padding: 2em; */
 }
@@ -526,33 +678,51 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+  /* padding: 40px; */
+  /* 🤖 Stage2: rem-based padding for contact section. */
+  padding: var(--space-xl);
     min-height: 100vh;
 }
 
 .contact__icon{
-    width: 50px;
+  /* width: 50px; */
+  /* 🤖 Stage2: tokenized contact icon size. */
+  width: var(--size-contact-icon);
 }
 
 .contact__item{
-    font-size: 40px;
+  /* font-size: 40px; */
+  /* 🤖 Stage2: rem-based contact item text size. */
+  font-size: 2.5rem;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 100px;
+  /* gap: 20px; */
+  /* 🤖 Stage2: rem-based gap for contact items. */
+  gap: 1.25rem;
+  /* padding: 100px; */
+  /* 🤖 Stage2: rem-based padding for contact items. */
+  padding: 6.25rem;
 }
 
 /* MISSION */
 .mission-header {
         text-align: center;
-        font-size: clamp(14px, 2.3vw, 20px);
-        padding: 30vh 100px 0 100px;
+  /* font-size: clamp(14px, 2.3vw, 20px); */
+  /* 🤖 Stage2: tokenized mission header size. */
+  font-size: var(--text-lg);
+  /* padding: 30vh 100px 0 100px; */
+  /* 🤖 Stage2: rem-based mission header padding. */
+  padding: 30vh 6.25rem 0 6.25rem;
     }
 
     .mission {
         text-align: center;
-        font-size: clamp(14px, 2.3vw, 20px);
-        padding: 0 100px;
+      /* font-size: clamp(14px, 2.3vw, 20px); */
+      /* 🤖 Stage2: tokenized mission body size. */
+      font-size: var(--text-lg);
+      /* padding: 0 100px; */
+      /* 🤖 Stage2: rem-based mission body padding. */
+      padding: 0 6.25rem;
     }
 
     .mission-header__subtitle {
@@ -618,7 +788,9 @@ footer {
 
     .arguments__item {
       list-style-type: none;
-      padding: 25px;
+      /* padding: 25px; */
+      /* 🤖 Stage2: rem-based spacing for list items. */
+      padding: 1.5625rem;
       margin: 10vh 0;
     }
 
@@ -632,7 +804,9 @@ footer {
 
     .kill-counter__label,
     .kill-counter__title {
-        font-size: clamp(14px, 2.3vw, 20px);
+      /* font-size: clamp(14px, 2.3vw, 20px); */
+      /* 🤖 Stage2: tokenized kill-counter sizes. */
+      font-size: var(--text-lg);
     }
 
     .kill-counter__title {
@@ -648,8 +822,12 @@ footer {
 
     .real-mission {
         text-align: center;
-        font-size: clamp(14px, 2.3vw, 20px);
-        padding: 0 100px;
+      /* font-size: clamp(14px, 2.3vw, 20px); */
+      /* 🤖 Stage2: tokenized real-mission body size. */
+      font-size: var(--text-lg);
+        /* padding: 0 100px; */
+        /* 🤖 Stage2: rem-based real-mission padding. */
+        padding: 0 6.25rem;
     }
     .real-mission-header__title,
     .real-mission__header,
@@ -662,18 +840,24 @@ footer {
         font-weight: 100;
     }
     .org-list__title {
-        padding: 20px;
+      /* padding: 20px; */
+      /* 🤖 Stage2: rem-based padding for org list title. */
+      padding: 1.25rem;
     }
     .org-list__list {
         margin: 0;
         padding: 0;
     }
     .org-list__item {
-        padding: 10px;
+      /* padding: 10px; */
+      /* 🤖 Stage2: rem-based padding for org list items. */
+      padding: 0.625rem;
         list-style-type: none;
     }
     .org-list__link {
-        color: black;
+      /* color: black; */
+      /* 🤖 Stage2: tokenized link color. */
+      color: var(--color-text);
         text-decoration: none;  
     }
     .org-list__link:hover .org-list__link-underline {
@@ -682,12 +866,63 @@ footer {
     
     /* FOOTER SUBSITES */
  .welfare-policy {
-    margin: 20px;
-    padding: 20px;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+   /* margin: 20px; */
+   /* 🤖 Stage2: rem-based welfare card margin. */
+   margin: 1.25rem;
+   /* padding: 20px; */
+   /* 🤖 Stage2: rem-based welfare card padding. */
+   padding: 1.25rem;
+   /* border: 2px solid #000000; */
+   /* 🤖 Stage2: tokenized border color. */
+   border: 0.125rem solid var(--color-border);
+  /* border-radius: 10px; */
+  /* 🤖 Stage2: rem-based radius for welfare card. */
+  border-radius: 0.625rem;
+  /* background-color: #f9f9f9; */
+  /* 🤖 Stage2: tokenized welfare background. */
+  background-color: var(--color-surface);
     line-height: 1.6;
+}
+
+/* 🤖 Stage2: moved alert styles from index.html into global stylesheet. */
+.alert {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 0;
+  right: 0;
+  top: 5%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.alert span {
+  z-index: 1;
+  font-size: 3vw;
+  position: fixed;
+  color: var(--color-text-inverse);
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  font-weight: 600;
+  padding: 0.625rem;
+  flex-wrap: wrap;
+  background-color: var(--color-bg-inverse);
+  height: 60%;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.alert button {
+  position: fixed;
+  height: 10%;
+  width: 15vw;
+  bottom: 40%;
+  z-index: 1;
 }
 
 
@@ -718,7 +953,9 @@ footer {
 }
 
 .welfare-policy__signature {
-    margin-top: 40px;
+  /* margin-top: 40px; */
+  /* 🤖 Stage2: rem-based spacing for signature. */
+  margin-top: 2.5rem;
     text-align: right;
 }
 
@@ -760,8 +997,12 @@ footer {
 
 
  .program {
-    margin: 20px;
-    padding: 20px;
+  /* margin: 20px; */
+  /* 🤖 Stage2: rem-based program section margin. */
+  margin: 1.25rem;
+  /* padding: 20px; */
+  /* 🤖 Stage2: rem-based program section padding. */
+  padding: 1.25rem;
     line-height: 1.6;
 }
 
@@ -772,10 +1013,16 @@ footer {
 /*[ℹ] ⓘ Visually hides the element while keeping it available for a11y and SEO */
   .visually-hidden{
     position: absolute;
-    width: 1px;
-    height: 1px;
+    /* width: 1px; */
+    /* 🤖 Stage2: rem-based a11y sizing. */
+    width: 0.0625rem;
+    /* height: 1px; */
+    /* 🤖 Stage2: rem-based a11y sizing. */
+    height: 0.0625rem;
     padding: 0;
-    margin: -1px;
+    /* margin: -1px; */
+    /* 🤖 Stage2: rem-based a11y offset. */
+    margin: -0.0625rem;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
@@ -787,7 +1034,9 @@ footer {
 /* Partners grid (logo banners) */
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+  /* 🤖 Stage2: rem-based min column size. */
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 1rem;
   padding: 1rem 0 2rem 0;
   align-items: center;
@@ -797,33 +1046,51 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  /* background: #ffffff; */
+  /* 🤖 Stage2: tokenized card background. */
+  background: var(--color-bg);
   padding: 0.75rem;
-  border-radius: 8px;
+  /* border-radius: 8px; */
+  /* 🤖 Stage2: rem-based radius for cards. */
+  border-radius: 0.5rem;
   text-decoration: none;
   color: inherit;
   transition: transform .18s ease, box-shadow .18s ease;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.06);
+  /* box-shadow: 0 1px 4px rgba(0,0,0,0.08); */
+  /* 🤖 Stage2: tokenized subtle shadow. */
+  box-shadow: 0 1px 4px var(--color-shadow-soft);
+  /* border: 1px solid rgba(0,0,0,0.06); */
+  /* 🤖 Stage2: tokenized border color. */
+  border: 1px solid var(--color-border-soft);
 }
 .partners-grid__card:focus,
 .partners-grid__card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  /* box-shadow: 0 8px 24px rgba(0,0,0,0.12); */
+  /* 🤖 Stage2: tokenized hover shadow. */
+  box-shadow: 0 8px 24px var(--color-shadow-strong);
 }
 .partners-grid__logo {
   max-width: 100%;
-  height: 64px;
+  /* height: 64px; */
+  /* 🤖 Stage2: tokenized logo height. */
+  height: var(--size-partner-logo);
   object-fit: contain;
   margin-bottom: 0.5rem;
 }
 .partners-grid__name {
   font-size: 0.85rem;
   text-align: center;
-  color: #333;
+  /* color: #333; */
+  /* 🤖 Stage2: tokenized muted text color. */
+  color: var(--color-muted);
 }
 @media (min-width: 1200px) {
-  .partners-grid__logo { height: 80px; }
+  .partners-grid__logo {
+    /* height: 80px; */
+    /* 🤖 Stage2: tokenized large logo height. */
+    height: var(--size-partner-logo-lg);
+  }
 }
         /* display: flex;
         flex-direction: column;
@@ -842,10 +1109,18 @@ footer {
 
 .career__apply-button{
     display: inline-block;
-    padding: 6px 12px;
-    background: hsl(94, 100%, 44%);
-    color: white;
-    border-radius: 16px;
+  /* padding: 6px 12px; */
+  /* 🤖 Stage2: rem-based padding for apply button. */
+  padding: 0.375rem 0.75rem;
+  /* background: hsl(94, 100%, 44%); */
+  /* 🤖 Stage2: tokenized accent color. */
+  background: var(--color-accent);
+  /* color: white; */
+  /* 🤖 Stage2: tokenized inverse text color. */
+  color: var(--color-text-inverse);
+  /* border-radius: 16px; */
+  /* 🤖 Stage2: rem-based button radius. */
+  border-radius: 1rem;
     text-decoration: none;
     font-weight: 600;
 }
@@ -853,8 +1128,12 @@ footer {
 
 
     .partners {
-        margin: 20px;
-        padding: 20px;
+      /* margin: 20px; */
+      /* 🤖 Stage2: rem-based partners section margin. */
+      margin: 1.25rem;
+      /* padding: 20px; */
+      /* 🤖 Stage2: rem-based partners section padding. */
+      padding: 1.25rem;
         text-align: center;
         line-height: 1.6;
     }
@@ -862,18 +1141,24 @@ footer {
     
     .partners__list {
         margin: 0;
-        padding: 30px;
+      /* padding: 30px; */
+      /* 🤖 Stage2: rem-based partners list padding. */
+      padding: 1.875rem;
         list-style: none;
 
         /* display: grid; */
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 60px;
+        /* gap: 60px; */
+        /* 🤖 Stage2: rem-based partners list gap. */
+        gap: 3.75rem;
     }
 
     .partners__link {
-        color: black;
+      /* color: black; */
+      /* 🤖 Stage2: tokenized link color. */
+      color: var(--color-text);
         position: relative;
         z-index: 1;
         display: flex;
@@ -882,7 +1167,9 @@ footer {
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        background: rgba(255,255,255,0.35);
+        /* background: rgba(255,255,255,0.35); */
+        /* 🤖 Stage2: tokenized soft surface background. */
+        background: var(--color-surface-soft);
         border-radius: inherit;
         padding: 0.25rem;
         box-sizing: border-box;
@@ -892,26 +1179,38 @@ footer {
 
     .partners__list-item {
         /* padding: 1em 0; */
-        border: 1px solid black;
-        width: 220px;
-        height: 150px;
+      /* border: 1px solid black; */
+      /* 🤖 Stage2: tokenized border color. */
+      border: 1px solid var(--color-border);
+      /* width: 220px; */
+      /* 🤖 Stage2: rem-based partner card width. */
+      width: 13.75rem;
+      /* height: 150px; */
+      /* 🤖 Stage2: rem-based partner card height. */
+      height: 9.375rem;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        border-radius: 16px;
+      /* border-radius: 16px; */
+      /* 🤖 Stage2: rem-based radius for partner cards. */
+      border-radius: 1rem;
     }
 
     .partners__list-item::before {
         content: '';
         position:  absolute;
-        top: 10px;
+      /* top: 10px; */
+      /* 🤖 Stage2: rem-based icon offset. */
+      top: 0.625rem;
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 220px;
+      /* font-size: 220px; */
+      /* 🤖 Stage2: rem-based icon size. */
+      font-size: 13.75rem;
     }
 
     /* .partners__list-item--us::before { content: '🇺🇸'; } */
