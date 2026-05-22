@@ -88,9 +88,9 @@
 
 **Misja (misja.html)**
 - `.future` → `.mission-intro`
-- `.facts` → `.facts`
-- `.facts h3` → `.facts__heading`
-- `.facts li` → `.facts__item`
+- `.facts` → `.arguments`
+- `.facts h3` → `.arguments__title`
+- `.facts li` → `.arguments__item`
 - `.counter-header` → `.kill-counter__header`
 - `.counter-container` → `.kill-counter`
 

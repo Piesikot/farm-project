@@ -1,4 +1,4 @@
-### Refactoring Stage II - typhogaphy migration
+### Refactoring Stage II - Typhogaphy migration
 
 Setting :root, CSS variables and spacing units to rem/em.
 
@@ -18,11 +18,11 @@ Setting :root, CSS variables and spacing units to rem/em.
   - Font loading note: add a single `@import` or `<link>` (preferred in HTML head) for Fraunces + Inter so every page shares the same font source.
   - Typography tokens as clamp() values: `--text-xs, --text-sm, --text-base, --text-md, --text-lg, --text-xl, --text-2xl` (mirror former clamp values).
   - Spacing: `--space-xs ... --space-xl`.
--  - Colors: `--color-text, --color-bg, --color-text-inverse, --color-bg-inverse`, plus tokens for current accents and UI neutrals (e.g., muted text, borders, surfaces, overlays, and brand green if kept).
-- Inventory shared image sizes and spacing values in style.css and inline `<style>` blocks (logo sizes, advantages icons, polish seal, worldwide globe, partners grid logos, menu/header paddings, contact icons, and alert overlay) and convert them into tokens before replacing declarations.
-- Introduce image size tokens (e.g., `--size-logo`, `--size-advantage-icon`, `--size-seal`, `--size-globe`, `--size-partner-logo`, `--size-contact-icon`) and tokenized padding/gap values for shared components; keep the 1050px breakpoint values tokenized.
-- Normalize repeated inline `<style>` overrides in HTML pages (notably `.topbar__logo` on subpages) by moving tokenized rules into style.css and commenting out the inline originals.
-- Comment out old declarations and add the tokenized version immediately after, to avoid ambiguity and keep rollback simple.
+  - Colors: `--color-text, --color-bg, --color-text-inverse, --color-bg-inverse`, plus tokens for current accents and UI neutrals (e.g., muted text, borders, surfaces, overlays, and brand green if kept).
+  - Inventory shared image sizes and spacing values in style.css and inline `<style>` blocks (logo sizes, advantages icons, polish seal, worldwide globe, partners grid logos, menu/header paddings, contact icons, and alert overlay) and convert them into tokens before replacing declarations.
+  - Introduce image size tokens (e.g., `--size-logo`, `--size-advantage-icon`, `--size-seal`, `--size-globe`, `--size-partner-logo`, `--size-contact-icon`) and tokenized padding/gap values for shared components; keep the 1050px breakpoint values tokenized.
+  - Normalize repeated inline `<style>` overrides in HTML pages (notably `.topbar__logo` on subpages) by moving tokenized rules into style.css and commenting out the inline originals.
+  - Comment out old declarations and add the tokenized version immediately after, to avoid ambiguity and keep rollback simple.
 
 ## Execution order
 1) Inventory current shared image sizes, spacing values, and inline `<style>` overrides across all HTML pages (including the `.alert` block in index.html and repeated `.topbar__logo` overrides on subpages).

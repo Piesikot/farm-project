@@ -1,0 +1,20 @@
+#
+obrysy
+biało-czerwone tło
+
+## 
+-  Menu polish button min-height 40px, hover underline animation, colors to black, logo/h1 link to index.html, comment out unfinished items if needed ; add hover underline animation.
+
+## 
+- Advantages: recolor icons to black; improve mobile stacking.
+- Offer: refine worldwide/local offer styling.
+- Footer: hover states for links.
+- Kontakt: embed Facebook fanpage.
+- Kariera: finish volunteer offer styling.
+- Partnerzy: add flags for international partners.
+- Misja: add scroll-to-counter button; embed Dairy is Scary; consider parallax/text over media.
+- Przyszlosc: parallax/text over media; consistent BEM/styling.
+
+### 
+- Video: add white transition between clips.
+
