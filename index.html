@@ -33,53 +33,45 @@
    - SMACSS: Base, Layout, Module, State architecture
 */
 
-/* 🟠 */
-/* .menu__item--active{
-    text-decoration: underline;
-    cursor: not-allowed;
- } */
+.alert {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 0;
+  right: 0;
+  top: 5%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
 
-/* .alert{
-     position: absolute;
-     height: 80%;
-     width: 80%;
-     left: 0;
-     right: 0;
-     top: 5%;
-     margin: auto;
-     display: flex;
-     justify-content: center;
- } */
+.alert span {
+  z-index: 1;
+  font-size: 3vw;
+  position: fixed;
+  color: var(--color-text-inverse);
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  font-weight: 600;
+  padding: 0.625rem;
+  flex-wrap: wrap;
+  background-color: var(--color-bg-inverse);
+  height: 60%;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-/* .alert span{
-     z-index: 1;
-     font-size: 3vw;
-     position: fixed;
-     color: white;
-     left: 0;
-     right: 0;
-     margin: auto;
-     text-align: center;
-     font-weight: 600;
-     padding: 10px;
-     flex-wrap: wrap;
-     background-color: black;
-     height:60%;
-     opacity: 0.8;
-     display: flex;
-     justify-content: center;
-     flex-direction: column;
- } */
-
-/* .alert button{
-     position: fixed;
-     height: 10%;
-     width: 15vw;
-     bottom: 40%;
-     z-index: 1;
- } */
-/* 🤖 Stage2: moved alert styles to style.css for tokenization and shared usage. */
-
+.alert button {
+  position: fixed;
+  height: 10%;
+  width: 15vw;
+  bottom: 40%;
+  z-index: 1;
+}
 </style>
 
 <body>
@@ -89,7 +81,6 @@
                     <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
                 </div>
                 <ul class="menu">
-                    <li class="menu__item menu__item--active"><a class="menu__button" href="index.html">Farma</a></li>
                     <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
                     <li class="menu__item menu__products"><a class="menu__button" href="produkty.html">Produkty</a></li>
                         <!-- <li>Psina</li>
@@ -257,10 +248,10 @@
     </footer>
 
 <!-- 🔧 Wyłączanie alertu 🔧 -->
-<!-- <div class="alert">
+<div class="alert">
     <span>Uwaga! Strona w trakcie budowy. Niektóre rzeczy mogą nie działać poprawnie.</span>
     <button id="alert-button">OK</button>
-</div> -->
+</div>
 
 <script>
     let alert_window = document.querySelector('.alert');
