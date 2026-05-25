@@ -258,6 +258,11 @@ h6 {
   cursor: not-allowed;
 }
 
+.footer-menu__item--active .footer-menu__button {
+  text-decoration: underline;
+  cursor: not-allowed;
+}
+
 /* 🤖 LEGACY-STAGE1: top-level products item is now `.menu__products`; old `.menu__products-list` is reserved for future dropdown and stays inactive in MVP. */
 .menu .menu__products {
   padding: 0;
@@ -271,6 +276,8 @@ h6 {
 .menu__item {
   cursor: grab;
 }
+
+
 
 header,
 .header {
@@ -884,46 +891,6 @@ footer {
     line-height: 1.6;
 }
 
-/* 🤖 Stage2: moved alert styles from index.html into global stylesheet. */
-.alert {
-  position: absolute;
-  height: 80%;
-  width: 80%;
-  left: 0;
-  right: 0;
-  top: 5%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.alert span {
-  z-index: 1;
-  font-size: 3vw;
-  position: fixed;
-  color: var(--color-text-inverse);
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
-  font-weight: 600;
-  padding: 0.625rem;
-  flex-wrap: wrap;
-  background-color: var(--color-bg-inverse);
-  height: 60%;
-  opacity: 0.8;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.alert button {
-  position: fixed;
-  height: 10%;
-  width: 15vw;
-  bottom: 40%;
-  z-index: 1;
-}
 
 
 /* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
