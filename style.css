@@ -38,26 +38,40 @@
 
 
 
-/* 🤖 Stage2: add global tokens for typography, spacing, colors, and shared sizes to enable 1:1 rem/em migration. */
+/* Stage2: add global tokens for typography, spacing, colors, and shared sizes to enable 1:1 rem/em migration. */
 :root {
+
+  /* Fonts, fallbacks) */
+    /* [ℹ] Zmienna definiuje główne kroje pisma i ich fallbacki, zapewniając spójny wygląd typografii na różnych urządzeniach. Dzięki temu tekst zawsze wyświetla się poprawnie, nawet jeśli główna czcionka się nie załaduje. */
+    /* [ℹ] This variable defines the primary fonts and their fallbacks, ensuring consistent typography across devices. It guarantees readable text even if the main font fails to load.  */
   --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --font-display: 'Fraunces', var(--font-fallback);
   --font-body: 'Inter', var(--font-fallback);
 
+
+/* Typogrphy scales (--text-*) z clamp */
+  /* [ℹ] Użycie clamp() pozwala na płynne skalowanie tekstu między minimalną i maksymalną wartością, co poprawia czytelność na różnych ekranach. To nowoczesne podejście do fluid typography. */
+  /* [ℹ] Using clamp() enables fluid scaling of text between minimum and maximum values, improving readability across screen sizes. This is a modern approach to fluid typography. */
   --text-xs: clamp(0.625rem, 1.2vw, 1.125rem);
-  --text-sm: clamp(0.6875rem, 2vw, 1.25rem);
-  --text-base: clamp(0.75rem, 1.5vw, 1.125rem);
+  --text-sm: clamp(.6875rem, 2vw, 1.25rem);
+  --text-base: clamp(.75rem, 1.5vw, 1.125rem);
   --text-md: clamp(0.875rem, 2.2vw, 1.75rem);
   --text-lg: clamp(0.875rem, 2.3vw, 1.25rem);
-  --text-xl: clamp(0.875rem, 2.4vw, 1.375rem);
+  --text-xl: clamp(.875rem, 2.4vw, 1.375rem);
   --text-2xl: clamp(1.375rem, 4vw, 9.25rem);
 
+/* Spacing (--space-*) w rem */
+  /* [ℹ] Zmiennie kolorów pozwalają na łatwe zarządzanie paletą i szybkie wprowadzanie zmian w całym projekcie. Semantyczne nazwy poprawiają czytelność i ułatwiają utrzymanie kodu. */
+  /* [ℹ] Color variables allow easy palette management and quick global updates across the project. Semantic naming improves readability and maintainability. */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 2.5rem;
 
+/* Colors (--color-*) */
+  /* [ℹ] Zmiennie kolorów pozwalają na łatwe zarządzanie paletą i szybkie wprowadzanie zmian w całym projekcie. Semantyczne nazwy poprawiają czytelność i ułatwiają utrzymanie kodu. */
+  /* [ℹ] Color variables allow easy palette management and quick global updates across the project. Semantic naming improves readability and maintainability. */
   --color-text: #000;
   --color-bg: #fff;
   --color-text-inverse: #fff;
@@ -73,18 +87,21 @@
   --color-shadow-strong: rgba(0, 0, 0, 0.12);
   --color-accent: hsl(94, 100%, 44%);
 
-  --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);
-  --size-logo-compact: clamp(3.125rem, 30% + 0.3125rem, 200rem);
-  --size-seal: clamp(18.75rem, 30vw, 37.5rem);
-  --size-advantage-icon: 10rem;
+  /* Graphics sizes (--size-*) */
+    /* [ℹ] Zmiennie rozmiarów oparte na clamp() zapewniają responsywne skalowanie grafik bez utraty proporcji. Dzięki temu elementy wizualne wyglądają dobrze na każdym ekranie. */
+    /* [ℹ] Graphics size variables based on clamp() ensure responsive scaling of visuals without losing proportions. This ensures elements look good on any screen size. */                                       
+  --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem); 
+  --size-logo-compact: clamp(3rem, 30% + 0.3rem, 12rem);
+  --size-seal: clamp(18rem, 30vw, 37rem);
+  --size-advantage-icon: clamp(6rem, 8vw, 10rem);
   --size-advantage-icon-border: 0.17rem;
-  --size-worldwide-icon: 6rem;
-  --size-worldwide-icon-compact: 4rem;
-  --size-news-image: 8rem;
-  --size-contact-icon: 3.125rem;
-  --size-partner-logo: 4rem;
-  --size-partner-logo-lg: 5rem;
-  --size-topbar-height: 4rem;
+  --size-worldwide-icon: clamp(5rem, 6vw, 6rem);
+  --size-worldwide-icon-compact: clamp(4rem, 6vw, 6rem);
+  --size-news-image: clamp(6rem, 10vw, 8rem);
+  --size-contact-icon: clamp(2.5rem, 5vw, 3.5rem);
+  --size-partner-logo: clamp(3.125rem, 30% + 0.3rem, 6rem);
+  --size-partner-logo-lg: clamp(6.25rem, 60% + 1.25rem, 31.25rem);
+  --size-topbar-height: clamp(3rem, 6vw, 8rem);
 }
 
 
@@ -649,28 +666,36 @@ footer {
 }
 
 
-
+.news-section__container{
+  /* border: solid red; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 .news-section__date{
   /* font-size: clamp(12px, 1.5vw, 18px); */
   /* 🤖 Stage2: tokenized news date size. */
-  font-size: var(--text-base);
-    font-weight: 700;
+    font-size: var(--text-base);
+    font-weight: 600;
+    padding: var(--space-xs);
+    border: solid var(--color-border);
+    border-radius: 44%;
 }
 
 .news-section__title-container {
     display: flex;
-    align-items: flex-start;
-  /* gap: 2em; */
+    align-items: center;
+    justify-content: center;
   /* 🤖 Stage2: tokenized gap. */
   gap: var(--space-lg);
-    width: 80%;
-  /* padding-top: 1em; */
   /* 🤖 Stage2: tokenized padding. */
-  padding-top: var(--space-sm);
+  /* padding-top: var(--space-sm); */
 }
+
 .news-section__title{
-  align-self: center;
+  font-size: var(--text-lg);C
 }
 
 .news-section__img {
@@ -679,6 +704,7 @@ footer {
   width: var(--size-news-image);
     height: auto;
     /* padding: 2em; */
+
 }
 
 .contact{
