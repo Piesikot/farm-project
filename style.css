@@ -75,7 +75,7 @@
   --color-muted: #333;
   --color-surface: #f9f9f9;
   --color-surface-soft: rgba(255, 255, 255, 0.35);
-  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-overlay: rgba(0, 0, 0, 0.6);
 
   /* 🔴ten kolor jeszcze poustawiać gdzie indziej, gdzie się da -chyba już wykonane */
   --color-transparent-box: rgba(255, 255, 255, 0.6);
@@ -168,27 +168,10 @@ h6 {
 
 
 
+
 /* TOPBAR */
 
-/* 🛠 REFAKTORYZUJĘ LOGO 🛠  */
-
-
-
-
 .topbar__logo {
-  
-  /* 🔴 XXX 🔴 */
-  width: var(--size-logo);
-  
-  
-  /* Refactoring Stage 2: align padding with spacing tokens. */
-  padding-left: var(--space-md);
-
-  position: relative; 
-  z-index: 9999; 
-  /* ⓘ przeglądarki obsługują wartości do 2,147,483,647 (32‑bit signed int), ale realnie nie ma sensu przekraczać 9999. */
-  /* 🔴 XXX 🔴 */
-  
   /* ✓ logo po refaktoryzacji ✓*/
   position: absolute;
 /* 
@@ -199,52 +182,21 @@ h6 {
   width: var(--size-logo);
 
   padding: 0 var(--space-md);
-  /* ✓ logo po refaktoryzacji ✓ */
-}
-
-
-
-.topbar {
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
   
-  /* zabezpieczenie utrzymania warstwy topbara nad video */
-  /* z-index: 100;  */
-  /* position: relative;  */
-
-  /* Refactoring Stage 2: tokenized translucent topbar background. */
-  /* background: var(--color-transparent-box);  */
-
-  /* Refactoring Stage 2: tokenized topbar height in rem. */
-  /* height: var(--size-topbar-height); */
-
-  /* Refactoring Stage 2: keep minimum width aligned with topbar height token. */
-  /* min-width: var(--size-topbar-height);  */
-}
-.topbar{
-  /* padding-top: var(--space-xl); */
-  /* z tym się zjeżdą z headerem, a bez tego wychodzi poza górną krawędź */
-
-  /* display: flex; */
-  /* align-items: center; */
-}
-
-
-/* 🛠 REFAKTORYZUJĘ LOGO 🛠 */
-
-.logo{
-
+  /* ✓ logo po refaktoryzacji ✓ */
+  /* 🔴 do dopracowania na podstronach  */
 }
 
 .menu {
   display: flex;
   justify-content: center;
+
+  /* klasyczny trick na centrowanie diva */
   margin: 0 auto;
   width: fit-content;
 
   /* padding: var(--space-sm) var(--space-xl); */
-  /* ^ z tymtreść poniżej advantages się rozjeżdża  */
+  /* ^ z tym treść poniżej advantages się rozjeżdża  */
 
   padding: 2vw 3vw 2vw 3vw;
   /* 🟠 vw lepiej się sprawdza */
@@ -260,24 +212,32 @@ h6 {
   /* Refactoring Stage 2: tokenized menu type size. */
   font-size: var(--text-xl); 
 
-  /* align-items: center; */
+  background: var(--color-overlay);
 
-  background: var(--color-transparent-box);
   border-radius: var(--radius);
 
-  /* margin: var(--space-lg) var(--space-lg) 0 0; */
-  /* margin: var(--space-md); */
+  /* przesunięcie menu do lewej krawędzi */
   margin-top: var(--space-md);
-  /* margin-right: var(--space-sm); */
-  /* 🟠 mało wiele jest dobrze, choć jeszcze do dopracowania, bo niewiadomo dlacego, space nie zwiększa się równomiernie. Czy to ze względu na margin headera? */
-
   margin-right: var(--space-lg);
+
+  text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+
+  /* 🔴 do dopracowania na podstronach  */
 }
 
 .menu__button {
   /* Refactoring Stage 2: tokenized text color for menu links. */
   color: var(--color-text);
   text-decoration: none;
+
+  /* background-color: var(--color-overlay); */
+
+  /* padding: 0.30em; */
+  /* border-radius: var(--radius); */
 }
 
 /* ⓘ zmienia cursor bez użycia :hover */
@@ -300,7 +260,6 @@ h6 {
 /* NAGŁÓWKI / HEADERS */
 
 .header {  
-/* 🛠 refactoringuę tego bg headera 🛠*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,10 +275,6 @@ h6 {
   /* Refactoring Stage 2: tokenized header padding. */
   padding: var(--space-xl);
 
-  /* Refactoring Stage 2: tokenized header transparent container box. */
-  /* background: var(--color-transparent-box); */
-  /* border-radius: var(--radius); */
-
   /* width: fit-content; */
   /*  ^ flex przestaje się centrować */
   width: fit-content;
@@ -328,11 +283,8 @@ h6 {
   margin: 0 auto;
 
   margin-top: var(--space-md);
-
-/* 🛠 refactoringuę tego bg headera 🛠*/
-
-
 }
+
 .header__logo{
   display: none;
 }
@@ -349,8 +301,6 @@ h6 {
      1px -1px 0 #fff,
     -1px  1px 0 #fff,
      1px  1px 0 #fff;
-
-  
 }
 
 .header__subtitle {
@@ -389,9 +339,9 @@ h6 {
   justify-content: center;
   align-items: center;
 
-  border: var(--size-advantage-icon-border) solid var(--color-border);
+  border: var(--size-advantage-icon-border) solid var(--color-surface);
   border-radius: 50%;
-  box-shadow: inset 0 0 0 var(--size-advantage-icon-border) var(--color-text-inverse);
+  box-shadow: inset 0 0 0 var(--size-advantage-icon-border) var(--color-border);
   /* box-shadow: inset i border, intencjonalnie użyte razem jako obrys i kontur obrysu dla efektu wizualnego  */
 
   /* Refactoring Stage 2: tokenized icon size. */
@@ -419,8 +369,8 @@ h6 {
   
   /* Refactoring Stage 2: tokenized padding. */
   padding: var(--space-xs);
-  /* 🔴 Robił się pasekna monitorze 19. Chyba jednak warto menu zrobić. Oraz, hmm, zmniejszyć, czcionkę?🔴 */
-  /* z tekstem xs i paddingiem xs na 19' działa🟠 */
+  /* ⚠  Robił się pasekna monitorze 19. */
+  /*  teraazz tekstem xs i paddingiem xs na 19' działa🟠 */
 
   /* Refactoring Stage 2: tokenized radius. */
   border-radius: var(--radius);
