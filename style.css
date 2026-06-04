@@ -18,7 +18,6 @@
 
 */
 
-
 /*
    [ℹ] The project has been refactored to the BEM methodology (getbem – Western standard).
    The class structure has been organized according to OOCSS principles:
@@ -35,19 +34,14 @@
    - Theme: none (not required in this project)
 */
 
-
-
-
-/* Stage2: add global tokens for typography, spacing, colors, and shared sizes to enable 1:1 rem/em migration. */
+/* Refactoring Stage 2: add global tokens for typography, spacing, colors, and shared sizes to enable 1:1 rem/em migration. */
 :root {
-
   /* Fonts, fallbacks) */
     /* [ℹ] Zmienna definiuje główne kroje pisma i ich fallbacki, zapewniając spójny wygląd typografii na różnych urządzeniach. Dzięki temu tekst zawsze wyświetla się poprawnie, nawet jeśli główna czcionka się nie załaduje. */
     /* [ℹ] This variable defines the primary fonts and their fallbacks, ensuring consistent typography across devices. It guarantees readable text even if the main font fails to load.  */
   --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --font-display: 'Fraunces', var(--font-fallback);
   --font-body: 'Inter', var(--font-fallback);
-
 
 /* Typogrphy scales (--text-*) z clamp */
   /* [ℹ] Użycie clamp() pozwala na płynne skalowanie tekstu między minimalną i maksymalną wartością, co poprawia czytelność na różnych ekranach. To nowoczesne podejście do fluid typography. */
@@ -61,8 +55,6 @@
   --text-2xl: clamp(1.375rem, 4vw, 9.25rem);
 
 /* Spacing (--space-*) w rem */
-  /* [ℹ] Zmiennie kolorów pozwalają na łatwe zarządzanie paletą i szybkie wprowadzanie zmian w całym projekcie. Semantyczne nazwy poprawiają czytelność i ułatwiają utrzymanie kodu. */
-  /* [ℹ] Color variables allow easy palette management and quick global updates across the project. Semantic naming improves readability and maintainability. */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -73,14 +65,21 @@
   /* [ℹ] Zmiennie kolorów pozwalają na łatwe zarządzanie paletą i szybkie wprowadzanie zmian w całym projekcie. Semantyczne nazwy poprawiają czytelność i ułatwiają utrzymanie kodu. */
   /* [ℹ] Color variables allow easy palette management and quick global updates across the project. Semantic naming improves readability and maintainability. */
   --color-text: #000;
+
+  /* 🟠  Tutaj musi być inny kolor niż w topbar-bg, bo się miesza stacking context i zaczyna wyświetlać video w niższych sekcjach. Trzeba dopracować przy czyszczeniu z opacity*/
+  /* to jest bg w seal, czyli mogę to zawsać polish-bg, i dać biało czerwone barwy, ale to już po przeniensieniu do offer do products */
   --color-bg: #fff;
+
   --color-text-inverse: #fff;
   --color-bg-inverse: #000;
   --color-muted: #333;
   --color-surface: #f9f9f9;
   --color-surface-soft: rgba(255, 255, 255, 0.35);
   --color-overlay: rgba(0, 0, 0, 0.8);
-  --color-topbar-bg: rgba(255, 255, 255, 0.6);
+
+  /* 🔴ten kolor jeszcze poustawiać gdzie indziej, gdzie się da -chyba już wykonane */
+  --color-transparent-box: rgba(255, 255, 255, 0.6);
+
   --color-border: #000;
   --color-border-soft: rgba(0, 0, 0, 0.06);
   --color-shadow-soft: rgba(0, 0, 0, 0.08);
@@ -89,12 +88,15 @@
 
   /* Graphics sizes (--size-*) */
     /* [ℹ] Zmiennie rozmiarów oparte na clamp() zapewniają responsywne skalowanie grafik bez utraty proporcji. Dzięki temu elementy wizualne wyglądają dobrze na każdym ekranie. */
-    /* [ℹ] Graphics size variables based on clamp() ensure responsive scaling of visuals without losing proportions. This ensures elements look good on any screen size. */                                       
-  --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem); 
-  --size-logo-compact: clamp(3rem, 30% + 0.3rem, 12rem);
-  --size-seal: clamp(18rem, 30vw, 37rem);
-  --size-advantage-icon: clamp(6rem, 8vw, 10rem);
-  --size-advantage-icon-border: 0.17rem;
+    /* [ℹ] Graphics size variables based on clamp() ensure responsive scaling of visuals without losing proportions. This ensures elements look good on any screen size. */  
+    
+    /* 🟡 zwiększyć logo na dużych ekranach */
+  /* --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);  */
+  --size-logo: clamp(5rem, 40% + 1rem, 10rem);
+  --size-logo-compact: clamp(4rem, 30% + 0.3rem, 12rem);
+  --size-advantage-icon: clamp(5rem, 8vw, 15rem);
+  --size-advantage-icon-border: 0.15rem;
+  --size-seal: clamp(10rem, 15vw, 25rem);
   --size-worldwide-icon: clamp(5rem, 6vw, 6rem);
   --size-worldwide-icon-compact: clamp(4rem, 6vw, 6rem);
   --size-news-image: clamp(6rem, 10vw, 8rem);
@@ -102,8 +104,9 @@
   --size-partner-logo: clamp(3.125rem, 30% + 0.3rem, 6rem);
   --size-partner-logo-lg: clamp(6.25rem, 60% + 1.25rem, 31.25rem);
   --size-topbar-height: clamp(3rem, 6vw, 8rem);
-}
 
+  --radius: 1rem;
+}
 
  * { box-sizing: border-box; 
 }     /* ↑ [ℹ] sprawia, że całkowite wymiary elementu są uwzględniane łącznie, to ustawienie ma naukowo udowodniony wpływ na zmniejszenie myśli samobójczych u programistów [ℹ] */
@@ -117,156 +120,169 @@ html {
  /* [ℹ] ↑ removes the browser’s default spacing around the page content, giving you a “full-bleed” layout starting from the very edge of the viewport, without this video is visible beyond the edges [ℹ] */
 
 body {
-  /* 🤖 Stage2: apply global body typeface and default colors via tokens. */
+  /* Refactoring Stage 2: apply global body typeface and default colors via tokens. */
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
 }
 
+ /* Titles */
+
+  /* Refactoring Stage 2: set display font for headings to keep typographic hierarchy consistent. */
+  /* ⓘ  Mimo stosowania BEM w projekcie, selektory nagłówków pozostają tutaj celowo jako globalna warstwa typografii, bo definiują wspólny wygląd wszystkich nagłówków niezależnie od komponentu, a nie styl konkretnego modułu.*/
+  /* Despite using BEM in the project, heading selectors remain here intentionally as a global typography layer, as they define the common appearance of all headings regardless of the component, rather than the style of a specific module.*/
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  /* 🤖 Stage2: set display font for headings to keep typographic hierarchy consistent. */
   font-family: var(--font-display);
 }
 
 .page {
-  /* z-index: -10; */
-  /* ⓘ ↑ bez position to nic nie robi i robi bałagan ("negatywne z-indexy bywają źródłem niespodzianek") ⓘ */
   max-width: 100%; 
   height: 100%; 
 }
 
-/* ↓  ✓ Video po pierwszej refaktoryzacji ↓ ✓ */
+/* INDEX VIDEO */
+/* 🟡 Do poprawienia w edytorze wideo m.in. białe tło przejścia, i 🟡 do doskonalenia na małe ekrany ↓ */
 .video-container {
   position: fixed;
+
   inset: 0;
-  /* ⓘ ↑ bez tego totalnie się rozjeżdża ⓘ */
+  /* ⓘ ↑ bez tego totalnie nie działa na małym ekranie, a na większych się rozjeżdża od góry ⓘ */
+
   z-index: -20;
   overflow: hidden;
-  /* background: white; */
-  /* 🤖 Stage2: tokenized background color for consistent theming. */
+
+  /* Refactoring Stage 2:  tokenized background color for consistent theming. */
   background: var(--color-bg);
 
   /* [ℹ] zdjęcie na wypadek, gdyby video się nie załadowało */
   /* [ℹ] picture in case video fails to load */
     background: url('src/TastyDog-Background.png') center/cover;
-    /* ↑ Do zrobienia jeszcze inne warianty */
+    /* ↑ 🟡 Do zrobienia jeszcze inne warianty */
 }
- @media only screen and (max-width: 1050px) {
-   .video-container__video {
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto;
-  height: auto;
-  position: absolute;
-  /* top: 25%; */
-  left: 50%;
-
-  /* transform: translate(-50%,-50%) scale(0.7); */
-  /* 0.6 lepiej, ale jest biały pask u góry na Samsungu */
-  /* 0.7 na firefoxie działa dobrze nawet na width 260, na Samsungu Galaxy A41 robią się paski, które teoretycznie chyba dałbym radę ogarnąć dodając białe menu, i jakiś margin/clamp na topie. ale czy warto ryzykować? Zwłaszcza, że ikonka wolnego wybiegu też jednak nie może wychodzić poza, bo z duża jasnością ekrenu ją widać!*/
-  /* Bez sensu z tym kombinować raczej, ale się zobaczy po refaktoryzacji menu  */
-
-   /* object-fit: fill; */
-   top: 50%;
-   transform: translateX(-50%) translateY(-50%);
-    /* bez skalowania działa - obiekt ma ten sam rozmiar, co kontener */
-    /* w Firefoxie działa na 320x256 oprócz 🐛 menu  */
-    /* w Chromie 320x256 się wykrzacza  */
-    /* na Samsungu Galaxy A41 działa*/
-
-    /* jakoś tam działą, ale do film do dostosowania, i zobaczy się, co trzeba będzie zastosować po refaktoryzacji menu */
-  }
-} 
 /* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
 
 
+
+/* TOPBAR */
+
+/* 🛠 REFAKTORYZUJĘ LOGO 🛠  */
+
+
+
+
 .topbar__logo {
-  /* filter: brightness(0) invert(1); */
-  /* width: clamp(100px, 60% + 20px, 500px); */
-  /* 🤖 Stage2: tokenized shared logo size for 1:1 rem migration. */
+  
+  /* 🔴 XXX 🔴 */
   width: var(--size-logo);
-  /* padding-top: 8em; */
-  /* 🤖 Stage2: use rem-based spacing token while preserving original scale. */
-  padding-top: calc(var(--space-lg) * 4);
-  /* padding-left: 1.5em; */
-  /* 🤖 Stage2: align padding with spacing tokens. */
+  
+  
+  /* Refactoring Stage 2: align padding with spacing tokens. */
   padding-left: var(--space-md);
+
   position: relative; 
-  z-index: 30;
+  z-index: 9999; 
+  /* ⓘ przeglądarki obsługują wartości do 2,147,483,647 (32‑bit signed int), ale realnie nie ma sensu przekraczać 9999. */
+  /* 🔴 XXX 🔴 */
+  
+  /* ✓ logo po refaktoryzacji ✓*/
+  position: absolute;
+/* 
+  background: var(--color-transparent-box);
+  border-radius: var(--radius); */
+
+  /* Refactoring Stage 2: tokenized shared logo size for 1:1 rem migration. */
+  width: var(--size-logo);
+
+  padding: 0 var(--space-md);
+  /* ✓ logo po refaktoryzacji ✓ */
 }
 
-/* 🤖 Stage2: subpage logo sizing moved from inline styles into CSS. */
-.page--subsite .topbar__logo {
-  width: var(--size-logo-compact);
-  padding-top: var(--space-sm);
-}
 
-  /* [ℹ] jeden breakpoint jest konieczny dla dobrego UX - interaktywnego efektu parallax nożem po gardle przy scrollowaniu */
-  /* [ℹ] one breakpoint is necessary for good UX - interactive parallax effect of a knife across the throat while scrolling */
- @media only screen and (max-width: 1050px) {
-  .topbar__logo {
-    /* width: clamp(50px, 30% + 5px, 3200px); */
-    /* 🤖 Stage2: tokenized compact logo size for small screens. */
-    width: var(--size-logo-compact);
-    /* padding: 1em 0 0 0.5em; */
-    /* 🤖 Stage2: rem-based padding for the mobile logo placement. */
-    padding: var(--space-sm) 0 0 var(--space-xs);
-  }
- }
+
 .topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background: white; */
-  /* 🤖 Stage2: tokenized background color for topbar. */
-  background: var(--color-bg);
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  
+  /* zabezpieczenie utrzymania warstwy topbara nad video */
+  /* z-index: 100;  */
+  /* position: relative;  */
 
-  /* ⓘ🔧 ↓ tworzy własny stacking context — elementy wewnątrz tego 
-  kontekstu nie będą układane względem rodzeństwa z zewnątrz ↓ 🔧 ⓘ */
-  /* opacity: 0.6; */
-  /* ⓘ 🔧 ↑ 🔧 ⓘ */
+  /* Refactoring Stage 2: tokenized translucent topbar background. */
+  /* background: var(--color-transparent-box);  */
 
-  /* background: rgba(255,255,255,0.6); */
-  /* 🤖 Stage2: tokenized translucent topbar background. */
-  background: var(--color-topbar-bg); 
-/* ⓘ 🔧 ↑ zapobiega tworzeniu dodatkowych stacking contextów i ułatwia kontrolę porządku warstw, które mają miejsce w przypadku używania opacity 🔧 ⓘ */
-/* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
-  /* height: 4em; */
-  /* 🤖 Stage2: tokenized topbar height in rem. */
-  height: var(--size-topbar-height);
-  /* min-width: 4em; */
-  /* 🤖 Stage2: keep minimum width aligned with topbar height token. */
-  min-width: var(--size-topbar-height);
+  /* Refactoring Stage 2: tokenized topbar height in rem. */
+  /* height: var(--size-topbar-height); */
 
-  position: relative; z-index: 20; 
+  /* Refactoring Stage 2: keep minimum width aligned with topbar height token. */
+  /* min-width: var(--size-topbar-height);  */
 }
-/* 🤖 LEGACY-STAGE1: replaced `.topbar__menu` with `.menu` for getbem consistency. */
-/* .topbar__menu { */
+.topbar{
+  /* padding-top: var(--space-xl); */
+  /* z tym się zjeżdą z headerem, a bez tego wychodzi poza górną krawędź */
+
+  /* display: flex; */
+  /* align-items: center; */
+}
+
+
+/* 🛠 REFAKTORYZUJĘ LOGO 🛠 */
+
+.logo{
+
+}
+
 .menu {
   display: flex;
-  padding: 2vw 3vw 2vw 3vw;
-  list-style: none;
-  gap: 6vw;
-  /* font-size: clamp(11px, 2vw, 20px); */
-  /* 🤖 Stage2: tokenized menu type size. */
-  font-size: var(--text-sm); 
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
 
-  align-items: center;
+  /* padding: var(--space-sm) var(--space-xl); */
+  /* ^ z tymtreść poniżej advantages się rozjeżdża  */
+
+  padding: 2vw 3vw 2vw 3vw;
+  /* 🟠 vw lepiej się sprawdza */
+
+  list-style: none;
+
+  gap: 6vw;
+  /* 🟠 tutaj vw tylko się sprawdza */
+
+  /* gap: var(--space-xl); */
+/* ^ z tym  treść poniżej advantages się rozjeżdża  */
+
+  /* Refactoring Stage 2: tokenized menu type size. */
+  font-size: var(--text-xl); 
+
+  /* align-items: center; */
+
+  background: var(--color-transparent-box);
+  border-radius: var(--radius);
+
+  /* margin: var(--space-lg) var(--space-lg) 0 0; */
+  /* margin: var(--space-md); */
+  margin-top: var(--space-md);
+  /* margin-right: var(--space-sm); */
+  /* 🟠 mało wiele jest dobrze, choć jeszcze do dopracowania, bo niewiadomo dlacego, space nie zwiększa się równomiernie. Czy to ze względu na margin headera? */
+
+  margin-right: var(--space-lg);
 }
-/* 🤖 LEGACY-STAGE1: replaced `.topbar__menu__button` with `.menu__button` for getbem consistency. */
-/* .topbar__menu__button { */
+
 .menu__button {
-  /* color: black; */
-  /* 🤖 Stage2: tokenized text color for menu links. */
+  /* Refactoring Stage 2: tokenized text color for menu links. */
   color: var(--color-text);
   text-decoration: none;
-  opacity: 1;
-  z-index: 10;
+}
+
+/* ⓘ zmienia cursor bez użycia :hover */
+.menu__item {
+  cursor: grab;
 }
 
 /* ⓘ EFEKTY DLA AKTYWNYCH ELEMENTÓW MENU NA KTORYM USER SIĘ ZNAJDUJE BEZ ZMIENIANIA KAŻDEJ Z PODSTRON OSOBNO. ⓘ */
@@ -274,195 +290,160 @@ h6 {
   text-decoration: underline;
   cursor: not-allowed;
 }
-
 .footer-menu__item--active .footer-menu__button {
   text-decoration: underline;
   cursor: not-allowed;
 }
 
-/* 🤖 LEGACY-STAGE1: top-level products item is now `.menu__products`; old `.menu__products-list` is reserved for future dropdown and stays inactive in MVP. */
-.menu .menu__products {
-  padding: 0;
-  cursor: grab;
-}
-/* .menu .menu__products-list {
-  padding: 0;
-  cursor: grab;
-} */
-
-.menu__item {
-  cursor: grab;
-}
 
 
+/* NAGŁÓWKI / HEADERS */
 
-header,
-.header {
+.header {  
+/* 🛠 refactoringuę tego bg headera 🛠*/
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* color: black; */
-  /* 🤖 Stage2: tokenized header text color. */
+
+  /* zabezpieczenie względem video */
+  position: relative; 
+  z-index: -10;
+
+  /* Refactoring Stage 2: tokenized header text color. */
   color: var(--color-text);
-  /* padding: 2.5em; */
-  /* 🤖 Stage2: tokenized header padding. */
+
+  /* Refactoring Stage 2: tokenized header padding. */
   padding: var(--space-xl);
-  /* background: white; */
-  /* 🤖 Stage2: tokenized header background. */
-  background: var(--color-bg);
+
+  /* Refactoring Stage 2: tokenized header transparent container box. */
+  /* background: var(--color-transparent-box); */
+  /* border-radius: var(--radius); */
 
   /* width: fit-content; */
-  /* ↑ z tym withem przestaje centrować */
+  /*  ^ flex przestaje się centrować */
+  width: fit-content;
 
-  position: relative; z-index: -10;
-  /* 🔴 */
-  opacity: 0.6;
-  /* to nie header sprawiał, że menu zakrywało logo, a menu! */
-  /* ⓘ opacity  tworzy własny stacking context — elementy wewnątrz tego kontekstu nie będą układane względem rodzeństwa z zewnątrz ⓘ */
-  /* ⓘ rgba zamiast opacity -> półprzezroczyste tła bez tworzenia nowego stacking context ⓘ */
+  /* klasyczny trick na centrowanie diva */
+  margin: 0 auto;
+
+  margin-top: var(--space-md);
+
+/* 🛠 refactoringuę tego bg headera 🛠*/
+
+
 }
-/*  ↑ Do doszliwoania w przyszłości ↑ */
-
-header h1,
+.header__logo{
+  display: none;
+}
 .header__title {
   text-align: center;
-  /* font-size: clamp(22px, 4vw, 148px); */
-  /* 🤖 Stage2: tokenized hero title size. */
+  /* Refactoring Stage 2: tokenized hero title size. */
   font-size: var(--text-2xl); 
   margin: 0;
+
+  text-decoration: underline;
+
+  text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+
+  
 }
 
-header h2,
 .header__subtitle {
-  /* font-size: clamp(14px, 2.2vw, 28px); */
-  /* 🤖 Stage2: tokenized subtitle size. */
+  /* Refactoring Stage 2: tokenized subtitle size. */
   font-size: var(--text-md);
+  text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
 }
+
+
+
+/* ADVANTAGES */
 
 .advantages {
   display: flex;
-  /* font-size: clamp(10px, 1.2vw, 18px); */
-  /* 🤖 Stage2: tokenized advantages type size. */
+  /* Refactoring Stage 2: tokenized advantages type size. */
   font-size: var(--text-xs); 
-  /* color: #ffffff; */
-  /* 🤖 Stage2: tokenized inverse text color. */
+  /* Refactoring Stage 2: tokenized inverse text color. */
   color: var(--color-text-inverse);
   justify-content: center;
-}
- @media only screen and (max-width: 1050px) {
-  .advantages {
-  flex-direction: column;
-
-  gap: 15em;
-  /* odstęp pomiędzy elementami */
-  padding: 10em;
-  /* odstęp od krawiędzi */
- }
 }
 
 .advantages__card {
   display: flex;
   flex-direction: column;
-
-  padding: 1em;
-  /* ⓘ 10em/vh po prostu było za duże */
-  /* 5em to minimum na którm działa dobrze na moich sprzętach, więc daję 4 na wszelki */
-  /* ale padding left i right daje odstęp pomiędzy elementami, więc też jest potrzebny */
-    /* po zmianie padiingów w pro zczęło się ucinać, więc muszę dać jeszcze mniejszy padding tutaj: 3 wyadję się być ok, ale daję 2 na wszelki  */
-    /* ten padding przydaje się tylko na większych ekranach */
-
-    /* przy 4em są paski, zmienam na 1em */
-
+  padding: var(--space-lg);
   align-items: center;
   text-align: center;
-
-  /* ⓘ najlepsze efekty wizualne dałoby menu czarne i byłoby też najbardziej funkcjonalne */
-  /* działa, jedynie nie zdaje testu SC - chyba to kwestia menu*/
-}
- @media only screen and (max-width: 1050px) {
- .advantages__card {
-    padding: 0;
-    /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
-
-    /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
- }
 }
 
 .advantages__icon-container {
-  border-radius: 50%;
-  /* color: black; */
-  /* width: 10em; */
-  /* 🤖 Stage2: tokenized icon size. */
-  width: var(--size-advantage-icon);
-  /* height: 10em; */
-  /* 🤖 Stage2: tokenized icon size. */
-  height: var(--size-advantage-icon);
-  /* border: 0.17em solid black; */
-  /* 🤖 Stage2: tokenized icon border. */
-  border: var(--size-advantage-icon-border) solid var(--color-border);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: white; */
 
-  /* ⚠ 🔧🟡 opacity 🟡 🔧 ⚠ */
-  opacity: 0.6;
-  /* ⚠ 🔧🟡 opacity 🟡 🔧 ⚠ */
+  border: var(--size-advantage-icon-border) solid var(--color-border);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 var(--size-advantage-icon-border) var(--color-text-inverse);
+  /* box-shadow: inset i border, intencjonalnie użyte razem jako obrys i kontur obrysu dla efektu wizualnego  */
+
+  /* Refactoring Stage 2: tokenized icon size. */
+  width: var(--size-advantage-icon);
+  /* Refactoring Stage 2: tokenized icon size. */
+  height: var(--size-advantage-icon);
+  /* Refactoring Stage 2: tokenized icon border. */
 }
+
 .advantages__icon {
-  width: 63%;
-}
-.advantages__title {
-  text-transform: uppercase;
-  font-weight: 800;
-  /* color: black; */
-  /* 🤖 Stage2: tokenized title color. */
-  color: var(--color-text);
+  /* ⓘ wartość procetowa utrzymująca proporcje ikony względem kontenera tj.okręgu. Token utworzony w tym celu byłby nadmiarowy. */
+  width: 60%;
 }
 
-.advantages h3,
+.advantages__title,
 .advantages__description {
-  /* font-size: clamp(14px, 2.4vw, 22px); */
-  /* 🤖 Stage2: tokenized advantage description size. */
-  font-size: var(--text-xl);
-  /* background: white; */
-  /* 🤖 Stage2: tokenized background color. */
-  background: var(--color-bg);
-  opacity: 0.5;
-  /* color: black; */
-  /* 🤖 Stage2: tokenized text color. */
-  color: var(--color-text);
-  /* padding: 0.5em; */
-  /* 🤖 Stage2: tokenized padding. */
-  padding: var(--space-xs);
-  /* border-radius: 0.5em; */
-  /* 🤖 Stage2: tokenized radius. */
-  border-radius: var(--space-xs);
-}
+  /* Refactoring Stage 2: tokenized advantage description size. */
+  font-size: var(--text-xs);
 
+  /* Refactoring Stage 2: tokenized transparent text container box. */
+  background: var(--color-transparent-box);
+
+  /* Refactoring Stage 2: tokenized text color. */
+  color: var(--color-text);
+  
+  /* Refactoring Stage 2: tokenized padding. */
+  padding: var(--space-xs);
+  /* 🔴 Robił się pasekna monitorze 19. Chyba jednak warto menu zrobić. Oraz, hmm, zmniejszyć, czcionkę?🔴 */
+  /* z tekstem xs i paddingiem xs na 19' działa🟠 */
+
+  /* Refactoring Stage 2: tokenized radius. */
+  border-radius: var(--radius);
+  /* 🟡takie radiusowe menu, headery i footer można roważyć, czy nawet może logo tak opleść? */
+}
 
 .polish-quality {  
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: white; */
-  /* 🤖 Stage2: tokenized background color. */
+  /* Refactoring Stage 2: tokenized background color. */
   background: var(--color-bg);
 }
+
 .polish-quality__seal {
-  /* width: clamp(300px, 30vw, 600px); */
-  /* 🤖 Stage2: tokenized seal size. */
+  /* Refactoring Stage 2: tokenized seal size. */
   width: var(--size-seal);
-  /* padding: 2em; */
-  /* 🤖 Stage2: tokenized seal padding. */
+  /* Refactoring Stage 2: tokenized seal padding. */
   padding: var(--space-lg);
-  /* width: 100%; */
-  /* ⚠ ↑ 🟡 wykomentowane powodowało buga w postaci horizonatl scroll przy SC bo width:100% był wyłączony, mimo, że cały czas tu był...⚠ 🟡 */
 
-  /* 🟡 Ustawiać na wszelki wypade width:100%? max-width:100%? Wszystkie rozmiary i tak są zaaplanowane do refaktoryzacji ⚠ 🟡*/
-
+  /* 🔴 Ustawiać na wszelki wypadek max-width:100%? 
+  Wszystkie rozmiary do refaktoryzacji ⚠ 🔴*/
   max-width: 100%;
 }
 
@@ -516,6 +497,11 @@ align-items: center;
   /* 🟡 dlatego wracam tymczasowo do em 🟡*/
 }
  @media only screen and (max-width: 1050px) {
+.worldwide-offer__content {
+ flex-direction: column;
+ /* flex-wrap: wrap; */
+}
+
   .worldwide-offer__icon {
   /* width: 4em; */
   /* 🤖 Stage2: tokenized compact worldwide icon size. */
@@ -542,7 +528,9 @@ align-items: center;
 }
 .worldwide-offer__description {
   /* border: dashed 3px violet; */
-  padding-left: 1em ;
+  padding-left: 2.5em ;
+  
+
 }
 .worldwide-offer__footer {
 /* color: brown; */
@@ -568,9 +556,11 @@ text-align: center;
   padding-left: 1em;
 }
   @media only screen and (max-width: 1050px) {
+
 .local-offer__category {
   flex-direction: column;
   }
+
  }
 
 
@@ -628,9 +618,10 @@ footer {
 /* ↑ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↑ */
 
 
-/* PODSTRONY */
+/* PODSTRONY | SUBPAGES */
 
-/* układ strony */
+
+/* UKŁAD STRONY | LAYOUT */
     .career,
     .contact,
     .mission,
@@ -654,9 +645,17 @@ footer {
         justify-content: center;
     }
 
+/* 🟡em? */
 .news-section, .products-section{
     padding: 4em 0;
 }
+
+/* Refactoring Stage 2: subpage logo sizing moved from internal to external CSS. */
+.page--subsite .topbar__logo {
+  width: var(--size-logo-compact);
+  padding-top: var(--space-sm);
+}
+
 
 /* HEADERS */
 .news-header, .products-header, .contact-header, .mission-header, .real-mission-header, .welfare-header, .program-header, .career-header, .partners-header{
@@ -1219,3 +1218,100 @@ footer {
     /* .partners__list-item--se::before { content: '🇸🇪'; } */
     /* .partners__list-item--de::before { content: '🇩🇪'; } */
     /* .partners__list-item--za::before { content: '🇿🇦'; } */
+
+
+    
+/* BREAKPOINT MAX-WIDTH: 1050px */ 
+/* [ℹ] jedyny w całym projekcie. Konieczny dla uzyskania immersyjnego efektu interakcji warstw, parallax-like effect nożem po gardle przy scrollowaniu  */
+/* [ℹ] one breakpoint is necessary for good UX - interactive parallax-like effect of a knife across the throat while scrolling */
+
+/* 🟡Ogólnie trzeba fonty zwiększyć na małch ekranach, zwłascza menu🟡 */
+
+/* INDEX VIDEO BREAKPOINT - 🟡 do doskonalenia na małe ekrany*/
+ @media only screen and (max-width: 1050px) {
+   .video-container__video {
+  min-width: 100%; 
+  min-height: 100%; 
+  width: auto;
+  height: auto;
+  position: absolute;
+  /* top: 25%; */
+  left: 50%;
+
+  /* transform: translate(-50%,-50%) scale(0.7); */
+  /* 0.6 lepiej, ale jest biały pask u góry na Samsungu */
+  /* 0.7 na firefoxie działa dobrze nawet na width 260, na Samsungu Galaxy A41 robią się paski, które teoretycznie chyba dałbym radę ogarnąć dodając białe menu, i jakiś margin/clamp na topie. ale czy warto ryzykować? Zwłaszcza, że ikonka wolnego wybiegu też jednak nie może wychodzić poza, bo z duża jasnością ekrenu ją widać!*/
+  /* Bez sensu z tym kombinować raczej, ale się zobaczy po refaktoryzacji menu  */
+
+   /* object-fit: fill; */
+   top: 50%;
+   transform: translateX(-50%) translateY(-50%);
+    /* bez skalowania działa - obiekt ma ten sam rozmiar, co kontener */
+    /* w Firefoxie działa na 320x256 oprócz 🐛 menu  */
+    /* w Chromie 320x256 się wykrzacza  */
+    /* na Samsungu Galaxy A41 działa*/
+
+    /* jakoś tam działą, ale do film do dostosowania, i zobaczy się, co trzeba będzie zastosować po refaktoryzacji menu */
+  }
+} 
+
+
+  /* TOPBAR BREAKPOINT */
+
+  /* 🔴 XXX 🔴 */
+ @media only screen and (max-width: 1050px) {
+  .topbar__logo {
+    /* Refactoring Stage 2: tokenized compact logo size for small screens. */
+    width: var(--size-logo-compact);
+    /* Refactoring Stage 2: rem-based padding for the mobile logo placement. */
+    padding: var(--space-sm) 0 0 var(--space-xs);
+                         /* 🟡^ */
+  }
+/* 🔴 XXX 🔴 */
+
+.topbar{
+ display: flex;
+ align-items: center;
+}
+.topbar__logo {
+  display: none;
+}
+
+.logo{
+  /* position: relative; */
+}
+ .menu {
+    font-size: var(--text-sm); 
+    margin: auto;
+    margin-top: var(--space-md);
+ }
+
+
+.header__logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__logo{
+  display: block;
+  width: var(--size-logo-compact);
+}
+
+
+  .advantages {
+  flex-direction: column;
+
+  /* odstęp pomiędzy elementami */
+  gap: calc(var(--space-xl) * 2);
+
+  /* odstęp od krawiędzi */
+  padding: var(--space-xl);
+ }
+
+ .advantages__card {
+    padding: 0;
+    /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
+
+    /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
+  }
+}
