@@ -8,7 +8,37 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fraunces:wght@400;500;600;700&display=swap">
 </head>
 <style>
-    
+    .products-header {
+        display: flex;
+        justify-content: center;
+    }
+    .products-header__logo-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: var(--space-sm);
+
+        margin: var(--space-md) auto;
+
+        text-decoration: none;
+
+        color: var(--color-text);
+        background: var(--color-overlay);
+        border-radius: var(--radius);
+
+        text-shadow:
+            -1px -1px 0 #fff,
+             1px -1px 0 #fff,
+            -1px  1px 0 #fff,
+             1px  1px 0 #fff;
+        }
+
+    .products-header__logo{
+        display: none;
+    }
+
+
 </style>
 <body>
     <!-- /* Projekt został dostosowany do:
@@ -23,26 +53,38 @@
 */ -->
     <div class="page">
 
-                <div class="topbar">
-                    <div class="topbar__logo-container">
-                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
-                    </div>
+        <!-- stare topbar logo -->
+                <!-- <div class="topbar">
+                    <div class="logo-container">
+                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
+                    </div>   -->
+
+            <div class="topbar">
+                <a href="index.html" class="logo-container">
+                <img class="topbar__logo"
+                    src="src/PoP-logo.svg"
+                    alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
+                </a>
+
                     <ul class="menu">
-                        <li class="menu__item"><a class="menu__button" href="index.html">Farma</a></li>
-                        <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
+
                         <li class="menu__item menu__products menu__item--active"><a class="menu__button" href="produkty.html">Produkty</a></li>
                                 <!-- <li>Psina</li>
                                 <li>Nabiał</li>
                                 <li>Szczenięcina</li>
                                 <li>Kocina</li> -->
-                            <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
-                            <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
+                        <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
+                        <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
+                        <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
-                
-                <div class="products">
+
                     <header class="products-header">
-                        <h1 class="products-header__title">PRODUKTY</h1>
+                        <a href="index.html" class="products-header__logo-container">
+                            <img class="products-header__logo menu__button"
+                            src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak"> <span class="products-header__farm-title">Piesik od Pokoleń S.A.</span> 
+                        </a>
+                        <h1 class="products-header__title visually-hidden">PRODUKTY</h1>
                     </header>
 
                 <!-- https://sokolow.pl/ -->
@@ -66,7 +108,7 @@
                         
                         <!-- <div class="products-main-container"></div> -->
                             <!-- https://sokolow.pl/produkty -->
-                            <article class="products-section">
+                            <!-- <article class="products-section">
                                 <h2 class="products-section__title">PSINA</h2>
                                 <p class="products-section__description">Psina jest szlachetnym gatunkiem mięsa, a ponadto jest to wartościowy składnik diety, dostarczający pełnowartościowego białka, niezbędnych aminokwasów oraz witamin, takich jak kwas foliowy i inne witaminy z grupy B, a także minerałów w tym fosforu, sodu i potasu. Dzięki wysokiej zawartości tłuszczu charakteryzuje się dużą wartością energetyczną. To kluczowy element tradycyjnych potraw, doskonały do gotowania, smażenia, duszenia czy pieczenia. Przy wyborze psiny warto postawić na mięso wysokiej jakości, najlepiej pochodzące z młodych sztuk, które jest delikatne i niezbyt tłuste.</p>
                             </article>
@@ -75,7 +117,94 @@
                             <article class="products-section">
                                 <h2 class="products-section__title">KOCINA</h2>
                                 <p class="products-section__description">Kocina to mięso o wyjątkowych właściwościach, wyróżniające się delikatną strukturą, jasnoróżową barwą i niską zawartością tłuszczu. Jest doskonałym źródłem białka, cynku, potasu, żelaza oraz witamin z grupy B. Dzięki wysokiej wartości odżywczej szczególnie polecana jest dzieciom, seniorom i osobom dbającym o szczupłą sylwetkę. Ze względu na niską zawartość tłuszczu jest również odpowiednia dla osób z podwyższonym ryzykiem miażdżycy, chorób serca oraz diabetyków.</p>
-                            </article>
+                            </article> -->
+
+<!-- .offer-content -->
+            <div class="offer-content">
+
+                <!-- worldwide-offer -->
+                <div class="worldwide-offer">
+
+                    <!-- worldwide-offer__header -->
+                    <div class="worldwide-offer__header">
+                        <h2 class="worldwide-offer__title">Czy wiesz, że nasze produkty są dostępne w wielu krajach na całym świecie?</h2>
+                    </div>
+
+                    <div class="worldwide-offer__content">
+
+                        <div class="worldwide-offer__icon-container">
+                            <img class="worldwide-offer__icon" src="src/international_2206535.png" alt="Globus">
+                        </div>
+
+                        <div class="worldwide-offer__description">
+                            <div class="worldwide-offer__countries-container">
+                                <p class="worldwide-offer__countries">Jesteśmy dostępni w
+                                    <a class="worldwide-offer__country" href="https://www.elwooddogmeat.com/" target="_blank" rel="noopener">Stanach Zjednoczonych</a>,
+                                    <a class="worldwide-offer__country" href="https://sites.google.com/view/ranchodoslatidos/" target="_blank" rel="noopener">Brazylii</a>,
+                                    <a class="worldwide-offer__country" href="https://www.facebook.com/Rodopskaovcharka" target="_blank" rel="noopener">Bułgarii</a>,
+                                    <a class="worldwide-offer__country" href="https://www.ellashunde.dk/" target="_blank" rel="noopener">Danii</a>,
+                                    <a class="worldwide-offer__country" href="https://koiranliha.com/" target="_blank" rel="noopener">Finlandii</a>,
+                                    <a class="worldwide-offer__country" href="https://www.ferme-bernier.fr/" target="_blank" rel="noopener">Francji</a>,
+                                    <a class="worldwide-offer__country" href="https://www.facebook.com/p/Cat-Gourmet-Butcher-100087208381072/" target="_blank" rel="noopener">Malcie</a>,
+                                    <a class="worldwide-offer__country" href="https://www.koninkhondenvlees.nl/" target="_blank" rel="noopener">Holandii</a>,
+                                    <a class="worldwide-offer__country" href="https://www.hundekjott.no/" target="_blank" rel="noopener">Norwegii</a>,
+                                    <a class="worldwide-offer__country" href="https://belmontecarnedeperro.com/" target="_blank" rel="noopener">Hiszpanii</a>,
+                                    <a class="worldwide-offer__country" href="https://www.gotlandshundfarm.se/" target="_blank" rel="noopener">Szwecji</a>,
+                                    a także już niedługo w Niemczech i Afryce Południowej!
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="worldwide-offer__footer">Piesik od Pokoleń S.A. jest autoryzowanym, międzynarodowym członkiem Elwood's Organic Dog Meat. Zapewniamy jednak, że wszystkie psy są hodowane lokalnie, w państwa okolicy.
+                    </div>
+                </div>
+
+                <!-- https://sokolow.pl/produkty -->
+
+                <!-- .local-offer -->
+                <div class="local-offer">
+                    <!-- .local-offer categories -->
+                    <div class="local-offer__category-container">
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">MIĘSO</h3>
+                            <p class="local-offer__category-description">Hodowla zwierząt i produkcja mięsa jest naszą pasją! Z zaangażowaniem dostarczamy psie i kocie mięso naszym klientom, głęboko wierząc, że najwyższą jakość osiągamy dzięki połączeniu nowoczesnych rozwiązań, ciężkiej pracy, miłości do zwierząt i współpracy z polskimi, a także zagranicznymi rolnikami. Kontrolujemy każdy etap produkcji, by tworzyć mięso, które jest owocem naszej pasji i doświadczenia, by mogło trafić na Twój stół!</p>
+                        </div>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">WĘDLINY</h3>
+                            <p class="local-offer__category-description">Każdego dnia wytwarzamy około 1200 ton najwyższej jakości wyrobów mięsnych, z pasją tworząc smaki, które podbijają podniebienia. Nieustannie rozwijamy naszą ofertę, wprowadzając nowe kulinarne rozwiązania. Dbałość o wyjątkowy smak idzie u nas w parze z najwyższą jakością składników, z których powstają nasze produkty.</p>
+                        </div>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">DANIA GOTOWE</h3>
+                            <p class="local-offer__category-description">Wiemy, jak cenny jest Twój czas, dlatego oferujemy najwyższej jakości dania gotowe, które ułatwiają codzienne gotowanie. Tworzenie nowych produktów to nasza pasja! Przywracamy smaki uwielbiane przez naszych klientów od lat i odkrywamy nietypowe połączenia dla miłośników kulinarnych eksperymentów. Łączymy aktualne potrzeby konsumentów z naszymi inspiracjami, by dostarczać produkty o wyjątkowych walorach smakowych.</p>
+                        </div>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">KONSERWY</h3>
+                            <p class="local-offer__category-description">Czy dobre jedzenie i smaki z dzieciństwa są dla Ciebie ważne? Na farmie Piesik od Pokoleń wierzymy, że tak! Dlatego tworzymy nasze konserwy z myślą o chwilach pełnych kulinarnych przyjemności. Łączymy tradycyjne smaki z wygodą szybkiego przygotowania, by cieszyć się pysznymi wspomnieniami każdego dnia.</p>
+                        </div>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">OFERTA DLA WEGETARIAN</h3>
+                            <p class="local-offer__category-description">Tak, nasze produkty są także idealne dla ludzi na diecie wegetariańskiej! Ze względu na to, że uważnie śledzimy trendy żywieniowe i staramy się jak najlepiej odpowiadać na potrzeby naszych klientów, stworzyliśmy specjalną linię produktów wegetariańskich, dedykowaną osobom, które kochają zwierzęta i z tego powodu nie jedzą mięsa. Każdy, kto spróbował naszych produktów żałuje, że zrobił to tak późno. Jeśli jesteś, tak jak niegdyś nasi nowi klienci, osobą znudzoną ciągłym piciem krowiego, owczego, czy koziego mleka, gorąco zachęcamy do zapoznania się z naszą ofertą psiego i kociego mleka. Gwarantujemy wspaniały smak, nie wspominając nawet o walorach zdrowotnych!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div> 
+</div> 
+
+            <!-- https://sokolow.pl/produkty/wieprzowina/bez-antybiotykow -->
+
+            <!-- https://sokolowsa.pl/wydarzenia/sokolow-jako-pierwsza-polska-firma-ze-zgoda-na-eksport-wolowiny-do-chin -->
+            <!-- <h3>Psie mięso to przyszłość!</h3> -->
+            
+            <!-- <div class="farm-description__img-container">
+                <img src="src/dogsoffuture.png" alt="">
+                <span class="pro-description">
+                W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z polskimi rolnikami i możliwości kontroli na każdym etapie produkcji możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.            </span>-->
+                <!-- a href zobacz więcej https://sokolowsa.pl/firma/razem-w-przyszlosc -->
+        </div>
 
 
                     </main>

@@ -46,21 +46,23 @@
 /* Typogrphy scales (--text-*) z clamp */
   /* [ℹ] Użycie clamp() pozwala na płynne skalowanie tekstu między minimalną i maksymalną wartością, co poprawia czytelność na różnych ekranach. To nowoczesne podejście do fluid typography. */
   /* [ℹ] Using clamp() enables fluid scaling of text between minimum and maximum values, improving readability across screen sizes. This is a modern approach to fluid typography. */
-  --text-xs: clamp(0.625rem, 1.2vw, 1.125rem);
-  --text-sm: clamp(.6875rem, 2vw, 1.25rem);
-  --text-base: clamp(.75rem, 1.5vw, 1.125rem);
-  --text-md: clamp(0.875rem, 2.2vw, 1.75rem);
-  --text-lg: clamp(0.875rem, 2.3vw, 1.25rem);
-  --text-xl: clamp(.875rem, 2.4vw, 1.375rem);
-  --text-2xl: clamp(1.375rem, 4vw, 9.25rem);
+  /* --text-xs: clamp(0.625rem, 1.2vw, 1.125rem); */
+  --text-xs:clamp(0.5rem, 0.75vw, 1rem);
+  --text-sm: clamp(0.6rem, 1vw, 1.25rem);
+  --text-base: clamp(0.75rem, 1.25vw, 1.5rem);
+  --text-md: clamp(0.8rem, 1.5vw, 1.75rem);
+  --text-lg: clamp(0.9rem, 2vw, 2rem);
+  --text-xl: clamp(1rem, 2.5vw, 2.5rem);
+  --text-2xl: clamp(1.5rem, 3vw, 3rem);
 
 /* Spacing (--space-*) w rem */
+  --space-xxs: 0.3rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 2.5rem;
-
+  --space-2xl: 5rem;
 /* Colors (--color-*) */
   /* [ℹ] Zmiennie kolorów pozwalają na łatwe zarządzanie paletą i szybkie wprowadzanie zmian w całym projekcie. Semantyczne nazwy poprawiają czytelność i ułatwiają utrzymanie kodu. */
   /* [ℹ] Color variables allow easy palette management and quick global updates across the project. Semantic naming improves readability and maintainability. */
@@ -94,6 +96,7 @@
   /* --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);  */
   --size-logo: clamp(5rem, 40% + 1rem, 10rem);
   --size-logo-compact: clamp(4rem, 30% + 0.3rem, 12rem);
+  --size-logo-menu-btn: clamp(1rem, 10% + 0.5rem, 3rem);
   --size-advantage-icon: clamp(5rem, 8vw, 15rem);
   --size-advantage-icon-border: 0.15rem;
   --size-seal: clamp(10rem, 15vw, 25rem);
@@ -170,7 +173,12 @@ h6 {
 
 
 /* TOPBAR */
+.topbar {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 
+}
 .topbar__logo {
   /* ✓ logo po refaktoryzacji ✓*/
   position: absolute;
@@ -189,7 +197,8 @@ h6 {
 
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content:space-between;
+  align-items: center;
 
   /* klasyczny trick na centrowanie diva */
   margin: 0 auto;
@@ -198,33 +207,26 @@ h6 {
   /* padding: var(--space-sm) var(--space-xl); */
   /* ^ z tym treść poniżej advantages się rozjeżdża  */
 
-  padding: 2vw 3vw 2vw 3vw;
-  /* 🟠 vw lepiej się sprawdza */
+  padding: var(--space-md) var(--space-xl);
 
   list-style: none;
 
-  gap: 6vw;
-  /* 🟠 tutaj vw tylko się sprawdza */
+  /* gap: 9vw; */
+  /* 🟠 tutaj vw  się najlepiej sprawdza */
 
-  /* gap: var(--space-xl); */
-/* ^ z tym  treść poniżej advantages się rozjeżdża  */
+  gap: var(--space-2xl);
+  /* ^ z tym  treść poniżej advantages się rozjeżdża  */
+/* 🟠 hmm, a teraz się nic nie rozjeżdża */
 
   /* Refactoring Stage 2: tokenized menu type size. */
-  font-size: var(--text-xl); 
+  /* font-size: var(--text-xl);  */
 
   background: var(--color-overlay);
-
   border-radius: var(--radius);
 
   /* przesunięcie menu do lewej krawędzi */
   margin-top: var(--space-md);
-  margin-right: var(--space-lg);
-
-  text-shadow:
-    -1px -1px 0 #fff,
-     1px -1px 0 #fff,
-    -1px  1px 0 #fff,
-     1px  1px 0 #fff;
+  /* margin-right: var(--space-lg); */
 
   /* 🔴 do dopracowania na podstronach  */
 }
@@ -233,12 +235,17 @@ h6 {
   /* Refactoring Stage 2: tokenized text color for menu links. */
   color: var(--color-text);
   text-decoration: none;
+  font-size: var(--text-lg);
 
-  /* background-color: var(--color-overlay); */
+  
+  text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+    }
 
-  /* padding: 0.30em; */
-  /* border-radius: var(--radius); */
-}
+
 
 /* ⓘ zmienia cursor bez użycia :hover */
 .menu__item {
@@ -319,8 +326,12 @@ h6 {
 
 .advantages {
   display: flex;
+
   /* Refactoring Stage 2: tokenized advantages type size. */
-  font-size: var(--text-xs); 
+  /* font-size: var(--text-2xl);  */
+   /* font-size: 100rem; */
+   /* 🔴 CZEMU TO NIE REAGUJE!?  */
+
   /* Refactoring Stage 2: tokenized inverse text color. */
   color: var(--color-text-inverse);
   justify-content: center;
@@ -358,14 +369,12 @@ h6 {
 
 .advantages__title,
 .advantages__description {
-  /* Refactoring Stage 2: tokenized advantage description size. */
-  font-size: var(--text-xs);
+   /* Refactoring Stage 2: tokenized text color. */
+  color: var(--color-text);
 
-  /* Refactoring Stage 2: tokenized transparent text container box. */
   background: var(--color-transparent-box);
 
-  /* Refactoring Stage 2: tokenized text color. */
-  color: var(--color-text);
+ 
   
   /* Refactoring Stage 2: tokenized padding. */
   padding: var(--space-xs);
@@ -376,6 +385,17 @@ h6 {
   border-radius: var(--radius);
   /* 🟡takie radiusowe menu, headery i footer można roważyć, czy nawet może logo tak opleść? */
 }
+
+.advantages__title{
+  /* Refactoring Stage 2: tokenized advantage description size. */
+font-size: var(--text-md);
+}
+
+.advantages__description {
+font-size: var(--text-base);
+
+}
+
 
 .polish-quality {  
   width: 100%;
@@ -394,7 +414,6 @@ h6 {
 
   /* 🔴 Ustawiać na wszelki wypadek max-width:100%? 
   Wszystkie rozmiary do refaktoryzacji ⚠ 🔴*/
-  max-width: 100%;
 }
 
 /* .offer-content */
@@ -1080,7 +1099,6 @@ footer {
         line-height: 1.6;
     }
 
-    
     .partners__list {
         margin: 0;
       /* padding: 30px; */
@@ -1205,58 +1223,50 @@ footer {
   }
 } 
 
-
   /* TOPBAR BREAKPOINT */
 
-  /* 🔴 XXX 🔴 */
  @media only screen and (max-width: 1050px) {
-  .topbar__logo {
-    /* Refactoring Stage 2: tokenized compact logo size for small screens. */
-    width: var(--size-logo-compact);
-    /* Refactoring Stage 2: rem-based padding for the mobile logo placement. */
-    padding: var(--space-sm) 0 0 var(--space-xs);
-                         /* 🟡^ */
-  }
-/* 🔴 XXX 🔴 */
+  .topbar__logo{
+            display: none;
+            /* eee, 🔴 czemu to nic nie robi? */
+        }
 
-.topbar{
- display: flex;
- align-items: center;
-}
-.topbar__logo {
-  display: none;
-}
-
-.logo{
-  /* position: relative; */
-}
  .menu {
-    font-size: var(--text-sm); 
-    margin: auto;
-    margin-top: var(--space-md);
- }
+  /*     /* 🟠 tymczasowo zostaje, ale jest jeszcze do kolejnej refaktoryzacji */
+    margin-top: var(--space-xs );
+    /* margin:auto 10%; */
+    /* margin-left: 0.5rem; */
+    /* margin-right: 0.5rem; */
+    /* 🟠 dziwnie się to zachowuje, jeszcze do dopracowania */
+    padding: var(--space-sm);
+    /* gap: var(--space-xl); */
+    gap: 10vw;
+  }
 
+  /* MENU BUTTONS */
+  /* 🟠 ta sama wielkość, więc jakoś to dobrze byłoby ujednolicić */
+.menu__button {
+  font-size: var(--text-sm);
+  }
 
-.header__logo-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.header__logo{
-  display: block;
-  width: var(--size-logo-compact);
+.footer-menu__button {
+  font-size: var(--text-sm);
+  /* font-size: clamp(0.5rem, 0.75vw, 1rem); */
 }
 
 
   .advantages {
   flex-direction: column;
-
   /* odstęp pomiędzy elementami */
-  gap: calc(var(--space-xl) * 2);
+  gap: var(--space-2xl);
 
   /* odstęp od krawiędzi */
   padding: var(--space-xl);
  }
+.advantages__title,
+.advantages__description {
+  font-size: var(--text-sm);
+}
 
  .advantages__card {
     padding: 0;
@@ -1264,4 +1274,19 @@ footer {
 
     /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
   }
+
+.products-header__logo-container{
+  width: 8rem;
+  /* gap: var(--space-xxs); */
+  /* gap: 0.1rem; */
+  padding: var(--space-xxs);
+  }
+  .products-header__farm-title{
+  font-size: var( --text-xs);
+  }
+  .products-header__logo{
+  display: flex;
+  width: var(--size-logo-menu-btn);
+  }
+
 }
