@@ -338,6 +338,8 @@ h6 {
   justify-content: center;
 }
 
+
+
 .advantages__card {
   display: flex;
   flex-direction: column;
@@ -374,8 +376,6 @@ h6 {
   color: var(--color-text);
 
   background: var(--color-transparent-box);
-
- 
   
   /* Refactoring Stage 2: tokenized padding. */
   padding: var(--space-xs);
@@ -499,8 +499,12 @@ align-items: center;
 .worldwide-offer__description {
   /* border: dashed 3px violet; */
   padding-left: 2.5em ;
-  
-
+}
+.worldwide-offer__countries{
+  line-height: 1.5rem;
+}
+.worldwide-offer__country{
+  padding: var(--space-xs)
 }
 .worldwide-offer__footer {
 /* color: brown; */
@@ -523,7 +527,7 @@ text-align: center;
 .local-offer__category-description {
   /* font-size: clamp(12px, 1.2vw, 18px); zmniejszone max */
   /* color: cadetblue; */
-  padding-left: 1em;
+  padding-left: 2em;
 }
   @media only screen and (max-width: 1050px) {
 
@@ -607,12 +611,12 @@ footer {
       /* padding: 20px; */
       /* 🤖 Stage2: rem-based section padding. */
       padding: 1.25rem;
-        line-height: 1.6;
-        min-height: 100vh;
+      line-height: 1.6;
+      min-height: 100vh;
 
-         display: flex;
-        flex-direction: column;
-        justify-content: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
 /* 🟡em? */
@@ -1270,7 +1274,9 @@ footer {
 .advantages__title,
 .advantages__description {
   font-size: var(--text-sm);
+  
 }
+
 
  .advantages__card {
     padding: 0;
@@ -1292,5 +1298,10 @@ footer {
   display: flex;
   width: var(--size-logo-menu-btn);
   }
-
+.worldwide-offer__countries{
+  line-height: 3rem;
+}
+  .worldwide-offer__country{
+  padding: var(--space-md)
+}
 }
