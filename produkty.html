@@ -34,8 +34,9 @@
              1px  1px 0 #fff;
         }
 
-    .products-header__logo{
+    .header__logo--subpage{
         display: none;
+
     }
 
 
@@ -51,7 +52,7 @@
    - OOCSS: separation of structure vs skin and container vs content
    - SMACSS: Base, Layout, Module, State architecture
 */ -->
-    <div class="page">
+    <div class="page page--subpage">
 
         <!-- stare topbar logo -->
                 <!-- <div class="topbar">
@@ -68,7 +69,7 @@
 
                     <ul class="menu">
 
-                        <li class="menu__item menu__products menu__item--active"><a class="menu__button" href="produkty.html">Produkty</a></li>
+                        <li class="menu__item menu__item--active"><a class="menu__button" href="produkty.html">Produkty</a></li>
                                 <!-- <li>Psina</li>
                                 <li>Nabiał</li>
                                 <li>Szczenięcina</li>
@@ -78,14 +79,16 @@
                         <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
-
+                
+<!-- 🔴🔴🔴🔴🔴🔴🔴 -->
                     <header class="products-header">
                         <a href="index.html" class="products-header__logo-container">
-                            <img class="products-header__logo menu__button"
+                            <img class="header__logo--subpage menu__button"
                             src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak"> <span class="products-header__farm-title">Piesik od Pokoleń S.A.</span> 
                         </a>
                         <h1 class="products-header__title visually-hidden">PRODUKTY</h1>
                     </header>
+<!-- 🔴🔴🔴🔴🔴🔴🔴🔴 -->
 
                 <!-- https://sokolow.pl/ -->
 

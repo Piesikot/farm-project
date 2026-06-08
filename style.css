@@ -295,6 +295,7 @@ h6 {
 .header__logo{
   display: none;
 }
+
 .header__title {
   text-align: center;
   /* Refactoring Stage 2: tokenized hero title size. */
@@ -624,7 +625,10 @@ footer {
   width: var(--size-logo-compact);
   padding-top: var(--space-sm);
 }
-
+/* Na podstronach na dużych ekranach jest topbar logo  */
+.header__logo--subpage{
+        display: none;
+    }
 
 /* HEADERS */
 .news-header, .products-header, .contact-header, .mission-header, .real-mission-header, .welfare-header, .program-header, .career-header, .partners-header{
@@ -663,7 +667,7 @@ footer {
 }
 
 .news-section__title{
-  font-size: var(--text-lg);C
+  font-size: var(--text-lg);
 }
 
 .news-section__img {
