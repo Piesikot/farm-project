@@ -630,7 +630,7 @@ footer {
   padding-top: var(--space-sm);
 }
 /* Na podstronach na dużych ekranach jest topbar logo  */
-.products-header__logo--subpage{
+.brand__logo{
         display: none;
     }
 
@@ -641,7 +641,7 @@ footer {
     opacity: 1;
 }
 
- .products-header__logo-container{
+ .brand-container{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1311,14 +1311,14 @@ footer {
     /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
   }
 
- .products-header__logo-container{
+ .brand-container{
   width: 10rem;
   /* gap: var(--space-xxs); */
   /* gap: 0.1rem; */
   /* padding: var(--space-xxs); */
   }
 
-  .products-header__logo--subpage{
+  .brand__logo{
   display: flex;
   width: var(--size-logo-menu-btn);
   /* width:  */
