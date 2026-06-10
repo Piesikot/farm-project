@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fraunces:wght@400;500;600;700&display=swap">
 </head>
 <style>
-    .products-header {
-        display: flex;
-        justify-content: center;
-    }
-    .products-header__logo-container{
+
+   /* .header__logo-container{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,10 +29,16 @@
              1px -1px 0 #fff,
             -1px  1px 0 #fff,
              1px  1px 0 #fff;
-        }
+
+        width: clamp(1.5rem, 30% + 0.5rem, 3rem);
+        } */
 
     
-
+.header__logo--subpage{
+      /* display: flex; */
+  /* width: var(--size-logo-menu-btn); */
+    /* width: fit-content; */
+}
 
 </style>
 <body>
@@ -58,7 +61,7 @@
                     </div>   -->
 
             <div class="topbar">
-                <a href="index.html" class="logo-container">
+                <a href="index.html" class="topbar__logo-container">
                 <img class="topbar__logo"
                     src="src/PoP-logo.svg"
                     alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
@@ -67,10 +70,6 @@
                     <ul class="menu">
 
                         <li class="menu__item menu__item--active"><a class="menu__button" href="produkty.html">Produkty</a></li>
-                                <!-- <li>Psina</li>
-                                <li>Nabiał</li>
-                                <li>Szczenięcina</li>
-                                <li>Kocina</li> -->
                         <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
                         <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
                         <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
@@ -78,10 +77,10 @@
                 </div>
                 
 <!-- 🔴🔴🔴🔴🔴🔴🔴 -->
-                    <header class="products-header">
-                        <a href="index.html" class="products-header__logo-container">
-                            <img class="header__logo--subpage menu__button"
-                            src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak"> <span class="products-header__farm-title">Piesik od Pokoleń S.A.</span> 
+                     <header class="products-header">
+                        <a href="index.html" class="products-header__logo-container products-header__logo-container--subpage">
+                            <img class="products-header__logo products-header__logo--subpage"
+                            src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak"> <span class="products-header__farm-title menu__button">Piesik od Pokoleń S.A.</span>
                         </a>
                         <h1 class="products-header__title visually-hidden">PRODUKTY</h1>
                     </header>

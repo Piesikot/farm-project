@@ -96,7 +96,7 @@
   /* --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);  */
   --size-logo: clamp(5rem, 40% + 1rem, 10rem);
   --size-logo-compact: clamp(4rem, 30% + 0.3rem, 12rem);
-  --size-logo-menu-btn: clamp(1rem, 10% + 0.5rem, 3rem);
+  --size-logo-menu-btn: clamp(1.25rem, 10% + 0.5rem, 3rem);
   --size-advantage-icon: clamp(5rem, 8vw, 15rem);
   --size-advantage-icon-border: 0.15rem;
   --size-seal: clamp(10rem, 15vw, 25rem);
@@ -512,8 +512,6 @@ width: fit-content;
 text-align: center;
 }
 
-
-
 .local-offer{
   padding: 2em;
 }
@@ -522,7 +520,7 @@ text-align: center;
   justify-content: center;
   align-items: center;
   /* border: forestgreen dashed 5px; */
-  padding: 1em;
+  /* padding: 1em; */
 }
 .local-offer__category-description {
   /* font-size: clamp(12px, 1.2vw, 18px); zmniejszone max */
@@ -592,8 +590,10 @@ footer {
 /* ↑ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↑ */
 
 
-/* PODSTRONY | SUBPAGES */
 
+
+
+/* PODSTRONY | SUBPAGES */
 
 /* UKŁAD STRONY | LAYOUT */
     .career,
@@ -630,7 +630,7 @@ footer {
   padding-top: var(--space-sm);
 }
 /* Na podstronach na dużych ekranach jest topbar logo  */
-.header__logo--subpage{
+.products-header__logo--subpage{
         display: none;
     }
 
@@ -640,6 +640,32 @@ footer {
     z-index: 1;
     opacity: 1;
 }
+
+ .products-header__logo-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: var(--space-sm);
+
+        margin: var(--space-md) auto;
+
+        text-decoration: none;
+
+        color: var(--color-text);
+        background: var(--color-overlay);
+        border-radius: var(--radius);
+
+        text-shadow:
+            -1px -1px 0 #fff,
+             1px -1px 0 #fff,
+            -1px  1px 0 #fff,
+             1px  1px 0 #fff;
+
+        width: clamp(3rem, 30% + 0.5rem, 10rem);
+        width: fit-content;
+        }
+
 
 
 .news-section__container{
@@ -1285,19 +1311,29 @@ footer {
     /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
   }
 
-.products-header__logo-container{
-  width: 8rem;
+ .products-header__logo-container{
+  width: 10rem;
   /* gap: var(--space-xxs); */
   /* gap: 0.1rem; */
-  padding: var(--space-xxs);
+  /* padding: var(--space-xxs); */
   }
-  .products-header__farm-title{
-  font-size: var( --text-xs);
-  }
-  .products-header__logo{
+
+  .products-header__logo--subpage{
   display: flex;
   width: var(--size-logo-menu-btn);
+  /* width:  */
   }
+
+    .products-header__farm-title{
+  /* font-size: var( --text-xs); */
+  /* width: fit-content; */
+  /* width: var(--size-logo-menu-btn); */
+  /* width: */
+  /* font-size: var(--text-xxs); */
+  /*🟡 WTF jak to usunąłem to się zrobiło dobiło poprawne na małych ekranach */
+  }
+
+
 .worldwide-offer__countries{
   line-height: 3rem;
 }
