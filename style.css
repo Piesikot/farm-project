@@ -325,7 +325,7 @@ h6 {
 
 /* ADVANTAGES */
 
-.advantages {
+.advantages-container {
   display: flex;
 
   /* Refactoring Stage 2: tokenized advantages type size. */
@@ -336,6 +336,8 @@ h6 {
   /* Refactoring Stage 2: tokenized inverse text color. */
   color: var(--color-text-inverse);
   justify-content: center;
+
+  /* border: solid red; */
 }
 
 
@@ -397,15 +399,14 @@ font-size: var(--text-base);
 
 }
 
-
+/* 
 .polish-quality {  
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Refactoring Stage 2: tokenized background color. */
   background: var(--color-bg);
-}
+} */
 
 .polish-quality__seal {
   /* Refactoring Stage 2: tokenized seal size. */
@@ -1290,7 +1291,7 @@ footer {
 }
 
 
-  .advantages {
+  .advantages-container {
   flex-direction: column;
   /* odstęp pomiędzy elementami */
   gap: var(--space-2xl);
