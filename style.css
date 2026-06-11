@@ -179,7 +179,7 @@ h6 {
   /* align-items: center; */
 
 }
-.topbar__logo {
+.logo {
   /* ✓ logo po refaktoryzacji ✓*/
   position: absolute;
 /* 
@@ -625,7 +625,8 @@ footer {
 }
 
 /* Refactoring Stage 2: subpage logo sizing moved from internal to external CSS. */
-.page--subsite .topbar__logo {
+/* 🟡subsite!? */
+.page--subsite .logo {
   width: var(--size-logo-compact);
   padding-top: var(--space-sm);
 }
@@ -1260,7 +1261,7 @@ footer {
   /* TOPBAR BREAKPOINT */
 
  @media only screen and (max-width: 1050px) {
-  .topbar__logo{
+  .logo{
             display: none;
             /* eee, 🔴 czemu to nic nie robi? */
         }
