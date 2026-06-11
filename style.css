@@ -670,6 +670,13 @@ footer {
 
 
 
+/* PRODUKTY */
+.chart{
+  width: 100vw;
+  /* width: 1rem; */
+  /* height: auto; */
+}
+
 .news-section__container{
   /* border: solid red; */
   display: flex;
