@@ -96,7 +96,7 @@
   /* --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);  */
   --size-logo: clamp(5rem, 40% + 1rem, 10rem);
   --size-logo-compact: clamp(4rem, 30% + 0.3rem, 12rem);
-  --size-logo-menu-btn: clamp(1.25rem, 10% + 0.5rem, 3rem);
+  /* --size-brand-logo: clamp(1.5rem, 10% + 0.5rem, 3rem); */
   --size-advantage-icon: clamp(5rem, 8vw, 15rem);
   --size-advantage-icon-border: 0.15rem;
   --size-seal: clamp(10rem, 15vw, 25rem);
@@ -221,7 +221,8 @@ h6 {
   /* Refactoring Stage 2: tokenized menu type size. */
   /* font-size: var(--text-xl);  */
 
-  background: var(--color-overlay);
+  /* background: var(--color-overlay); */
+
   border-radius: var(--radius);
 
   /* przesunięcie menu do lewej krawędzi */
@@ -232,6 +233,11 @@ h6 {
 }
 
 .menu__button {
+  background: var(--color-overlay);
+  /* padding: 0.5rem; */
+  border-radius: var(--radius);
+  padding: 1.05rem;
+
   /* Refactoring Stage 2: tokenized text color for menu links. */
   color: var(--color-text);
   text-decoration: none;
@@ -245,6 +251,10 @@ h6 {
      1px  1px 0 #fff;
     }
 
+.brand__title{
+  /* padding: 0.5rem; */
+  background: none;
+}
 
 
 /* ⓘ zmienia cursor bez użycia :hover */
@@ -648,7 +658,6 @@ footer {
         justify-content: center;
         align-items: center;
 
-        padding: var(--space-sm);
 
         margin: var(--space-md) auto;
 
@@ -664,7 +673,9 @@ footer {
             -1px  1px 0 #fff,
              1px  1px 0 #fff;
 
-        width: clamp(3rem, 30% + 0.5rem, 10rem);
+        
+        /* padding: var(--space-sm); */
+        /* width: clamp(3rem, 30% + 0.5rem, 10rem); */
         width: fit-content;
         }
 
@@ -1274,28 +1285,69 @@ footer {
             /* eee, 🔴 czemu to nic nie robi? */
         }
 
+  /* NOWE DUZE MENU DO INDEXU  */
  .menu {
-  /*     /* 🟠 tymczasowo zostaje, ale jest jeszcze do kolejnej refaktoryzacji */
-    margin-top: var(--space-xs );
-    /* margin:auto 10%; */
-    /* margin-left: 0.5rem; */
-    /* margin-right: 0.5rem; */
-    /* 🟠 dziwnie się to zachowuje, jeszcze do dopracowania */
-    padding: var(--space-sm);
-    /* gap: var(--space-xl); */
-    gap: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    background: none;
+    justify-content: space-evenly;
+    /* gap: 3.6rem; */
+    gap: 1.5rem;
+    padding: 0.5rem;
+    /* flex-basis: 25%; */
   }
 
-  /* MENU BUTTONS */
-  /* 🟠 ta sama wielkość, więc jakoś to dobrze byłoby ujednolicić */
 .menu__button {
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
+  /* background: var(--color-overlay); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: var(--radius);
+
+  padding: 1.05rem;
+
+  /* flex-basis: 25%; */
+  
+  }
+  
+.brand-container{
+  /* width: rem; */
+  /* ^width tutaj powodował problemy */
+
+  width: 14.5rem;
+  /* ale bez width też problem */
+
+  height: 3.1rem;  
+  display: flex;
+  justify-content: center;
+  margin-top:1.5rem;
+}
+
+.brand__title{
+  padding: 0.5rem;
+  font-size: var(--text-md);
+}
+
+  .brand__logo{
+  display: flex;
+  /* width: var(--size-brand-logo); */
+  /* width: clamp(1.5rem, 10% + 0.5rem, 3rem);*/
+  width: 3rem;
+  /* float: right; */
+  /* background: none; */
   }
 
+
+
+  
 .footer-menu__button {
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
   /* font-size: clamp(0.5rem, 0.75vw, 1rem); */
 }
+
+
 
 
   .advantages-container {
@@ -1320,18 +1372,6 @@ footer {
     /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
   }
 
- .brand-container{
-  width: 10rem;
-  /* gap: var(--space-xxs); */
-  /* gap: 0.1rem; */
-  /* padding: var(--space-xxs); */
-  }
-
-  .brand__logo{
-  display: flex;
-  width: var(--size-logo-menu-btn);
-  /* width:  */
-  }
 
     .products-header__farm-title{
   /* font-size: var( --text-xs); */
