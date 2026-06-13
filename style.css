@@ -95,13 +95,13 @@
     /* 🟡 zwiększyć logo na dużych ekranach */
   /* --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);  */
   --size-logo: clamp(5rem, 40% + 1rem, 10rem);
-  --size-logo-compact: clamp(4rem, 30% + 0.3rem, 12rem);
+  --size-logo-compact: clamp(4.5rem, 30% + 0.3rem, 12rem);
   /* --size-brand-logo: clamp(1.5rem, 10% + 0.5rem, 3rem); */
   --size-advantage-icon: clamp(5rem, 8vw, 15rem);
   --size-advantage-icon-border: 0.15rem;
   --size-seal: clamp(10rem, 15vw, 25rem);
   --size-worldwide-icon: clamp(5rem, 6vw, 6rem);
-  --size-worldwide-icon-compact: clamp(4rem, 6vw, 6rem);
+  --size-worldwide-icon-compact: clamp(4.5rem, 6vw, 10rem);
   --size-news-image: clamp(6rem, 10vw, 8rem);
   --size-contact-icon: clamp(2.5rem, 5vw, 3.5rem);
   --size-partner-logo: clamp(3.125rem, 30% + 0.3rem, 6rem);
@@ -210,16 +210,14 @@ h6 {
 
 .menu__button {
   background: var(--color-overlay);
-  /* padding: 0.5rem; */
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: var(--space-sm);
 
   /* Refactoring Stage 2: tokenized text color for menu links. */
   color: var(--color-text);
   text-decoration: none;
   font-size: var(--text-lg);
 
-  
   text-shadow:
     -1px -1px 0 #fff,
      1px -1px 0 #fff,
@@ -228,10 +226,8 @@ h6 {
     }
 
 .brand__title{
-  /* padding: 0.5rem; */
   background: none;
 }
-
 
 /* ⓘ zmienia cursor bez użycia :hover */
 .menu__item {
@@ -278,7 +274,6 @@ h6 {
   margin-top: var(--space-md);
 }
 
-/* .header__logo */
 .logo--header{
   display: none;
 }
@@ -290,7 +285,6 @@ h6 {
   margin: 0;
 
   text-decoration: underline;
-
   text-shadow:
     -1px -1px 0 #fff,
      1px -1px 0 #fff,
@@ -315,19 +309,10 @@ h6 {
 .advantages-cards-container {
   display: flex;
 
-  /* Refactoring Stage 2: tokenized advantages type size. */
-  /* font-size: var(--text-2xl);  */
-   /* font-size: 100rem; */
-   /* 🔴 CZEMU TO NIE REAGUJE!?  */
-
   /* Refactoring Stage 2: tokenized inverse text color. */
   color: var(--color-text-inverse);
   justify-content: center;
-
-  /* border: solid red; */
 }
-
-
 
 .advantages-card {
   display: flex;
@@ -342,9 +327,9 @@ h6 {
   justify-content: center;
   align-items: center;
 
-  border: var(--size-advantage-icon-border) solid var(--color-surface);
+  border: var(--size-advantage-icon-border) solid var(--color-border);
   border-radius: 50%;
-  box-shadow: inset 0 0 0 var(--size-advantage-icon-border) var(--color-border);
+  box-shadow: inset 0 0 0 var(--size-advantage-icon-border) var(--color-surface);
   /* box-shadow: inset i border, intencjonalnie użyte razem jako obrys i kontur obrysu dla efektu wizualnego  */
 
   /* Refactoring Stage 2: tokenized icon size. */
@@ -368,7 +353,7 @@ h6 {
   
   /* Refactoring Stage 2: tokenized padding. */
   padding: var(--space-xs);
-  /* ⚠  Robił się pasekna monitorze 19. */
+  /* ⚠  Robił się pasek na monitorze 19. */
   /*  teraazz tekstem xs i paddingiem xs na 19' działa🟠 */
 
   /* Refactoring Stage 2: tokenized radius. */
@@ -383,92 +368,39 @@ font-size: var(--text-md);
 
 .advantages-card__description {
 font-size: var(--text-base);
-
-}
-
-/* 
-.polish-quality {  
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-bg);
-} */
-
-.polish-quality__seal {
-  /* Refactoring Stage 2: tokenized seal size. */
-  width: var(--size-seal);
-  /* Refactoring Stage 2: tokenized seal padding. */
-  padding: var(--space-lg);
-
-  /* 🔴 Ustawiać na wszelki wypadek max-width:100%? 
-  Wszystkie rozmiary do refaktoryzacji ⚠ 🔴*/
 }
 
 /* .offer-content */
 .offer-content {
-  /* color: #000; */
-  /* 🤖 Stage2: tokenized offer text color. */
+  /* Refactoring Stage 2: tokenized offer text color. */
   color: var(--color-text);
 
-  /* ⚠ ⓘ  🔧 ↓   ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
-  /* background: white; */
-  /* 🤖 Stage2: tokenized offer background. */
-  background: var(--color-bg);
-        /* ↑ 🔧 ↑ */
+  /* ⚠  ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
 
-/* padding: 1em; */
+  /* Refactoring Stage 2: tokenized offer background. */
+  background: var(--color-bg);
 }
-/* ⓘ ten wrap  jednak okazał się potrzebny, żeby ułożyć globus w odpowiednim miejscu ⓘ */
-/* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer__content` with `.worldwide-offer__content` (Batch B). */
-/* .offer-content__worldwide-offer__content { */
+
 .worldwide-offer__content {
   display: flex;
-/* border: 3px dashed purple; */
   padding: 1em;
   align-items: center;
-  /* 🟡 koniecznie trzeba dostosować jeszcze, żeby linki były bardziej klikalne 🟡*/
 }
-/* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer__img` with `.worldwide-offer__img` (Batch B). */
-/* .offer-content__worldwide-offer__img { */
-/* 🤖 LEGACY-STAGE1B: renamed `.worldwide-offer__img` to `.worldwide-offer__icon-container` for clearer semantics of the wrapper element. */
-/* .worldwide-offer__img { */
+
 .worldwide-offer__icon-container {
 display: flex;
 justify-content: center;
 align-items: center;
 }
-/* 🤖 LEGACY-STAGE1: replaced tag-coupled `.offer-content__worldwide-offer__img img` with class-first `.worldwide-offer__icon` (Batch D). */
-/* .offer-content__worldwide-offer__img img { */
-
 
 .worldwide-offer__icon {
-  /* width: 6em; */
-  /* 🤖 Stage2: tokenized worldwide icon size. */
+
+  /* Refactoring Stage 2:: tokenized worldwide icon size. */
   width: var(--size-worldwide-icon);
-  /* height: 6em; */
-  /* 🤖 Stage2: tokenized worldwide icon size. */
+  /* Refactoring Stage 2: tokenized worldwide icon size. */
   height: var(--size-worldwide-icon);
-  /* width:35%; */
-  /* height: 35%; */
-  /* ⚠ z procentami się totalnie spłaszcza, że jest ledwo widoczne, hmmm.. ⚠  */
-  /* 🟡 dlatego wracam tymczasowo do em 🟡*/
-}
- @media only screen and (max-width: 1050px) {
-.worldwide-offer__content {
- flex-direction: column;
- /* flex-wrap: wrap; */
 }
 
-  .worldwide-offer__icon {
-  /* width: 4em; */
-  /* 🤖 Stage2: tokenized compact worldwide icon size. */
-  width: var(--size-worldwide-icon-compact);
-  /* height: 4em; */
-  /* 🤖 Stage2: tokenized compact worldwide icon size. */
-  height: var(--size-worldwide-icon-compact);
-  }
- }
 
 /* 🛠 ↓ offer-content po pierwszedj refaktoryzacji ↓ 🛠 ✓ */
 /* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer` with `.worldwide-offer` (Batch B). */
@@ -492,8 +424,13 @@ align-items: center;
   line-height: 1.5rem;
 }
 .worldwide-offer__country{
-  padding: var(--space-xs)
+  padding: var(--space-xs);
+  color:#3fa5ff;
 }
+.worldwide-offer__country:visited {
+ color:#fc6b55;
+}
+
 .worldwide-offer__footer {
 /* color: brown; */
 width: fit-content;
@@ -661,8 +598,7 @@ footer {
 /* PRODUKTY */
 .chart{
   width: 100vw;
-  /* width: 1rem; */
-  /* height: auto; */
+  display: none;
 }
 
 .news-section__container{
@@ -1221,8 +1157,8 @@ footer {
 
     
 /* BREAKPOINT MAX-WIDTH: 1050px */ 
-/* [ℹ] jedyny w całym projekcie. Konieczny dla uzyskania immersyjnego efektu interakcji warstw, parallax-like effect nożem po gardle przy scrollowaniu  */
-/* [ℹ] one breakpoint is necessary for good UX - interactive parallax-like effect of a knife across the throat while scrolling */
+/* [ℹ]  Konieczny dla uzyskania immersyjnego efektu interakcji warstw, parallax-like effect nożem po gardle przy scrollowaniu  */
+/* [ℹ] Nnecessary for good UX - interactive parallax-like effect of a knife across the throat while scrolling */
 
 /* 🟡Ogólnie trzeba fonty zwiększyć na małch ekranach, zwłascza menu🟡 */
 
@@ -1252,14 +1188,10 @@ footer {
 
     /* jakoś tam działą, ale do film do dostosowania, i zobaczy się, co trzeba będzie zastosować po refaktoryzacji menu */
   }
-} 
 
-  /* TOPBAR BREAKPOINT */
-
- @media only screen and (max-width: 1050px) {
+  /* na małych ekranach logo się wyświetla nie w topbarze, a headerze lub pod menu */
   .logo--topbar{
             display: none;
-            /* eee, 🔴 czemu to nic nie robi? */
         }
 
   /* NOWE DUZE MENU DO INDEXU  */
@@ -1268,108 +1200,113 @@ footer {
     flex-wrap: wrap;
     background: none;
     justify-content: space-evenly;
-    /* gap: 3.6rem; */
-    gap: 1.5rem;
-    padding: 0.5rem;
+    gap: var(--space-md);
+    padding: var(--space-xs);
   }
 
 .menu__button {
   font-size: var(--text-md);
-  /* background: var(--color-overlay); */
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: var(--radius);
-
-  padding: 1.05rem;
-
-  /* flex-basis: 25%; */
-  
+  padding: var(--space-sm);
   }
   
 .brand-container{
-  /* width: rem; */
-  /* ^width tutaj powodował problemy */
-
   width: 15.5rem;
-  /* ale bez width też problem */
-
   height: 3.1rem;  
+  /* specjalnie dobrane rozmiary, inne nie pasują  */
+
   display: flex;
   justify-content: center;
-  margin-top:1.5rem;
+  margin-top: var(--space-md);
 }
 
 .brand__title{
-  padding: 0.5rem;
+  padding: var(--space-xs);
   font-size: var(--text-md);
 }
 
-  .brand__logo{
+.brand__logo{
   display: flex;
-  /* width: var(--size-brand-logo); */
-  /* width: clamp(1.5rem, 10% + 0.5rem, 3rem);*/
   width: 3rem;
-  /* float: right; */
-  /* background: none; */
+  /* specjalnie dobrane rozmiary, inne nie pasują  */
   }
 
+.logo--topbar {
+  display: none;
+  }
 
-
-  
-.footer-menu__button {
-  font-size: var(--text-md);
-  /* font-size: clamp(0.5rem, 0.75vw, 1rem); */
+.logo-container--header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
+.logo--header{
+  display: flex;
+  width: var(--size-logo-compact);
+}
 
+.header__title{
+  /* lepiej dostosowany rozmiar na małych ekranach🟠 */
+    font-size: calc(var(--text-2xl)*1.2); 
+  }
+
+.header__subtitle{
+  font-size: var(--text-xl)
+  }
 
   .advantages-cards-container {
   flex-direction: column;
+
   /* odstęp pomiędzy elementami */
   gap: var(--space-2xl);
 
   /* odstęp od krawiędzi */
   padding: var(--space-xl);
  }
+
 .advantages-card__title,
 .advantages-card__description {
-  font-size: var(--text-sm);
-  
+  font-size: var(--text-md);
 }
 
+.worldwide-offer__content {
+ flex-direction: column;
+}
+
+  .worldwide-offer__icon {
+  /* Refactoring Stage 2: tokenized compact worldwide icon size. */
+  width: var(--size-worldwide-icon-compact);
+  height: var(--size-worldwide-icon-compact);
+  /* czy jest sens tego tokena dla tej jednej wartości? */
+  }
+  
+.footer-menu__button {
+  font-size: var(--text-md);
+}
 
  .advantages-card {
     padding: 0;
     /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
-
-    /* Na razie zostawiam tak, potem jeszcze wraz ze zmianą rozmarów fontów będzie trzeba dostosować wielkości i odległości */
   }
-
-
-    .products-header__farm-title{
-  /* font-size: var( --text-xs); */
-  /* width: fit-content; */
-  /* width: var(--size-logo-menu-btn); */
-  /* width: */
-  /* font-size: var(--text-xxs); */
-  /*🟡 WTF jak to usunąłem to się zrobiło dobiło poprawne na małych ekranach */
-  }
-
 
 .worldwide-offer__countries{
   line-height: 3rem;
 }
   .worldwide-offer__country{
-  padding: var(--space-md)
+  padding: var(--space-md);
 }
-}
+
+
 
 /* BREAKPOINT STYLUJĄCY MENU NA NAJMNIEJSZYCH ERKANACH JEDNAK JEST POTRZEBNY*/
 @media only screen and (max-width: 475px) {
   .menu__item {
+    /* zapobiega wrapowaniu się do 3 pozycji */
     flex: 0 0 calc(50% - 1.5rem);
   }
 }
