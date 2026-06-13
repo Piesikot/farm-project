@@ -173,26 +173,12 @@ h6 {
 
 
 /* TOPBAR */
-.topbar {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
 
-}
 .logo--topbar{
-  /* ✓ logo po refaktoryzacji ✓*/
   position: absolute;
-/* 
-  background: var(--color-transparent-box);
-  border-radius: var(--radius); */
-
-  /* Refactoring Stage 2: tokenized shared logo size for 1:1 rem migration. */
   width: var(--size-logo);
-
   padding: 0 var(--space-md);
-  
-  /* ✓ logo po refaktoryzacji ✓ */
-  /* 🔴 do dopracowania na podstronach  */
+  /* 🔴 do dopracowania na podstronach włącznie ze strukturą HTML */
 }
 
 .menu {
@@ -205,29 +191,19 @@ h6 {
   width: fit-content;
 
   /* padding: var(--space-sm) var(--space-xl); */
-  /* ^ z tym treść poniżej advantages się rozjeżdża  */
+  /* ^ z tym treść poniżej advantages się rozjeżdżało, ale teraz w tamtym miejscu nie ma już żadnej treści  */
 
   padding: var(--space-md) var(--space-xl);
 
   list-style: none;
 
-  /* gap: 9vw; */
-  /* 🟠 tutaj vw  się najlepiej sprawdza */
-
   gap: var(--space-2xl);
-  /* ^ z tym  treść poniżej advantages się rozjeżdża  */
+  /* ^ z tym  treść poniżej advantages się rozjeżdżała  */
 /* 🟠 hmm, a teraz się nic nie rozjeżdża */
-
-  /* Refactoring Stage 2: tokenized menu type size. */
-  /* font-size: var(--text-xl);  */
-
-  /* background: var(--color-overlay); */
 
   border-radius: var(--radius);
 
-  /* przesunięcie menu do lewej krawędzi */
   margin-top: var(--space-md);
-  /* margin-right: var(--space-lg); */
 
   /* 🔴 do dopracowania na podstronach  */
 }
@@ -236,7 +212,7 @@ h6 {
   background: var(--color-overlay);
   /* padding: 0.5rem; */
   border-radius: var(--radius);
-  padding: 1.05rem;
+  padding: 1rem;
 
   /* Refactoring Stage 2: tokenized text color for menu links. */
   color: var(--color-text);
