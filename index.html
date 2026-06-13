@@ -77,16 +77,16 @@
 
 
  @media only screen and (max-width: 1050px) {
-    .topbar__logo {
+    .logo--topbar {
     display: none;
     }
 
-    .header__logo-container{
+    .logo-container--header{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.header__logo{
+.logo--header{
   display: flex;
   width: var(--size-logo-compact);
 }
@@ -97,14 +97,10 @@
 
 <body>
     <div class="page">
-            <!-- <div class="topbar">
-                <div class="topbar__logo-container">
-                    <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
-                </div> -->
 
                 <div class="topbar">
-                    <div class="logo-container">
-                        <img class="logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
+                    <div class="logo-container logo-container--topbar">
+                        <img class="logo logo--topbar" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
                     </div>  
                 
                     <ul class="menu">
@@ -126,12 +122,10 @@
         </div> 
     
             <header class="header">
-                <div class="header__logo-container">
-
-                    <!-- Na małych ekranach w nagłówku strony głównej (indeksu) wyświetla się logo firmy.-->
-                    <!-- On small screens, the company logo appears in the header of the index (landing) page. -->
-                    <img class="header__logo" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
-                    
+                <!-- Na małych ekranach w nagłówku strony głównej (indeksu) wyświetla się logo firmy.-->
+                <!-- On small screens, the company logo appears in the header of the (index) page. -->
+                <div class="logo-container logo-container--header">
+                    <img class="logo logo--header" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
                     <h1 class="header__title">Piesik od Pokoleń S.A.</h1>
                     </div>
                 <h2 class="header__subtitle">Psie mięso to przyszłość!</h2>
@@ -173,7 +167,6 @@
                     </div>
 
                     <div class="advantages-container">
-
                         <div class="advantages__card">
                             <div class="advantages__icon-container">
                                 <img class="advantages__icon" src="src/bez_antybiotyków.png" alt="ikona przedstawiająca ">

@@ -179,7 +179,7 @@ h6 {
   /* align-items: center; */
 
 }
-.logo {
+.logo--topbar{
   /* ✓ logo po refaktoryzacji ✓*/
   position: absolute;
 /* 
@@ -302,7 +302,8 @@ h6 {
   margin-top: var(--space-md);
 }
 
-.header__logo{
+/* .header__logo */
+.logo--header{
   display: none;
 }
 
@@ -637,7 +638,7 @@ footer {
 
 /* Refactoring Stage 2: subpage logo sizing moved from internal to external CSS. */
 /* 🟡subsite!? */
-.page--subsite .logo {
+.page--subsite .logo--topbar {
   width: var(--size-logo-compact);
   padding-top: var(--space-sm);
 }
@@ -1280,7 +1281,7 @@ footer {
   /* TOPBAR BREAKPOINT */
 
  @media only screen and (max-width: 1050px) {
-  .logo{
+  .logo--topbar{
             display: none;
             /* eee, 🔴 czemu to nic nie robi? */
         }
@@ -1294,7 +1295,6 @@ footer {
     /* gap: 3.6rem; */
     gap: 1.5rem;
     padding: 0.5rem;
-    /* flex-basis: 25%; */
   }
 
 .menu__button {
@@ -1316,7 +1316,7 @@ footer {
   /* width: rem; */
   /* ^width tutaj powodował problemy */
 
-  width: 14.5rem;
+  width: 15.5rem;
   /* ale bez width też problem */
 
   height: 3.1rem;  
@@ -1389,4 +1389,11 @@ footer {
   .worldwide-offer__country{
   padding: var(--space-md)
 }
+}
+
+/* BREAKPOINT STYLUJĄCY MENU NA NAJMNIEJSZYCH ERKANACH JEDNAK JEST POTRZEBNY*/
+@media only screen and (max-width: 475px) {
+  .menu__item {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
 }
