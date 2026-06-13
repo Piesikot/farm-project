@@ -336,7 +336,7 @@ h6 {
 
 /* ADVANTAGES */
 
-.advantages-container {
+.advantages-cards-container {
   display: flex;
 
   /* Refactoring Stage 2: tokenized advantages type size. */
@@ -353,7 +353,7 @@ h6 {
 
 
 
-.advantages__card {
+.advantages-card {
   display: flex;
   flex-direction: column;
   padding: var(--space-lg);
@@ -361,7 +361,7 @@ h6 {
   text-align: center;
 }
 
-.advantages__icon-container {
+.advantages-card__icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -378,13 +378,13 @@ h6 {
   /* Refactoring Stage 2: tokenized icon border. */
 }
 
-.advantages__icon {
+.advantages-card__icon {
   /* ⓘ wartość procetowa utrzymująca proporcje ikony względem kontenera tj.okręgu. Token utworzony w tym celu byłby nadmiarowy. */
   width: 60%;
 }
 
-.advantages__title,
-.advantages__description {
+.advantages-card__title,
+.advantages-card__description {
    /* Refactoring Stage 2: tokenized text color. */
   color: var(--color-text);
 
@@ -400,12 +400,12 @@ h6 {
   /* 🟡takie radiusowe menu, headery i footer można roważyć, czy nawet może logo tak opleść? */
 }
 
-.advantages__title{
+.advantages-card__title{
   /* Refactoring Stage 2: tokenized advantage description size. */
 font-size: var(--text-md);
 }
 
-.advantages__description {
+.advantages-card__description {
 font-size: var(--text-base);
 
 }
@@ -1350,7 +1350,7 @@ footer {
 
 
 
-  .advantages-container {
+  .advantages-cards-container {
   flex-direction: column;
   /* odstęp pomiędzy elementami */
   gap: var(--space-2xl);
@@ -1358,14 +1358,14 @@ footer {
   /* odstęp od krawiędzi */
   padding: var(--space-xl);
  }
-.advantages__title,
-.advantages__description {
+.advantages-card__title,
+.advantages-card__description {
   font-size: var(--text-sm);
   
 }
 
 
- .advantages__card {
+ .advantages-card {
     padding: 0;
     /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
 
