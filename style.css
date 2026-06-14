@@ -46,7 +46,6 @@
 /* Typogrphy scales (--text-*) z clamp */
   /* [ℹ] Użycie clamp() pozwala na płynne skalowanie tekstu między minimalną i maksymalną wartością, co poprawia czytelność na różnych ekranach. To nowoczesne podejście do fluid typography. */
   /* [ℹ] Using clamp() enables fluid scaling of text between minimum and maximum values, improving readability across screen sizes. This is a modern approach to fluid typography. */
-  /* --text-xs: clamp(0.625rem, 1.2vw, 1.125rem); */
   --text-xs:clamp(0.5rem, 0.75vw, 1rem);
   --text-sm: clamp(0.6rem, 1vw, 1.25rem);
   --text-base: clamp(0.75rem, 1.25vw, 1.5rem);
@@ -56,7 +55,6 @@
   --text-2xl: clamp(1.5rem, 3vw, 3rem);
 
 /* Spacing (--space-*) w rem */
-  --space-xxs: 0.3rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -79,7 +77,7 @@
   --color-surface-soft: rgba(255, 255, 255, 0.35);
   --color-overlay: rgba(0, 0, 0, 0.6);
 
-  /* 🔴ten kolor jeszcze poustawiać gdzie indziej, gdzie się da -chyba już wykonane */
+  /* 🟠ten kolor jeszcze poustawiać gdzie indziej, gdzie się da 🟠-chyba już wykonane */
   --color-transparent-box: rgba(255, 255, 255, 0.6);
 
   --color-border: #000;
@@ -92,7 +90,7 @@
     /* [ℹ] Zmiennie rozmiarów oparte na clamp() zapewniają responsywne skalowanie grafik bez utraty proporcji. Dzięki temu elementy wizualne wyglądają dobrze na każdym ekranie. */
     /* [ℹ] Graphics size variables based on clamp() ensure responsive scaling of visuals without losing proportions. This ensures elements look good on any screen size. */  
     
-    /* 🟡 zwiększyć logo na dużych ekranach */
+    /* 🟠 zwiększyć logo na dużych ekranach */
   /* --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);  */
   --size-logo: clamp(5rem, 40% + 1rem, 10rem);
   --size-logo-compact: clamp(4.5rem, 30% + 0.3rem, 12rem);
@@ -127,6 +125,8 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
+
+  
 }
 
  /* Titles */
@@ -166,6 +166,8 @@ h6 {
   /* [ℹ] picture in case video fails to load */
     background: url('src/TastyDog-Background.png') center/cover;
     /* ↑ 🟡 Do zrobienia jeszcze inne warianty */
+
+  height: max-content;
 }
 /* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
 
@@ -205,7 +207,7 @@ h6 {
 
   margin-top: var(--space-md);
 
-  /* 🔴 do dopracowania na podstronach  */
+  /* 🟠 do sprawdzemoa na podstronach  */
 }
 
 .menu__button {
@@ -237,6 +239,7 @@ h6 {
 /* ⓘ EFEKTY DLA AKTYWNYCH ELEMENTÓW MENU NA KTORYM USER SIĘ ZNAJDUJE BEZ ZMIENIANIA KAŻDEJ Z PODSTRON OSOBNO. ⓘ */
 .menu__item--active .menu__button {
   text-decoration: underline;
+  font-weight: 800;
   cursor: not-allowed;
 }
 .footer-menu__item--active .footer-menu__button {
@@ -354,7 +357,7 @@ h6 {
   /* Refactoring Stage 2: tokenized padding. */
   padding: var(--space-xs);
   /* ⚠  Robił się pasek na monitorze 19. */
-  /*  teraazz tekstem xs i paddingiem xs na 19' działa🟠 */
+  /*  teraz tekstem xs i paddingiem xs na 19' działa. 🟠 */
 
   /* Refactoring Stage 2: tokenized radius. */
   border-radius: var(--radius);
@@ -370,141 +373,66 @@ font-size: var(--text-md);
 font-size: var(--text-base);
 }
 
-/* .offer-content */
-.offer-content {
-  /* Refactoring Stage 2: tokenized offer text color. */
-  color: var(--color-text);
 
-  /* ⚠  ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
-
-  /* Refactoring Stage 2: tokenized offer background. */
-  background: var(--color-bg);
-}
-
-.worldwide-offer__content {
-  display: flex;
-  padding: 1em;
-  align-items: center;
-}
-
-.worldwide-offer__icon-container {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.worldwide-offer__icon {
-
-  /* Refactoring Stage 2:: tokenized worldwide icon size. */
-  width: var(--size-worldwide-icon);
-  /* Refactoring Stage 2: tokenized worldwide icon size. */
-  height: var(--size-worldwide-icon);
-}
-
-
-/* 🛠 ↓ offer-content po pierwszedj refaktoryzacji ↓ 🛠 ✓ */
-/* 🤖 LEGACY-STAGE1: replaced `.offer-content__worldwide-offer` with `.worldwide-offer` (Batch B). */
-/* .offer-content__worldwide-offer { */
-.worldwide-offer {
-  display: flex;
- flex-direction: column;
- /* border: dashed 5px blue;   */
-
- padding: 2em;
-}
-
-.worldwide-offer__title {
-  text-align: center;
-}
-.worldwide-offer__description {
-  /* border: dashed 3px violet; */
-  padding-left: 2.5em ;
-}
-.worldwide-offer__countries{
-  line-height: 1.5rem;
-}
-.worldwide-offer__country{
-  padding: var(--space-xs);
-  color:#3fa5ff;
-}
-.worldwide-offer__country:visited {
- color:#fc6b55;
-}
-
-.worldwide-offer__footer {
-/* color: brown; */
-width: fit-content;
-text-align: center;
-}
 
 .local-offer{
-  padding: 2em;
+  background: #f9f9f9;
+  /* padding: 2em; */
+   padding: var(--space-lg);
 }
 .local-offer__category {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: forestgreen dashed 5px; */
-  /* padding: 1em; */
 }
 .local-offer__category-description {
-  /* font-size: clamp(12px, 1.2vw, 18px); zmniejszone max */
-  /* color: cadetblue; */
-  padding-left: 2em;
+  /* padding-left: 2em; */
+  padding-left: var(--space-lg)
 }
-  @media only screen and (max-width: 1050px) {
 
-.local-offer__category {
-  flex-direction: column;
-  }
 
- }
 
 
  /* FOOTER */
-/* ↓ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↓ */
-footer {
-  /* background: #000; */
-  /* 🤖 Stage2: tokenized footer background. */
-  background: var(--color-bg-inverse);
-  /* color: #ffffff; */
-  /* 🤖 Stage2: tokenized footer text color. */
-  color: var(--color-text-inverse);
 
+footer {
+  /* Refactoring Stage 2: tokenized footer background. */
+  background: var(--color-bg-inverse);
+  /* Refactoring Stage 2:tokenized footer text color. */
+  color: var(--color-text-inverse);
 }
+
 .footer-menu {
   display: flex;
-    /* gap: 1.5em; */
-    /* 🤖 Stage2: tokenized footer gap. */
+
+    /* Refactoring Stage 2: tokenized footer gap. */
     gap: var(--space-md);
     /*ⓘ ↑odstęp↑ MIĘDZY elementami PIONOWY */
-    /* padding: 1.5em; */
-    /* 🤖 Stage2: tokenized footer padding. */
+
+    /* Refactoring Stage 2: tokenized footer padding. */
     padding: var(--space-md);
     /*ⓘ ↑odstęp↑ OD KRAWĘDZI kontenera  */
 
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
 .footer-menu__button {
-  color: red;
-  /* color: #ffffff; */
-  /* 🤖 Stage2: tokenized footer link color. */
+  /* Refactoring Stage 2: tokenized footer link color. */
   color: var(--color-text-inverse);
   text-decoration: none;
-  /* font-size: 16px; */
-  /* 🤖 Stage2: rem-based font size for footer links. */
-  font-size: 1rem;
+
+/* 🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡 */
+
+  /* Refactoring Stage 2: rem-based font size for footer links. */
+  font-size: var(--text-sm);
   line-height: 1.2;
-/* daje ~40–44px wysokości */
-  /* padding: 16px;  */
-  /* min-height: 44px; */
-  /* padding: 44px; */
-  /* margin: 4rem; */
 }
+
 .footer-menu__item--active .footer-menu__button {
   text-decoration: underline;
-  font-weight: 700;
+  font-weight: 800;
+  cursor: not-allowed;
 }
 .footer-menu__item--centered {
   display: flex;
@@ -512,9 +440,6 @@ footer {
   flex-basis: 100%;
   text-align: center;
 }
-/* ↑ ✓ footer po pierwszej (i mam nadzieję, że ostatniej) refaktoryzacji ✓ ↑ */
-
-
 
 
 
@@ -596,6 +521,82 @@ footer {
 
 
 /* PRODUKTY */
+
+
+
+
+/* .offer-content */
+.offer-content {
+  /* Refactoring Stage 2: tokenized offer text color. */
+  color: var(--color-text);
+
+  /* ⚠  ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
+
+  /* Refactoring Stage 2: tokenized offer background. */
+  background: var(--color-bg);
+}
+
+.worldwide-offer__content {
+  display: flex;
+  padding: var(--space-2xl 0);
+  align-items: center;
+  /* justify-content: center; */
+    /* ^ 🟡 czemu nie działa?   */
+    /* border: solid red; */
+}
+
+.worldwide-offer__icon-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.worldwide-offer__icon {
+  /* Refactoring Stage 2: tokenized worldwide icon size. */
+  width: var(--size-worldwide-icon);
+  /* Refactoring Stage 2: tokenized worldwide icon size. */
+  height: var(--size-worldwide-icon);
+    /* 🟡 czy jest sens tego tokena dla tej jednej wartości? */
+}
+
+
+.worldwide-offer {
+  display: flex;
+ flex-direction: column;
+ /* padding: 2em; */
+ padding: var(--space-lg);
+}
+
+.worldwide-offer__title {
+  text-align: center;
+}
+.worldwide-offer__description {
+  /* padding-left: 2.5em ; */
+   padding: var(--space-xl);
+   /* padding-top: 0; */
+}
+.worldwide-offer__countries{
+  /* line-height: 1.5rem; */
+  line-height: var(--space-md);
+}
+.worldwide-offer__country{
+  padding: var(--space-xs);
+  color:#3fa5ff;
+}
+.worldwide-offer__country:visited {
+ color:#fc6b55;
+}
+
+.worldwide-offer__footer {
+width: fit-content;
+text-align: center;
+}
+
+
+
+
+
+
 .chart{
   width: 100vw;
   display: none;
@@ -1274,16 +1275,28 @@ footer {
   font-size: var(--text-md);
 }
 
-.worldwide-offer__content {
- flex-direction: column;
-}
+
 
   .worldwide-offer__icon {
   /* Refactoring Stage 2: tokenized compact worldwide icon size. */
   width: var(--size-worldwide-icon-compact);
   height: var(--size-worldwide-icon-compact);
-  /* czy jest sens tego tokena dla tej jednej wartości? */
   }
+  .worldwide-offer__content {
+ flex-direction: column;
+}
+.local-offer__category {
+  flex-direction: column;
+  }
+
+  .local-offer__category-description {
+  padding: 0;
+}
+
+.local-offer__category-title{
+  text-align: center;
+}
+
   
 .footer-menu__button {
   font-size: var(--text-md);
@@ -1294,13 +1307,16 @@ footer {
     /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
   }
 
+.worldwide-offer__description {
+   padding-top: 0;
+}
 .worldwide-offer__countries{
   line-height: 3rem;
 }
   .worldwide-offer__country{
   padding: var(--space-md);
 }
-
+ }
 
 
 /* BREAKPOINT STYLUJĄCY MENU NA NAJMNIEJSZYCH ERKANACH JEDNAK JEST POTRZEBNY*/
@@ -1309,4 +1325,8 @@ footer {
     /* zapobiega wrapowaniu się do 3 pozycji */
     flex: 0 0 calc(50% - 1.5rem);
   }
+
+  /* .worldwide-offer__content {
+ flex-direction: column;
+} */
 }

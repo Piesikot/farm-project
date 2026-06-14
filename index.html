@@ -77,7 +77,7 @@
 
 
  @media only screen and (max-width: 1050px) {
-    .logo--topbar {
+    /* .logo--topbar {
     display: none;
     }
 
@@ -88,8 +88,8 @@
 }
 .logo--header{
   display: flex;
-  width: var(--size-logo-compact);
-}
+  width: calc(var(--size-logo-compact)*1.2);
+} */
   }
 
 
@@ -98,6 +98,7 @@
 <body>
     <div class="page">
 
+                <!-- 🔴 do dopracowania na podstronach -->
                 <div class="topbar">
                     <div class="logo-container logo-container--topbar">
                         <img class="logo logo--topbar" src="src/PoP-logo.svg" alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
@@ -163,55 +164,37 @@
                                 Nasze psy mają możliwość przebywania na świeżym powietrzu.
                             </p>
                         </div>
-
                     </div>
-
-                    <div class="advantages-cards-container">
-                        <div class="advantages-card">
-                            <div class="advantages-card__icon-container">
-                                <img class="advantages-card__icon" src="src/bez_antybiotyków.png" alt="ikona przedstawiająca ">
-                            </div>
-                            <h3 class="advantages-card__title">Bez Antybiotyków</h3>
-                            <p class="advantages-card__description">
-                                Ograniczamy użycie antybiotyków do niezbędnego minumum.
-                            </p>
+                </div>
+                
+                <!-- .local-offer -->
+                <div class="local-offer">
+                    <!-- .local-offer categories -->
+                    <div class="local-offer__category-container">
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">MIĘSO</h3>
+                            <p class="local-offer__category-description">Hodowla zwierząt i produkcja mięsa jest naszą pasją! Z zaangażowaniem dostarczamy psie i kocie mięso naszym klientom, głęboko wierząc, że najwyższą jakość osiągamy dzięki połączeniu nowoczesnych rozwiązań, ciężkiej pracy, miłości do zwierząt i współpracy z polskimi, a także zagranicznymi rolnikami. Kontrolujemy każdy etap produkcji, by tworzyć mięso, które jest owocem naszej pasji i doświadczenia, by mogło trafić na Twój stół!</p>
                         </div>
-
-                        <div class="advantages-card">
-                            <div class="advantages-card__icon-container">
-                                <img class="advantages-card__icon" src="src/produkt_polski.png" alt="ikona przedstawiająca ">
-                            </div>
-                            <h3 class="advantages-card__title">Produkt Polski</h3>
-                            <p class="advantages-card__description">
-                                Kupując nasze produkty, wspierasz polską gospodarkę.
-                            </p>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">WĘDLINY</h3>
+                            <p class="local-offer__category-description">Każdego dnia wytwarzamy około 1200 ton najwyższej jakości wyrobów mięsnych, z pasją tworząc smaki, które podbijają podniebienia. Nieustannie rozwijamy naszą ofertę, wprowadzając nowe kulinarne rozwiązania. Dbałość o wyjątkowy smak idzie u nas w parze z najwyższą jakością składników, z których powstają nasze produkty.</p>
                         </div>
-
-
-                        <div class="advantages-card">
-                            <div class="advantages-card__icon-container">
-                                <img class="advantages-card__icon" src="src/najwyzsza_jakosc.png" alt="ikona przedstawiająca ">
-                            </div>
-                            <h3 class="advantages-card__title">Najwyższa Jakość</h3>
-                            <p class="advantages-card__description">
-                                Nasze produkty posiadają certyfikaty najwyższej jakości.
-                            </p>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">DANIA GOTOWE</h3>
+                            <p class="local-offer__category-description">Wiemy, jak cenny jest Twój czas, dlatego oferujemy najwyższej jakości dania gotowe, które ułatwiają codzienne gotowanie. Tworzenie nowych produktów to nasza pasja! Przywracamy smaki uwielbiane przez naszych klientów od lat i odkrywamy nietypowe połączenia dla miłośników kulinarnych eksperymentów. Łączymy aktualne potrzeby konsumentów z naszymi inspiracjami, by dostarczać produkty o wyjątkowych walorach smakowych.</p>
+                        </div>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">KONSERWY</h3>
+                            <p class="local-offer__category-description">Czy dobre jedzenie i smaki z dzieciństwa są dla Ciebie ważne? Na farmie Piesik od Pokoleń wierzymy, że tak! Dlatego tworzymy nasze konserwy z myślą o chwilach pełnych kulinarnych przyjemności. Łączymy tradycyjne smaki z wygodą szybkiego przygotowania, by cieszyć się pysznymi wspomnieniami każdego dnia.</p>
+                        </div>
+                        <div class="local-offer__category">
+                            <h3 class="local-offer__category-title">OFERTA DLA WEGETARIAN</h3>
+                            <p class="local-offer__category-description">Tak, nasze produkty są także idealne dla ludzi na diecie wegetariańskiej! Ze względu na to, że uważnie śledzimy trendy żywieniowe i staramy się jak najlepiej odpowiadać na potrzeby naszych klientów, stworzyliśmy specjalną linię produktów wegetariańskich, dedykowaną osobom, które kochają zwierzęta i z tego powodu nie jedzą mięsa. Każdy, kto spróbował naszych produktów żałuje, że zrobił to tak późno. Jeśli jesteś, tak jak niegdyś nasi nowi klienci, osobą znudzoną ciągłym piciem krowiego, owczego, czy koziego mleka, gorąco zachęcamy do zapoznania się z naszą ofertą psiego i kociego mleka. Gwarantujemy wspaniały smak, nie wspominając nawet o walorach zdrowotnych!</p>
                         </div>
                     </div>
-            </div>
+                </div>
         </div>
 
-            <!-- <h4 class="farm__farm-title">Mięso z tuczu bez antybiotyków</h4>
-            <span class="farm__farm-description">
-                Naszym głównym celem w prowadzeniu tuczu bez użycia antybiotyków jest ograniczenie ich stosowania do minimum, edukacja producentów na temat zasad takiego tuczu oraz koordynacja całego procesu. Dzięki temu zapewniamy najwyższej jakości surowiec do produktów, które spełniają oczekiwania naszych konsumentów. Jednocześnie stale rozszerzamy naszą ofertę o nowe, innowacyjne produkty, odpowiadając na rosnące potrzeby rynku.</span> -->
-            
-            <!-- <img class="chart" src="src/butcher_chart.png" alt="obraz przedstawiający części ciała psa przeznaczone na mięso "> -->
-
-            <!-- <div class="polish-quality">
-                <img class="polish-quality__seal" src="src/Copilot_20260225_083128.png" alt="Certyfikat Ministerstwa Rolnictwa i Rozwoju Wsi - Produkt Polski">
-            </div> -->
-
-            
     </main>
     <footer>
             <div class="footer-menu">
