@@ -52,7 +52,7 @@
   --text-md: clamp(0.8rem, 1.5vw, 1.75rem);
   --text-lg: clamp(0.9rem, 2vw, 2rem);
   --text-xl: clamp(1rem, 2.5vw, 2.5rem);
-  --text-2xl: clamp(1.5rem, 3vw, 3rem);
+  --text-2xl: clamp(2rem, 4vw, 5rem);
 
 /* Spacing (--space-*) w rem */
   --space-xs: 0.5rem;
@@ -125,8 +125,6 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
-
-  
 }
 
  /* Titles */
@@ -167,7 +165,8 @@ h6 {
     background: url('src/TastyDog-Background.png') center/cover;
     /* ↑ 🟡 Do zrobienia jeszcze inne warianty */
 
-  height: max-content;
+  /* height: max-content; */
+  /* ^ z tym nie wyświetla się na telefonie */
 }
 /* ↑ ✓ Video po pierwszej refaktoryzacji ✓ ↑ */
 
@@ -283,11 +282,17 @@ h6 {
 
 .header__title {
   text-align: center;
-  /* Refactoring Stage 2: tokenized hero title size. */
-  font-size: var(--text-2xl); 
   margin: 0;
 
+  /* Refactoring Stage 2: tokenized hero title size. */
+  font-size: var(--text-2xl);
+  
+  font-weight:900;
+  /* 1000 jest dozwolone w CSS, ale większość fontów i tak zaokrągli to do 900, i tak jest z Fraunces . */
+
+
   text-decoration: underline;
+
   text-shadow:
     -1px -1px 0 #fff,
      1px -1px 0 #fff,
@@ -385,9 +390,15 @@ font-size: var(--text-base);
   justify-content: center;
   align-items: center;
 }
+.local-offer__category-title{
+    font-size: var(--text-md);
+
+}
 .local-offer__category-description {
   /* padding-left: 2em; */
-  padding-left: var(--space-lg)
+  padding-left: var(--space-lg);
+
+  font-size: var(--text-md);
 }
 
 
@@ -425,7 +436,7 @@ footer {
 /* 🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡 */
 
   /* Refactoring Stage 2: rem-based font size for footer links. */
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
   line-height: 1.2;
 }
 
@@ -524,16 +535,35 @@ footer {
 
 
 
-
 /* .offer-content */
 .offer-content {
-  /* Refactoring Stage 2: tokenized offer text color. */
-  color: var(--color-text);
+  /* border: solid rgb(225, 255, 0); */
 
+  /* Refactoring Stage 2: tokenized offer text color. */
+  /* color: var(--color-text); */
   /* ⚠  ⓘ teraz już wiem, że opacity i kolory tła wpływają na wyświetlanie się bloków ⓘ */
 
   /* Refactoring Stage 2: tokenized offer background. */
-  background: var(--color-bg);
+  /* background: var(--color-bg); */
+  
+  /* font-size: var(--space-md); */
+}
+
+
+.worldwide-offer {
+  display: flex;
+ flex-direction: column;
+ /* padding: 2em; */
+ padding: var(--space-lg);
+ /* border: solid rgb(255, 0, 0); */
+}
+
+.worldwide-offer__title {
+   /* border: solid gold; */
+
+  text-align: center;
+  font-size: var(--text-lg);
+
 }
 
 .worldwide-offer__content {
@@ -542,7 +572,6 @@ footer {
   align-items: center;
   /* justify-content: center; */
     /* ^ 🟡 czemu nie działa?   */
-    /* border: solid red; */
 }
 
 .worldwide-offer__icon-container {
@@ -560,24 +589,17 @@ align-items: center;
 }
 
 
-.worldwide-offer {
-  display: flex;
- flex-direction: column;
- /* padding: 2em; */
- padding: var(--space-lg);
-}
-
-.worldwide-offer__title {
-  text-align: center;
-}
 .worldwide-offer__description {
   /* padding-left: 2.5em ; */
    padding: var(--space-xl);
    /* padding-top: 0; */
+
+       font-size: var(--text-md);
+
 }
 .worldwide-offer__countries{
   /* line-height: 1.5rem; */
-  line-height: var(--space-md);
+  line-height: var(--space-lg);
 }
 .worldwide-offer__country{
   padding: var(--space-xs);
@@ -590,20 +612,47 @@ align-items: center;
 .worldwide-offer__footer {
 width: fit-content;
 text-align: center;
+
+/* dopiero z margin 0 auto ten footer środkuje się na tv */
+justify-content: center;
+margin: 0 auto;
+
+    font-size: var(--text-base);
 }
 
+.products-lists{
+  display: flex;
+  justify-content: center;
+  font-size: var(--text-base);
+    /* padding: 20px; */
+    /* 🟠 do doprasowania z chartem, bo jakoś krzywo jest */
+    
+    /* margin: 0 auto; */
 
+    display: none;
+}
 
+.products-lists ul{
+  padding: 20px;
+  /* ^ 🟠 bez tego na telefonie się rozjeżdża */
+  /* justify-content: center; */
 
+}
+.chart-container{
+  display: flex;
+  justify-content: center;
 
+      display: none;
 
+}
 .chart{
-  width: 100vw;
-  display: none;
-}
+  width: 40vw;
+  /* width: 50%; */
+  /* display: none; */
+  /* margin: 0 auto; */
 
+}
 .news-section__container{
-  /* border: solid red; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1253,7 +1302,7 @@ text-align: center;
 
 .header__title{
   /* lepiej dostosowany rozmiar na małych ekranach🟠 */
-    font-size: calc(var(--text-2xl)*1.2); 
+    /* font-size: calc(var(--text-2xl)*1.2);  */
   }
 
 .header__subtitle{
@@ -1299,7 +1348,7 @@ text-align: center;
 
   
 .footer-menu__button {
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
 }
 
  .advantages-card {
@@ -1309,13 +1358,19 @@ text-align: center;
 
 .worldwide-offer__description {
    padding-top: 0;
+   /* font-size: var(--space-sm); */
 }
 .worldwide-offer__countries{
   line-height: 3rem;
+  text-align: center
 }
   .worldwide-offer__country{
   padding: var(--space-md);
 }
+
+
+.products-lists{
+  font-size: var(--text-xs);
  }
 
 
