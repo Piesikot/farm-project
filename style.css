@@ -506,6 +506,26 @@ footer {
 text-align: center;
 }
 
+/*[ℹ] ⓘ  Ukrywa element wizualnie, ale pozostawia go dostępnym dla a11y i SEO */
+/*[ℹ] ⓘ Visually hides the element while keeping it available for a11y and SEO */
+  .visually-hidden{
+    position: absolute;
+    /* width: 1px; */
+    /* 🤖 Stage2: rem-based a11y sizing. */
+    width: 0.0625rem;
+    /* height: 1px; */
+    /* 🤖 Stage2: rem-based a11y sizing. */
+    height: 0.0625rem;
+    padding: 0;
+    /* margin: -1px; */
+    /* 🤖 Stage2: rem-based a11y offset. */
+    margin: -0.0625rem;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
  .brand-container{
         display: flex;
         justify-content: center;
@@ -918,7 +938,12 @@ font-size: var(--text-base);}
         text-decoration: underline;
     } 
     
+
+
+
+
     /* FOOTER SUBSITES */
+
  .welfare-policy {
    /* margin: 20px; */
    /* 🤖 Stage2: rem-based welfare card margin. */
@@ -940,7 +965,7 @@ font-size: var(--text-base);}
 
 
 
-/* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
+/* 🔴te są potrzebne */
 .welfare-header__subtitle {
     margin: 0;
 }
@@ -1022,28 +1047,97 @@ font-size: var(--text-base);}
     /* line-height: 1.6; */
 }
 
-
-
-
-/*[ℹ] ⓘ  Ukrywa element wizualnie, ale pozostawia go dostępnym dla a11y i SEO */
-/*[ℹ] ⓘ Visually hides the element while keeping it available for a11y and SEO */
-  .visually-hidden{
-    position: absolute;
-    /* width: 1px; */
-    /* 🤖 Stage2: rem-based a11y sizing. */
-    width: 0.0625rem;
-    /* height: 1px; */
-    /* 🤖 Stage2: rem-based a11y sizing. */
-    height: 0.0625rem;
-    padding: 0;
-    /* margin: -1px; */
-    /* 🤖 Stage2: rem-based a11y offset. */
-    margin: -0.0625rem;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+.career{
+  padding-top: 0;
+  padding-bottom: 0;
+  /* align-items: center; */
+  font-size: var(--text-md);
 }
+
+.career__section-title{
+  /* text-align: center; */
+}
+
+.career__section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+    .career__list {
+        /* margin: 0; */
+        /* padding-left: 0; */
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+/* 
+    .career__section-title, .career__section-lead,  */
+    
+    .career__list-item{
+      padding: var(--space-xs);
+      /* padding-left: 0; */
+              /* text-align: center; */
+
+    }
+
+.career__apply-button{
+    display: inline-block;
+  /* padding: 6px 12px; */
+  /* 🤖 Stage2: rem-based padding for apply button. */
+  padding: 0.375rem 0.75rem;
+  /* background: hsl(94, 100%, 44%); */
+  /* 🤖 Stage2: tokenized accent color. */
+  background: var(--color-accent);
+  /* color: white; */
+  /* 🤖 Stage2: tokenized inverse text color. */
+  color: var(--color-text-inverse);
+  /* border-radius: 16px; */
+  /* 🤖 Stage2: rem-based button radius. */
+  border-radius: var(--radius);
+    text-decoration: none;
+    
+ text-shadow:
+    -1px -1px 0 #009428,
+     1px -1px 0 #24a800,
+    -1px  1px 0 #1eb300,
+     1px  1px 0 #2ac300;
+
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: #fff;
+  background: #00c853;
+  border-radius: var(--radius);
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 200, 83, 0.6);
+  animation: pulse 1.8s infinite ease-in-out;
+  transition: transform 0.2s ease;
+}
+
+.career__apply-button:hover{
+    /* background: #27ae60; */
+  transform: scale(0.95);
+}
+
+
+.career__apply-button:active {
+  transform: scale(0.75);
+}
+
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0.8rem rgba(0, 200, 83, 0.6); }
+  50% { box-shadow: 0 0 1.6rem rgba(0, 200, 83, 0.9); }
+  100% { box-shadow: 0 0 0.8rem rgba(0, 200, 83, 0.6); }
+}
+
+
+
+
+
 
 
 
@@ -1116,32 +1210,6 @@ font-size: var(--text-base);}
     .career-header__subtitle {
         margin: 0;
     }
-
-    .career__list {
-        margin: 0;
-        padding-left: 1.5rem;
-    }
-
-
-.career__apply-button{
-    display: inline-block;
-  /* padding: 6px 12px; */
-  /* 🤖 Stage2: rem-based padding for apply button. */
-  padding: 0.375rem 0.75rem;
-  /* background: hsl(94, 100%, 44%); */
-  /* 🤖 Stage2: tokenized accent color. */
-  background: var(--color-accent);
-  /* color: white; */
-  /* 🤖 Stage2: tokenized inverse text color. */
-  color: var(--color-text-inverse);
-  /* border-radius: 16px; */
-  /* 🤖 Stage2: rem-based button radius. */
-  border-radius: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-
 
     .partners {
       /* margin: 20px; */
@@ -1418,6 +1486,39 @@ font-size: var(--text-base);}
         max-width: 100%;
         /* width */
       }
+    
+      
+
+    .career__section{
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+}
+
+    .career__list {
+        margin: 0;
+        /* padding-left: 0; */
+        /* justify-content: center; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        text-align: left;
+        display: block;
+    }
+/* 
+    .career__section-title, .career__section-lead,  */
+    
+    .career__list-item{
+      padding: var(--space-xs);
+      /* padding-left: 0; */
+              /* text-align: center; */
+      }
+
+      .career__apply-button{
+        margin-top: 10px;
+      }
+  }
 
 
 /* BREAKPOINT STYLUJĄCY MENU NA NAJMNIEJSZYCH ERKANACH JEDNAK JEST POTRZEBNY*/
