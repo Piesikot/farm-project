@@ -496,11 +496,12 @@ footer {
         display: none;
     }
 
-/* HEADERS */
+/* HEADERSy podstron */
 .news-header, .products-header, .contact-header, .mission-header, .real-mission-header, .welfare-header, .program-header, .career-header, .partners-header{
-/* 🟡 do ustawienia z indexem potem */
-    z-index: 1;
+   z-index: 1;
     opacity: 1;
+/* czy ^ z-index i opacity potrzebne ? */
+text-align: center;
 }
 
  .brand-container{
@@ -619,6 +620,7 @@ margin: 0 auto;
 
     font-size: var(--text-base);
 }
+
 
 .products-lists{
   display: flex;
