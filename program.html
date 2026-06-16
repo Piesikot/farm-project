@@ -14,12 +14,6 @@
 </head>
 <style>
 
-/* .topbar__logo {
-        width: clamp(50px, 30% + 5px, 3200px);
-        padding-top: 1em;
-    } */
-/* 🤖 Stage2: moved subpage logo sizing to style.css under .page--subsite .topbar__logo. */
-
 </style>
 <body>
           <!-- /* Projekt został dostosowany do:
@@ -33,34 +27,46 @@
    - SMACSS: Base, Layout, Module, State architecture
 */ -->
     <div class="page page--subsite">
-        <!-- <div class="wrapper"> -->
-                <div class="topbar">
-                    <div class="topbar__logo-container">
-                        <img class="topbar__logo" src="src/PoP-logo.svg" alt="logo Piesik od Pokoleń ">
-                    </div>
+
+            <div class="topbar">
+                               
+                <a href="index.html" class="logo-container--topbar">
+                <img class="logo--topbar"
+                    src="src/PoP-logo.svg"
+                    alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
+                </a>
+
                     <ul class="menu">
-                        <li class="menu__item"><a class="menu__button" href="index.html">Farma</a></li>
+                        <li class="menu__item"><a class="menu__button" href="produkty.html">Produkty</a></li>
                         <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
-                        <li class="menu__item menu__products"><a class="menu__button" href="produkty.html">Produkty</a></li>
-                                <!-- <li>Psina</li>
-                                <li>Nabiał</li>
-                                <li>Szczenięcina</li>
-                                <li>Kocina</li> -->
-                            <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
-                            <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
+                        <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
+                        <li class="menu__item"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
                     </ul>
                 </div>
+
+                <a href="index.html" class="brand-container brand">
+                    <!-- logo inside brand button -->
+                    <img class="brand__logo logo--brand"
+                        src="src/PoP-logo.svg"
+                        alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
+                    <span class="brand__title menu__button">Piesik od Pokoleń S.A.</span>
+                </a>
 
         <!-- Treść strony jest satyryczną parafrazą polityki firmy Sokołów S.A. -->
         <!-- https://sokolowsa.pl/firma/razem-w-przyszlosc -->
             <div class="program">
                 <header class="program-header">
                     <h1 class="program-header__title">PROGRAM</h1>
-                    <p class="program-header__subtitle">W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z polskimi rolnikami i możliwości kontroli na każdym etapie produkcji możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.</p>
-                    <!-- <img src="src/FutureDogs.png" alt="biegnące psy"> -->
+                    <h2 class="program-header__subtitle" >W ramach programu „Psie mięso to Przyszłość” budujemy przyszłość zdrowego jedzenia. Dzięki współpracy z polskimi, a także i zagranicznymi rolnikami mamy możliwość kontroli na każdym etapie produkcji, i dzięki temu możemy mieć pewność, że produkujemy najwyższej jakości mięso i wędliny.  </h2>
+
                 </header>
 
                 <main class="program-main">
+
+                  
+                    <img src="src/future_dogs.png" class="program-img" alt="biegnące psy">
+
+
                         <p class="program__description">Idea działania firmy Piesik od Pokoleń S.A. opiera się na założeniu, że doskonałość w przemyśle mięsnym można osiągnąć jedynie poprzez harmonijne połączenie innowacyjnych technologii z najwyższymi standardami bezpieczeństwa, gwarantowanymi przez zespół wysoko kompetentnych ekspertów. W ramach inicjatywy „Psie mięso to przyszłość" spółka Piesik od Pokoleń kształtuje wizję zdrowej żywności przyszłości. Dzięki ścisłej kooperacji z zagranicznymi producentami rolnymi oraz możliwości nadzoru nad całym procesem wytwórczym, firma ma gwarancję wytwarzania produktów mięsnych i wyrobów wędliniarskich najwyższej próby. Piesik od Pokoleń S.A. jest prekursorem w polskim sektorze przetwórstwa mięsa psiego i kociego, wprowadził model bezpośredniej partnerstwa z gospodarstwami rolnymi. Nowatorski system hodowli psów funkcjonuje nieprzerwanie od roku 2020, natomiast program tuczu psowatych rozpoczął działalność w marcu 2017 roku. Obecnie Piesik od Pokoleń S.A. współpracuje z prawie 200 hodowcami zwierząt z całego świata.</p>
 
                         <section class="program__section">
@@ -104,7 +110,6 @@
                 <span class="footer-menu__item footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
             </div>
     </footer>
-
 
 <script>
 

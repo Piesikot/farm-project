@@ -493,6 +493,7 @@ footer {
   /* padding-top: var(--space-sm); */
 }
 /* Na podstronach na dużych ekranach jest topbar logo  */
+
 .brand__logo{
         display: none;
     }
@@ -736,6 +737,11 @@ font-size: var(--text-base);}
 
 }
 
+.welfare-main, .program-main{
+  font-size: var(--text-md);
+}
+
+
 /* MISSION */
 .mission-header {
         text-align: center;
@@ -756,6 +762,22 @@ font-size: var(--text-base);}
       /* 🤖 Stage2: rem-based mission body padding. */
       padding: 0 6.25rem;
     }
+
+.program-header__subtitle{
+  font-size: var(--text-md);
+}
+
+.program-img{
+  width: 100vw;
+  max-width: 60%;
+
+  margin: 0 auto;
+  display: block;
+  /* ⓘ margin: 0 auto nie działa, jak element nie jest blokiem */
+}
+
+
+
 
     .mission-header__subtitle {
         padding: 20vh 0;
@@ -958,44 +980,46 @@ font-size: var(--text-base);}
 }
 
 /* 🔴 do dopracowania pozostałe marginesy z nagłówków semantycznych. Jak najlpeiej to opracaować? */
+/* 🟠 po zakometowaniu nie ma żadnej widocznej zmiany, znowu Copilot mi nabrudził */
+
 .program-header__subtitle {
-    margin: 0;
+    /* margin: 0; */
 }
 
 .program__description {
-    margin: 0 0 2rem 0;
+    /* margin: 0 0 2rem 0; */
 }
 
 .program__section {
-    margin: 0 0 2rem 0;
+    /* margin: 0 0 2rem 0; */
 }
 
 .program__section-title {
-    margin: 0 0 0.75rem 0;
+    /* margin: 0 0 0.75rem 0; */
 }
 
 .program__section-lead {
-    margin: 0 0 1rem 0;
+    /* margin: 0 0 1rem 0; */
 }
 
 .program__list {
-    margin: 0;
-    padding-left: 1.5rem;
+    /* margin: 0; */
+    /* padding-left: 1.5rem; */
 }
 
 .program__list-item {
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
 }
 
 
  .program {
   /* margin: 20px; */
   /* 🤖 Stage2: rem-based program section margin. */
-  margin: 1.25rem;
+  /* margin: 1.25rem; */
   /* padding: 20px; */
   /* 🤖 Stage2: rem-based program section padding. */
-  padding: 1.25rem;
-    line-height: 1.6;
+  /* padding: 1.25rem; */
+    /* line-height: 1.6; */
 }
 
 
@@ -1228,166 +1252,172 @@ font-size: var(--text-base);}
 
 /* INDEX VIDEO BREAKPOINT - 🟡 do doskonalenia na małe ekrany*/
  @media only screen and (max-width: 1050px) {
-   .video-container__video {
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto;
-  height: auto;
-  position: absolute;
-  /* top: 25%; */
-  left: 50%;
+        .video-container__video {
+        min-width: 100%; 
+        min-height: 100%; 
+        width: auto;
+        height: auto;
+        position: absolute;
+        /* top: 25%; */
+        left: 50%;
 
-  /* transform: translate(-50%,-50%) scale(0.7); */
-  /* 0.6 lepiej, ale jest biały pask u góry na Samsungu */
-  /* 0.7 na firefoxie działa dobrze nawet na width 260, na Samsungu Galaxy A41 robią się paski, które teoretycznie chyba dałbym radę ogarnąć dodając białe menu, i jakiś margin/clamp na topie. ale czy warto ryzykować? Zwłaszcza, że ikonka wolnego wybiegu też jednak nie może wychodzić poza, bo z duża jasnością ekrenu ją widać!*/
-  /* Bez sensu z tym kombinować raczej, ale się zobaczy po refaktoryzacji menu  */
+        /* transform: translate(-50%,-50%) scale(0.7); */
+        /* 0.6 lepiej, ale jest biały pask u góry na Samsungu */
+        /* 0.7 na firefoxie działa dobrze nawet na width 260, na Samsungu Galaxy A41 robią się paski, które teoretycznie chyba dałbym radę ogarnąć dodając białe menu, i jakiś margin/clamp na topie. ale czy warto ryzykować? Zwłaszcza, że ikonka wolnego wybiegu też jednak nie może wychodzić poza, bo z duża jasnością ekrenu ją widać!*/
+        /* Bez sensu z tym kombinować raczej, ale się zobaczy po refaktoryzacji menu  */
 
-   /* object-fit: fill; */
-   top: 50%;
-   transform: translateX(-50%) translateY(-50%);
-    /* bez skalowania działa - obiekt ma ten sam rozmiar, co kontener */
-    /* w Firefoxie działa na 320x256 oprócz 🐛 menu  */
-    /* w Chromie 320x256 się wykrzacza  */
-    /* na Samsungu Galaxy A41 działa*/
+        /* object-fit: fill; */
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+          /* bez skalowania działa - obiekt ma ten sam rozmiar, co kontener */
+          /* w Firefoxie działa na 320x256 oprócz 🐛 menu  */
+          /* w Chromie 320x256 się wykrzacza  */
+          /* na Samsungu Galaxy A41 działa*/
 
-    /* jakoś tam działą, ale do film do dostosowania, i zobaczy się, co trzeba będzie zastosować po refaktoryzacji menu */
-  }
-
-  /* na małych ekranach logo się wyświetla nie w topbarze, a headerze lub pod menu */
-  .logo--topbar{
-            display: none;
+          /* jakoś tam działą, ale do film do dostosowania, i zobaczy się, co trzeba będzie zastosować po refaktoryzacji menu */
         }
 
-  /* NOWE DUZE MENU DO INDEXU  */
- .menu {
-    display: flex;
-    flex-wrap: wrap;
-    background: none;
-    justify-content: space-evenly;
-    gap: var(--space-md);
-    padding: var(--space-xs);
-  }
+        /* na małych ekranach logo się wyświetla nie w topbarze, a headerze lub pod menu */
+        .logo--topbar{
+                  display: none;
+              }
 
-.menu__button {
-  font-size: var(--text-md);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: var(--radius);
-  padding: var(--space-sm);
-  }
-  
-.brand-container{
-  width: 15.5rem;
-  height: 3.1rem;  
-  /* specjalnie dobrane rozmiary, inne nie pasują  */
+        /* NOWE DUZE MENU DO INDEXU  */
+      .menu {
+          display: flex;
+          flex-wrap: wrap;
+          background: none;
+          justify-content: space-evenly;
+          gap: var(--space-md);
+          padding: var(--space-xs);
+        }
 
-  display: flex;
-  justify-content: center;
-  margin-top: var(--space-md);
-}
+      .menu__button {
+        font-size: var(--text-md);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--radius);
+        padding: var(--space-sm);
+        }
+        
+      .brand-container{
+        width: 15.5rem;
+        height: 3.1rem;  
+        /* specjalnie dobrane rozmiary, inne nie pasują  */
 
-.brand__title{
-  padding: var(--space-xs);
-  font-size: var(--text-md);
-}
+        display: flex;
+        justify-content: center;
+        margin-top: var(--space-md);
+      }
 
-.brand__logo{
-  display: flex;
-  width: 3rem;
-  /* specjalnie dobrane rozmiary, inne nie pasują  */
-  }
+      .brand__title{
+        padding: var(--space-xs);
+        font-size: var(--text-md);
+      }
 
-.logo--topbar {
-  display: none;
-  }
+      .brand__logo{
+        display: flex;
+        width: 3rem;
+        /* specjalnie dobrane rozmiary, inne nie pasują  */
+        }
 
-.logo-container--header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .logo--topbar {
+        display: none;
+        }
 
-
-.logo--header{
-  display: flex;
-  width: var(--size-logo-compact);
-}
-
-.header__title{
-  /* lepiej dostosowany rozmiar na małych ekranach🟠 */
-    /* font-size: calc(var(--text-2xl)*1.2);  */
-  }
-
-.header__subtitle{
-  font-size: var(--text-xl)
-  }
-
-  .advantages-cards-container {
-  flex-direction: column;
-
-  /* odstęp pomiędzy elementami */
-  gap: var(--space-2xl);
-
-  /* odstęp od krawiędzi */
-  padding: var(--space-xl);
- }
-
-.advantages-card__title,
-.advantages-card__description {
-  font-size: var(--text-md);
-}
+      .logo-container--header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
 
+      .logo--header{
+        display: flex;
+        width: var(--size-logo-compact);
+      }
 
-  .worldwide-offer__icon {
-  /* Refactoring Stage 2: tokenized compact worldwide icon size. */
-  width: var(--size-worldwide-icon-compact);
-  height: var(--size-worldwide-icon-compact);
-  }
-  .worldwide-offer__content {
- flex-direction: column;
-}
-.local-offer__category {
-  flex-direction: column;
-  }
+      .header__title{
+        /* lepiej dostosowany rozmiar na małych ekranach🟠 */
+          /* font-size: calc(var(--text-2xl)*1.2);  */
+        }
 
-  .local-offer__category-description {
-  padding: 0;
-}
+      .header__subtitle{
+        font-size: var(--text-xl)
+        }
 
-.local-offer__category-title{
-  text-align: center;
-}
+        .advantages-cards-container {
+        flex-direction: column;
 
-  
-.footer-menu__button {
-  /* font-size: var(--text-sm); */
-  /* border: solid red; */
-  /* color: red; */
-}
+        /* odstęp pomiędzy elementami */
+        gap: var(--space-2xl);
 
- .advantages-card {
-    padding: 0;
-    /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
-  }
+        /* odstęp od krawiędzi */
+        padding: var(--space-xl);
+      }
 
-.worldwide-offer__description {
-   padding-top: 0;
-   /* font-size: var(--space-sm); */
-}
-.worldwide-offer__countries{
-  line-height: 3rem;
-  text-align: center
-}
-  .worldwide-offer__country{
-  padding: var(--space-md);
-}
+      .advantages-card__title,
+      .advantages-card__description {
+        font-size: var(--text-md);
+      }
 
 
-.products-lists{
-  font-size: var(--text-xs);
- }
+
+        .worldwide-offer__icon {
+        /* Refactoring Stage 2: tokenized compact worldwide icon size. */
+        width: var(--size-worldwide-icon-compact);
+        height: var(--size-worldwide-icon-compact);
+        }
+        .worldwide-offer__content {
+      flex-direction: column;
+      }
+      .local-offer__category {
+        flex-direction: column;
+        }
+
+        .local-offer__category-description {
+        padding: 0;
+      }
+
+      .local-offer__category-title{
+        text-align: center;
+      }
+
+        
+      .footer-menu__button {
+        /* font-size: var(--text-sm); */
+        /* border: solid red; */
+        /* color: red; */
+      }
+
+      .advantages-card {
+          padding: 0;
+          /* ^ padding na mniejszych ekranach nie jest potrzebny - jest wręcz przeciwnie */
+        }
+
+      .worldwide-offer__description {
+        padding-top: 0;
+        /* font-size: var(--space-sm); */
+      }
+      .worldwide-offer__countries{
+        line-height: 3rem;
+        text-align: center
+      }
+        .worldwide-offer__country{
+        padding: var(--space-md);
+      }
+
+
+      .products-lists{
+        font-size: var(--text-xs);
+      }
+
+      .program-img{
+        width: 100vw;
+        max-width: 100%;
+        /* width */
+      }
 
 
 /* BREAKPOINT STYLUJĄCY MENU NA NAJMNIEJSZYCH ERKANACH JEDNAK JEST POTRZEBNY*/
