@@ -487,9 +487,10 @@ footer {
 
 /* Refactoring Stage 2: subpage logo sizing moved from internal to external CSS. */
 /* 🟡subsite!? */
+/* AHA, OKAZAŁO SIĘ, ŻE COPILOT TO STWORZYŁ NIEPROSZONY */
 .page--subsite .logo--topbar {
-  width: var(--size-logo-compact);
-  padding-top: var(--space-sm);
+  /* width: var(--size-logo-compact); */
+  /* padding-top: var(--space-sm); */
 }
 /* Na podstronach na dużych ekranach jest topbar logo  */
 .brand__logo{
