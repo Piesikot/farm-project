@@ -101,7 +101,7 @@
   --size-worldwide-icon: clamp(5rem, 6vw, 6rem);
   --size-worldwide-icon-compact: clamp(4.5rem, 6vw, 10rem);
   --size-news-image: clamp(6rem, 10vw, 8rem);
-  --size-contact-icon: clamp(2.5rem, 5vw, 3.5rem);
+  --size-contact-icon: clamp(2rem, 2.5vw, 3.5rem);
   --size-partner-logo: clamp(3.125rem, 30% + 0.3rem, 6rem);
   --size-partner-logo-lg: clamp(6.25rem, 60% + 1.25rem, 31.25rem);
   --size-topbar-height: clamp(3rem, 6vw, 8rem);
@@ -436,7 +436,7 @@ footer {
 /* 🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡 */
 
   /* Refactoring Stage 2: rem-based font size for footer links. */
-  font-size: var(--text-md);
+  font-size: var(--text-base);
   line-height: 1.2;
 }
 
@@ -723,7 +723,7 @@ font-size: var(--text-base);}
 .contact__item{
   /* font-size: 40px; */
   /* 🤖 Stage2: rem-based contact item text size. */
-  font-size: 2.5rem;
+  font-size: var(--text-md);
     display: flex;
     align-items: center;
   /* gap: 20px; */
@@ -731,7 +731,8 @@ font-size: var(--text-base);}
   gap: 1.25rem;
   /* padding: 100px; */
   /* 🤖 Stage2: rem-based padding for contact items. */
-  padding: 6.25rem;
+  padding: var(--space-xl);
+
 }
 
 /* MISSION */
@@ -1360,7 +1361,9 @@ font-size: var(--text-base);}
 
   
 .footer-menu__button {
-  font-size: var(--text-sm);
+  /* font-size: var(--text-sm); */
+  /* border: solid red; */
+  /* color: red; */
 }
 
  .advantages-card {
