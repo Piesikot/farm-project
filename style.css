@@ -770,7 +770,7 @@ font-size: var(--text-base);}
   font-size: var(--text-lg);
   /* padding: 30vh 100px 0 100px; */
   /* 🤖 Stage2: rem-based mission header padding. */
-  padding: 30vh 6.25rem 0 6.25rem;
+  /* padding: 30vh 6.25rem 0 6.25rem; */
     }
 
     .mission {
@@ -780,7 +780,7 @@ font-size: var(--text-base);}
       font-size: var(--text-lg);
       /* padding: 0 100px; */
       /* 🤖 Stage2: rem-based mission body padding. */
-      padding: 0 6.25rem;
+      /* padding: 0 6.25rem; */
     }
 
 .program-header__subtitle{
