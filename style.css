@@ -901,7 +901,7 @@ font-size: var(--text-base);}
       font-size: var(--text-lg);
         /* padding: 0 100px; */
         /* 🤖 Stage2: rem-based real-mission padding. */
-        padding: 0 6.25rem;
+        /* padding: 0 6.25rem; */
     }
     .real-mission-header__title,
     .real-mission__header,
