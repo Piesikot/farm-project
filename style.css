@@ -11,7 +11,7 @@
 
    Projekt jest również zgodny ze SMACSS:
    - Base: reset, normalizacja, style globalne
-  - Layout: page, topbar, header, video-container, offer-content
+  - Layout: page, topbar, header, video-container--farm, offer-content
    - Module: menu, advantages, worldwide-offer, local-offer, footer-menu, polish-quality
    - State: modyfikatory (np. menu__item--active)
    - Theme: brak (nie wymagane w tym projekcie)
@@ -28,7 +28,7 @@
 
    The project is also compliant with SMACSS:
    - Base: reset, normalization, global styles
-  - Layout: page, topbar, header, video-container, offer-content
+  - Layout: page, topbar, header, video-container--farm, offer-content
    - Module: menu, advantages, worldwide-offer, local-offer, footer-menu, polish-quality
    - State: modifiers (e.g., menu__item--active)
    - Theme: none (not required in this project)
@@ -148,7 +148,7 @@ h6 {
 
 /* INDEX VIDEO */
 /* 🟡 Do poprawienia w edytorze wideo m.in. białe tło przejścia, i 🟡 do doskonalenia na małe ekrany ↓ */
-.video-container {
+.video-container--farm {
   position: fixed;
 
   inset: 0;
@@ -1315,7 +1315,7 @@ font-size: var(--text-base);}
 
 /* INDEX VIDEO BREAKPOINT - 🟡 do doskonalenia na małe ekrany*/
  @media only screen and (max-width: 1050px) {
-        .video-container__video {
+    .video-container__video--farm{
         min-width: 100%; 
         min-height: 100%; 
         width: auto;
