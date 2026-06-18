@@ -161,72 +161,7 @@
             </div>
     </footer>
 
-<script>
-    // ADAPTT Kill Counter code
-    (function () {
-        // ID list present on this page: count1 .. count18
-        var ids = [
-            'count1','count2','count3','count4','count5','count6','count7','count8','count9',
-            'count10','count11','count12','count13','count14','count15','count16','count17','count18'
-        ];
-
-        // Approximate annual "millions" for each id (numbers taken/adapted from the ADAPTT example where applicable).
-        // These are 'millions per year' values; adjust if you want different speeds.
-        var millionsMap = {
-            // Top of page: psy, koty
-            'count1': 16,   // dogs
-            'count2': 4,    // cats
-            // Livestock / other (adapted from ADAPTT mapping)
-            'count3': 90000, // marine animals
-            'count4': 45895, // chickens
-            'count5': 2262,  // (used here for wild boar as placeholder)
-            'count6': 1244,  // pigs
-            'count7': 857,   // turkeys (or other)
-            'count8': 691,   // geese
-            'count9': 533,   // sheep
-            'count10': 515,  // goats
-            'count11': 345,  // cows and calves
-            'count12': 292,  // rabbits
-            'count13': 65,   // rodents
-            'count14': 63,   // pigeons and other birds
-            'count15': 23,   // buffaloes
-            'count16': 16,   // horses
-            'count17': 4,    // donkeys and mules
-            'count18': 4     // camels and camelids
-        };
-
-        var counts = {};
-        var rate = {};
-        var perSecond = 8; // updates per second
-
-        function StartKillCounter() {
-            ids.forEach(function (id) {
-                counts[id] = 0;
-                var millions = millionsMap[id] || 0;
-                rate[id] = millions * 1000000 / 365 / 24 / 60 / 60 / perSecond;
-            });
-            setInterval(NewCounts, 1000 / perSecond);
-        }
-
-        function NewCounts() {
-            ids.forEach(function (id) {
-                counts[id] += rate[id];
-                var num = Math.round(counts[id]);
-                var el = document.getElementById(id);
-                if (el) {
-                    // Use en-US to ensure comma thousands separator
-                    el.textContent = num.toLocaleString('en-US');
-                }
-            });
-        }
-
-        // Start when DOM is ready (script is at bottom, but this is safe)
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', StartKillCounter);
-        } else {
-            StartKillCounter();
-        }
-    })();
-</script>
+<script src="/js/global.js"></script>
+    
 </body>
 </html>
