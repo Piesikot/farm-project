@@ -798,13 +798,14 @@ font-size: var(--text-base);}
 
 
 
+/* MISSION */
 
     .mission-header__subtitle {
         padding: 20vh 0;
         font-weight: 100;
     }
 
-    .mission__lead,
+    .mission-main__lead,
     .mission__question,
     .mission__disagree,
     .mission__explanation,
@@ -820,7 +821,7 @@ font-size: var(--text-base);}
       font-size: 1.17em;
     }
 
-    .mission__lead,
+    .mission-main__lead,
     .mission__question,
     .mission__disagree {
         font-size: 1em;
@@ -834,10 +835,10 @@ font-size: var(--text-base);}
         font-size: 0.67em;
     }
 
-    .mission__lead,
+    .mission-main__lead,
     .mission__question,
     .mission__disagree {
-        padding: 40vh 0;
+        padding: 40vh vw;
         font-weight: 100;
     }
 
@@ -894,6 +895,13 @@ font-size: var(--text-base);}
         padding: 30vh 100px 0 100px;
     } */
 
+
+
+
+
+    /* REAL MISSION */
+
+
     .real-mission {
         text-align: center;
       /* font-size: clamp(14px, 2.3vw, 20px); */
@@ -904,14 +912,14 @@ font-size: var(--text-base);}
         /* padding: 0 6.25rem; */
     }
     .real-mission-header__title,
-    .real-mission__header,
-    .real-mission__subtitle,
-    .real-mission__question,
-    .real-mission__answer,
+    .real-mission-main__lead,
+    .real-mission-main__CTA,
+    .real-mission-main__question,
+    .real-mission-main__answer,
     .activism__header,
     .org-list__title {
-        padding: 20vh 0;
-        font-weight: 100;
+        padding: 20vh 3vw;
+        font-weight: 9000;
     }
     .org-list__title {
       /* padding: 20px; */
