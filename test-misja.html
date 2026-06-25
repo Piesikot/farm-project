@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Piesik od Pokoleń | Psie mięso to przyszłość!| Pierwsza polska farma psów | sklep e-Pies </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fraunces:wght@400;500;600;700&display=swap">
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="revised" content="2012.10.10" />
+    <meta name="ADAPTT" content="Animals Deserve Absolute Protection Today and Tomorrow" />
+    <meta name="keywords" content="ADAPTT, animal rights, veganism, Gary Yourofsky, fight speciesism, fight animal abuse" />
+    <meta name="description" content="This page incorporates the basic XHTML, CSS, and JavaScript source code for the
+        ADAPTT Kill Counter. This code is a modification of code produced by Action for Animals and SFVegan." />
+
+</head>
+<style type="text/css">
+		span#count0, span#count1, span#count2, span#count3, span#count4, span#count5, 
+		span#count6, span#count7, span#count8, span#count9, span#count10, span#count11, 
+		span#count12, span#count13, span#count14, span#count15, span#count16, span#count17 { 
+			display: inline; 
+		}
+	</style>
+<body>
+    <!-- /* [ℹ] Projekt został dostosowany do:
+   - BEM (getbem): czytelna struktura bloków, elementów i modyfikatorów
+   - OOCSS: rozdzielenie structure vs skin oraz container vs content
+   - SMACSS: architektura Base, Layout, Module, State
+*/ -->
+    <!-- /* [ℹ] Codebase refactored to follow:
+   - BEM (getbem): clear block/element/modifier structure
+   - OOCSS: separation of structure vs skin and container vs content
+   - SMACSS: Base, Layout, Module, State architecture
+*/ -->
+    <div class="page page--subpage">
+
+        <div class="topbar">
+                
+            <a href="index.html" class="logo-container--topbar">
+                <img class="logo--topbar"
+                    src="src/PoP-logo.svg"
+                    alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
+                </a>
+
+                <ul class="menu">
+                    <li class="menu__item menu__products"><a class="menu__button" href="produkty.html">Produkty</a></li>
+                    <li class="menu__item"><a class="menu__button" href="aktualnosci.html">Aktualności</a></li>
+                    <li class="menu__item"><a class="menu__button" href="kontakt.html">Kontakt</a></li>
+                    <li class="menu__item menu__item--active"><a class="menu__button" href="misja.html">Nasza Misja</a></li>
+                </ul>
+                </div>
+
+            <a href="index.html" class="brand-container brand">
+                    <!-- logo inside brand button -->
+                <img class="brand__logo logo--brand"
+                    src="src/PoP-logo.svg"
+                    alt="logo firmy Piesik od Pokoleń przedstawiające psa w czapce kucharskiej i tasak">
+                <span class="brand__title menu__button">Piesik od Pokoleń S.A.</span>
+            </a>
+
+             <!-- <div class="video-container video-container--mission-meat">
+                <video class="video-container__video video-container__video--mission-meat" width="100%" preload="auto" loop autoplay muted>
+                    <source src='src/' type='video/mp4' /> -->
+                    <!-- video downloaded from https://www.vecteezy.com/ -->
+                <!-- </video>       
+            </div> 
+         -->
+
+
+<!-- <DIV class="TEST" style="text-align: center;"> -->
+    <!-- <h4>TEST Animals Slaughtered:</h4> -->
+	<!-- <p>
+		<span id="count0">0</span>&nbsp;marine animals<br />
+		<span id="count1">0</span>&nbsp;chickens<br />
+		<span id="count2">0</span>&nbsp;ducks<br />
+		<span id="count3">0</span>&nbsp;pigs<br />
+		<span id="count4">0</span>&nbsp;rabbits<br />
+		<span id="count5">0</span>&nbsp;turkeys<br />
+		<span id="count6">0</span>&nbsp;geese<br />
+		<span id="count7">0</span>&nbsp;sheep<br />
+		<span id="count8">0</span>&nbsp;goats<br />
+		<span id="count9">0</span>&nbsp;cows and calves<br />
+		<span id="count10">0</span>&nbsp;rodents<br />
+		<span id="count11">0</span>&nbsp;pigeons and other birds<br />
+		<span id="count12">0</span>&nbsp;buffaloes<br />
+		<span id="count13">0</span>&nbsp;dogs<br />
+		<span id="count14">0</span>&nbsp;cats<br />
+		<span id="count15">0</span>&nbsp;horses<br />
+		<span id="count16">0</span>&nbsp;donkeys and mules<br />
+		<span id="count17">0</span>&nbsp;camels and other camelids
+	</p> -->
+<!-- </DIV> -->
+            <div class="mission">
+            <header class="mission-header">
+                    <!-- Zrobić animowane tło -->
+                     <!-- https://www.vecteezy.com/video/50144448-a-fresh-uncooked-red-pork-belly-slices-are-flying-through-the-air -->
+                    <!-- https://www.vecteezy.com/video/36623687-chopped-red-meat-display-at-local-store -->
+                <h1 class="mission-header__title">Psie mięso to przyszłość!</h1>
+                <h2 class="mission-header__subtitle">Czy się zgadzasz?</h2>
+            </header>
+
+            <main class="mission-main">
+                <p class="mission-main__lead">Naszą misją jest rozpowszechnienie hodowli psów i kotów na cały świat. Razem z innymi rolnikami na całym świecie dbamy o to, aby  mięso i nabiał trafiały na Twój stół!</p>
+                <section class="kill-counter kill-counter--farm">
+                    <!-- Potem zrobić, żeby liczyło od czasu wejścia na stronę, a nie w odnośnik misji. -->
+                    <p class="kill-counter__label">Od czasu zapoznawania się z naszą misją zostało zabitych na świecie dla Ciebie:</p>
+                    <p class="kill-counter__counts">  
+                            <span class="count0" style="display: none">0</span>
+                            <span class="count1" style="display: none">0</span>
+                            <span class="count2" style="display: none">0</span>
+                            <span class="count3" style="display: none">0</span>
+                            <span class="count4" style="display: none">0</span>
+                            <span class="count5" style="display: none">0</span>
+                            <span class="count6" style="display: none">0</span>
+                            <span class="count7" style="display: none">0</span>
+                            <span class="count8" style="display: none">0</span>
+                            <span class="count9" style="display: none">0</span>
+                            <span class="count10" style="display: none">0</span>
+                            <span class="count11" style="display: none">0</span>
+                            <span class="count12" style="display: none">0</span>
+                            <span class="count13">0</span>&nbsp;dogs<br />
+                            <span class="count14">0</span>&nbsp;cats<br />
+                            <span class="count15" style="display: none">0</span>
+                            <span class="count16" style="display: none"> 0</span>
+                            <span class="count17" style="display: none">0</span>
+                    </p>
+                </section>
+            
+                
+            <section class="arguments">
+                <h3 class="arguments__title">Kilka informacji o hodowli psów i kotów:</h3>
+                <ul class="arguments__list">
+                    <li class="arguments__item">👉Hodowla psów i kotów zapewnia pracę milionom ludzi na całym świecie.</li>
+                    <li class="arguments__item">👉W wielu krajach psina oraz kocina są uważane za delikates, a ich spożywanie jest tradycją.</li>
+                    <li class="arguments__item">👉Nasze rasy psów hodowlanych są hodowane specjalnie na mięso i nie przetrwałyby bez opieki człowieka.</li>
+                    <li class="arguments__item">👉Mięso psów i kotów zawiera żelazo hemowe, które jest łatwiej przyswajalne niż to z innych zwierząt.</li>
+                    <li class="arguments__item">👉Kocie i psie mięso jest lepszym źródłem białka, niż mięso innych zwierząt.</li>
+                    <li class="arguments__item">👉Ludzie jedli psy i koty od zarania dziejów.</li>
+                    <li class="arguments__item">👉Niektóre rasy psów hodowlanych zostały udomowione właśnie po to, by służyć ludziom jako pożywienie.</li>
+                    <li class="arguments__item">👉Wiele kultur ma rytuały religijne i święta związane z jedzeniem psiny i kociny, np. Yulin w Chinach.</li>
+                    <li class="arguments__item">👉Ludzie są biologicznie przystosowani do trawienia psiego i kociego mięsa.</li>
+                    <li class="arguments__item">👉Ograniczenie spożycia psiego i kociego mięsa może prowadzić do niedoborów niektórych składników odżywczych.</li>
+                    <li class="arguments__item">👉Jedzenie mięsa z psów i kotów jest osobistym wyborem.</li>
+                    <li class="arguments__item">👉Gdybyśmy nie jedli psów i kotów, to byłoby ich tak dużo, że zawładnęłyby światem.</li>
+                    <li class="arguments__item">👉Czy psy i koty są ważniejsze od ludzi?</li>
+                </ul>
+            </section>
+
+            <p class="mission__question">Czy zgadzasz się z powyższymi stwierdzeniami?</p>
+
+            <!-- <p class="mission__question">Czy uważasz je za absurlane i niedopuszczalne?</p> -->
+
+            <p class="mission__disagree">Jeśli się nie zgadzasz, i chcesz bronić zwierząt...</p>
+
+            <section class="kill-counter kill-counter--livestock">
+                <h5 class="kill-counter__title">
+                    Wiedz, że w tej chwili na świecie zabijanych jest również:
+                </h5>
+                    <div class="kill-counter__livestock">
+                        <p>
+                            <span class="count0">0</span>&nbsp;marine animals<br />
+                            <span class="count1">0</span>&nbsp;chickens<br />
+                            <span class="count2">0</span>&nbsp;ducks<br />
+                            <span class="count3">0</span>&nbsp;pigs<br />
+                            <span class="count4">0</span>&nbsp;rabbits<br />
+                            <span class="count5">0</span>&nbsp;turkeys<br />
+                            <span class="count6">0</span>&nbsp;geese<br />
+                            <span class="count7">0</span>&nbsp;sheep<br />
+                            <span class="count8">0</span>&nbsp;goats<br />
+                            <span class="count9">0</span>&nbsp;cows and calves<br />
+                            <span class="count10">0</span>&nbsp;rodents<br />
+                            <span class="count11">0</span>&nbsp;pigeons and other birds<br />
+                            <span class="count12">0</span>&nbsp;buffaloes<br />
+                            <span class="count13">0</span>&nbsp;dogs<br />
+                            <span class="count14">0</span>&nbsp;cats<br />
+                            <span class="count15">0</span>&nbsp;horses<br />
+                            <span class="count16">0</span>&nbsp;donkeys and mules<br />
+                            <span class="count17">0</span>&nbsp;camels and other camelids
+                        </p>
+                    </div>
+                    <p class="kill-counter__footer">
+                    Nie różniących niczym od psów i kotów, które chcesz bronić.
+                    </p>  
+                </section>
+
+            <p class="mission__explanation">Tak naprawdę, ta strona jest satyryczną parafrazą witryny najbardziej popularnej firmy w Polsce zajmującej się produkcją mięsną. Tak zwane "zwierzęta hodowlane" nie różnią się od psów i kotów. Tak samo, jak one, są to istoty czujące, które chcą żyć wolne od cierpienia, a przedstawione powyżej stwierdzenia są parafrazą najczęściej powtarzanych argumentów przez ludzi, wykorzystujących zwierzęta, by usprawiedliwić swoje wybory konsumenckie.</p>
+
+            <p class="mission__explanation"><del>Krowa mleczna</del> Suka mleczna rozpoczyna życie i kończy życie w ubojni. Aby dowiedzieć się więcej obejrzyj krótki, 5-cio minutowy filmik pod<a href="https://www.youtube.com/watch?v=UcN7SGGoCNI"> tym linkiem.</a></p>
+
+            <!-- Error 153Video player configuration error -->
+            <!-- <iframe src="https://www.youtube.com/embed/UcN7SGGoCNI" title="whatever" frameBorder="0" style="margin-top: 50px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe> -->
+
+            <p class="mission__explanation">Następnie zachęcamy zapoznać się z naszą misją <a href="prawdziwa-misja.html"> klikając tutaj.</a></p>
+
+            </main>
+            </div>
+        </div>
+    <footer>
+            <div class="footer-menu">
+                <span class="footer-menu__item"><a href="dobrostan.html" class="footer-menu__button">DOBROSTAN</a></span>
+                <span class="footer-menu__item"><a href="program.html" class="footer-menu__button">PROGRAM</a></span>
+                <span class="footer-menu__item"><a href="kariera.html" class="footer-menu__button">KARIERA</a></span>
+                <span class="footer-menu__item"><a href="partnerzy.html" class="footer-menu__button">PARTNERZY</a></span>
+                <span class="footer-menu__item footer-menu__item--centered"><a class="footer-menu__button" href="http://www.piesikot.co">CREATED BY PiesikCorp Agency</a></span>
+            </div>
+    </footer>
+
+<script>
+
+		// Global variables: ___________________________________________________________________
+
+		var counts = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+		var rate = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+		
+		// Functions: __________________________________________________________________________
+		
+		function StartKillCounter() {
+			var millions = [ 90000, 45895, 2262, 1244, 857, 691, 533, 515, 345, 292, 65, 63, 23, 16, 4, 4, 3, 2 ];
+			var perSecond = 8;
+			for (var i = 0; i < counts.length; ++i) 
+				rate[i] = millions[i] * 1000000 / 365 / 24 / 60 / 60 / perSecond;
+			setInterval(NewCounts, 1000 / perSecond);
+		}
+		
+		function NewCounts() {
+			var num, thous, str;
+			for (var i = 0; i < counts.length; ++i) {
+				counts[i] += rate[i];
+				num = Math.round(counts[i]);
+				str = "";
+				while (num > 1000) {
+					thous = num % 1000;
+					if (thous < 10)
+						thous = "00" + thous;
+					else if (thous < 100)
+						thous = "0" + thous;
+					str = "," + thous + str;
+					num = Math.floor(num / 1000);
+				}
+				str = num + str;
+				// document.getElementById("count" + i).innerHTML = str;
+
+                // document.querySelectorAll(".count" + i).innerHTML = str;
+                //querySelectorAll() zwraca NodeList (listę wielu elementów), a nie pojedynczy element — więc ta linijka nic nie robi.  
+
+                document.querySelectorAll(".count" + i).forEach(el => {
+                    el.innerHTML = str;
+                    });
+                //querySelectorAll(".count" + i) → znajduje wszystkie elementy z klasą count0, count1, itd., a forEach(el => ...) → przechodzi po każdym z nich i ustawia innerHTML.
+
+			}
+		}
+
+
+		StartKillCounter();
+
+</script>
+    
+</body>
+</html>
