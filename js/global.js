@@ -33,69 +33,50 @@ function getSessionTime() {
 
 
 // ADAPTT Kill Counter code
-        (function () {
-        // ID list present on this page: count1 .. count18
-        var ids = [
-            'count1','count2','count3','count4','count5','count6','count7','count8','count9',
-            'count10','count11','count12','count13','count14','count15','count16','count17','count18'
-        ];
+// Global variables: ___________________________________________________________________
 
-        // Approximate annual "millions" for each id (numbers taken/adapted from the ADAPTT example where applicable).
-        // These are 'millions per year' values; adjust if you want different speeds.
-        var millionsMap = {
-            // Top of page: psy, koty
-            'count1': 16,   // dogs
-            'count2': 4,    // cats
-            // Livestock / other (adapted from ADAPTT mapping)
-            'count3': 90000, // marine animals
-            'count4': 45895, // chickens
-            'count5': 2262,  // (used here for wild boar as placeholder)
-            'count6': 1244,  // pigs
-            'count7': 857,   // turkeys (or other)
-            'count8': 691,   // geese
-            'count9': 533,   // sheep
-            'count10': 515,  // goats
-            'count11': 345,  // cows and calves
-            'count12': 292,  // rabbits
-            'count13': 65,   // rodents
-            'count14': 63,   // pigeons and other birds
-            'count15': 23,   // buffaloes
-            'count16': 16,   // horses
-            'count17': 4,    // donkeys and mules
-            'count18': 4     // camels and camelids
-        };
+		var counts = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+		var rate = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+		
+		// Functions: __________________________________________________________________________
+		
+		function StartKillCounter() {
+			var millions = [ 90000, 45895, 2262, 1244, 857, 691, 533, 515, 345, 292, 65, 63, 23, 16, 4, 4, 3, 2 ];
+			var perSecond = 8;
+			for (var i = 0; i < counts.length; ++i) 
+				rate[i] = millions[i] * 1000000 / 365 / 24 / 60 / 60 / perSecond;
+			setInterval(NewCounts, 1000 / perSecond);
+		}
+		
+		function NewCounts() {
+			var num, thous, str;
+			for (var i = 0; i < counts.length; ++i) {
+				counts[i] += rate[i];
+				num = Math.round(counts[i]);
+				str = "";
+				while (num > 1000) {
+					thous = num % 1000;
+					if (thous < 10)
+						thous = "00" + thous;
+					else if (thous < 100)
+						thous = "0" + thous;
+					str = "," + thous + str;
+					num = Math.floor(num / 1000);
+				}
+				str = num + str;
+				// document.getElementById("count" + i).innerHTML = str;
 
-        var counts = {};
-        var rate = {};
-        var perSecond = 8; // updates per second
+                // document.querySelectorAll(".count" + i).innerHTML = str;
+                //querySelectorAll() zwraca NodeList (listę wielu elementów), a nie pojedynczy element — więc ta linijka nic nie robi.  
 
-        function StartKillCounter() {
-            ids.forEach(function (id) {
-                counts[id] = 0;
-                var millions = millionsMap[id] || 0;
-                rate[id] = millions * 1000000 / 365 / 24 / 60 / 60 / perSecond;
-            });
-            setInterval(NewCounts, 1000 / perSecond);
-        }
+                document.querySelectorAll(".count" + i).forEach(el => {
+                    el.innerHTML = str;
+                    });
+                //querySelectorAll(".count" + i) → znajduje wszystkie elementy z klasą count0, count1, itd., a forEach(el => ...) → przechodzi po każdym z nich i ustawia innerHTML.
 
-        function NewCounts() {
-            ids.forEach(function (id) {
-                counts[id] += rate[id];
-                var num = Math.round(counts[id]);
-                var el = document.getElementById(id);
-                if (el) {
-                    // Use en-US to ensure comma thousands separator
-                    el.textContent = num.toLocaleString('en-US');
-                }
-            });
-        }
+			}
+		}
 
-        // Start when DOM is ready (script is at bottom, but this is safe)
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', StartKillCounter);
-        } else {
-            StartKillCounter();
-        }
-    })();
 
+		StartKillCounter();
     
