@@ -8,18 +8,18 @@ if (alert_window && alert_button){
     } );
 }
 
-// 🟡licznik muszę przerobić, żeby session storage działało
+
 // ===============================
-// SESSION STORAGE – GLOBAL START
+// LOCAL STORAGE – GLOBAL START
 // ===============================
 
 // 1. Pobierz zapisany czas startu
-let start = sessionStorage.getItem("startTime");
+let start = localStorage.getItem("startTime");
 
 // 2. Jeśli nie istnieje — ustaw go (pierwsze wejście na stronę)
 if (!start) {
-    sessionStorage.setItem("startTime", Date.now());
-    start = sessionStorage.getItem("startTime");
+    localStorage.setItem("startTime", Date.now());
+    start = localStorage.getItem("startTime");
 }
 
 // 3. Zamień na liczbę
@@ -33,6 +33,7 @@ function getSessionTime() {
 
 
 // ADAPTT Kill Counter code
+
 // Global variables: ___________________________________________________________________
 
 		var counts = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
@@ -45,8 +46,16 @@ function getSessionTime() {
 			var perSecond = 8;
 			for (var i = 0; i < counts.length; ++i) 
 				rate[i] = millions[i] * 1000000 / 365 / 24 / 60 / 60 / perSecond;
+
+                    //localStorage - podpinanie licznika
+                    const elapsed = (Date.now() - startTime) / 1000; // sekundy
+
+                    for (let i = 0; i < counts.length; i++) {
+                        counts[i] = rate[i] * elapsed;
+                    }
+
 			setInterval(NewCounts, 1000 / perSecond);
-		}
+		    }
 		
 		function NewCounts() {
 			var num, thous, str;
