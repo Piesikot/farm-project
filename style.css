@@ -888,6 +888,10 @@ font-size: var(--text-base);}
         font-weight: 100;
     }
 
+    .kill-counter__counts--livestock{
+      padding: var(--space-md);
+    }
+
     /* REAL MISSION */
         /* .real-mission-header {
         text-align: center;

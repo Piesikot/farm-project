@@ -79,7 +79,7 @@
                     <!-- Potem zrobić, żeby liczyło od czasu wejścia na stronę, a nie w odnośnik misji. -->
                     <p class="kill-counter__label">Od czasu zapoznawania się z naszą misją zostało zabitych na świecie dla Ciebie:</p>
 
-                    <p class="kill-counter__counts">  
+                    <p class="kill-counter__counts kill-counter__counts--farm">  
                             <span class="count13">0</span>&nbsp;psów<br />
                             <span class="count14">0</span>&nbsp;kotów<br />
                     </p>
@@ -90,14 +90,14 @@
             <section class="arguments">
                 <h3 class="arguments__title">Kilka informacji o hodowli psów i kotów:</h3>
                 <ul class="arguments__list">
-                    <li class="arguments__item">👉Hodowla psów i kotów zapewnia pracę milionom ludzi na całym świecie.</li>
+                    <li class="arguments__item">👉Ludzie jedli psy i koty od zarania dziejów.</li>
                     <li class="arguments__item">👉W wielu krajach psina oraz kocina są uważane za delikates, a ich spożywanie jest tradycją.</li>
+                    <li class="arguments__item">👉Niektóre rasy psów hodowlanych zostały udomowione właśnie po to, by służyć ludziom jako pożywienie.</li>
                     <li class="arguments__item">👉Nasze rasy psów hodowlanych są hodowane specjalnie na mięso i nie przetrwałyby bez opieki człowieka.</li>
+                    <li class="arguments__item">👉Wiele kultur ma rytuały religijne i święta związane z jedzeniem psiny i kociny, np. Yulin w Chinach.</li>
+                    <li class="arguments__item">👉Hodowla psów i kotów zapewnia pracę milionom ludzi na całym świecie.</li>
                     <li class="arguments__item">👉Mięso psów i kotów zawiera żelazo hemowe, które jest łatwiej przyswajalne niż to z innych zwierząt.</li>
                     <li class="arguments__item">👉Kocie i psie mięso jest lepszym źródłem białka, niż mięso innych zwierząt.</li>
-                    <li class="arguments__item">👉Ludzie jedli psy i koty od zarania dziejów.</li>
-                    <li class="arguments__item">👉Niektóre rasy psów hodowlanych zostały udomowione właśnie po to, by służyć ludziom jako pożywienie.</li>
-                    <li class="arguments__item">👉Wiele kultur ma rytuały religijne i święta związane z jedzeniem psiny i kociny, np. Yulin w Chinach.</li>
                     <li class="arguments__item">👉Ludzie są biologicznie przystosowani do trawienia psiego i kociego mięsa.</li>
                     <li class="arguments__item">👉Ograniczenie spożycia psiego i kociego mięsa może prowadzić do niedoborów niektórych składników odżywczych.</li>
                     <li class="arguments__item">👉Jedzenie mięsa z psów i kotów jest osobistym wyborem.</li>
@@ -116,9 +116,8 @@
                 <h5 class="kill-counter__title">
                     Wiedz, że w tej chwili na świecie zabijanych jest również:
                 </h5>
-                    <div class="kill-counter__livestock">
-                        <p>
-                       <span class="count0">0</span>&nbsp;zwierząt morskich<br /> 
+                        <p class="kill-counter__counts kill-counter__counts--livestock">
+                            <span class="count0">0</span>&nbsp;zwierząt morskich<br /> 
                             <span class="count1">0</span>&nbsp;kurczaków<br />
                             <span class="count2">0</span>&nbsp;kaczek<br />
                             <span class="count3">0</span>&nbsp;świń<br />
@@ -135,9 +134,9 @@
                             <span class="count16">0</span>&nbsp;osłów i mułów<br />
                             <span class="count17">0</span>&nbsp;wielbłądów i innych wielbłądowatych
                         </p>
-                    </div>
+
                     <p class="kill-counter__footer">
-                    i to właśnie    <b>Ty</b> jesteś tego powodem, zawsze kiedy kupujesz produkty odzwierzęce.<br> Zwierzęta te, nie różnią się one niczym od psów i kotów, które chcesz bronić...
+                    i to właśnie    <b>Ty</b> jesteś tego powodem, kiedy kupujesz produkty odzwierzęce.<br> Powyższe zwierzęta, nie różnią się niczym od psów i kotów, które chcesz bronić...
                     </p>  
                 </section>
 
@@ -163,56 +162,7 @@
             </div>
     </footer>
 
-<script src="js/global.js">
-
-// // Global variables: ___________________________________________________________________
-
-// 		var counts = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
-// 		var rate = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
-		
-// 		// Functions: __________________________________________________________________________
-		
-// 		function StartKillCounter() {
-// 			var millions = [ 90000, 45895, 2262, 1244, 857, 691, 533, 515, 345, 292, 65, 63, 23, 16, 4, 4, 3, 2 ];
-// 			var perSecond = 8;
-// 			for (var i = 0; i < counts.length; ++i) 
-// 				rate[i] = millions[i] * 1000000 / 365 / 24 / 60 / 60 / perSecond;
-// 			setInterval(NewCounts, 1000 / perSecond);
-// 		}
-		
-// 		function NewCounts() {
-// 			var num, thous, str;
-// 			for (var i = 0; i < counts.length; ++i) {
-// 				counts[i] += rate[i];
-// 				num = Math.round(counts[i]);
-// 				str = "";
-// 				while (num > 1000) {
-// 					thous = num % 1000;
-// 					if (thous < 10)
-// 						thous = "00" + thous;
-// 					else if (thous < 100)
-// 						thous = "0" + thous;
-// 					str = "," + thous + str;
-// 					num = Math.floor(num / 1000);
-// 				}
-// 				str = num + str;
-// 				// document.getElementById("count" + i).innerHTML = str;
-
-//                 // document.querySelectorAll(".count" + i).innerHTML = str;
-//                 //querySelectorAll() zwraca NodeList (listę wielu elementów), a nie pojedynczy element — więc ta linijka nic nie robi.  
-
-//                 document.querySelectorAll(".count" + i).forEach(el => {
-//                     el.innerHTML = str;
-//                     });
-//                 //querySelectorAll(".count" + i) → znajduje wszystkie elementy z klasą count0, count1, itd., a forEach(el => ...) → przechodzi po każdym z nich i ustawia innerHTML.
-
-// 			}
-// 		}
-
-
-// 		StartKillCounter();
-
-</script>
+<script src="js/global.js"></script>
     
 </body>
 </html>
