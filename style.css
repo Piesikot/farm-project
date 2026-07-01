@@ -61,40 +61,27 @@
   --space-lg: 2rem;
   --space-xl: 2.5rem;
   --space-2xl: 5rem;
+
 /* Colors (--color-*) */
   /* [ℹ] Zmiennie kolorów pozwalają na łatwe zarządzanie paletą i szybkie wprowadzanie zmian w całym projekcie. Semantyczne nazwy poprawiają czytelność i ułatwiają utrzymanie kodu. */
   /* [ℹ] Color variables allow easy palette management and quick global updates across the project. Semantic naming improves readability and maintainability. */
   --color-text: #000;
-
-  /* 🟠  Tutaj musi być inny kolor niż w topbar-bg, bo się miesza stacking context i zaczyna wyświetlać video w niższych sekcjach. Trzeba dopracować przy czyszczeniu z opacity*/
-  /* to jest bg w seal, czyli mogę to zawsać polish-bg, i dać biało czerwone barwy, ale to już po przeniensieniu do offer do products */
   --color-bg: #fff;
-
   --color-text-inverse: #fff;
   --color-bg-inverse: #000;
-  --color-muted: #333;
   --color-surface: #f9f9f9;
   --color-surface-soft: rgba(255, 255, 255, 0.35);
   --color-overlay: rgba(0, 0, 0, 0.6);
-
-  /* 🟠ten kolor jeszcze poustawiać gdzie indziej, gdzie się da 🟠-chyba już wykonane */
   --color-transparent-box: rgba(255, 255, 255, 0.6);
-
   --color-border: #000;
-  --color-border-soft: rgba(0, 0, 0, 0.06);
-  --color-shadow-soft: rgba(0, 0, 0, 0.08);
+  --color-border-inside: #fff;
   --color-shadow-strong: rgba(0, 0, 0, 0.12);
-  --color-accent: hsl(94, 100%, 44%);
 
   /* Graphics sizes (--size-*) */
     /* [ℹ] Zmiennie rozmiarów oparte na clamp() zapewniają responsywne skalowanie grafik bez utraty proporcji. Dzięki temu elementy wizualne wyglądają dobrze na każdym ekranie. */
     /* [ℹ] Graphics size variables based on clamp() ensure responsive scaling of visuals without losing proportions. This ensures elements look good on any screen size. */  
-    
-    /* 🟠 zwiększyć logo na dużych ekranach */
-  /* --size-logo: clamp(6.25rem, 60% + 1.25rem, 31.25rem);  */
-  --size-logo: clamp(5rem, 40% + 1rem, 10rem);
-  --size-logo-compact: clamp(4.5rem, 30% + 0.3rem, 12rem);
-  /* --size-brand-logo: clamp(1.5rem, 10% + 0.5rem, 3rem); */
+  --size-logo: clamp(5rem, 12% + 2rem, 15rem);
+  --size-logo-compact: clamp(6rem, 25% + 0.5rem, 12rem);
   --size-advantage-icon: clamp(5rem, 8vw, 15rem);
   --size-advantage-icon-border: 0.15rem;
   --size-seal: clamp(10rem, 15vw, 25rem);
@@ -106,6 +93,7 @@
   --size-partner-logo-lg: clamp(7rem, 60% + 1.25rem, 31rem);
   --size-topbar-height: clamp(3rem, 6vw, 8rem);
 
+  /* radius */
   --radius: 1rem;
 }
 
@@ -178,8 +166,8 @@ h6 {
 .logo--topbar{
   position: absolute;
   width: var(--size-logo);
-  padding: 0 var(--space-md);
-  /* 🔴 do dopracowania na podstronach włącznie ze strukturą HTML */
+  padding: 0 var(--space-lg);
+
 }
 
 .menu {
@@ -308,6 +296,7 @@ h6 {
      1px -1px 0 #fff,
     -1px  1px 0 #fff,
      1px  1px 0 #fff;
+  
 }
 
 
@@ -337,7 +326,7 @@ h6 {
 
   border: var(--size-advantage-icon-border) solid var(--color-border);
   border-radius: 50%;
-  box-shadow: inset 0 0 0 var(--size-advantage-icon-border) var(--color-surface);
+  box-shadow: inset 0 0 0 var(--size-advantage-icon-border) var(--color-border-inside);
   /* box-shadow: inset i border, intencjonalnie użyte razem jako obrys i kontur obrysu dla efektu wizualnego  */
 
   /* Refactoring Stage 2: tokenized icon size. */
@@ -821,7 +810,10 @@ font-size: var(--text-base);}
       font-size: 1.17em;
     }
 
-    .mission-main__lead,
+    .mission-main__lead{
+      /* color: red; */
+    }
+
     .mission__question,
     .mission__disagree {
         font-size: 1em;
@@ -835,16 +827,15 @@ font-size: var(--text-base);}
         font-size: 0.67em;
     }
 
-    .mission-main__lead,
+    /* .mission-main__lead, */
     .mission__question,
     .mission__disagree {
-        padding: 40vh vw;
+        padding: 40vh 0;
         font-weight: 100;
     }
 
     .mission__explanation {
         padding: 10vh 0;
-        font-weight: 100;
     }
 
     .arguments {
@@ -1103,7 +1094,10 @@ font-size: var(--text-base);}
   padding: 0.375rem 0.75rem;
   /* background: hsl(94, 100%, 44%); */
   /* 🤖 Stage2: tokenized accent color. */
-  background: var(--color-accent);
+
+
+
+
   /* color: white; */
   /* 🤖 Stage2: tokenized inverse text color. */
   color: var(--color-text-inverse);
@@ -1206,7 +1200,7 @@ font-size: var(--text-base);}
   text-align: center;
   /* color: #333; */
   /* 🤖 Stage2: tokenized muted text color. */
-  color: var(--color-muted);
+  color: var(--color-text);
 }
 
 .partners-footer{
@@ -1411,6 +1405,8 @@ font-size: var(--text-base);}
       .logo--header{
         display: flex;
         width: var(--size-logo-compact);
+
+        padding-right: var(--space-sm);
       }
 
       .header__title{
@@ -1419,7 +1415,9 @@ font-size: var(--text-base);}
         }
 
       .header__subtitle{
-        font-size: var(--text-xl)
+        font-size: var(--text-xl);
+
+        padding: var(--space-md) 0;
         }
 
         .advantages-cards-container {
