@@ -36,6 +36,11 @@
 
 /* Refactoring Stage 2: add global tokens for typography, spacing, colors, and shared sizes to enable 1:1 rem/em migration. */
 :root {
+  /* [ℹ] Intencjonalnie brak ustawionego font-size na elemencie root, aby pozostawić przeglądarkom ich domyślne 1rem = 16px. Jest to spójny standard we wszystkich nowoczesnych przeglądarkach i zapewnia przewidywalny wygląd interfejsu. Dzięki temu typografia oraz spacing oparte na rem zachowują pełne accessibility — użytkownicy mogą skalować tekst zgodnie ze swoimi potrzebami, a strona pozostaje czytelna i stabilna na każdym urządzeniu. */
+  /* [ℹ] The root font-size is intentionally left unset, allowing browsers to apply their default 1rem = 16px. This consistent standard across modern browsers ensures a predictable and uniform layout. It also preserves full accessibility, enabling users to adjust text size according to their needs while maintaining readability and a stable visual hierarchy throughout the interface. */
+
+
+
   /* Fonts, fallbacks) */
     /* [ℹ] Zmienna definiuje główne kroje pisma i ich fallbacki, zapewniając spójny wygląd typografii na różnych urządzeniach. Dzięki temu tekst zawsze wyświetla się poprawnie, nawet jeśli główna czcionka się nie załaduje. */
     /* [ℹ] This variable defines the primary fonts and their fallbacks, ensuring consistent typography across devices. It guarantees readable text even if the main font fails to load.  */
@@ -93,7 +98,7 @@
   --size-partner-logo-lg: clamp(7rem, 60% + 1.25rem, 31rem);
   --size-topbar-height: clamp(3rem, 6vw, 8rem);
 
-  /* radius */
+  /* Radius size */
   --radius: 1rem;
 }
 
@@ -177,24 +182,13 @@ h6 {
 
   /* klasyczny trick na centrowanie diva */
   margin: 0 auto;
+
   width: fit-content;
-
-  /* padding: var(--space-sm) var(--space-xl); */
-  /* ^ z tym treść poniżej advantages się rozjeżdżało, ale teraz w tamtym miejscu nie ma już żadnej treści  */
-
   padding: var(--space-md) var(--space-xl);
-
   list-style: none;
-
   gap: var(--space-2xl);
-  /* ^ z tym  treść poniżej advantages się rozjeżdżała  */
-/* 🟠 hmm, a teraz się nic nie rozjeżdża */
-
   border-radius: var(--radius);
-
   margin-top: var(--space-md);
-
-  /* 🟠 do sprawdzemoa na podstronach  */
 }
 
 .menu__button {
@@ -223,6 +217,16 @@ h6 {
   cursor: grab;
 }
 
+.menu__item:hover{
+transform: scale(0.95);
+transition: transform 0.2s ease;
+}
+
+.menu__item:active{
+transform: scale(0.80);
+}
+
+
 /* ⓘ EFEKTY DLA AKTYWNYCH ELEMENTÓW MENU NA KTORYM USER SIĘ ZNAJDUJE BEZ ZMIENIANIA KAŻDEJ Z PODSTRON OSOBNO. ⓘ */
 .menu__item--active .menu__button {
   text-decoration: underline;
@@ -232,6 +236,7 @@ h6 {
 .footer-menu__item--active .footer-menu__button {
   text-decoration: underline;
   cursor: not-allowed;
+  
 }
 
 
@@ -540,6 +545,14 @@ text-align: center;
         /* width: clamp(3rem, 30% + 0.5rem, 10rem); */
         width: fit-content;
         }
+
+    .brand-container:hover{
+      transform: scale(0.95);
+      transition: transform 0.2s ease;
+    }
+    .brand-container:active{
+      transform: scale(0.80);
+    }
 
 
 
@@ -1130,7 +1143,7 @@ font-size: var(--text-base);}
 
 
 .career__apply-button:active {
-  transform: scale(0.75);
+  transform: scale(0.80);
 }
 
 
