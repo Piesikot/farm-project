@@ -226,17 +226,35 @@ transition: transform 0.2s ease;
 transform: scale(0.80);
 }
 
+.footer-menu__item:hover{
+transform: scale(0.90);
+transition: transform 0.5s ease;
+}
+
+.menu__item:active{
+transform: scale(0.80);
+}
+
+
+
+
 
 /* ⓘ EFEKTY DLA AKTYWNYCH ELEMENTÓW MENU NA KTORYM USER SIĘ ZNAJDUJE BEZ ZMIENIANIA KAŻDEJ Z PODSTRON OSOBNO. ⓘ */
 .menu__item--active .menu__button {
   text-decoration: underline;
   font-weight: 800;
   cursor: not-allowed;
+
+  transform: none;
 }
+
 .footer-menu__item--active .footer-menu__button {
   text-decoration: underline;
   cursor: not-allowed;
-  
+  }
+
+.menu__item--active:hover, .footer-menu__item--active:hover{
+    transform: none;
 }
 
 
