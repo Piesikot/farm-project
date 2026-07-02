@@ -817,6 +817,8 @@ font-size: var(--text-base);}
   margin: 0 auto;
   display: block;
   /* ⓘ margin: 0 auto nie działa, jak element nie jest blokiem */
+
+  border: solid 1.5px var(--color-border);
 }
 
 
