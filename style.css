@@ -39,8 +39,6 @@
   /* [ℹ] Intencjonalnie brak ustawionego font-size na elemencie root, aby pozostawić przeglądarkom ich domyślne 1rem = 16px. Jest to spójny standard we wszystkich nowoczesnych przeglądarkach i zapewnia przewidywalny wygląd interfejsu. Dzięki temu typografia oraz spacing oparte na rem zachowują pełne accessibility — użytkownicy mogą skalować tekst zgodnie ze swoimi potrzebami, a strona pozostaje czytelna i stabilna na każdym urządzeniu. */
   /* [ℹ] The root font-size is intentionally left unset, allowing browsers to apply their default 1rem = 16px. This consistent standard across modern browsers ensures a predictable and uniform layout. It also preserves full accessibility, enabling users to adjust text size according to their needs while maintaining readability and a stable visual hierarchy throughout the interface. */
 
-
-
   /* Fonts, fallbacks) */
     /* [ℹ] Zmienna definiuje główne kroje pisma i ich fallbacki, zapewniając spójny wygląd typografii na różnych urządzeniach. Dzięki temu tekst zawsze wyświetla się poprawnie, nawet jeśli główna czcionka się nie załaduje. */
     /* [ℹ] This variable defines the primary fonts and their fallbacks, ensuring consistent typography across devices. It guarantees readable text even if the main font fails to load.  */
@@ -81,6 +79,7 @@
   --color-border: #000;
   --color-border-inside: #fff;
   --color-shadow-strong: rgba(0, 0, 0, 0.12);
+  --color-border-img: rgba(0, 0, 0, 0.35);
 
   /* Graphics sizes (--size-*) */
     /* [ℹ] Zmiennie rozmiarów oparte na clamp() zapewniają responsywne skalowanie grafik bez utraty proporcji. Dzięki temu elementy wizualne wyglądają dobrze na każdym ekranie. */
@@ -234,10 +233,6 @@ transition: transform 0.5s ease;
 .menu__item:active{
 transform: scale(0.80);
 }
-
-
-
-
 
 /* ⓘ EFEKTY DLA AKTYWNYCH ELEMENTÓW MENU NA KTORYM USER SIĘ ZNAJDUJE BEZ ZMIENIANIA KAŻDEJ Z PODSTRON OSOBNO. ⓘ */
 .menu__item--active .menu__button {
@@ -696,6 +691,10 @@ font-size: var(--text-base);
   /* margin: 0 auto; */
 
 }
+
+
+
+/* NEWS */
 .news-section__container{
   display: flex;
   justify-content: center;
@@ -724,6 +723,10 @@ font-size: var(--text-base);
     /* padding: 2em; */
     
   margin-left: 0;
+}
+
+.news-section__img--border{
+  border: 3px solid var(--color-border-img);
 }
 
 .news-section__title-container {
