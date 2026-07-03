@@ -88,7 +88,10 @@
   --size-logo-compact: clamp(6rem, 25% + 0.5rem, 12rem);
   --size-advantage-icon: clamp(5rem, 8vw, 15rem);
   --size-advantage-icon-border: 0.15rem;
+
   --size-seal: clamp(10rem, 15vw, 25rem);
+/* ^ czy potrzebne to? */
+
   --size-worldwide-icon: clamp(5rem, 6vw, 6rem);
   --size-worldwide-icon-compact: clamp(4.5rem, 6vw, 10rem);
   --size-news-image: clamp(6rem, 10vw, 8rem);
@@ -661,35 +664,56 @@ font-size: var(--text-base);
 
 .products-lists{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   font-size: var(--text-base);
-    /* padding: 20px; */
+    padding: var(--space-md) var(--space-2xl);
     /* 🟠 do doprasowania z chartem, bo jakoś krzywo jest */
     
+    /* display: inline-block; */
     /* margin: 0 auto; */
 
-    display: none;
+    /* display: none; */
+    /* padding: var(--space-xs); */
+}
+
+.dog-meat-list__title, .cat-meat-list__title{
+  display: inline-block;
+  margin: 1rem 25%;
+  font-size: var(--text-md);
+}
+.dog-meat-list__item, .cat-meat-list__item{
+  padding: var(--space-sm) 0;
 }
 
 .products-lists ul{
-  padding: 20px;
-  /* ^ 🟠 bez tego na telefonie się rozjeżdża */
+  /* padding: 0 10vw; */
+  /* ^ 🟠 bez tego na telefonie się rozjeżdża w prawo*/
   /* justify-content: center; */
-
+  display: inline-block;
+  /* margin: 0 auto; */
+  /* padding-bottom: var(--space-md); */
+  /* padding: var(--space-xl); */
 }
 .chart-container{
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
 
-      display: none;
+      /* display: none; */
+/* margin: 0 auto; */
+display: block;
 
+/* margin-left: -40px; */
 }
 .chart{
-  width: 40vw;
+  width: clamp(17.5rem, 50vw, 31rem);
   /* width: 50%; */
   /* display: none; */
   /* margin: 0 auto; */
+display: block;
+margin: 0 auto;
+  /* padding: 0 10vw; */
 
+  /* margin-left: -80px; */
 }
 
 
@@ -1517,18 +1541,25 @@ font-size: var(--text-base);}
         padding: var(--space-md);
       }
 
-
       .products-lists{
-        font-size: var(--text-xs);
+        font-size: var(--text-base);
+        /* padding: var(--space-sm); */
+        padding: 20px;
+        margin-left: -20px;
       }
+      .products-lists ul{
+        /* padding: 0 40px;         */
+      }
+       .chart-container{
+      /* margin-left: 20px; */
+    }
 
       .program-img{
         width: 100vw;
         max-width: 100%;
         /* width */
       }
-    
-      
+   
 
     .career__section{
   /* display: flex; */
