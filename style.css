@@ -661,6 +661,10 @@ margin: 0 auto;
 font-size: var(--text-base);
 }
 
+ .products-offer-title{
+        text-align: center;
+        font-size: var(--text-md);
+      }
 
 .products-lists{
   display: flex;
@@ -1544,8 +1548,8 @@ font-size: var(--text-base);}
       .products-lists{
         font-size: var(--text-base);
         /* padding: var(--space-sm); */
-        padding: 20px;
-        margin-left: -20px;
+        padding: 30px;
+        margin-left: -30px;
       }
       .products-lists ul{
         /* padding: 0 40px;         */
